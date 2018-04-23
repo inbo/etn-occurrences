@@ -1,0 +1,70 @@
+---
+title: "Darwin Core mapping"
+subtitle: "For: ETN - LifeWatch.be acoustic telemetry data of fish"
+author:
+- Peter Desmet
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    number_sections: true
+---
+
+This document describes how we map the checklist data to Darwin Core. The source file for this document can be found [here](https://github.com/inbo/etn-occurrences/blob/master/src/dwc_mapping.Rmd).
+
+# Setup
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+Set locale (so we use UTF-8 character encoding):
+
+```{r}
+# This works on Mac OS X, might not work on other OS
+Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
+```
+
+Load libraries:
+
+```{r}
+library(tidyverse) # To transform data
+library(magrittr)  # For %<>% pipes
+library(janitor)   # To clean input data
+```
+
+Set file paths (all paths should be relative to this script):
+ 
+```{r}
+# Raw files:
+raw_data_file = "../data/raw/etn-dump.csv"
+
+# Processed files:
+dwc_machine_occurrence_file = "../data/processed/machine_occurrence.csv"
+dwc_human_occurrence_file = "../data/processed/human_occurrence.csv"
+dwc_mof_file = "../data/processed/measurementorfact.csv"
+```
+
+# Read and pre-process raw data
+
+Create a data frame `raw_data` from the source data:
+
+```{r}
+raw_data <- read.csv(raw_data_file, fileEncoding = "UTF-8")
+```
+
+Clean the data somewhat:
+
+```{r}
+raw_data %<>%
+  remove_empty("rows") %>%    # Remove empty rows
+  clean_names()               # Have sensible (lowercase) column names
+```
+
+Show information about data frame:
+
+```{r}
+str(raw_data)
+```
