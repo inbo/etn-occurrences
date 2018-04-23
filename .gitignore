@@ -38,4 +38,4 @@ vignettes/*.pdf
 
 # Data
 /data/raw/*
-!/data/raw/etn-dump.csv
+!/data/raw/etn_dump.csv
