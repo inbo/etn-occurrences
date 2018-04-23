@@ -1,0 +1,16 @@
+name: "Fish tracking data"
+output_dir: "../docs"
+include: ["static/"]
+navbar:
+  title: "etn-occurrences"
+  left:
+  - text: "Darwin Core mapping"
+    href: dwc_mapping.html
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/inbo/etn-occurrences
+output:
+  html_document:
+    theme: yeti
+    df_print: paged
+    css: "static/css/inbo.css"
