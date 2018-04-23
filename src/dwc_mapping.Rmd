@@ -30,20 +30,21 @@ Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
 Load libraries:
 
 ```{r}
-library(tidyverse) # To transform data
+library(dplyr)     # To transform data
 library(magrittr)  # For %<>% pipes
 library(janitor)   # To clean input data
+library(lubridate) # To work with dates
 ```
 
 Set file paths (all paths should be relative to this script):
  
 ```{r}
 # Raw files:
-raw_data_file = "../data/raw/etn-dump.csv"
+raw_detections_file = "../data/raw/etn_dump.csv"
 
 # Processed files:
-dwc_machine_occurrence_file = "../data/processed/machine_occurrence.csv"
-dwc_human_occurrence_file = "../data/processed/human_occurrence.csv"
+dwc_occ_detections_file = "../data/processed/machine_obs_occurrence.csv"
+dwc_occ_animal_tagging_file = "../data/processed/human_obs_occurrence.csv"
 dwc_mof_file = "../data/processed/measurementorfact.csv"
 ```
 
@@ -51,14 +52,14 @@ dwc_mof_file = "../data/processed/measurementorfact.csv"
 
 Create a data frame `raw_data` from the source data:
 
-```{r}
-raw_data <- read.csv(raw_data_file, fileEncoding = "UTF-8")
+```{r read_raw_data}
+raw_detections <- read.csv(raw_detections_file, fileEncoding = "UTF-8")
 ```
 
 Clean the data somewhat:
 
 ```{r}
-raw_data %<>%
+raw_detections %<>%
   remove_empty("rows") %>%    # Remove empty rows
   clean_names()               # Have sensible (lowercase) column names
 ```
@@ -66,5 +67,318 @@ raw_data %<>%
 Show information about data frame:
 
 ```{r}
-str(raw_data)
+str(raw_detections)
+```
+
+Preview data:
+
+```{r}
+head(raw_detections)
+```
+
+Save columns names
+
+```{r}
+raw_detections_colnames <- colnames(raw_detections)
+```
+
+## Info per project/species
+
+Show information grouped by project and species:
+
+```{r}
+raw_detections %>%
+  group_by(animal_project_name, animals_scientific_name) %>%
+  summarize(
+    detections = n(),
+    individuals = n_distinct(animal_id_pk),
+    stations = n_distinct(deployment_station_name),
+    start_date = round_date(min(as.Date(detections_datetime)), unit = "day"),
+    end_date = round_date(max(as.Date(detections_datetime)), unit = "day")
+  )
+```
+
+# Create occurrence core (detections)
+
+```{r start_detections}
+occ_detections <- raw_detections
+```
+
+Sort by transmitter and date:
+
+```{r}
+occ_detections %<>% arrange(detections_transmitter, detections_datetime)
+```
+
+## Term mapping
+
+Map the source data to [Darwin Core Occurrence](http://rs.gbif.org/core/dwc_occurrence_2015-07-02.xml) (but in the classic Darwin Core order):
+
+### type
+
+```{r}
+occ_detections %<>% mutate(type = "Event")
+```
+
+### language
+
+```{r}
+occ_detections %<>% mutate(language = "en")
+```
+
+### license
+
+```{r}
+occ_detections %<>% mutate(license = "http://creativecommons.org/publicdomain/zero/1.0/")
+```
+
+### rightsHolder
+
+The owner of the tag:
+
+```{r}
+occ_detections %<>% mutate(rightsHolder = recode(as.character(tag_owner_organization),
+  "INBO"                         = "INBO",
+  .default = "",
+  .missing = ""
+))
+```
+
+Show mapped values:
+
+```{r}
+occ_detections %>% 
+  select(tag_owner_organization, rightsHolder) %>%
+  group_by_all() %>%
+  summarize(records = n()) %>%
+  arrange(tag_owner_organization)
+```
+
+### accessRights
+
+```{r}
+occ_detections %<>% mutate(accessRights = "http://www.inbo.be/en/norms-for-data-use")
+```
+
+### datasetID
+
+```{r}
+occ_detections %<>% mutate(datasetID = "") # TODO: add DOI
+```
+
+### institutionCode
+
+Same as the `rightsHolder`:
+
+```{r}
+occ_detections %<>% mutate(institutionCode = rightsHolder)
+```
+
+### datasetName
+
+```{r}
+occ_detections %<>% mutate(datasetName = "Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)") # TODO: verify
+```
+
+### basisOfRecord
+
+```{r}
+occ_detections %<>% mutate(basisOfRecord = "MachineObservation")
+```
+
+### informationWithheld
+
+```{r eval = FALSE}
+occ_detections %<>% mutate(informationWithheld = "see metadata") # TODO: currently not included, to be defined
+```
+
+### dynamicProperties
+
+```{r}
+occ_detections %<>% mutate(dynamicProperties = paste0(
+  "{\"transmitter\":\"", detections_transmitter, "\", ",
+  "\"receiver\":\"", detections_receiver, "\"}"
+))
+```
+
+### occurrenceID
+
+```{r}
+occ_detections %<>% mutate(occurrenceID = paste("etn", "lifewatch", detections_id_pk, sep = ":"))
+```
+
+Check for duplicate `occurrenceID`s (should be 0):
+
+```{r}
+anyDuplicated(occ_detections$occurrenceID)
+```
+
+### organismID
+
+```{r eval = FALSE}
+occ_detections %<>% mutate(organismID = animals_animal_id) # TODO: This one is often NA. detections_transmitter would have been nicer
+```
+
+### eventDate
+
+`datetime` assumed to be UTC. For 3D analyses milliseconds will be required, but these won't be available in the source data until VRL imports are supported:
+
+```{r}
+occ_detections %<>% mutate(eventDate = format(as.POSIXct(detections_datetime), format = "%Y-%m-%dT%H:%M:%SZ")) # TODO: verify if UTC
+```
+
+### samplingProtocol
+
+```{r}
+# TODO: refer to DOI of methodology paper? Can some information be derived from source data?
+# receivers_receiver_type: acoustic_telemetry, SVN, active
+# receivers_model_number: VR2W, NA, 122325
+# animals_capture_method: NA, LINE FISHING, FYKE NETS
+```
+
+### locationID
+
+The `deployments_station_name` is a fixed code for that deployment location. It should always be populated. The `detections_receiver` code is not adequate, as a receiver can be moved from one location to another.
+
+```{r}
+occ_detections %<>% mutate(locationID = deployment_station_name)
+```
+
+Check `locationID` is not `NA` (should be 0):
+
+```{r}
+occ_detections %>%
+  filter(is.na(locationID)) %>%
+  nrow()
+```
+
+### decimalLatitude
+
+There are several columns with coordinates information. Of those the **deployment** coordinates of the receiver are the closest approximation of the position of the fish and always populated:
+
+```{r}
+occ_detections %<>% mutate(decimalLatitude = sprintf("%.7f", round(deployment_lat, digits = 7)))
+```
+
+Check `decimalLatitude` is not `NA` (should be 0):
+
+```{r}
+occ_detections %>%
+  filter(is.na(decimalLatitude)) %>%
+  nrow()
+```
+
+### decimalLongitude
+
+```{r}
+occ_detections %<>% mutate(decimalLongitude = sprintf("%.7f", round(deployment_long, digits = 7)))
+```
+
+### geodeticDatum
+
+```{r}
+occ_detections %<>% mutate(geodeticDatum = "WGS84")
+```
+
+### coordinateUncertaintyInMeters
+
+```{r}
+# Depends on area: sea / Westerscheldt: 200m on average, 500m extreme, while Albertkanaal: 2km
+# TODO: on which field should this be based?
+# network_project_project?
+# animal_project_project?
+# detections_receiver?
+```
+
+### georeferenceSources
+
+```{r}
+occ_detections %<>% mutate(georeferenceSources = "GPS") # TODO: not always GPS, maybe drop term
+```
+
+### scientificName
+
+```{r}
+occ_detections %<>% mutate(scientificName = animals_scientific_name)
+```
+
+Show unique values:
+
+```{r}
+occ_detections %>%
+  select(animals_scientific_name) %>%
+  group_by_all() %>%
+  summarize(records = n())
+```
+
+Filter out records with `Sync tag` as scientific name:
+
+```{r}
+occ_detections %<>% filter(scientificName != "Sync tag")
+```
+
+Number of remaining occurrences:
+
+```{r}
+nrow(occ_detections)
+```
+
+### kingdom
+
+```{r}
+occ_detections %<>% mutate(kingdom = "Animalia")
+```
+
+Some other higher classication terms could be populated, but with the limited number of species it's not really useful as extra filters.
+
+### taxonRank
+
+```{r}
+occ_detections %<>% mutate(taxonRank = "species") # TODO: all species?
+```
+
+## Terms considered but not included in mapping
+
+### locality
+
+There is location information in `deployments_location_name`, but these raw Dutch location names are not very useful, so we don't include this information:
+
+```{r}
+raw_detections %>%
+  select(deployments_location_name) %>%
+  unique() %>%
+  head()
+```
+
+### minimumDepthInMeters
+
+Pressure tags collect depth information, but that won't be available in the source data until VRL imports are supported.
+
+### vernacularName
+
+```{r}
+raw_detections %>%
+  select(animal_common_name) %>%
+  unique() %>%
+  head()
+```
+
+## Post-processing
+
+Remove the original columns:
+
+```{r}
+occ_detections %<>% select(-one_of(raw_detections_colnames))
+```
+
+Preview data:
+
+```{r}
+occ_detections %>% head()
+```
+
+Save to CSV:
+
+```{r}
+write.csv(occ_detections, file = dwc_occ_detections_file, na = "", row.names = FALSE, fileEncoding = "UTF-8")
 ```

@@ -317,28 +317,29 @@ div.tocify {
 Sys.setlocale(&quot;LC_CTYPE&quot;, &quot;en_US.UTF-8&quot;)</code></pre>
 <pre><code>## [1] &quot;en_US.UTF-8&quot;</code></pre>
 <p>Load libraries:</p>
-<pre class="r"><code>library(tidyverse) # To transform data
+<pre class="r"><code>library(dplyr)     # To transform data
 library(magrittr)  # For %&lt;&gt;% pipes
-library(janitor)   # To clean input data</code></pre>
+library(janitor)   # To clean input data
+library(lubridate) # To work with dates</code></pre>
 <p>Set file paths (all paths should be relative to this script):</p>
 <pre class="r"><code># Raw files:
-raw_data_file = &quot;../data/raw/etn-dump.csv&quot;
+raw_detections_file = &quot;../data/raw/etn_dump.csv&quot;
 
 # Processed files:
-dwc_machine_occurrence_file = &quot;../data/processed/machine_occurrence.csv&quot;
-dwc_human_occurrence_file = &quot;../data/processed/human_occurrence.csv&quot;
+dwc_occ_detections_file = &quot;../data/processed/machine_obs_occurrence.csv&quot;
+dwc_occ_animal_tagging_file = &quot;../data/processed/human_obs_occurrence.csv&quot;
 dwc_mof_file = &quot;../data/processed/measurementorfact.csv&quot;</code></pre>
 </div>
 <div id="read-and-pre-process-raw-data" class="section level1">
 <h1><span class="header-section-number">2</span> Read and pre-process raw data</h1>
 <p>Create a data frame <code>raw_data</code> from the source data:</p>
-<pre class="r"><code>raw_data &lt;- read.csv(raw_data_file, fileEncoding = &quot;UTF-8&quot;)</code></pre>
+<pre class="r"><code>raw_detections &lt;- read.csv(raw_detections_file, fileEncoding = &quot;UTF-8&quot;)</code></pre>
 <p>Clean the data somewhat:</p>
-<pre class="r"><code>raw_data %&lt;&gt;%
+<pre class="r"><code>raw_detections %&lt;&gt;%
   remove_empty(&quot;rows&quot;) %&gt;%    # Remove empty rows
   clean_names()               # Have sensible (lowercase) column names</code></pre>
 <p>Show information about data frame:</p>
-<pre class="r"><code>str(raw_data)</code></pre>
+<pre class="r"><code>str(raw_detections)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    1000 obs. of  38 variables:
 ##  $ detections_receiver             : Factor w/ 11 levels &quot;VR2-5326&quot;,&quot;VR2-5773&quot;,..: 5 5 5 5 5 5 5 5 5 5 ...
 ##  $ detections_transmitter          : Factor w/ 2 levels &quot;A69-1303-3547&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
@@ -378,6 +379,244 @@ dwc_mof_file = &quot;../data/processed/measurementorfact.csv&quot;</code></pre>
 ##  $ animal_sex                      : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
 ##  $ deployment_lat                  : num  51 51 51 51 51 ...
 ##  $ deployment_long                 : num  3.72 3.72 3.72 3.72 3.72 ...</code></pre>
+<p>Preview data:</p>
+<pre class="r"><code>head(raw_detections)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["detections_receiver"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["detections_transmitter"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["detections_transmitter_name"],"name":[3],"type":["lgl"],"align":["right"]},{"label":["detections_transmitter_serial"],"name":[4],"type":["lgl"],"align":["right"]},{"label":["detections_sensor_value"],"name":[5],"type":["lgl"],"align":["right"]},{"label":["detections_sensor_unit"],"name":[6],"type":["lgl"],"align":["right"]},{"label":["detections_sensor2_value"],"name":[7],"type":["lgl"],"align":["right"]},{"label":["detections_sensor2_unit"],"name":[8],"type":["lgl"],"align":["right"]},{"label":["detections_station_name"],"name":[9],"type":["lgl"],"align":["right"]},{"label":["detections_datetime"],"name":[10],"type":["fctr"],"align":["left"]},{"label":["detections_id_pk"],"name":[11],"type":["int"],"align":["right"]},{"label":["detections_qc_flag"],"name":[12],"type":["lgl"],"align":["right"]},{"label":["detections_file"],"name":[13],"type":["fctr"],"align":["left"]},{"label":["detections_latitude"],"name":[14],"type":["lgl"],"align":["right"]},{"label":["detections_longitude"],"name":[15],"type":["lgl"],"align":["right"]},{"label":["detections_deployment_fk"],"name":[16],"type":["int"],"align":["right"]},{"label":["animals_scientific_name"],"name":[17],"type":["fctr"],"align":["left"]},{"label":["deployments_location_name"],"name":[18],"type":["fctr"],"align":["left"]},{"label":["deployment_station_name"],"name":[19],"type":["fctr"],"align":["left"]},{"label":["deployments_deploy_date_time"],"name":[20],"type":["fctr"],"align":["left"]},{"label":["animal_project_name"],"name":[21],"type":["fctr"],"align":["left"]},{"label":["animal_project_code"],"name":[22],"type":["fctr"],"align":["left"]},{"label":["animal_moratorium"],"name":[23],"type":["fctr"],"align":["left"]},{"label":["network_project_name"],"name":[24],"type":["fctr"],"align":["left"]},{"label":["network_project_code"],"name":[25],"type":["fctr"],"align":["left"]},{"label":["network_moratorium"],"name":[26],"type":["fctr"],"align":["left"]},{"label":["detections_signal_to_noise_ratio"],"name":[27],"type":["lgl"],"align":["right"]},{"label":["detections_detection_file_id"],"name":[28],"type":["lgl"],"align":["right"]},{"label":["tag_sensor_type"],"name":[29],"type":["lgl"],"align":["right"]},{"label":["tag_intercept"],"name":[30],"type":["lgl"],"align":["right"]},{"label":["tag_slope"],"name":[31],"type":["lgl"],"align":["right"]},{"label":["sensor_value_depth_meters"],"name":[32],"type":["lgl"],"align":["right"]},{"label":["tag_owner_organization"],"name":[33],"type":["fctr"],"align":["left"]},{"label":["animal_id_pk"],"name":[34],"type":["int"],"align":["right"]},{"label":["animal_common_name"],"name":[35],"type":["lgl"],"align":["right"]},{"label":["animal_sex"],"name":[36],"type":["lgl"],"align":["right"]},{"label":["deployment_lat"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["deployment_long"],"name":[38],"type":["dbl"],"align":["right"]}],"data":[{"1":"VR2W-112290","2":"A69-1303-3547","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"2012-02-06 20:35:47","11":"33653838","12":"NA","13":"VR2W_112290_20120207_1.csv","14":"NA","15":"NA","16":"2311","17":"Lampetra fluviatilis","18":"Bovenschelde - Stroomop Stuw Tijarm","19":"Tsost","20":"2012-01-25 00:00:00","21":"2011 Rivierprik","22":"2011_rivierprik","23":"f","24":"Bovenschelde","25":"bovenschelde","26":"f","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"INBO","34":"226","35":"NA","36":"FALSE","37":"50.99154","38":"3.723474","_rn_":"1"},{"1":"VR2W-112290","2":"A69-1303-3547","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"2012-02-06 20:38:46","11":"33653839","12":"NA","13":"VR2W_112290_20120207_1.csv","14":"NA","15":"NA","16":"2311","17":"Lampetra fluviatilis","18":"Bovenschelde - Stroomop Stuw Tijarm","19":"Tsost","20":"2012-01-25 00:00:00","21":"2011 Rivierprik","22":"2011_rivierprik","23":"f","24":"Bovenschelde","25":"bovenschelde","26":"f","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"INBO","34":"226","35":"NA","36":"FALSE","37":"50.99154","38":"3.723474","_rn_":"2"},{"1":"VR2W-112290","2":"A69-1303-3547","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"2012-02-06 20:42:26","11":"33653840","12":"NA","13":"VR2W_112290_20120207_1.csv","14":"NA","15":"NA","16":"2311","17":"Lampetra fluviatilis","18":"Bovenschelde - Stroomop Stuw Tijarm","19":"Tsost","20":"2012-01-25 00:00:00","21":"2011 Rivierprik","22":"2011_rivierprik","23":"f","24":"Bovenschelde","25":"bovenschelde","26":"f","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"INBO","34":"226","35":"NA","36":"FALSE","37":"50.99154","38":"3.723474","_rn_":"3"},{"1":"VR2W-112290","2":"A69-1303-3547","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"2012-02-06 20:44:05","11":"33653841","12":"NA","13":"VR2W_112290_20120207_1.csv","14":"NA","15":"NA","16":"2311","17":"Lampetra fluviatilis","18":"Bovenschelde - Stroomop Stuw Tijarm","19":"Tsost","20":"2012-01-25 00:00:00","21":"2011 Rivierprik","22":"2011_rivierprik","23":"f","24":"Bovenschelde","25":"bovenschelde","26":"f","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"INBO","34":"226","35":"NA","36":"FALSE","37":"50.99154","38":"3.723474","_rn_":"4"},{"1":"VR2W-112290","2":"A69-1303-3547","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"2012-02-06 20:55:08","11":"33653842","12":"NA","13":"VR2W_112290_20120207_1.csv","14":"NA","15":"NA","16":"2311","17":"Lampetra fluviatilis","18":"Bovenschelde - Stroomop Stuw Tijarm","19":"Tsost","20":"2012-01-25 00:00:00","21":"2011 Rivierprik","22":"2011_rivierprik","23":"f","24":"Bovenschelde","25":"bovenschelde","26":"f","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"INBO","34":"226","35":"NA","36":"FALSE","37":"50.99154","38":"3.723474","_rn_":"5"},{"1":"VR2W-112290","2":"A69-1303-3547","3":"NA","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"2012-02-06 20:56:24","11":"33653843","12":"NA","13":"VR2W_112290_20120207_1.csv","14":"NA","15":"NA","16":"2311","17":"Lampetra fluviatilis","18":"Bovenschelde - Stroomop Stuw Tijarm","19":"Tsost","20":"2012-01-25 00:00:00","21":"2011 Rivierprik","22":"2011_rivierprik","23":"f","24":"Bovenschelde","25":"bovenschelde","26":"f","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"INBO","34":"226","35":"NA","36":"FALSE","37":"50.99154","38":"3.723474","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Save columns names</p>
+<pre class="r"><code>raw_detections_colnames &lt;- colnames(raw_detections)</code></pre>
+<div id="info-per-projectspecies" class="section level2">
+<h2><span class="header-section-number">2.1</span> Info per project/species</h2>
+<p>Show information grouped by project and species:</p>
+<pre class="r"><code>raw_detections %&gt;%
+  group_by(animal_project_name, animals_scientific_name) %&gt;%
+  summarize(
+    detections = n(),
+    individuals = n_distinct(animal_id_pk),
+    stations = n_distinct(deployment_station_name),
+    start_date = round_date(min(as.Date(detections_datetime)), unit = &quot;day&quot;),
+    end_date = round_date(max(as.Date(detections_datetime)), unit = &quot;day&quot;)
+  )</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["animal_project_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["animals_scientific_name"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["detections"],"name":[3],"type":["int"],"align":["right"]},{"label":["individuals"],"name":[4],"type":["int"],"align":["right"]},{"label":["stations"],"name":[5],"type":["int"],"align":["right"]},{"label":["start_date"],"name":[6],"type":["date"],"align":["right"]},{"label":["end_date"],"name":[7],"type":["date"],"align":["right"]}],"data":[{"1":"2011 Rivierprik","2":"Lampetra fluviatilis","3":"1000","4":"2","5":"11","6":"2012-01-23","7":"2012-03-08"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<div id="create-occurrence-core-detections" class="section level1">
+<h1><span class="header-section-number">3</span> Create occurrence core (detections)</h1>
+<pre class="r"><code>occ_detections &lt;- raw_detections</code></pre>
+<p>Sort by transmitter and date:</p>
+<pre class="r"><code>occ_detections %&lt;&gt;% arrange(detections_transmitter, detections_datetime)</code></pre>
+<div id="term-mapping" class="section level2">
+<h2><span class="header-section-number">3.1</span> Term mapping</h2>
+<p>Map the source data to <a href="http://rs.gbif.org/core/dwc_occurrence_2015-07-02.xml">Darwin Core Occurrence</a> (but in the classic Darwin Core order):</p>
+<div id="type" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> type</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(type = &quot;Event&quot;)</code></pre>
+</div>
+<div id="language" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> language</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(language = &quot;en&quot;)</code></pre>
+</div>
+<div id="license" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> license</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(license = &quot;http://creativecommons.org/publicdomain/zero/1.0/&quot;)</code></pre>
+</div>
+<div id="rightsholder" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> rightsHolder</h3>
+<p>The owner of the tag:</p>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(rightsHolder = recode(as.character(tag_owner_organization),
+  &quot;INBO&quot;                         = &quot;INBO&quot;,
+  .default = &quot;&quot;,
+  .missing = &quot;&quot;
+))</code></pre>
+<p>Show mapped values:</p>
+<pre class="r"><code>occ_detections %&gt;% 
+  select(tag_owner_organization, rightsHolder) %&gt;%
+  group_by_all() %&gt;%
+  summarize(records = n()) %&gt;%
+  arrange(tag_owner_organization)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["tag_owner_organization"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["rightsHolder"],"name":[2],"type":["chr"],"align":["left"]},{"label":["records"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"INBO","2":"INBO","3":"1000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="accessrights" class="section level3">
+<h3><span class="header-section-number">3.1.5</span> accessRights</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(accessRights = &quot;http://www.inbo.be/en/norms-for-data-use&quot;)</code></pre>
+</div>
+<div id="datasetid" class="section level3">
+<h3><span class="header-section-number">3.1.6</span> datasetID</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(datasetID = &quot;&quot;) # TODO: add DOI</code></pre>
+</div>
+<div id="institutioncode" class="section level3">
+<h3><span class="header-section-number">3.1.7</span> institutionCode</h3>
+<p>Same as the <code>rightsHolder</code>:</p>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(institutionCode = rightsHolder)</code></pre>
+</div>
+<div id="datasetname" class="section level3">
+<h3><span class="header-section-number">3.1.8</span> datasetName</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(datasetName = &quot;Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)&quot;) # TODO: verify</code></pre>
+</div>
+<div id="basisofrecord" class="section level3">
+<h3><span class="header-section-number">3.1.9</span> basisOfRecord</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(basisOfRecord = &quot;MachineObservation&quot;)</code></pre>
+</div>
+<div id="informationwithheld" class="section level3">
+<h3><span class="header-section-number">3.1.10</span> informationWithheld</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(informationWithheld = &quot;see metadata&quot;) # TODO: currently not included, to be defined</code></pre>
+</div>
+<div id="dynamicproperties" class="section level3">
+<h3><span class="header-section-number">3.1.11</span> dynamicProperties</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(dynamicProperties = paste0(
+  &quot;{\&quot;transmitter\&quot;:\&quot;&quot;, detections_transmitter, &quot;\&quot;, &quot;,
+  &quot;\&quot;receiver\&quot;:\&quot;&quot;, detections_receiver, &quot;\&quot;}&quot;
+))</code></pre>
+</div>
+<div id="occurrenceid" class="section level3">
+<h3><span class="header-section-number">3.1.12</span> occurrenceID</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(occurrenceID = paste(&quot;etn&quot;, &quot;lifewatch&quot;, detections_id_pk, sep = &quot;:&quot;))</code></pre>
+<p>Check for duplicate <code>occurrenceID</code>s (should be 0):</p>
+<pre class="r"><code>anyDuplicated(occ_detections$occurrenceID)</code></pre>
+<pre><code>## [1] 0</code></pre>
+</div>
+<div id="organismid" class="section level3">
+<h3><span class="header-section-number">3.1.13</span> organismID</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(organismID = animals_animal_id) # TODO: This one is often NA. detections_transmitter would have been nicer</code></pre>
+</div>
+<div id="eventdate" class="section level3">
+<h3><span class="header-section-number">3.1.14</span> eventDate</h3>
+<p><code>datetime</code> assumed to be UTC. For 3D analyses milliseconds will be required, but these won’t be available in the source data until VRL imports are supported:</p>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(eventDate = format(as.POSIXct(detections_datetime), format = &quot;%Y-%m-%dT%H:%M:%SZ&quot;)) # TODO: verify if UTC</code></pre>
+</div>
+<div id="samplingprotocol" class="section level3">
+<h3><span class="header-section-number">3.1.15</span> samplingProtocol</h3>
+<pre class="r"><code># TODO: refer to DOI of methodology paper? Can some information be derived from source data?
+# receivers_receiver_type: acoustic_telemetry, SVN, active
+# receivers_model_number: VR2W, NA, 122325
+# animals_capture_method: NA, LINE FISHING, FYKE NETS</code></pre>
+</div>
+<div id="locationid" class="section level3">
+<h3><span class="header-section-number">3.1.16</span> locationID</h3>
+<p>The <code>deployments_station_name</code> is a fixed code for that deployment location. It should always be populated. The <code>detections_receiver</code> code is not adequate, as a receiver can be moved from one location to another.</p>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(locationID = deployment_station_name)</code></pre>
+<p>Check <code>locationID</code> is not <code>NA</code> (should be 0):</p>
+<pre class="r"><code>occ_detections %&gt;%
+  filter(is.na(locationID)) %&gt;%
+  nrow()</code></pre>
+<pre><code>## [1] 0</code></pre>
+</div>
+<div id="decimallatitude" class="section level3">
+<h3><span class="header-section-number">3.1.17</span> decimalLatitude</h3>
+<p>There are several columns with coordinates information. Of those the <strong>deployment</strong> coordinates of the receiver are the closest approximation of the position of the fish and always populated:</p>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(decimalLatitude = sprintf(&quot;%.7f&quot;, round(deployment_lat, digits = 7)))</code></pre>
+<p>Check <code>decimalLatitude</code> is not <code>NA</code> (should be 0):</p>
+<pre class="r"><code>occ_detections %&gt;%
+  filter(is.na(decimalLatitude)) %&gt;%
+  nrow()</code></pre>
+<pre><code>## [1] 0</code></pre>
+</div>
+<div id="decimallongitude" class="section level3">
+<h3><span class="header-section-number">3.1.18</span> decimalLongitude</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(decimalLongitude = sprintf(&quot;%.7f&quot;, round(deployment_long, digits = 7)))</code></pre>
+</div>
+<div id="geodeticdatum" class="section level3">
+<h3><span class="header-section-number">3.1.19</span> geodeticDatum</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(geodeticDatum = &quot;WGS84&quot;)</code></pre>
+</div>
+<div id="coordinateuncertaintyinmeters" class="section level3">
+<h3><span class="header-section-number">3.1.20</span> coordinateUncertaintyInMeters</h3>
+<pre class="r"><code># Depends on area: sea / Westerscheldt: 200m on average, 500m extreme, while Albertkanaal: 2km
+# TODO: on which field should this be based?
+# network_project_project?
+# animal_project_project?
+# detections_receiver?</code></pre>
+</div>
+<div id="georeferencesources" class="section level3">
+<h3><span class="header-section-number">3.1.21</span> georeferenceSources</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(georeferenceSources = &quot;GPS&quot;) # TODO: not always GPS, maybe drop term</code></pre>
+</div>
+<div id="scientificname" class="section level3">
+<h3><span class="header-section-number">3.1.22</span> scientificName</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(scientificName = animals_scientific_name)</code></pre>
+<p>Show unique values:</p>
+<pre class="r"><code>occ_detections %&gt;%
+  select(animals_scientific_name) %&gt;%
+  group_by_all() %&gt;%
+  summarize(records = n())</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["animals_scientific_name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["records"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Lampetra fluviatilis","2":"1000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Filter out records with <code>Sync tag</code> as scientific name:</p>
+<pre class="r"><code>occ_detections %&lt;&gt;% filter(scientificName != &quot;Sync tag&quot;)</code></pre>
+<p>Number of remaining occurrences:</p>
+<pre class="r"><code>nrow(occ_detections)</code></pre>
+<pre><code>## [1] 1000</code></pre>
+</div>
+<div id="kingdom" class="section level3">
+<h3><span class="header-section-number">3.1.23</span> kingdom</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(kingdom = &quot;Animalia&quot;)</code></pre>
+<p>Some other higher classication terms could be populated, but with the limited number of species it’s not really useful as extra filters.</p>
+</div>
+<div id="taxonrank" class="section level3">
+<h3><span class="header-section-number">3.1.24</span> taxonRank</h3>
+<pre class="r"><code>occ_detections %&lt;&gt;% mutate(taxonRank = &quot;species&quot;) # TODO: all species?</code></pre>
+</div>
+</div>
+<div id="terms-considered-but-not-included-in-mapping" class="section level2">
+<h2><span class="header-section-number">3.2</span> Terms considered but not included in mapping</h2>
+<div id="locality" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> locality</h3>
+<p>There is location information in <code>deployments_location_name</code>, but these raw Dutch location names are not very useful, so we don’t include this information:</p>
+<pre class="r"><code>raw_detections %&gt;%
+  select(deployments_location_name) %&gt;%
+  unique() %&gt;%
+  head()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["deployments_location_name"],"name":[1],"type":["fctr"],"align":["left"]}],"data":[{"1":"Bovenschelde - Stroomop Stuw Tijarm","_rn_":"1"},{"1":"Bovenschelde - Stuwgeul Asper","_rn_":"49"},{"1":"Bovenschelde - Stroomop Complex Asper","_rn_":"58"},{"1":"Bovenschelde - Kop Sluismuur Oudenaarde","_rn_":"173"},{"1":"Bovenschelde - Stuwgeul Oudenaarde","_rn_":"176"},{"1":"Nevengeul Oudenaarde (Afwaarts)","_rn_":"207"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="minimumdepthinmeters" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> minimumDepthInMeters</h3>
+<p>Pressure tags collect depth information, but that won’t be available in the source data until VRL imports are supported.</p>
+</div>
+<div id="vernacularname" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> vernacularName</h3>
+<pre class="r"><code>raw_detections %&gt;%
+  select(animal_common_name) %&gt;%
+  unique() %&gt;%
+  head()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["animal_common_name"],"name":[1],"type":["lgl"],"align":["right"]}],"data":[{"1":"NA","_rn_":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<div id="post-processing" class="section level2">
+<h2><span class="header-section-number">3.3</span> Post-processing</h2>
+<p>Remove the original columns:</p>
+<pre class="r"><code>occ_detections %&lt;&gt;% select(-one_of(raw_detections_colnames))</code></pre>
+<p>Preview data:</p>
+<pre class="r"><code>occ_detections %&gt;% head()</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["type"],"name":[1],"type":["chr"],"align":["left"]},{"label":["language"],"name":[2],"type":["chr"],"align":["left"]},{"label":["license"],"name":[3],"type":["chr"],"align":["left"]},{"label":["rightsHolder"],"name":[4],"type":["chr"],"align":["left"]},{"label":["accessRights"],"name":[5],"type":["chr"],"align":["left"]},{"label":["datasetID"],"name":[6],"type":["chr"],"align":["left"]},{"label":["institutionCode"],"name":[7],"type":["chr"],"align":["left"]},{"label":["datasetName"],"name":[8],"type":["chr"],"align":["left"]},{"label":["basisOfRecord"],"name":[9],"type":["chr"],"align":["left"]},{"label":["dynamicProperties"],"name":[10],"type":["chr"],"align":["left"]},{"label":["occurrenceID"],"name":[11],"type":["chr"],"align":["left"]},{"label":["eventDate"],"name":[12],"type":["chr"],"align":["left"]},{"label":["locationID"],"name":[13],"type":["fctr"],"align":["left"]},{"label":["decimalLatitude"],"name":[14],"type":["chr"],"align":["left"]},{"label":["decimalLongitude"],"name":[15],"type":["chr"],"align":["left"]},{"label":["geodeticDatum"],"name":[16],"type":["chr"],"align":["left"]},{"label":["georeferenceSources"],"name":[17],"type":["chr"],"align":["left"]},{"label":["scientificName"],"name":[18],"type":["fctr"],"align":["left"]},{"label":["kingdom"],"name":[19],"type":["chr"],"align":["left"]},{"label":["taxonRank"],"name":[20],"type":["chr"],"align":["left"]}],"data":[{"1":"Event","2":"en","3":"http://creativecommons.org/publicdomain/zero/1.0/","4":"INBO","5":"http://www.inbo.be/en/norms-for-data-use","6":"","7":"INBO","8":"Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)","9":"MachineObservation","10":"{\"transmitter\":\"A69-1303-3547\", \"receiver\":\"VR2W-112298\"}","11":"etn:lifewatch:33677049","12":"2012-01-23T18:08:31Z","13":"soAsp","14":"50.9147526","15":"3.6729189","16":"WGS84","17":"GPS","18":"Lampetra fluviatilis","19":"Animalia","20":"species","_rn_":"1"},{"1":"Event","2":"en","3":"http://creativecommons.org/publicdomain/zero/1.0/","4":"INBO","5":"http://www.inbo.be/en/norms-for-data-use","6":"","7":"INBO","8":"Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)","9":"MachineObservation","10":"{\"transmitter\":\"A69-1303-3547\", \"receiver\":\"VR2W-112298\"}","11":"etn:lifewatch:33677051","12":"2012-01-23T18:10:00Z","13":"soAsp","14":"50.9147526","15":"3.6729189","16":"WGS84","17":"GPS","18":"Lampetra fluviatilis","19":"Animalia","20":"species","_rn_":"2"},{"1":"Event","2":"en","3":"http://creativecommons.org/publicdomain/zero/1.0/","4":"INBO","5":"http://www.inbo.be/en/norms-for-data-use","6":"","7":"INBO","8":"Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)","9":"MachineObservation","10":"{\"transmitter\":\"A69-1303-3547\", \"receiver\":\"VR2W-112298\"}","11":"etn:lifewatch:33677053","12":"2012-01-23T18:11:19Z","13":"soAsp","14":"50.9147526","15":"3.6729189","16":"WGS84","17":"GPS","18":"Lampetra fluviatilis","19":"Animalia","20":"species","_rn_":"3"},{"1":"Event","2":"en","3":"http://creativecommons.org/publicdomain/zero/1.0/","4":"INBO","5":"http://www.inbo.be/en/norms-for-data-use","6":"","7":"INBO","8":"Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)","9":"MachineObservation","10":"{\"transmitter\":\"A69-1303-3547\", \"receiver\":\"VR2W-112298\"}","11":"etn:lifewatch:33677055","12":"2012-01-23T18:12:17Z","13":"soAsp","14":"50.9147526","15":"3.6729189","16":"WGS84","17":"GPS","18":"Lampetra fluviatilis","19":"Animalia","20":"species","_rn_":"4"},{"1":"Event","2":"en","3":"http://creativecommons.org/publicdomain/zero/1.0/","4":"INBO","5":"http://www.inbo.be/en/norms-for-data-use","6":"","7":"INBO","8":"Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)","9":"MachineObservation","10":"{\"transmitter\":\"A69-1303-3547\", \"receiver\":\"VR2W-112298\"}","11":"etn:lifewatch:33677056","12":"2012-01-23T18:13:25Z","13":"soAsp","14":"50.9147526","15":"3.6729189","16":"WGS84","17":"GPS","18":"Lampetra fluviatilis","19":"Animalia","20":"species","_rn_":"5"},{"1":"Event","2":"en","3":"http://creativecommons.org/publicdomain/zero/1.0/","4":"INBO","5":"http://www.inbo.be/en/norms-for-data-use","6":"","7":"INBO","8":"Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)","9":"MachineObservation","10":"{\"transmitter\":\"A69-1303-3547\", \"receiver\":\"VR2W-112298\"}","11":"etn:lifewatch:33677058","12":"2012-01-23T18:14:50Z","13":"soAsp","14":"50.9147526","15":"3.6729189","16":"WGS84","17":"GPS","18":"Lampetra fluviatilis","19":"Animalia","20":"species","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Save to CSV:</p>
+<pre class="r"><code>write.csv(occ_detections, file = dwc_occ_detections_file, na = &quot;&quot;, row.names = FALSE, fileEncoding = &quot;UTF-8&quot;)</code></pre>
+</div>
 </div>
 
 
