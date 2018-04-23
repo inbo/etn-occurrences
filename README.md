@@ -1,8 +1,8 @@
-# Fish tracking data
+# ETN - LifeWatch.be acoustic telemetry data of fish
 
 ## Rationale
 
-This repository contains the functionality to standardize the _Fish tracking data_ to a [Darwin Core occurrence dataset](https://www.gbif.org/dataset-classes) that can be harvested by [GBIF](http://www.gbif.org). It was developed for [LifeWatch](http://www.lifewatch.be).
+This repository contains the functionality to standardize the _ETN - LifeWatch.be acoustic telemetry data of fish_ to a [Darwin Core occurrence dataset](https://www.gbif.org/dataset-classes) that can be harvested by [GBIF](http://www.gbif.org). It was developed for [LifeWatch](http://www.lifewatch.be).
 
 ## Workflow
 

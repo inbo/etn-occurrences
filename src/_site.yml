@@ -1,4 +1,4 @@
-name: "Fish tracking data"
+name: "ETN - LifeWatch.be acoustic fish telemetry data of fish"
 output_dir: "../docs"
 include: ["static/"]
 navbar:
