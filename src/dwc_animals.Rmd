@@ -1,0 +1,124 @@
+---
+title: "Darwin Core mapping"
+subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
+author:
+- Lien Reysehove
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+#  pdf_document:
+#    df_print: kable
+#    number_sections: yes
+#    toc: yes
+#    toc_depth: 3
+---
+
+
+# Setup 
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Install packages
+
+```{r}
+library(tidyverse)      # To do data science
+library(magrittr)       # To use %<>% pipes
+library(here)           # To find files
+library(janitor)        # To clean input data
+library(readxl)         # To read Excel files
+library(digest)         # To generate hashes
+library(rgbif)          # To use GBIF services
+library(etn)
+```
+
+# Read source data
+
+Connect to database:
+
+```{r}
+my_con <- connect_to_etn("damiano.oldoni@inbo.be", "1zFhM2Ic")
+```
+
+Load animal data:
+
+```{r}
+input_data <- get_animals(my_con)
+tags    <- get_transmitters(my_con)
+```
+
+Save as input file
+
+```{r}
+write_csv(input_data, here("data", "processed", "raw.csv"), na = "")
+```
+
+Filter on requested animal projects:
+
+```{r}
+input_data %>% 
+  group_by(projectname) %>% 
+  summarise(records = n())
+```
+
+```{r}
+input_data %<>% 
+  filter(projectname %in% c("2011 Rivierprik",
+                            "2012 Leopoldkanaal",
+                            "2013 Albertkanaal",
+                            "2014 Demer",
+                            "2015 Dijle",
+                            "2015 PhD Verhelst",
+                            "Homarus",
+                            "PhD Jan Reubens"))
+
+# Exclude data form `scientific_name`= `Sync tag` in `projectname` = `2013 Albertkanaal` and
+# for `scientific_name` = `Gadus morhua` in `projectname` = `2015 PhD Verhelst`
+input_data <-
+  input_data %>% 
+    filter(!(projectname == "2013 Albertkanaal" & scientific_name == "Sync tag")) %>%
+    filter(!(projectname == "2015 PhD Verhelst" & scientific_name == "Gadus morhua")) %>% 
+    filter(!(projectname == "PhD Jan Reubens" & scientific_name == "Sentinel"))
+```
+
+# Process source data
+
+## Tidy data
+
+Clean data somewhat:
+
+```{r}
+input_data %<>% remove_empty("rows")
+```
+
+## Scientific names
+
+Use the [GBIF nameparser](https://www.gbif.org/tools/name-parser) to retrieve nomenclatural information for the scientific names in the checklist:
+
+```{r}
+parsed_names <- input_data %>%
+  distinct(scientific_name) %>%
+  pull() %>% # Create vector from dataframe
+  parsenames() # An rgbif function
+```
+
+Show scientific names with nomenclatural issues, i.e. not of `type = SCIENTIFIC` or that could not be fully parsed. Note: these are not necessarily incorrect.
+
+```{r}
+parsed_names %>%
+  select(scientificname, type, parsed, parsedpartially, rankmarker) %>%
+  filter(!(type == "SCIENTIFIC" & parsed == "TRUE" & parsedpartially == "FALSE"))
+```
+
+# Capture Event
+
+# Surgery Event
+
+# Release Event
+
