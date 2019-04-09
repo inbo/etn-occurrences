@@ -118,7 +118,101 @@ parsed_names %>%
 
 # Capture Event
 
+```{r}
+capture_event <- input_data
+```
+
+## Event Core
+
+### eventID
+
+```{r}
+capture_event %<>% mutate(dwc_eventID = paste(projectcode, id_pk,"capture", sep = ":")) 
+```
+
+### samplingProtocol
+
+```{r}
+capture_event %>% 
+  group_by(capture_method) %>%
+  summarize(records = n())
+```
+
+Transform to lower case:
+
+```{r}
+capture_event %<>% 
+  mutate(capture_method = str_to_lower(capture_method))
+```
+
+Map `samplingProtocol`:
+
+```{r}
+capture_event %<>% mutate(dwc_samplingProtocol = capture_method)
+```
+
+### eventDate:				catched_date_time
+
+```{r}
+capture_event %>% 
+  group_by(catched_date_time) %>%
+  summarize(records = n())
+```
+
+Split `catched_date_time` in two columns: `date` and `time`:
+
+```{r}
+capture_event %<>% separate(catched_date_time, 
+                           into = c("date", "time"),
+                           sep = " ")
+```
+
+Map `eventDate`
+
+```{r}
+capture_event %<>% mutate(dwc_eventDate = date)
+```
+
+### eventTime:				
+
+```{r}
+capture_event %>% 
+  group_by(time) %>%
+  summarize(records = n())
+```
+
+Add `Z` to date information to use a time that conforms to ISO 8601:2004(E):
+
+```{r}
+capture_event %<>% mutate(eventTime = paste0(time, "Z"))
+```
+
+
+
+
+### locality:				capture_location
+### verbatimDepth:			capture_depth
+### decimalLatitude:		capture_latitude
+### decimalLongitude:		capture_longitude
+### geodeticDatum:
+### coordinateUncertaintyInMeters: 	30?
+### occurrenceID:			animal_poject:id_capture
+### recordedBy:				person_id (?)
+### individualCount:		1 (?)
+### lifeStage:				life_stage
+### sex:					sex
+### scientificName:			scientific_name
+### kingdom:				Animalia
+### vernacularName:			common_name
+## extendend Measurements or Facts Extension
+
 # Surgery Event
 
+## Event Core
+## extendend Measurements or Facts Extension
+
 # Release Event
+
+## Event Core
+## extendend Measurements or Facts Extension
 
