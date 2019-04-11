@@ -363,7 +363,7 @@ write_csv(event, path = "../data/processed/event.csv", na = "")
 # Extendend Measurements or Facts Extension
 
 
-First, we map the eMoF extension linked to the capture event. This extension includes the tag properties.
+First, we map the eMoF extension linked to the *capture occurrence* This extension includes the tag properties.
 
 ```{r}
 emof_capture_tags <- input_animals
