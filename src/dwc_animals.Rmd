@@ -425,15 +425,128 @@ write_csv(event, path = "../data/processed/event.csv", na = "")
 
 # Extendend Measurements or Facts Extension
 
+First, we map the eMoF extension linked to the *capture occurrence*.
 
-First, we map the eMoF extension linked to the *capture occurrence* This extension includes the tag properties.
+## Length data
+
+Length data
 
 ```{r}
-emof_capture_tags <- input_animals
+emof_length1 <-
+  input_animals %>% 
+    filter(!is.na(length)) %>% 
+    mutate(dwc_measurementType = length_type) %>% 
+    mutate(dwc_measurementUnit = length_units) %>% 
+    mutate(dwc_measurementValue = as.character(length))
 ```
 
+Length2 data
 
+```{r}
+emof_length2 <-
+  input_animals %>% 
+    filter(!is.na(length2)) %>% 
+    mutate(dwc_measurementType = length2_type) %>% 
+    mutate(dwc_measurementUnit = length2_units) %>% 
+    mutate(dwc_measurementValue = as.character(length2))
+```
 
+Length3 data
 
+```{r}
+emof_length3 <-
+  input_animals %>% 
+    filter(!is.na(length3)) %>% 
+    mutate(dwc_measurementType = length3_type) %>% 
+    mutate(dwc_measurementUnit = length3_units) %>% 
+    mutate(dwc_measurementValue = as.character(length3))
+```
+
+Length4 data
+
+```{r}
+emof_length4 <-
+  input_animals %>% 
+    filter(!is.na(length4)) %>% 
+    mutate(dwc_measurementType = length4_type) %>% 
+    mutate(dwc_measurementUnit = length4_units) %>% 
+    mutate(dwc_measurementValue = as.character(length4))
+```
+
+### Weight data
+
+```{r}
+emof_weight <- 
+  input_animals %>% 
+    filter(!is.na(weight)) %>% 
+    mutate(dwc_measurementType = "weight") %>% 
+    mutate(dwc_measurementUnit = weight_units) %>% 
+    mutate(dwc_measurementValue = as.character(weight))
+```
+
+### Life stage
+
+```{r}
+emof_lifestage <-
+  input_animals %>% 
+    filter(!is.na(life_stage)) %>% 
+    mutate(dwc_measurementType = "life stage") %>% 
+    mutate(dwc_measurementUnit = "") %>% 
+    mutate(dwc_measurementValue = life_stage)
+```
+
+### Age
+
+```{r}
+emof_age <- 
+  input_animals %>% 
+    filter(!is.na(age)) %>% 
+    mutate(dwc_measurementType = "age") %>% 
+    mutate(dwc_measurementUnit = age_units) %>% 
+    mutate(dwc_measurementValue = as.character(age))  
+```
+
+### Sex
+
+```{r}
+emof_sex <- 
+  input_animals %>% 
+    filter(!is.na(sex)) %>% 
+    mutate(dwc_measurementType = "sex") %>% 
+    mutate(dwc_measurementUnit = "") %>% 
+    mutate(dwc_measurementValue = sex)  
+```
+
+### Origin
+
+```{r}
+emof_origin <- 
+  input_animals %>% 
+    filter(!is.na(wild_or_hatchery)) %>% 
+    mutate(dwc_measurementType = "origin") %>% 
+    mutate(dwc_measurementUnit = "") %>% 
+    mutate(dwc_measurementValue = wild_or_hatchery)  
+```
+
+## Post-processing
+
+```{r}
+emof_capture_occurrence <-
+  bind_rows(emof_length1, emof_length2, emof_length3, emof_length4, emof_weight, emof_lifestage, emof_age, emof_sex, emof_origin)
+```
+
+Map `eventID` and `occurrenceID`
+
+### eventID
+
+```{r}
+emof_capture_occurrence %<>% mutate(dwc_eventID = "") 
+```
+
+### occurrenceID
+
+```{r}
+emof_capture_occurrence %<>% mutate(dwc_occurrenceID = paste(projectcode, id_pk,"occurrence-capture", sep = ":")) 
+```
 
 
