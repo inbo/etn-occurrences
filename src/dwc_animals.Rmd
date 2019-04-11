@@ -46,29 +46,24 @@ Connect to database:
 my_con <- connect_to_etn("damiano.oldoni@inbo.be", "1zFhM2Ic")
 ```
 
-Load animal data:
+Load animal and transmitter data:
 
 ```{r}
-input_data <- get_animals(my_con)
-tags    <- get_transmitters(my_con)
-```
-
-Save as input file
-
-```{r}
-write_csv(input_data, here("data", "processed", "raw.csv"), na = "")
+input_animals <- get_animals(my_con)
+input_tags  <- get_transmitters(my_con)
 ```
 
 Filter on requested animal projects:
 
 ```{r}
-input_data %>% 
+input_animals %>% 
   group_by(projectname) %>% 
   summarise(records = n())
 ```
 
+
 ```{r}
-input_data %<>% 
+input_animals %<>% 
   filter(projectname %in% c("2011 Rivierprik",
                             "2012 Leopoldkanaal",
                             "2013 Albertkanaal",
@@ -80,11 +75,17 @@ input_data %<>%
 
 # Exclude data form `scientific_name`= `Sync tag` in `projectname` = `2013 Albertkanaal` and
 # for `scientific_name` = `Gadus morhua` in `projectname` = `2015 PhD Verhelst`
-input_data <-
-  input_data %>% 
+input_animals <-
+  input_animals %>% 
     filter(!(projectname == "2013 Albertkanaal" & scientific_name == "Sync tag")) %>%
     filter(!(projectname == "2015 PhD Verhelst" & scientific_name == "Gadus morhua")) %>% 
     filter(!(projectname == "PhD Jan Reubens" & scientific_name == "Sentinel"))
+```
+
+Save to CSV:
+
+```{r}
+write_csv(input_animals, path = "../data/raw/input_animals.csv", na = "")
 ```
 
 # Process source data
@@ -94,7 +95,7 @@ input_data <-
 Clean data somewhat:
 
 ```{r}
-input_data %<>% remove_empty("rows")
+input_animals %<>% remove_empty("rows")
 ```
 
 ## Scientific names
@@ -102,7 +103,7 @@ input_data %<>% remove_empty("rows")
 Use the [GBIF nameparser](https://www.gbif.org/tools/name-parser) to retrieve nomenclatural information for the scientific names in the checklist:
 
 ```{r}
-parsed_names <- input_data %>%
+parsed_names <- input_animals %>%
   distinct(scientific_name) %>%
   pull() %>% # Create vector from dataframe
   parsenames() # An rgbif function
@@ -116,103 +117,260 @@ parsed_names %>%
   filter(!(type == "SCIENTIFIC" & parsed == "TRUE" & parsedpartially == "FALSE"))
 ```
 
-# Capture Event
+# Event Core
 
 ```{r}
-capture_event <- input_data
+event_capture <- input_animals
 ```
 
-## Event Core
+## Capture event
 
 ### eventID
 
 ```{r}
-capture_event %<>% mutate(dwc_eventID = paste(projectcode, id_pk,"capture", sep = ":")) 
+event_capture %<>% mutate(dwc_eventID = paste(projectcode, id_pk,"event-capture", sep = ":")) 
 ```
 
 ### samplingProtocol
 
 ```{r}
-capture_event %>% 
+event_capture %>% 
   group_by(capture_method) %>%
   summarize(records = n())
 ```
 
-Transform to lower case:
-
 ```{r}
-capture_event %<>% 
-  mutate(capture_method = str_to_lower(capture_method))
+event_capture %<>% mutate(dwc_samplingProtocol = capture_method)
 ```
 
-Map `samplingProtocol`:
+### eventDate
 
 ```{r}
-capture_event %<>% mutate(dwc_samplingProtocol = capture_method)
-```
-
-### eventDate:				catched_date_time
-
-```{r}
-capture_event %>% 
+event_capture %>% 
   group_by(catched_date_time) %>%
   summarize(records = n())
 ```
 
-Split `catched_date_time` in two columns: `date` and `time`:
 
 ```{r}
-capture_event %<>% separate(catched_date_time, 
-                           into = c("date", "time"),
-                           sep = " ")
+event_capture %<>% mutate(dwc_eventDate = catched_date_time)
 ```
 
-Map `eventDate`
+### locality
+
+See [issue 34](https://github.com/inbo/etn-occurrences/issues/34)
 
 ```{r}
-capture_event %<>% mutate(dwc_eventDate = date)
+event_capture %<>% mutate(dwc_locality = capture_location)
 ```
 
-### eventTime:				
+### decimalLatitude
+
+see [issue11](https://github.com/inbo/etn-occurrences/issues/11)
 
 ```{r}
-capture_event %>% 
-  group_by(time) %>%
-  summarize(records = n())
+event_capture %<>% mutate(dwc_decimalLatitude = capture_latitude)
 ```
 
-Add `Z` to date information to use a time that conforms to ISO 8601:2004(E):
+### decimalLongitude
 
 ```{r}
-capture_event %<>% mutate(eventTime = paste0(time, "Z"))
+event_capture %<>% mutate(dwc_decimalLongitude = capture_longitude)
+```
+
+## Surgery Event
+
+```{r}
+event_surgery <- input_animals %>% filter(!is.na(date_of_surgery))
+```
+
+### eventID
+
+```{r}
+event_surgery %<>% mutate(dwc_eventID = paste(projectcode, id_pk,"event-surgery", sep = ":")) 
+```
+
+### samplingProtocol
+
+```{r}
+event_surgery %<>% mutate(dwc_samplingProtocol = "surgery") 
+```
+
+### eventDate
+
+```{r}
+event_surgery %<>% mutate(dwc_eventDate = date_of_surgery) 
+```
+
+### locality
+
+see [issue42](https://github.com/inbo/etn-occurrences/issues/42)
+
+```{r}
+event_surgery %<>% mutate(dwc_locality = surgery_location) 
+```
+
+### decimalLatitude
+
+```{r}
+event_surgery %<>% mutate(dwc_decimalLatitude = as.numeric("")) 
+```
+
+### decimalLongitude
+
+```{r}
+event_surgery %<>% mutate(dwc_decimalLongitude = as.numeric("")) 
+```
+
+## Release Event
+
+```{r}
+event_release <- input_animals
+```
+
+### eventID
+
+```{r}
+event_release %<>% mutate(dwc_eventID = paste(projectcode, id_pk,"event-release", sep = ":")) 
+```
+
+### samplingProtocol
+
+```{r}
+event_release %<>% mutate(dwc_samplingProtocol = "") 
+```
+
+### eventDate
+
+see [issue40](https://github.com/inbo/etn-occurrences/issues/40)
+
+```{r}
+event_release %<>% mutate(dwc_eventDate = utc_release_date_time) 
+```
+
+### locality
+
+see [issue41](https://github.com/inbo/etn-occurrences/issues/41)
+
+```{r}
+event_release %<>% mutate(dwc_locality = release_location)
+```
+
+### decimalLatitude
+
+see [issue11](https://github.com/inbo/etn-occurrences/issues/11)
+
+```{r}
+event_release %<>% mutate(dwc_decimalLatitude = release_latitude)
+```
+
+### decimalLongitude
+
+see [issue11](https://github.com/inbo/etn-occurrences/issues/11)
+
+```{r}
+event_release %<>% mutate(dwc_decimalLongitude = release_longitude)
+```
+
+## Stable event core terms
+
+Combine both `event_capture`, `event_surgery` and `event_release` to one `Event Core`:
+
+```{r}
+event <- bind_rows(event_capture, event_surgery, event_release)
+```
+
+Map `geodeticDatum` and `coordinateUncertaintyInMeters`:
+
+### geodeticDatum
+
+```{r}
+event %<>% mutate(dwc_geodeticDatum = "WGS84") 
+```
+
+### coordinateUncertaintyInMeters
+
+```{r}
+event %<>% mutate(dwc_coordinateUncertaintyInMeters = "30") 
+```
+
+# Occurrence Extension
+
+### occurrenceID
+
+```{r}
+event %<>% mutate(dwc_occurrenceID = paste(projectcode, id_pk,"occurrence-capture", sep = ":")) 
+```
+
+### recordedBy
+
+see [issue38](https://github.com/inbo/etn-occurrences/issues/38)
+
+```{r}
+event %<>% mutate(dwc_recordedBy = person_id) 
+```
+
+### scientificName
+
+```{r}
+event %<>% mutate(dwc_scientificName = scientific_name) 
+```
+
+### kingdom
+
+```{r}
+event %<>% mutate(dwc_kingdom = "Animalia") 
+```
+
+### phylum
+
+```{r}
+event %<>% mutate(dwc_phylum = "Chordata")
+```
+
+### vernacularName
+
+```{r}
+event %<>% mutate(dwc_vernacularName = common_name) 
+```
+
+## Post-processing
+
+Select columns starting with `dwc_`
+
+```{r}
+event %<>% select(starts_with("dwc_"))
+```
+
+Remove prefix `dwc_`
+
+```{r}
+colnames(event) <- str_remove(colnames(event), "dwc_")
+```
+
+Preview data:
+
+```{r}
+head(event)
+```
+
+Export data:
+
+```{r}
+write_csv(event, path = "../data/processed/event.csv", na = "")
+```
+
+# Extendend Measurements or Facts Extension
+
+
+First, we map the eMoF extension linked to the capture event. This extension includes the tag properties.
+
+```{r}
+emof_capture_tags <- input_animals
 ```
 
 
 
 
-### locality:				capture_location
-### verbatimDepth:			capture_depth
-### decimalLatitude:		capture_latitude
-### decimalLongitude:		capture_longitude
-### geodeticDatum:
-### coordinateUncertaintyInMeters: 	30?
-### occurrenceID:			animal_poject:id_capture
-### recordedBy:				person_id (?)
-### individualCount:		1 (?)
-### lifeStage:				life_stage
-### sex:					sex
-### scientificName:			scientific_name
-### kingdom:				Animalia
-### vernacularName:			common_name
-## extendend Measurements or Facts Extension
 
-# Surgery Event
-
-## Event Core
-## extendend Measurements or Facts Extension
-
-# Release Event
-
-## Event Core
-## extendend Measurements or Facts Extension
 
