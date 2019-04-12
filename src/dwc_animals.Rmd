@@ -32,25 +32,22 @@ library(tidyverse)      # To do data science
 library(magrittr)       # To use %<>% pipes
 library(here)           # To find files
 library(janitor)        # To clean input data
-library(readxl)         # To read Excel files
-library(digest)         # To generate hashes
-library(rgbif)          # To use GBIF services
-library(etn)
+library(etn)            # To interact with ETN
 ```
 
 # Read source data
 
-Connect to database:
+Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
 
 ```{r}
-my_con <- connect_to_etn("damiano.oldoni@inbo.be", "1zFhM2Ic")
+my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
 Load animal and transmitter data:
 
 ```{r}
 input_animals <- get_animals(my_con)
-input_tags   <- get_transmitters(my_con)
+input_tags    <- get_transmitters(my_con)
 ```
 
 Filter on requested animal projects:
