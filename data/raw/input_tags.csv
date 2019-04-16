@@ -1,7 +1,5 @@
 serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,min_delay,max_delay,power,end_date,file,estimated_lifetime,sensor_type,frequency,acoustic_tag_type,min_delay_step2,max_delay_step2,power_step2,min_delay_step3,max_delay_step3,power_step3,duration_step1,duration_step2,duration_step3,manufacturer_fk,intercept,slope,owner_group_fk,thelma_converted_code,financing_project_fk,acceleration_on_sec_step1,acceleration_on_sec_step2,acceleration_on_sec_step3,min_delay_step4,max_delay_step4,power_step4,duration_step4,acceleration_on_sec_step4,range,units,accelerometer_algoritm,accelerometer_samples_per_second,sensor_transmit_ratio,tag_full_id,status,projectcode
-1264416,acoustic,V13-1x,64859,A69-1601,RAF BAEYENS,1430,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64859,ACTIVE,2015_fint
 1228004,Acoustic,V13P-1x,100,A69-1105,RAF BAEYENS,759,,17,33,L,,TagSheet_20217.csv,301,P,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1105-100,ENDED,2013_albertkanaal
-1157770,Acoustic,V13-1x,28285,A69-1601,DAVID BUYSSE,290,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28285,ACTIVE,2015_fint
 1255008,Acoustic,V13-1x,47307,A69-1601,Raf Baeyens,1403,,60,120,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47307,AVAILABLE,2013_albertkanaal
 1255009,Acoustic,V13-1x,47308,A69-1601,RAF BAEYENS,1404,,17,33,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47308,AVAILABLE,2013_albertkanaal
 1097341,Acoustic,V9-1x,20701,A69-1303,JAN REUBENS,63,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20701,ENDED,phd_reubens
@@ -18,35 +16,8 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1104387,Acoustic,V7-4x,41142,A69-1303,DAVID BUYSSE,105,,45,95,L,,allTags_readyForDb.csv,157,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-41142,ENDED,2011_rivierprik
 1104388,Acoustic,V7-4x,41143,A69-1303,DAVID BUYSSE,106,,45,95,L,,allTags_readyForDb.csv,157,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-41143,ENDED,2011_rivierprik
 1104389,Acoustic,V8-4x,41249,A69-1303,DAVID BUYSSE,107,,85,140,L,,allTags_readyForDb.csv,154,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-41249,ENDED,2011_rivierprik
-1104308,Acoustic,V13-1x,65301,A69-1303,JAN REUBENS,84,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65301,ENDED,phd_reubens
-1097345,Acoustic,V13-1x,65302,A69-1303,JAN REUBENS,67,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65302,ENDED,phd_reubens
-1097346,Acoustic,V13-1x,65303,A69-1303,JAN REUBENS,68,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65303,ENDED,phd_reubens
-1097346,Acoustic,V13-1x,65303,A69-1303,JAN REUBENS,68,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65303,ENDED,phd_reubens
-1104310,Acoustic,V13-1x,65303,A69-1303,JAN REUBENS,86,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65303,ENDED,phd_reubens
-1097347,Acoustic,V13-1x,65304,A69-1303,JAN REUBENS,69,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65304,ENDED,phd_reubens
-1104311,Acoustic,V13-1x,65304,A69-1303,JAN REUBENS,87,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65304,ENDED,phd_reubens
-1264417,acoustic,V13-1x,64860,A69-1601,RAF BAEYENS,1431,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64860,ACTIVE,2015_fint
-1104309,Acoustic,V13-1x,65302,A69-1303,JAN REUBENS,85,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65302,ENDED,phd_reubens
 1224921,Acoustic,V13-1x,38725,A69-1601,RAF BAEYENS,726,,17,33,L,,allTags_readyForDb.csv,507,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-38725,ENDED,2013_albertkanaal
-1157771,Acoustic,V13-1x,28286,A69-1601,DAVID BUYSSE,291,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28286,ACTIVE,2015_fint
 1255010,Acoustic,V13-1x,47309,A69-1601,RAF BAEYENS,1405,,17,33,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47309,AVAILABLE,2013_albertkanaal
-1097348,Acoustic,V13-1x,65305,A69-1303,JAN REUBENS,70,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65305,ENDED,phd_reubens
-1104312,Acoustic,V13-1x,65305,A69-1303,JAN REUBENS,88,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65305,ENDED,phd_reubens
-1104313,Acoustic,V13-1x,65306,A69-1303,JAN REUBENS,89,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65306,ENDED,phd_reubens
-1097349,Acoustic,V13-1x,65306,A69-1303,JAN REUBENS,71,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65306,ENDED,phd_reubens
-1097350,Acoustic,V13-1x,65307,A69-1303,JAN REUBENS,72,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65307,ENDED,phd_reubens
-1104314,Acoustic,V13-1x,65307,A69-1303,JAN REUBENS,90,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65307,ENDED,phd_reubens
-1097351,Acoustic,V13-1x,65308,A69-1303,JAN REUBENS,73,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65308,ENDED,phd_reubens
-1104315,Acoustic,V13-1x,65308,A69-1303,JAN REUBENS,91,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65308,ENDED,phd_reubens
-1097352,Acoustic,V13-1x,65309,A69-1303,JAN REUBENS,74,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65309,ENDED,phd_reubens
-1104316,Acoustic,V13-1x,65309,A69-1303,JAN REUBENS,92,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65309,ENDED,phd_reubens
-1104317,Acoustic,V13-1x,65310,A69-1303,JAN REUBENS,93,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65310,ENDED,phd_reubens
-1097353,Acoustic,V13-1x,65310,A69-1303,JAN REUBENS,75,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65310,ENDED,phd_reubens
-1104318,Acoustic,V13-1x,65311,A69-1303,JAN REUBENS,94,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65311,ENDED,phd_reubens
-1097354,Acoustic,V13-1x,65311,A69-1303,JAN REUBENS,76,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65311,ENDED,phd_reubens
-1097355,Acoustic,V13-1x,65312,A69-1303,JAN REUBENS,77,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-65312,ENDED,phd_reubens
-1097723,Acoustic,V13-1x,65313,A69-1303,JAN REUBENS,78,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65313,ENDED,phd_reubens
-1097724,Acoustic,V13-1x,65314,A69-1303,JAN REUBENS,79,,600,600,L,,allTags_readyForDb.csv,405,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65314,ENDED,phd_reubens
 1104391,Acoustic,V8-4x,41251,A69-1303,DAVID BUYSSE,109,,85,140,L,,allTags_readyForDb.csv,154,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-41251,ENDED,2011_rivierprik
 1104392,Acoustic,V8-4x,41252,A69-1303,DAVID BUYSSE,110,,85,140,L,,allTags_readyForDb.csv,154,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-41252,ENDED,2011_rivierprik
 1104393,Acoustic,V8-4x,41253,A69-1303,DAVID BUYSSE,111,,85,140,L,,allTags_readyForDb.csv,154,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-41253,ENDED,2011_rivierprik
@@ -65,8 +36,6 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1105436,Acoustic,V7-4x,41639,A69-1303,DAVID BUYSSE,126,,45,95,L,,allTags_readyForDb.csv,157,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-41639,ENDED,2011_rivierprik
 1105437,Acoustic,V7-4x,41640,A69-1303,DAVID BUYSSE,127,,45,95,L,,allTags_readyForDb.csv,157,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-41640,ENDED,2011_rivierprik
 1105438,Acoustic,V7-4x,41641,A69-1303,DAVID BUYSSE,128,,45,95,L,,allTags_readyForDb.csv,157,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-41641,ENDED,2011_rivierprik
-1264418,acoustic,V13-1x,64861,A69-1601,RAF BAEYENS,1432,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64861,ACTIVE,2015_fint
-1104624,Acoustic,V13-1x,65312,A69-1303,JAN REUBENS,114,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65312,ENDED,phd_reubens
 1157744,Acoustic,V13-1x,28259,A69-1601,DAVID BUYSSE,264,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28259,ENDED,2013_albertkanaal
 1214068,Acoustic,V7-2x,34477,A69-1601,ANS MOUTON,609,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34477,ENDED,2013_albertkanaal
 1255011,Acoustic,V13-1x,47310,A69-1601,RAF BAEYENS,1406,,17,33,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47310,AVAILABLE,2013_albertkanaal
@@ -95,7 +64,6 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1116313,Acoustic,V9-1x,1705,A69-1601,JAN REUBENS,151,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1601-1705,ENDED,phd_reubens
 1116315,Acoustic,V9-1x,1707,A69-1601,JAN REUBENS,153,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1601-1707,ENDED,phd_reubens
 1122107,Acoustic,V13-1x,31854,A69-1601,DAVID BUYSSE,154,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31854,ENDED,2012_leopoldkanaal
-1104625,Acoustic,V13-1x,65313,A69-1303,JAN REUBENS,115,,500,700,L,,allTags_readyForDb.csv,1825,,069k,sentinel,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-65313,ENDED,phd_reubens
 1122108,Acoustic,V13-1x,31855,A69-1601,DAVID BUYSSE,155,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31855,ENDED,2012_leopoldkanaal
 1122109,Acoustic,V13-1x,31856,A69-1601,DAVID BUYSSE,156,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31856,ENDED,2012_leopoldkanaal
 1122110,Acoustic,V13-1x,31857,A69-1601,DAVID BUYSSE,157,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31857,ENDED,2012_leopoldkanaal
@@ -104,7 +72,6 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1122113,Acoustic,V13-1x,31860,A69-1601,DAVID BUYSSE,160,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31860,ENDED,2012_leopoldkanaal
 1122114,Acoustic,V13-1x,31861,A69-1601,DAVID BUYSSE,161,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31861,ENDED,2012_leopoldkanaal
 1122115,Acoustic,V13-1x,31862,A69-1601,DAVID BUYSSE,162,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31862,ENDED,2012_leopoldkanaal
-1264419,acoustic,V13-1x,64862,A69-1601,RAF BAEYENS,1433,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64862,ACTIVE,2015_fint
 1214114,Acoustic,V7-2x,34523,A69-1601,ANS MOUTON,655,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34523,ENDED,2013_albertkanaal
 1255012,Acoustic,V13-1x,47311,A69-1601,RAF BAEYENS,1407,,17,33,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47311,AVAILABLE,2013_albertkanaal
 1122116,Acoustic,V13-1x,31863,A69-1601,DAVID BUYSSE,163,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31863,ENDED,2012_leopoldkanaal
@@ -146,7 +113,6 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1122152,Acoustic,V13-1x,31899,A69-1601,DAVID BUYSSE,199,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31899,ENDED,2012_leopoldkanaal
 1122153,Acoustic,V13-1x,31900,A69-1601,DAVID BUYSSE,200,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31900,ENDED,2012_leopoldkanaal
 1122154,Acoustic,V13-1x,31901,A69-1601,DAVID BUYSSE,201,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31901,ENDED,2012_leopoldkanaal
-1264420,acoustic,V13-1x,64863,A69-1601,RAF BAEYENS,1434,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64863,ACTIVE,2015_fint
 1255013,Acoustic,V13-1x,47312,A69-1601,RAF BAEYENS,1408,,17,33,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47312,AVAILABLE,2013_albertkanaal
 1122155,Acoustic,V13-1x,31902,A69-1601,DAVID BUYSSE,202,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31902,ENDED,2012_leopoldkanaal
 1122156,Acoustic,V13-1x,31903,A69-1601,DAVID BUYSSE,203,,90,160,L,,allTags_readyForDb.csv,1155,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-31903,ENDED,2012_leopoldkanaal
@@ -161,10 +127,14 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1128936,Acoustic,V7-4x,3556,A69-1303,DAVID BUYSSE,213,,45,95,L,,allTags_readyForDb.csv,157,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-3556,ENDED,2011_rivierprik
 1145367,Acoustic,V13-1x,29919,A69-1601,DAVID BUYSSE,214,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29919,ENDED,2012_leopoldkanaal
 1145368,Acoustic,V13-1x,29920,A69-1601,DAVID BUYSSE,215,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29920,ENDED,2013_albertkanaal
+1145368,Acoustic,V13-1x,29920,A69-1601,DAVID BUYSSE,215,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29920,ENDED,2013_albertkanaal
+1145368,Acoustic,V13-1x,29920,A69-1601,DAVID BUYSSE,215,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29920,ENDED,2012_leopoldkanaal
 1145368,Acoustic,V13-1x,29920,A69-1601,DAVID BUYSSE,215,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29920,ENDED,2012_leopoldkanaal
 1145370,Acoustic,V13-1x,29922,A69-1601,DAVID BUYSSE,217,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29922,ENDED,2012_leopoldkanaal
 1145371,Acoustic,V13-1x,29923,A69-1601,DAVID BUYSSE,218,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29923,ENDED,2012_leopoldkanaal
 1145372,Acoustic,V13-1x,29924,A69-1601,DAVID BUYSSE,219,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29924,ENDED,2012_leopoldkanaal
+1145373,Acoustic,V13-1x,29925,A69-1601,DAVID BUYSSE,220,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29925,ENDED,2012_leopoldkanaal
+1145373,Acoustic,V13-1x,29925,A69-1601,DAVID BUYSSE,220,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29925,ENDED,2012_leopoldkanaal
 1145373,Acoustic,V13-1x,29925,A69-1601,DAVID BUYSSE,220,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29925,ENDED,2012_leopoldkanaal
 1145373,Acoustic,V13-1x,29925,A69-1601,DAVID BUYSSE,220,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29925,ENDED,2012_leopoldkanaal
 1145374,Acoustic,V13-1x,29926,A69-1601,DAVID BUYSSE,221,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29926,ENDED,2012_leopoldkanaal
@@ -213,8 +183,6 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1145415,Acoustic,V13-1x,29967,A69-1601,DAVID BUYSSE,262,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29967,ENDED,2012_leopoldkanaal
 1145416,Acoustic,V13-1x,29968,A69-1601,DAVID BUYSSE,263,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29968,ENDED,2012_leopoldkanaal
 1157745,Acoustic,V13-1x,28260,A69-1601,DAVID BUYSSE,265,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28260,ENDED,2013_albertkanaal
-1157754,Acoustic,V13-1x,28269,A69-1601,DAVID BUYSSE,274,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28269,ACTIVE,2015_fint
-1157753,Acoustic,V13-1x,28268,A69-1601,DAVID BUYSSE,273,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28268,ACTIVE,2015_fint
 1157751,Acoustic,V13-1x,28266,A69-1601,DAVID BUYSSE,271,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28266,AVAILABLE,2015_phd_verhelst
 1157750,Acoustic,V13-1x,28265,A69-1601,DAVID BUYSSE,270,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28265,AVAILABLE,2015_phd_verhelst
 1157749,Acoustic,V13-1x,28264,A69-1601,DAVID BUYSSE,269,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28264,AVAILABLE,2015_phd_verhelst
@@ -222,23 +190,7 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1157746,Acoustic,V13-1x,28261,A69-1601,DAVID BUYSSE,266,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28261,ENDED,2013_albertkanaal
 1157752,Acoustic,V13-1x,28267,A69-1601,DAVID BUYSSE,272,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28267,AVAILABLE,2015_phd_verhelst
 1157748,Acoustic,V13-1x,28263,A69-1601,DAVID BUYSSE,268,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28263,ENDED,2013_albertkanaal
-1157755,Acoustic,V13-1x,28270,A69-1601,DAVID BUYSSE,275,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28270,ACTIVE,2015_fint
-1157756,Acoustic,V13-1x,28271,A69-1601,DAVID BUYSSE,276,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28271,ACTIVE,2015_fint
-1157757,Acoustic,V13-1x,28272,A69-1601,DAVID BUYSSE,277,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28272,ACTIVE,2015_fint
-1157758,Acoustic,V13-1x,28273,A69-1601,DAVID BUYSSE,278,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28273,ACTIVE,2015_fint
-1157759,Acoustic,V13-1x,28274,A69-1601,DAVID BUYSSE,279,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28274,ACTIVE,2015_fint
-1157760,Acoustic,V13-1x,28275,A69-1601,DAVID BUYSSE,280,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28275,ACTIVE,2015_fint
-1157761,Acoustic,V13-1x,28276,A69-1601,DAVID BUYSSE,281,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28276,ACTIVE,2015_fint
-1157762,Acoustic,V13-1x,28277,A69-1601,DAVID BUYSSE,282,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28277,ACTIVE,2015_fint
-1157763,Acoustic,V13-1x,28278,A69-1601,DAVID BUYSSE,283,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28278,ACTIVE,2015_fint
-1157764,Acoustic,V13-1x,28279,A69-1601,DAVID BUYSSE,284,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28279,ACTIVE,2015_fint
-1157765,Acoustic,V13-1x,28280,A69-1601,DAVID BUYSSE,285,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28280,ACTIVE,2015_fint
-built-in,Acoustic,built-in,60507,A69-1601,,1384,,,,,,,,,,built-in,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-60507,AVAILABLE,rangetest
 1255015,Acoustic,V13-1x,47314,A69-1601,RAF BAEYENS,1410,,17,33,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47314,AVAILABLE,2013_albertkanaal
-1157766,Acoustic,V13-1x,28281,A69-1601,DAVID BUYSSE,286,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28281,ACTIVE,2015_fint
-1157767,Acoustic,V13-1x,28282,A69-1601,DAVID BUYSSE,287,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28282,ACTIVE,2015_fint
-1157768,Acoustic,V13-1x,28283,A69-1601,DAVID BUYSSE,288,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28283,ACTIVE,2015_fint
-1157769,Acoustic,V13-1x,28284,A69-1601,DAVID BUYSSE,289,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28284,ACTIVE,2015_fint
 1171686,Acoustic,V13-1x,26440,A69-1601,ANS MOUTON,305,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26440,AVAILABLE,2013_albertkanaal
 1171687,Acoustic,V13-1x,26441,A69-1601,ANS MOUTON,306,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26441,AVAILABLE,2013_albertkanaal
 1171688,Acoustic,V13-1x,26442,A69-1601,ANS MOUTON,307,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26442,AVAILABLE,2013_albertkanaal
@@ -270,14 +222,6 @@ built-in,Acoustic,built-in,60507,A69-1601,,1384,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1171714,Acoustic,V13-1x,26468,A69-1601,ANS MOUTON,333,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26468,AVAILABLE,2013_albertkanaal
 1171715,Acoustic,V13-1x,26469,A69-1601,ANS MOUTON,334,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26469,AVAILABLE,2013_albertkanaal
 1171716,Acoustic,V13-1x,26470,A69-1601,ANS MOUTON,335,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26470,AVAILABLE,2013_albertkanaal
-1157772,Acoustic,V13-1x,28287,A69-1601,DAVID BUYSSE,292,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28287,ACTIVE,2015_fint
-1157773,Acoustic,V13-1x,28288,A69-1601,DAVID BUYSSE,293,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28288,ACTIVE,2015_fint
-1157774,Acoustic,V13-1x,28289,A69-1601,DAVID BUYSSE,294,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28289,ACTIVE,2015_fint
-1157775,Acoustic,V13-1x,28290,A69-1601,DAVID BUYSSE,295,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28290,ACTIVE,2015_fint
-1157776,Acoustic,V13-1x,28291,A69-1601,DAVID BUYSSE,296,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28291,ACTIVE,2015_fint
-1157777,Acoustic,V13-1x,28292,A69-1601,DAVID BUYSSE,297,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28292,ACTIVE,2015_fint
-1157778,Acoustic,V13-1x,28293,A69-1601,DAVID BUYSSE,298,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28293,ACTIVE,2015_fint
-built-in,Acoustic,built-in,60508,A69-1601,,1385,,,,,,,,,,built-in,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-60508,AVAILABLE,rangetest
 1255016,Acoustic,V13-1x,47315,A69-1601,RAF BAEYENS,1411,,17,33,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47315,AVAILABLE,2013_albertkanaal
 1157779,Acoustic,V13-1x,28294,A69-1601,DAVID BUYSSE,299,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28294,ENDED,2014_demer
 1157780,Acoustic,V13-1x,28295,A69-1601,DAVID BUYSSE,300,,45,95,L,,allTags_readyForDb.csv,1219,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-28295,ENDED,2014_demer
@@ -313,7 +257,6 @@ built-in,Acoustic,built-in,60508,A69-1601,,1385,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1171743,Acoustic,V13-1x,26497,A69-1601,ANS MOUTON,362,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26497,ACTIVE,2013_albertkanaal
 1171744,Acoustic,V13-1x,26498,A69-1601,ANS MOUTON,363,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26498,ACTIVE,2013_albertkanaal
 1171745,Acoustic,V13-1x,26499,A69-1601,ANS MOUTON,364,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26499,ACTIVE,2013_albertkanaal
-built-in,Acoustic,built-in,60509,A69-1601,,1386,,,,,,,,,,built-in,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-60509,AVAILABLE,rangetest
 1255017,Acoustic,V13-1x,47316,A69-1601,RAF BAEYENS,1412,,17,33,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47316,AVAILABLE,2013_albertkanaal
 1171755,Acoustic,V13-1x,26509,A69-1601,ANS MOUTON,374,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26509,AVAILABLE,2013_albertkanaal
 1171756,Acoustic,V13-1x,26510,A69-1601,ANS MOUTON,375,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26510,AVAILABLE,2013_albertkanaal
@@ -345,58 +288,9 @@ built-in,Acoustic,built-in,60509,A69-1601,,1386,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1171782,Acoustic,V13-1x,26536,A69-1601,ANS MOUTON,401,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26536,AVAILABLE,2014_demer
 1171783,Acoustic,V13-1x,26537,A69-1601,ANS MOUTON,402,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26537,AVAILABLE,2014_demer
 1171784,Acoustic,V13-1x,26538,A69-1601,ANS MOUTON,403,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26538,AVAILABLE,2014_demer
-1172817,Acoustic,V9-2x,13631,A69-1601,KLAAS DENEUDT,405,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13631,ENDED,2015_phd_verhelst
-1172818,Acoustic,V9-2x,13632,A69-1601,KLAAS DENEUDT,406,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13632,ENDED,2015_phd_verhelst
-1172819,Acoustic,V9-2x,13633,A69-1601,KLAAS DENEUDT,407,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13633,ENDED,2015_phd_verhelst
-1172820,Acoustic,V9-2x,13634,A69-1601,KLAAS DENEUDT,408,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13634,ENDED,2015_phd_verhelst
-1172822,Acoustic,V9-2x,13636,A69-1601,KLAAS DENEUDT,410,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13636,ENDED,2015_phd_verhelst
-1172823,Acoustic,V9-2x,13637,A69-1601,KLAAS DENEUDT,411,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13637,ENDED,2015_phd_verhelst
-1172824,Acoustic,V9-2x,13638,A69-1601,KLAAS DENEUDT,412,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13638,ENDED,2015_phd_verhelst
-1172825,Acoustic,V9-2x,13639,A69-1601,KLAAS DENEUDT,413,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13639,ENDED,2015_phd_verhelst
-1181373,Acoustic,V9-2x,14853,A69-1601,JAN REUBENS,425,,170,310,H,2015-04-17T00:00:00Z,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14853,ENDED,2015_phd_verhelst
-built-in,Acoustic,built-in,60510,A69-1601,,1387,,,,,,,,,,built-in,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-60510,AVAILABLE,rangetest
 1255018,Acoustic,V13-1x,47317,A69-1601,RAF BAEYENS,1413,,17,33,L,,,644,,069k,animal,60,120,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47317,AVAILABLE,2013_albertkanaal
-1172826,Acoustic,V13-1x,13730,A69-1601,KLAAS DENEUDT,414,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13730,ENDED,2015_phd_verhelst
-1172827,Acoustic,V13-1x,13731,A69-1601,KLAAS DENEUDT,415,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13731,ENDED,2015_phd_verhelst
-1172828,Acoustic,V13-1x,13732,A69-1601,KLAAS DENEUDT,416,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13732,ENDED,2015_phd_verhelst
-1172829,Acoustic,V13-1x,13733,A69-1601,KLAAS DENEUDT,417,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13733,ENDED,2015_phd_verhelst
-1172830,Acoustic,V13-1x,13734,A69-1601,KLAAS DENEUDT,418,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13734,ENDED,2015_phd_verhelst
-1172831,Acoustic,V13-1x,13735,A69-1601,KLAAS DENEUDT,419,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13735,ENDED,2015_phd_verhelst
-1172832,Acoustic,V13-1x,13736,A69-1601,KLAAS DENEUDT,420,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13736,ENDED,2015_phd_verhelst
-1172833,Acoustic,V13-1x,13737,A69-1601,KLAAS DENEUDT,421,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13737,ENDED,2015_phd_verhelst
 1172834,Acoustic,V13-1x,13738,A69-1601,KLAAS DENEUDT,422,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13738,ENDED,homarus
 1172835,Acoustic,V13-1x,13739,A69-1601,KLAAS DENEUDT,423,,60,180,H,,allTags_readyForDb.csv,360,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-13739,ENDED,homarus
-1181372,Acoustic,V9-2x,14852,A69-1601,JAN REUBENS,424,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14852,ENDED,2015_phd_verhelst
-1181374,Acoustic,V9-2x,14854,A69-1601,JAN REUBENS,426,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14854,ENDED,2015_phd_verhelst
-1181375,Acoustic,V9-2x,14855,A69-1601,JAN REUBENS,427,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14855,ENDED,2015_phd_verhelst
-1181376,Acoustic,V9-2x,14856,A69-1601,JAN REUBENS,428,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14856,ENDED,2015_phd_verhelst
-1181377,Acoustic,V9-2x,14857,A69-1601,JAN REUBENS,429,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14857,ENDED,2015_phd_verhelst
-1181378,Acoustic,V9-2x,14858,A69-1601,JAN REUBENS,430,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14858,ENDED,2015_phd_verhelst
-1181379,Acoustic,V9-2x,14859,A69-1601,JAN REUBENS,431,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14859,ENDED,2015_phd_verhelst
-1181380,Acoustic,V9-2x,14860,A69-1601,JAN REUBENS,432,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14860,ENDED,2015_phd_verhelst
-1181381,Acoustic,V9-2x,14861,A69-1601,JAN REUBENS,433,,170,310,H,,allTags_readyForDb.csv,347,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14861,ENDED,2015_phd_verhelst
-1181382,Acoustic,V13-1x,14862,A69-1601,JAN REUBENS,434,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14862,ENDED,2015_phd_verhelst
-1181383,Acoustic,V13-1x,14863,A69-1601,JAN REUBENS,435,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14863,ENDED,2015_phd_verhelst
-1181384,Acoustic,V13-1x,14864,A69-1601,JAN REUBENS,436,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14864,ENDED,2015_phd_verhelst
-1181385,Acoustic,V13-1x,14865,A69-1601,JAN REUBENS,437,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14865,ENDED,2015_phd_verhelst
-1181386,Acoustic,V13-1x,14866,A69-1601,JAN REUBENS,438,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14866,ENDED,2015_phd_verhelst
-1181387,Acoustic,V13-1x,14867,A69-1601,JAN REUBENS,439,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14867,ENDED,2015_phd_verhelst
-1181388,Acoustic,V13-1x,14868,A69-1601,JAN REUBENS,440,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14868,ENDED,2015_phd_verhelst
-1181389,Acoustic,V13-1x,14869,A69-1601,JAN REUBENS,441,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14869,ENDED,2015_phd_verhelst
-1181389,Acoustic,V13-1x,14869,A69-1601,JAN REUBENS,441,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14869,ENDED,2015_phd_verhelst
-1181390,Acoustic,V13-1x,14870,A69-1601,JAN REUBENS,442,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14870,ENDED,2015_phd_verhelst
-1181391,Acoustic,V13-1x,14871,A69-1601,JAN REUBENS,443,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14871,ENDED,2015_phd_verhelst
-1181392,Acoustic,V13-1x,14872,A69-1601,JAN REUBENS,444,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14872,ENDED,2015_phd_verhelst
-1181393,Acoustic,V13-1x,14873,A69-1601,JAN REUBENS,445,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14873,ENDED,2015_phd_verhelst
-1181394,Acoustic,V13-1x,14874,A69-1601,JAN REUBENS,446,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14874,ENDED,2015_phd_verhelst
-1181395,Acoustic,V13-1x,14875,A69-1601,JAN REUBENS,447,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14875,ENDED,2015_phd_verhelst
-1181396,Acoustic,V13-1x,14876,A69-1601,JAN REUBENS,448,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14876,ENDED,2015_phd_verhelst
-1181397,Acoustic,V13-1x,14877,A69-1601,JAN REUBENS,449,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14877,ENDED,2015_phd_verhelst
-1181398,Acoustic,V13-1x,14878,A69-1601,JAN REUBENS,450,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14878,ENDED,2015_phd_verhelst
-1181399,Acoustic,V13-1x,14879,A69-1601,JAN REUBENS,451,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14879,ENDED,2015_phd_verhelst
-1181400,Acoustic,V13-1x,14880,A69-1601,JAN REUBENS,452,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14880,ENDED,2015_phd_verhelst
-1181401,Acoustic,V13-1x,14881,A69-1601,JAN REUBENS,453,,110,250,H,,allTags_readyForDb.csv,514,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-14881,ENDED,2015_phd_verhelst
-built-in,Acoustic,built-in,60511,A69-1601,,1388,,,,,,,,,,built-in,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-60511,AVAILABLE,rangetest
 1255019,Acoustic,V9-2x,47318,A69-1601,RAF BAEYENS,1414,,17,35,L,,,367,,069k,animal,300,360,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47318,ENDED,2013_albertkanaal
 1187429,Acoustic,V7-2x,16109,A69-1601,ANS MOUTON,460,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-16109,ENDED,2013_albertkanaal
 1187431,Acoustic,V7-2x,16111,A69-1601,ANS MOUTON,462,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-16111,ENDED,2013_albertkanaal
@@ -419,40 +313,8 @@ built-in,Acoustic,built-in,60511,A69-1601,,1388,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1187448,Acoustic,V7-2x,16128,A69-1601,ANS MOUTON,479,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-16128,ENDED,2013_albertkanaal
 1187449,Acoustic,V7-4x,16129,A69-1601,DAVID BUYSSE,480,,50,90,L,,allTags_readyForDb.csv,424,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-16129,ENDED,2014_demer
 1187450,Acoustic,V7-4x,16130,A69-1601,DAVID BUYSSE,481,,50,90,L,,allTags_readyForDb.csv,424,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-16130,ENDED,2014_demer
-built-in,Acoustic,built-in,60512,A69-1601,,1389,,,,,,,,,,built-in,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-60512,AVAILABLE,rangetest
 1255020,Acoustic,V9-2x,47319,A69-1601,RAF BAEYENS,1415,,17,35,L,,,367,,069k,animal,300,360,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47319,ENDED,2013_albertkanaal
 1187468,Acoustic,V7-4x,16148,A69-1601,DAVID BUYSSE,499,,50,90,L,,allTags_readyForDb.csv,424,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-16148,ENDED,2014_demer
-1214149,Acoustic,V13-1x,58575,A69-1601,JAN REUBENS,500,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58575,AVAILABLE,2015_phd_verhelst
-1214150,Acoustic,V13-1x,58576,A69-1601,JAN REUBENS,501,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58576,AVAILABLE,2015_phd_verhelst
-1214151,Acoustic,V13-1x,58577,A69-1601,JAN REUBENS,502,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58577,ACTIVE,2015_phd_verhelst
-1214152,Acoustic,V13-1x,58578,A69-1601,JAN REUBENS,503,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58578,AVAILABLE,2015_phd_verhelst
-1214153,Acoustic,V13-1x,58579,A69-1601,JAN REUBENS,504,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58579,AVAILABLE,2015_phd_verhelst
-1214154,Acoustic,V13-1x,58580,A69-1601,JAN REUBENS,505,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58580,AVAILABLE,2015_phd_verhelst
-1214155,Acoustic,V13-1x,58581,A69-1601,JAN REUBENS,506,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58581,ENDED,2015_phd_verhelst
-1214156,Acoustic,V13-1x,58582,A69-1601,JAN REUBENS,507,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58582,ENDED,2015_phd_verhelst
-1214157,Acoustic,V13-1x,58583,A69-1601,JAN REUBENS,508,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58583,ENDED,2015_phd_verhelst
-1214158,Acoustic,V13-1x,58584,A69-1601,JAN REUBENS,509,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58584,ENDED,2015_phd_verhelst
-1214159,Acoustic,V13-1x,58585,A69-1601,JAN REUBENS,510,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58585,ENDED,2015_phd_verhelst
-1214160,Acoustic,V13-1x,58586,A69-1601,JAN REUBENS,511,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58586,ENDED,2015_phd_verhelst
-1214161,Acoustic,V13-1x,58587,A69-1601,JAN REUBENS,512,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58587,AVAILABLE,2015_phd_verhelst
-1214162,Acoustic,V13-1x,58588,A69-1601,JAN REUBENS,513,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58588,AVAILABLE,2015_phd_verhelst
-1214163,Acoustic,V13-1x,58589,A69-1601,JAN REUBENS,514,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58589,AVAILABLE,2015_phd_verhelst
-1214164,Acoustic,V13-1x,58590,A69-1601,JAN REUBENS,515,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58590,AVAILABLE,2015_phd_verhelst
-1214165,Acoustic,V13-1x,58591,A69-1601,JAN REUBENS,516,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58591,AVAILABLE,2015_phd_verhelst
-1214166,Acoustic,V13-1x,58592,A69-1601,JAN REUBENS,517,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58592,AVAILABLE,2015_phd_verhelst
-1214167,Acoustic,V13-1x,58593,A69-1601,JAN REUBENS,518,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58593,AVAILABLE,2015_phd_verhelst
-1214168,Acoustic,V13-1x,58594,A69-1601,JAN REUBENS,519,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58594,AVAILABLE,2015_phd_verhelst
-1214169,Acoustic,V13-1x,58595,A69-1601,JAN REUBENS,520,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58595,AVAILABLE,2015_phd_verhelst
-1214170,Acoustic,V13-1x,58596,A69-1601,JAN REUBENS,521,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58596,AVAILABLE,2015_phd_verhelst
-1214171,Acoustic,V13-1x,58597,A69-1601,JAN REUBENS,522,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58597,AVAILABLE,2015_phd_verhelst
-1214172,Acoustic,V13-1x,58598,A69-1601,JAN REUBENS,523,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58598,AVAILABLE,2015_phd_verhelst
-1214173,Acoustic,V13-1x,58599,A69-1601,JAN REUBENS,524,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58599,AVAILABLE,2015_phd_verhelst
-1214174,Acoustic,V13-1x,58600,A69-1601,JAN REUBENS,525,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58600,AVAILABLE,2015_phd_verhelst
-1214175,Acoustic,V13-1x,58601,A69-1601,JAN REUBENS,526,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58601,AVAILABLE,2015_phd_verhelst
-1214176,Acoustic,V13-1x,58602,A69-1601,JAN REUBENS,527,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58602,AVAILABLE,2015_phd_verhelst
-1214177,Acoustic,V13-1x,58603,A69-1601,JAN REUBENS,528,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58603,AVAILABLE,2015_phd_verhelst
-1214178,Acoustic,V13-1x,58604,A69-1601,JAN REUBENS,529,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58604,AVAILABLE,2015_phd_verhelst
-built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-60513,AVAILABLE,rangetest
 1255021,Acoustic,V9-2x,47320,A69-1601,RAF BAEYENS,1416,,17,35,L,,,367,,069k,animal,300,360,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47320,ENDED,2013_albertkanaal
 1214001,Acoustic,V7-4x,34429,A69-1601,ANS MOUTON,542,,40,80,L,,allTags_readyForDb.csv,197,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34429,ENDED,2013_albertkanaal
 1214002,Acoustic,V7-4x,34430,A69-1601,ANS MOUTON,543,,40,80,L,,allTags_readyForDb.csv,197,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34430,ENDED,2013_albertkanaal
@@ -503,10 +365,6 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1214046,Acoustic,V7-4x,34474,A69-1601,ANS MOUTON,587,,40,80,L,,allTags_readyForDb.csv,197,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34474,ENDED,2015_dijle
 1214047,Acoustic,V7-4x,34475,A69-1601,ANS MOUTON,588,,40,80,L,,allTags_readyForDb.csv,197,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34475,ENDED,2015_dijle
 1214048,Acoustic,V7-4x,34476,A69-1601,ANS MOUTON,589,,40,80,L,,allTags_readyForDb.csv,197,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34476,ENDED,2015_dijle
-1214049,Acoustic,V9-2x,33125,A69-1601,ANS MOUTON,590,,20,40,H,,allTags_readyForDb.csv,132,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-33125,ENDED,2015_fint
-1214050,Acoustic,V9-2x,33126,A69-1601,ANS MOUTON,591,,20,40,H,,allTags_readyForDb.csv,132,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-33126,ENDED,2015_fint
-1214051,Acoustic,V9-2x,33127,A69-1601,ANS MOUTON,592,,20,40,L,,allTags_readyForDb.csv,626,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-33127,ENDED,2015_fint
-1214052,Acoustic,V9-2x,33128,A69-1601,ANS MOUTON,593,,20,40,L,,allTags_readyForDb.csv,626,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-33128,ENDED,2015_fint
 1214054,Acoustic,V13-1x,58611,A69-1601,ANS MOUTON,595,,80,160,L,,allTags_readyForDb.csv,1583,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-58611,ACTIVE,2015_phd_verhelst
 1214055,Acoustic,V13-1x,58612,A69-1601,ANS MOUTON,596,,80,160,L,,allTags_readyForDb.csv,1583,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-58612,ACTIVE,2015_phd_verhelst
 1214056,Acoustic,V13-1x,58613,A69-1601,ANS MOUTON,597,,80,160,L,,allTags_readyForDb.csv,1583,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-58613,ACTIVE,2015_phd_verhelst
@@ -526,6 +384,8 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1214076,Acoustic,V7-2x,34485,A69-1601,ANS MOUTON,617,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34485,ENDED,2013_albertkanaal
 1214077,Acoustic,V7-2x,34486,A69-1601,ANS MOUTON,618,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34486,ENDED,2013_albertkanaal
 1214077,Acoustic,V7-2x,34486,A69-1601,ANS MOUTON,618,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34486,ENDED,2013_albertkanaal
+1214077,Acoustic,V7-2x,34486,A69-1601,ANS MOUTON,618,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34486,ENDED,2013_albertkanaal
+1214077,Acoustic,V7-2x,34486,A69-1601,ANS MOUTON,618,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34486,ENDED,2013_albertkanaal
 1214078,Acoustic,V7-2x,34487,A69-1601,ANS MOUTON,619,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34487,ENDED,2013_albertkanaal
 1214079,Acoustic,V7-2x,34488,A69-1601,ANS MOUTON,620,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34488,ENDED,2013_albertkanaal
 1214080,Acoustic,V7-2x,34489,A69-1601,ANS MOUTON,621,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34489,ENDED,2013_albertkanaal
@@ -543,6 +403,8 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1214091,Acoustic,V7-2x,34500,A69-1601,ANS MOUTON,632,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34500,ENDED,2013_albertkanaal
 1214092,Acoustic,V7-2x,34501,A69-1601,ANS MOUTON,633,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34501,ENDED,2013_albertkanaal
 1214093,Acoustic,V7-2x,34502,A69-1601,ANS MOUTON,634,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34502,ENDED,2013_albertkanaal
+1214094,Acoustic,V7-2x,34503,A69-1601,ANS MOUTON,635,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34503,ENDED,2013_albertkanaal
+1214094,Acoustic,V7-2x,34503,A69-1601,ANS MOUTON,635,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34503,ENDED,2013_albertkanaal
 1214094,Acoustic,V7-2x,34503,A69-1601,ANS MOUTON,635,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34503,ENDED,2013_albertkanaal
 1214094,Acoustic,V7-2x,34503,A69-1601,ANS MOUTON,635,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34503,ENDED,2013_albertkanaal
 1214095,Acoustic,V7-2x,34504,A69-1601,ANS MOUTON,636,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34504,ENDED,2013_albertkanaal
@@ -589,23 +451,6 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1214124,Acoustic,V7-2x,34533,A69-1601,ANS MOUTON,665,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34533,ENDED,2013_albertkanaal
 1214125,Acoustic,V7-2x,34534,A69-1601,ANS MOUTON,666,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34534,ENDED,2013_albertkanaal
 1214126,Acoustic,V7-2x,34535,A69-1601,ANS MOUTON,667,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34535,ENDED,2013_albertkanaal
-1214127,Acoustic,V7-2x,34536,A69-1601,ANS MOUTON,668,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34536,ENDED,2015_fint
-1214128,Acoustic,V7-2x,34537,A69-1601,ANS MOUTON,669,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34537,ENDED,2015_fint
-1214129,Acoustic,V7-2x,34538,A69-1601,ANS MOUTON,670,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34538,ENDED,2015_fint
-1214130,Acoustic,V7-2x,34539,A69-1601,ANS MOUTON,671,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34539,ENDED,2015_fint
-1214131,Acoustic,V16-4x,65039,A69-1601,ANS MOUTON,672,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65039,ACTIVE,2013_albertkanaal
-1214132,Acoustic,V16-4x,65040,A69-1601,ANS MOUTON,673,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65040,ACTIVE,2013_albertkanaal
-1214133,Acoustic,V16-4x,65041,A69-1601,ANS MOUTON,674,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65041,ACTIVE,2013_albertkanaal
-1214134,Acoustic,V16-4x,65042,A69-1601,ANS MOUTON,675,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65042,ACTIVE,2013_albertkanaal
-1214135,Acoustic,V16-4x,65043,A69-1601,ANS MOUTON,676,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65043,ACTIVE,2013_albertkanaal
-1214136,Acoustic,V16-4x,65044,A69-1601,ANS MOUTON,677,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65044,ACTIVE,2013_albertkanaal
-1214137,Acoustic,V16-4x,65045,A69-1601,ANS MOUTON,678,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65045,ACTIVE,2013_albertkanaal
-1214138,Acoustic,V16-4x,65046,A69-1601,ANS MOUTON,679,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65046,ACTIVE,2013_albertkanaal
-1214139,Acoustic,V16-4x,65047,A69-1601,ANS MOUTON,680,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65047,ACTIVE,2013_albertkanaal
-1214140,Acoustic,V16-4x,65048,A69-1601,ANS MOUTON,681,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65048,ACTIVE,2013_albertkanaal
-1214141,Acoustic,V16-4x,65049,A69-1601,ANS MOUTON,682,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65049,ACTIVE,2013_albertkanaal
-1214142,Acoustic,V16-4x,65050,A69-1601,ANS MOUTON,683,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65050,ACTIVE,2013_albertkanaal
-1214143,Acoustic,V16-4x,65051,A69-1601,ANS MOUTON,684,,540,660,L,,allTags_readyForDb.csv,1825,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-65051,ACTIVE,2013_albertkanaal
 1219679,Acoustic,V13-1x,57465,A69-1601,PIETERJAN VERHELST,702,,60,100,L,,allTags_readyForDb.csv,1216,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-57465,AVAILABLE,2015_phd_verhelst
 1219680,Acoustic,V13-1x,57466,A69-1601,PIETERJAN VERHELST,703,,60,100,L,,allTags_readyForDb.csv,1216,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-57466,AVAILABLE,2015_phd_verhelst
 1219681,Acoustic,V13-1x,57467,A69-1601,PIETERJAN VERHELST,704,,60,100,L,,allTags_readyForDb.csv,1216,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-57467,AVAILABLE,2015_phd_verhelst
@@ -639,7 +484,6 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1224937,Acoustic,V13-1x,38741,A69-1601,RAF BAEYENS,742,,17,33,L,,allTags_readyForDb.csv,507,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-38741,ENDED,2013_albertkanaal
 1224938,Acoustic,V13-1x,38742,A69-1601,RAF BAEYENS,743,,17,33,L,,allTags_readyForDb.csv,507,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-38742,ENDED,2013_albertkanaal
 1224939,Acoustic,V13-1x,38743,A69-1601,RAF BAEYENS,744,,17,33,L,,allTags_readyForDb.csv,507,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-38743,ENDED,2013_albertkanaal
-1228350,Acoustic,V13-1x,56017,A69-1601,KLAAS DENEUDT,786,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56017,ACTIVE,2015_phd_verhelst
 1255026,Acoustic,V9-2x,47325,A69-1601,RAF BAEYENS,1421,,17,35,L,,,367,,069k,animal,300,360,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47325,ENDED,2013_albertkanaal
 1228005,Acoustic,V13P-1x,101,A69-1105,RAF BAEYENS,760,,17,33,L,,TagSheet_20217.csv,301,P,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1105-101,ENDED,2013_albertkanaal
 1228007,Acoustic,V13P-1x,103,A69-1105,RAF BAEYENS,762,,17,33,L,,TagSheet_20217.csv,301,P,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1105-103,ENDED,2013_albertkanaal
@@ -661,14 +505,6 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1224948,Acoustic,V13-1x,38752,A69-1601,RAF BAEYENS,753,,17,33,L,,allTags_readyForDb.csv,507,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-38752,ENDED,2013_albertkanaal
 1224949,Acoustic,V13-1x,38753,A69-1601,RAF BAEYENS,754,,17,33,L,,allTags_readyForDb.csv,507,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-38753,ENDED,2013_albertkanaal
 1224950,Acoustic,V13-1x,38754,A69-1601,RAF BAEYENS,755,,17,33,L,,allTags_readyForDb.csv,507,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-38754,ENDED,2013_albertkanaal
-1228355,Acoustic,V13-1x,56022,A69-1601,KLAAS DENEUDT,791,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56022,AVAILABLE,2015_phd_verhelst
-1228356,Acoustic,V13-1x,56023,A69-1601,KLAAS DENEUDT,792,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56023,AVAILABLE,2015_phd_verhelst
-1228357,Acoustic,V13-1x,56024,A69-1601,KLAAS DENEUDT,793,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56024,ACTIVE,2015_phd_verhelst
-1228358,Acoustic,V13-1x,56025,A69-1601,KLAAS DENEUDT,794,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56025,ACTIVE,2015_phd_verhelst
-1228359,Acoustic,V13-1x,56026,A69-1601,KLAAS DENEUDT,795,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56026,AVAILABLE,2015_phd_verhelst
-1228360,Acoustic,V13-1x,56027,A69-1601,KLAAS DENEUDT,796,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56027,AVAILABLE,2015_phd_verhelst
-1228361,Acoustic,V13-1x,56028,A69-1601,KLAAS DENEUDT,797,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56028,ACTIVE,2015_phd_verhelst
-1228362,Acoustic,V13-1x,56029,A69-1601,KLAAS DENEUDT,798,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56029,ACTIVE,2015_phd_verhelst
 1255027,Acoustic,V9-2x,47326,A69-1601,RAF BAEYENS,1422,,17,35,L,,,367,,069k,animal,300,360,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47326,ENDED,2013_albertkanaal
 1255028,Acoustic,V9-2x,47327,A69-1601,RAF BAEYENS,1423,,17,35,L,,,367,,069k,animal,300,360,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47327,ENDED,2013_albertkanaal
 1255029,Acoustic,V9-2x,47328,A69-1601,RAF BAEYENS,1424,,17,35,L,,,367,,069k,animal,300,360,L,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-47328,ENDED,2013_albertkanaal
@@ -684,8 +520,12 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1097334,Acoustic,V9-1x,20693,A69-1303,JAN REUBENS,56,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-20693,ENDED,phd_reubens
 1097335,Acoustic,V9-1x,20695,A69-1303,JAN REUBENS,57,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20695,ENDED,phd_reubens
 1097335,Acoustic,V9-1x,20695,A69-1303,JAN REUBENS,57,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20695,ENDED,phd_reubens
+1097335,Acoustic,V9-1x,20695,A69-1303,JAN REUBENS,57,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20695,ENDED,phd_reubens
+1097335,Acoustic,V9-1x,20695,A69-1303,JAN REUBENS,57,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20695,ENDED,phd_reubens
 1097336,Acoustic,V9-1x,20696,A69-1303,JAN REUBENS,58,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20696,ENDED,phd_reubens
 1097337,Acoustic,V9-1x,20697,A69-1303,JAN REUBENS,59,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20697,ENDED,phd_reubens
+1097338,Acoustic,V9-1x,20698,A69-1303,JAN REUBENS,60,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20698,ENDED,phd_reubens
+1097338,Acoustic,V9-1x,20698,A69-1303,JAN REUBENS,60,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20698,ENDED,phd_reubens
 1097338,Acoustic,V9-1x,20698,A69-1303,JAN REUBENS,60,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20698,ENDED,phd_reubens
 1097338,Acoustic,V9-1x,20698,A69-1303,JAN REUBENS,60,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20698,ENDED,phd_reubens
 1097339,Acoustic,V9-1x,20699,A69-1303,JAN REUBENS,61,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20699,ENDED,phd_reubens
@@ -770,7 +610,6 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1249196,Acoustic,V13-1x,52665,A69-1601,PIETERJAN VERHELST,1379,,60,100,H,,tagsheet_21464.csv,1021,,069k,animal,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1601-52665,ACTIVE,2015_phd_verhelst
 1249197,Acoustic,V13-1x,52666,A69-1601,PIETERJAN VERHELST,1380,,60,100,H,,tagsheet_21464.csv,1021,,069k,animal,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1601-52666,ACTIVE,2015_phd_verhelst
 1263157,acoustic,V7-2x,64513,A69-1601,RAF BAEYENS,1483,,15,30,L,,,64,,069k,animal,,,,,,,69,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64513,ENDED,2013_albertkanaal
-1228348,Acoustic,V13P-1x,2221,A69-9004,KLAAS DENEUDT,784,,140,220,H,,Tagsheet_20227.csv,657,P,069k,animal,,,,,,,,,,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9004-2221,ENDED,2015_phd_verhelst
 1249190,Acoustic,V13-1x,52659,A69-1601,PIETERJAN VERHELST,1373,,60,100,H,,tagsheet_21464.csv,1021,,069k,animal,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1601-52659,ACTIVE,2015_phd_verhelst
 1249191,Acoustic,V13-1x,52660,A69-1601,PIETERJAN VERHELST,1374,,60,100,H,,tagsheet_21464.csv,1021,,069k,animal,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1601-52660,ACTIVE,2015_phd_verhelst
 1249192,Acoustic,V13-1x,52661,A69-1601,PIETERJAN VERHELST,1375,,60,100,H,,tagsheet_21464.csv,1021,,069k,animal,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1601-52661,ACTIVE,2015_phd_verhelst
@@ -821,55 +660,6 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1278981,Acoustic,V13AP-1x-069k-1-0017m,1848,A69-9006,Raf Baeyens,2263,,17,33,L,,,183,A,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-9006-1848,ENDED,2013_albertkanaal
 1278982,Acoustic,V13AP-1x-069k-1-0017m,1850,A69-9006,Raf Baeyens,2265,,17,33,L,,,183,A,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-9006-1850,ENDED,2013_albertkanaal
 1278983,Acoustic,V13AP-1x-069k-1-0017m,1852,A69-9006,Raf Baeyens,2267,,17,33,L,,,183,A,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-9006-1852,ENDED,2013_albertkanaal
-1214058,Acoustic,V13-1x,58615,A69-1601,ANS MOUTON,599,,80,160,L,,allTags_readyForDb.csv,1583,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-58615,ACTIVE,2015_phd_verhelst
-1214053,Acoustic,V13-1x,58610,A69-1601,ANS MOUTON,594,,80,160,L,,allTags_readyForDb.csv,1583,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-58610,ACTIVE,2015_phd_verhelst
-1171754,Acoustic,V13-1x,26508,A69-1601,ANS MOUTON,373,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26508,ACTIVE,2015_phd_verhelst
-1228363,Acoustic,V13-1x,56030,A69-1601,KLAAS DENEUDT,799,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56030,ACTIVE,2015_phd_verhelst
-1228364,Acoustic,V13-1x,56031,A69-1601,KLAAS DENEUDT,800,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56031,ACTIVE,2015_phd_verhelst
-1214151,Acoustic,V13-1x,58577,A69-1601,JAN REUBENS,502,,140,220,H,,allTags_readyForDb.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-58577,ACTIVE,2015_phd_verhelst
-1228351,Acoustic,V13-1x,56018,A69-1601,KLAAS DENEUDT,787,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56018,ACTIVE,2015_phd_verhelst
-1228352,Acoustic,V13-1x,56019,A69-1601,KLAAS DENEUDT,788,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56019,ACTIVE,2015_phd_verhelst
-1228353,Acoustic,V13-1x,56020,A69-1601,KLAAS DENEUDT,789,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56020,ACTIVE,2015_phd_verhelst
-1228354,Acoustic,V13-1x,56021,A69-1601,KLAAS DENEUDT,790,,140,220,H,,Tagsheet_20227.csv,904,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1601-56021,ACTIVE,2015_phd_verhelst
-1271054,acoustic,V13AP-1x-069k-1-0034m,903,A69-9006,Jan Reubens,1793,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-903,ACTIVE,2015_phd_verhelst
-1271054,acoustic,V13AP-1x-069k-1-0034m,904,A69-9006,Jan Reubens,1794,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-904,ACTIVE,2015_phd_verhelst
-1271054,acoustic,V13AP-1x-069k-1-0034m,903,A69-9006,Jan Reubens,1793,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-903,ACTIVE,2015_phd_verhelst
-1271054,acoustic,V13AP-1x-069k-1-0034m,904,A69-9006,Jan Reubens,1794,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-904,ACTIVE,2015_phd_verhelst
-1271055,acoustic,V13AP-1x-069k-1-0034m,906,A69-9006,Jan Reubens,1796,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-906,ACTIVE,2015_phd_verhelst
-1271055,acoustic,V13AP-1x-069k-1-0034m,905,A69-9006,Jan Reubens,1795,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-905,ACTIVE,2015_phd_verhelst
-1271055,acoustic,V13AP-1x-069k-1-0034m,906,A69-9006,Jan Reubens,1796,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-906,ACTIVE,2015_phd_verhelst
-1271055,acoustic,V13AP-1x-069k-1-0034m,905,A69-9006,Jan Reubens,1795,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-905,ACTIVE,2015_phd_verhelst
-1271056,acoustic,V13AP-1x-069k-1-0034m,908,A69-9006,Jan Reubens,1798,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-908,ACTIVE,2015_phd_verhelst
-1271056,acoustic,V13AP-1x-069k-1-0034m,907,A69-9006,Jan Reubens,1797,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-907,ACTIVE,2015_phd_verhelst
-1271056,acoustic,V13AP-1x-069k-1-0034m,908,A69-9006,Jan Reubens,1798,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-908,ACTIVE,2015_phd_verhelst
-1271056,acoustic,V13AP-1x-069k-1-0034m,907,A69-9006,Jan Reubens,1797,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-907,ACTIVE,2015_phd_verhelst
-1271057,acoustic,V13AP-1x-069k-1-0034m,910,A69-9006,Jan Reubens,1800,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-910,ACTIVE,2015_phd_verhelst
-1271057,acoustic,V13AP-1x-069k-1-0034m,909,A69-9006,Jan Reubens,1799,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-909,ACTIVE,2015_phd_verhelst
-1271057,acoustic,V13AP-1x-069k-1-0034m,910,A69-9006,Jan Reubens,1800,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-910,ACTIVE,2015_phd_verhelst
-1271057,acoustic,V13AP-1x-069k-1-0034m,909,A69-9006,Jan Reubens,1799,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-909,ACTIVE,2015_phd_verhelst
-1271058,acoustic,V13AP-1x-069k-1-0034m,912,A69-9006,Jan Reubens,1802,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-912,ACTIVE,2015_phd_verhelst
-1271058,acoustic,V13AP-1x-069k-1-0034m,911,A69-9006,Jan Reubens,1801,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-911,ACTIVE,2015_phd_verhelst
-1271058,acoustic,V13AP-1x-069k-1-0034m,912,A69-9006,Jan Reubens,1802,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-912,ACTIVE,2015_phd_verhelst
-1271058,acoustic,V13AP-1x-069k-1-0034m,911,A69-9006,Jan Reubens,1801,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-911,ACTIVE,2015_phd_verhelst
-1271059,acoustic,V13AP-1x-069k-1-0034m,914,A69-9006,Jan Reubens,1804,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-914,ACTIVE,2015_phd_verhelst
-1271059,acoustic,V13AP-1x-069k-1-0034m,913,A69-9006,Jan Reubens,1803,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-913,ACTIVE,2015_phd_verhelst
-1271059,acoustic,V13AP-1x-069k-1-0034m,914,A69-9006,Jan Reubens,1804,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-914,ACTIVE,2015_phd_verhelst
-1271059,acoustic,V13AP-1x-069k-1-0034m,913,A69-9006,Jan Reubens,1803,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-913,ACTIVE,2015_phd_verhelst
-1271060,acoustic,V13AP-1x-069k-1-0034m,916,A69-9006,Jan Reubens,1806,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-916,ACTIVE,2015_phd_verhelst
-1271060,acoustic,V13AP-1x-069k-1-0034m,915,A69-9006,Jan Reubens,1805,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-915,ACTIVE,2015_phd_verhelst
-1271060,acoustic,V13AP-1x-069k-1-0034m,916,A69-9006,Jan Reubens,1806,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-916,ACTIVE,2015_phd_verhelst
-1271060,acoustic,V13AP-1x-069k-1-0034m,915,A69-9006,Jan Reubens,1805,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-915,ACTIVE,2015_phd_verhelst
-1271061,acoustic,V13AP-1x-069k-1-0034m,918,A69-9006,Jan Reubens,1808,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-918,AVAILABLE,2015_phd_verhelst
-1271061,acoustic,V13AP-1x-069k-1-0034m,917,A69-9006,Jan Reubens,1807,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-917,ACTIVE,2015_phd_verhelst
-1271071,acoustic,V13AP-1x-069k-1-0034m,938,A69-9006,Jan Reubens,1828,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-938,ACTIVE,2015_phd_verhelst
-1271071,acoustic,V13AP-1x-069k-1-0034m,937,A69-9006,Jan Reubens,1827,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-937,ACTIVE,2015_phd_verhelst
-1271071,acoustic,V13AP-1x-069k-1-0034m,938,A69-9006,Jan Reubens,1828,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-938,ACTIVE,2015_phd_verhelst
-1271071,acoustic,V13AP-1x-069k-1-0034m,937,A69-9006,Jan Reubens,1827,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-937,ACTIVE,2015_phd_verhelst
-1264428,acoustic,V13-1x,64871,A69-1601,RAF BAEYENS,1442,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64871,ACTIVE,2015_fint
-1264422,acoustic,V13-1x,64865,A69-1601,RAF BAEYENS,1436,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64865,ACTIVE,2015_fint
-1264429,acoustic,V13-1x,64872,A69-1601,RAF BAEYENS,1443,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64872,ACTIVE,2015_fint
-1264433,acoustic,V13-1x,64876,A69-1601,RAF BAEYENS,1447,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64876,ACTIVE,2015_fint
-1264421,acoustic,V13-1x,64864,A69-1601,RAF BAEYENS,1435,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64864,ACTIVE,2015_fint
 1264440,acoustic,V13-1x,64883,A69-1601,RAF BAEYENS,1454,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64883,AVAILABLE,2015_phd_verhelst
 1264436,acoustic,V13-1x,64879,A69-1601,RAF BAEYENS,1450,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64879,AVAILABLE,2015_phd_verhelst
 1264437,acoustic,V13-1x,64880,A69-1601,RAF BAEYENS,1451,,40,80,H,,,782,,069k,animal,40,80,L,,,,120,662,,1,,,4,,,,,,,,,,,,,,,,A69-1601-64880,AVAILABLE,2015_phd_verhelst
@@ -881,682 +671,3 @@ built-in,Acoustic,built-in,60513,A69-1601,,1390,,,,,,,,,,built-in,,,,,,,,,,1,,,7
 1272894,acoustic,V13-1x-069k-1,30354,A69-1602,PIETERJAN VERHELST,1925,,60,100,H,,,1022,"",069k,animal,60,100,L,"","",L,120,906,365,1,,,4,,,,,,,,,,,,,,,,A69-1602-30354,AVAILABLE,2015_phd_verhelst
 1272899,acoustic,V13-1x-069k-1,30359,A69-1602,PIETERJAN VERHELST,1930,,60,100,H,,,1022,"",069k,animal,60,100,L,"","",L,120,906,365,1,,,4,,,,,,,,,,,,,,,,A69-1602-30359,AVAILABLE,2015_phd_verhelst
 1171752,Acoustic,V13-1x,26506,A69-1601,ANS MOUTON,371,,80,160,L,,allTags_readyForDb.csv,1582,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-26506,AVAILABLE,2015_phd_verhelst
-1271061,acoustic,V13AP-1x-069k-1-0034m,918,A69-9006,Jan Reubens,1808,,140,220,H,,,490,P,069k,animal,,,L,,,L,495,365,0,1,-0.6065,0.1516,7,,,,,,,,,,,,,,,,A69-9006-918,AVAILABLE,2015_phd_verhelst
-1271061,acoustic,V13AP-1x-069k-1-0034m,917,A69-9006,Jan Reubens,1807,,140,220,H,,,490,A,069k,animal,,,L,,,L,495,365,0,1,0,0.013588,7,,,,,,,,,,,,,,,,A69-9006-917,ACTIVE,2015_phd_verhelst
-1113974,acoustic,V9-2L,1509,A69-1303,,4741,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1509,,PhD_Barbara_Koeck
-1113975,acoustic,V9-2L,1510,A69-1303,,4742,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1510,,PhD_Barbara_Koeck
-1113976,acoustic,V9-2L,1511,A69-1303,,4743,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1511,,PhD_Barbara_Koeck
-1113977,acoustic,V9-2L,1512,A69-1303,,4744,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1512,,PhD_Barbara_Koeck
-1113978,acoustic,V9-2L,1513,A69-1303,,4745,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1513,,PhD_Barbara_Koeck
-1113979,acoustic,V9-2L,1514,A69-1303,,4746,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1514,,PhD_Barbara_Koeck
-1113980,acoustic,V9-2L,1515,A69-1303,,4747,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1515,,PhD_Barbara_Koeck
-1113981,acoustic,V9-2L,1516,A69-1303,,4748,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1516,,PhD_Barbara_Koeck
-1113982,acoustic,V9-2L,1517,A69-1303,,4749,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1517,,PhD_Barbara_Koeck
-1113983,acoustic,V9-2L,1518,A69-1303,,4750,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1518,,PhD_Barbara_Koeck
-1113984,acoustic,V9-2L,1519,A69-1303,,4751,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1519,,PhD_Barbara_Koeck
-1113985,acoustic,V9-2L,1520,A69-1303,,4752,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1520,,PhD_Barbara_Koeck
-1113986,acoustic,V9-2L,1521,A69-1303,,4753,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1521,,PhD_Barbara_Koeck
-1113987,acoustic,V9-2L,1522,A69-1303,,4754,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1522,,PhD_Barbara_Koeck
-1113988,acoustic,V9-2L,1523,A69-1303,,4755,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1523,,PhD_Barbara_Koeck
-1113989,acoustic,V9-2L,1524,A69-1303,,4756,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1524,,PhD_Barbara_Koeck
-1113990,acoustic,V9-2L,1525,A69-1303,,4757,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1525,,PhD_Barbara_Koeck
-1113991,acoustic,V9-2L,1526,A69-1303,,4758,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1526,,PhD_Barbara_Koeck
-1113992,acoustic,V9-2L,1527,A69-1303,,4759,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1527,,PhD_Barbara_Koeck
-1113993,acoustic,V9-2L,1528,A69-1303,,4760,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1528,,PhD_Barbara_Koeck
-1113994,acoustic,V9-2L,1529,A69-1303,,4761,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1529,,PhD_Barbara_Koeck
-1113995,acoustic,V9-2L,1530,A69-1303,,4762,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1530,,PhD_Barbara_Koeck
-1113996,acoustic,V9-2L,1531,A69-1303,,4763,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1531,,PhD_Barbara_Koeck
-1113997,acoustic,V9-2L,1532,A69-1303,,4764,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1532,,PhD_Barbara_Koeck
-1113998,acoustic,V9-2L,1533,A69-1303,,4765,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1533,,PhD_Barbara_Koeck
-1113999,acoustic,V9-2L,1534,A69-1303,,4766,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1534,,PhD_Barbara_Koeck
-1114000,acoustic,V9-2L,1535,A69-1303,,4767,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1535,,PhD_Barbara_Koeck
-1114001,acoustic,V9-2L,1536,A69-1303,,4768,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1536,,PhD_Barbara_Koeck
-1114002,acoustic,V9-2L,1537,A69-1303,,4769,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1537,,PhD_Barbara_Koeck
-1114003,acoustic,V9-2L,1538,A69-1303,,4770,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1538,,PhD_Barbara_Koeck
-1114004,acoustic,V9-2L,1539,A69-1303,,4771,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1539,,PhD_Barbara_Koeck
-1114005,acoustic,V9-2L,1540,A69-1303,,4772,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1540,,PhD_Barbara_Koeck
-1114006,acoustic,V9-2L,1541,A69-1303,,4773,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1541,,PhD_Barbara_Koeck
-1114007,acoustic,V9-2L,1542,A69-1303,,4774,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1542,,PhD_Barbara_Koeck
-1114008,acoustic,V9-2L,1543,A69-1303,,4775,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1543,,PhD_Barbara_Koeck
-1114009,acoustic,V9-2L,1544,A69-1303,,4776,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1544,,PhD_Barbara_Koeck
-1114010,acoustic,V9-2L,1545,A69-1303,,4777,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1545,,PhD_Barbara_Koeck
-1114011,acoustic,V9-2L,1546,A69-1303,,4778,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1546,,PhD_Barbara_Koeck
-1114012,acoustic,V9-2L,1547,A69-1303,,4779,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1547,,PhD_Barbara_Koeck
-1114013,acoustic,V9-2L,1548,A69-1303,,4780,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1548,,PhD_Barbara_Koeck
-1114014,acoustic,V9-2L,1549,A69-1303,,4781,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1549,,PhD_Barbara_Koeck
-1114015,acoustic,V9-2L,1550,A69-1303,,4782,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1550,,PhD_Barbara_Koeck
-1114016,acoustic,V9-2L,1551,A69-1303,,4783,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1551,,PhD_Barbara_Koeck
-1114017,acoustic,V9-2L,1552,A69-1303,,4784,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1552,,PhD_Barbara_Koeck
-1114018,acoustic,V9-2L,1553,A69-1303,,4785,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1553,,PhD_Barbara_Koeck
-1114019,acoustic,V9-2L,1554,A69-1303,,4786,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1554,,PhD_Barbara_Koeck
-1114020,acoustic,V9-2L,1555,A69-1303,,4787,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1555,,PhD_Barbara_Koeck
-1114021,acoustic,V9-2L,1556,A69-1303,,4788,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1556,,PhD_Barbara_Koeck
-1114022,acoustic,V9-2L,1557,A69-1303,,4789,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1557,,PhD_Barbara_Koeck
-1114023,acoustic,V9-2L,1558,A69-1303,,4790,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1558,,PhD_Barbara_Koeck
-1114024,acoustic,V9-2L,1559,A69-1303,,4791,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1559,,PhD_Barbara_Koeck
-1114025,acoustic,V9-2L,1560,A69-1303,,4792,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1560,,PhD_Barbara_Koeck
-1114026,acoustic,V9-2L,1561,A69-1303,,4793,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1561,,PhD_Barbara_Koeck
-1114027,acoustic,V9-2L,1562,A69-1303,,4794,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1562,,PhD_Barbara_Koeck
-1114028,acoustic,V9-2L,1563,A69-1303,,4795,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1563,,PhD_Barbara_Koeck
-1114029,acoustic,V9-2L,1564,A69-1303,,4796,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1564,,PhD_Barbara_Koeck
-1114030,acoustic,V9-2L,1565,A69-1303,,4797,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1565,,PhD_Barbara_Koeck
-1114031,acoustic,V9-2L,1566,A69-1303,,4798,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1566,,PhD_Barbara_Koeck
-1114032,acoustic,V9-2L,1567,A69-1303,,4799,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1567,,PhD_Barbara_Koeck
-1114033,acoustic,V9-2L,1568,A69-1303,,4800,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1568,,PhD_Barbara_Koeck
-1114034,acoustic,V9-2L,1569,A69-1303,,4801,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1569,,PhD_Barbara_Koeck
-1114035,acoustic,V9-2L,1570,A69-1303,,4802,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1570,,PhD_Barbara_Koeck
-1114036,acoustic,V9-2L,1571,A69-1303,,4803,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1571,,PhD_Barbara_Koeck
-1114037,acoustic,V9-2L,1572,A69-1303,,4804,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1572,,PhD_Barbara_Koeck
-1114038,acoustic,V9-2L,1573,A69-1303,,4805,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1573,,PhD_Barbara_Koeck
-1114039,acoustic,V9-2L,1574,A69-1303,,4806,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1574,,PhD_Barbara_Koeck
-1114040,acoustic,V9-2L,1575,A69-1303,,4807,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1575,,PhD_Barbara_Koeck
-1114041,acoustic,V9-2L,1576,A69-1303,,4808,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1576,,PhD_Barbara_Koeck
-1114042,acoustic,V9-2L,1577,A69-1303,,4809,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1577,,PhD_Barbara_Koeck
-1114043,acoustic,V9-2L,1578,A69-1303,,4810,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1578,,PhD_Barbara_Koeck
-1114044,acoustic,V9-2L,1579,A69-1303,,4811,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1579,,PhD_Barbara_Koeck
-1114045,acoustic,V9-2L,1580,A69-1303,,4812,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1580,,PhD_Barbara_Koeck
-1114046,acoustic,V9-2L,1581,A69-1303,,4813,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1581,,PhD_Barbara_Koeck
-1114047,acoustic,V9-2L,1582,A69-1303,,4814,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1582,,PhD_Barbara_Koeck
-1114048,acoustic,V9-2L,1583,A69-1303,,4815,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1583,,PhD_Barbara_Koeck
-1114049,acoustic,V9-2L,1584,A69-1303,,4816,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1584,,PhD_Barbara_Koeck
-1114050,acoustic,V9-2L,1585,A69-1303,,4817,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1585,,PhD_Barbara_Koeck
-1114051,acoustic,V9-2L,1586,A69-1303,,4818,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1586,,PhD_Barbara_Koeck
-1114052,acoustic,V9-2L,1587,A69-1303,,4819,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1587,,PhD_Barbara_Koeck
-1114053,acoustic,V9-2L,1588,A69-1303,,4820,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1588,,PhD_Barbara_Koeck
-1114054,acoustic,V9-2L,1589,A69-1303,,4821,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1589,,PhD_Barbara_Koeck
-1114055,acoustic,V9-2L,1590,A69-1303,,4822,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1590,,PhD_Barbara_Koeck
-1114070,acoustic,V9-2L,1605,A69-1303,,4823,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1605,,PhD_Barbara_Koeck
-1114071,acoustic,V9-2L,1606,A69-1303,,4824,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1606,,PhD_Barbara_Koeck
-1114072,acoustic,V9-2L,1607,A69-1303,,4825,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1607,,PhD_Barbara_Koeck
-1114073,acoustic,V9-2L,1608,A69-1303,,4826,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1608,,PhD_Barbara_Koeck
-1114074,acoustic,V9-2L,1609,A69-1303,,4827,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1609,,PhD_Barbara_Koeck
-1114076,acoustic,V9-2L,1611,A69-1303,,4828,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1611,,PhD_Barbara_Koeck
-1114077,acoustic,V9-2L,1612,A69-1303,,4829,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1612,,PhD_Barbara_Koeck
-1114078,acoustic,V9-2L,1613,A69-1303,,4830,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1613,,PhD_Barbara_Koeck
-1114079,acoustic,V9-2L,1614,A69-1303,,4831,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1614,,PhD_Barbara_Koeck
-1114080,acoustic,V9-2L,1615,A69-1303,,4832,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1615,,PhD_Barbara_Koeck
-1114081,acoustic,V9-2L,1616,A69-1303,,4833,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1616,,PhD_Barbara_Koeck
-1114082,acoustic,V9-2L,1617,A69-1303,,4834,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1617,,PhD_Barbara_Koeck
-1114083,acoustic,V9-2L,1618,A69-1303,,4835,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1618,,PhD_Barbara_Koeck
-1114084,acoustic,V9-2L,1619,A69-1303,,4836,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1619,,PhD_Barbara_Koeck
-1114085,acoustic,V9-2L,1620,A69-1303,,4837,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1620,,PhD_Barbara_Koeck
-1114086,acoustic,V9-2L,1621,A69-1303,,4838,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1621,,PhD_Barbara_Koeck
-1114087,acoustic,V9-2L,1622,A69-1303,,4839,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1622,,PhD_Barbara_Koeck
-1114088,acoustic,V9-2L,1623,A69-1303,,4840,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1623,,PhD_Barbara_Koeck
-1114089,acoustic,V9-2L,1624,A69-1303,,4841,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1624,,PhD_Barbara_Koeck
-1114090,acoustic,V9-2L,1625,A69-1303,,4842,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1625,,PhD_Barbara_Koeck
-1114091,acoustic,V9-2L,1626,A69-1303,,4843,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1626,,PhD_Barbara_Koeck
-1114092,acoustic,V9-2L,1627,A69-1303,,4844,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1627,,PhD_Barbara_Koeck
-1114093,acoustic,V9-2L,1628,A69-1303,,4845,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-1628,,PhD_Barbara_Koeck
-1113982,acoustic,V9-2L,15172,A69-1303,,4846,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-15172,,PhD_Barbara_Koeck
-1113996,acoustic,V9-2L,15312,A69-1303,,4847,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-15312,,PhD_Barbara_Koeck
-1096094,acoustic,V9-2L,38915,A69-1303,,4848,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38915,,PhD_Barbara_Koeck
-1096095,acoustic,V9-2L,38916,A69-1303,,4849,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38916,,PhD_Barbara_Koeck
-1096096,acoustic,V9-2L,38917,A69-1303,,4850,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38917,,PhD_Barbara_Koeck
-1096097,acoustic,V9-2L,38918,A69-1303,,4851,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38918,,PhD_Barbara_Koeck
-1096098,acoustic,V9-2L,38919,A69-1303,,4852,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38919,,PhD_Barbara_Koeck
-1096099,acoustic,V9-2L,38920,A69-1303,,4853,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38920,,PhD_Barbara_Koeck
-1096100,acoustic,V9-2L,38921,A69-1303,,4854,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38921,,PhD_Barbara_Koeck
-1096101,acoustic,V9-2L,38922,A69-1303,,4855,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38922,,PhD_Barbara_Koeck
-1096102,acoustic,V9-2L,38923,A69-1303,,4856,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38923,,PhD_Barbara_Koeck
-1096103,acoustic,V9-2L,38924,A69-1303,,4857,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38924,,PhD_Barbara_Koeck
-1096104,acoustic,V8-4L,38925,A69-1303,,4858,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38925,,PhD_Barbara_Koeck
-1096105,acoustic,V8-4L,38926,A69-1303,,4859,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38926,,PhD_Barbara_Koeck
-1096106,acoustic,V8-4L,38927,A69-1303,,4860,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38927,,PhD_Barbara_Koeck
-1096107,acoustic,V8-4L,38928,A69-1303,,4861,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38928,,PhD_Barbara_Koeck
-1096108,acoustic,V8-4L,38929,A69-1303,,4862,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38929,,PhD_Barbara_Koeck
-1096109,acoustic,V8-4L,38930,A69-1303,,4863,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38930,,PhD_Barbara_Koeck
-1096110,acoustic,V8-4L,38931,A69-1303,,4864,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38931,,PhD_Barbara_Koeck
-1096111,acoustic,V8-4L,38932,A69-1303,,4865,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38932,,PhD_Barbara_Koeck
-1096112,acoustic,V8-4L,38933,A69-1303,,4866,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38933,,PhD_Barbara_Koeck
-1096113,acoustic,V8-4L,38934,A69-1303,,4867,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-38934,,PhD_Barbara_Koeck
-1102882,acoustic,V9-2L,40265,A69-1303,,4868,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-40265,,PhD_Barbara_Koeck
-1102891,acoustic,V9-2L,40274,A69-1303,,4869,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1303-40274,,PhD_Barbara_Koeck
-10434890,acoustic,V13TP-1L,12790,A69-1105,,4870,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1105-12790,,PhD_Jeremy_Pastor
-10434900,acoustic,V13TP-1L,12791,A69-1105,,4871,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1105-12791,,PhD_Jeremy_Pastor
-10434910,acoustic,V13TP-1L,12792,A69-1105,,4872,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1105-12792,,PhD_Jeremy_Pastor
-10434920,acoustic,V13TP-1L,12793,A69-1105,,4873,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1105-12793,,PhD_Jeremy_Pastor
-10434930,acoustic,V13TP-1L,12794,A69-1105,,4874,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1105-12794,,PhD_Jeremy_Pastor
-10434940,acoustic,V13TP-1L,12795,A69-1105,,4875,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1105-12795,,PhD_Jeremy_Pastor
-10434960,acoustic,V13TP-1L,12797,A69-1105,,4876,,,,,,,,,,animal,,,,,,,,,,1,,,23,,,,,,,,,,,,,,,,A69-1105-12797,,PhD_Jeremy_Pastor
-1249882,acoustic,V9-2H,43239,A180-1702,,4877,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43239,,PhysFish
-1249890,acoustic,V9-2H,43247,A180-1702,,4878,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43247,,PhysFish
-1249883,acoustic,V9-2H,43240,A180-1702,,4879,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43240,,PhysFish
-1249895,acoustic,V9-2H,43252,A180-1702,,4880,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43252,,PhysFish
-1249885,acoustic,V9-2H,43242,A180-1702,,4881,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43242,,PhysFish
-1249877,acoustic,V9-2H,43232,A180-1702,,4882,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43232,,PhysFish
-1249879,acoustic,V9-2H,43235,A180-1702,,4883,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43235,,PhysFish
-1249881,acoustic,V9-2H,43238,A180-1702,,4884,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43238,,PhysFish
-1249893,acoustic,V9-2H,43250,A180-1702,,4885,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43250,,PhysFish
-1249889,acoustic,V9-2H,43246,A180-1702,,4886,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43246,,PhysFish
-1249888,acoustic,V9-2H,43245,A180-1702,,4887,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43245,,PhysFish
-1249899,acoustic,V9-2H,43256,A180-1702,,4888,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43256,,PhysFish
-1249897,acoustic,V9-2H,43254,A180-1702,,4889,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43254,,PhysFish
-1249898,acoustic,V9-2H,43255,A180-1702,,4890,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43255,,PhysFish
-1249876,acoustic,V9-2H,43231,A180-1702,,4891,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43231,,PhysFish
-1249887,acoustic,V9-2H,43244,A180-1702,,4892,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43244,,PhysFish
-1249891,acoustic,V9-2H,43248,A180-1702,,4893,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43248,,PhysFish
-1249896,acoustic,V9-2H,43253,A180-1702,,4894,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43253,,PhysFish
-1249880,acoustic,V9-2H,43237,A180-1702,,4895,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43237,,PhysFish
-1249878,acoustic,V9-2H,43233,A180-1702,,4896,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43233,,PhysFish
-1249894,acoustic,V9-2H,43251,A180-1702,,4897,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43251,,PhysFish
-1249884,acoustic,V9-2H,43241,A180-1702,,4898,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43241,,PhysFish
-1249886,acoustic,V9-2H,43243,A180-1702,,4899,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43243,,PhysFish
-1249900,acoustic,V9-2H,43257,A180-1702,,4900,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43257,,PhysFish
-1249892,acoustic,V9-2H,43249,A180-1702,,4901,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43249,,PhysFish
-1249903,acoustic,V9-2H,43260,A180-1702,,4902,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43260,,PhysFish
-1249905,acoustic,V9-2H,43262,A180-1702,,4903,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43262,,PhysFish
-1249924,acoustic,V9-2H,43285,A180-1702,,4904,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43285,,PhysFish
-1249917,acoustic,V9-2H,43278,A180-1702,,4905,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43278,,PhysFish
-1249914,acoustic,V9-2H,43275,A180-1702,,4906,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43275,,PhysFish
-1249901,Acoustic,V9-2H,43258,A180-1702,,4907,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43258,,PhysFish
-1249902,Acoustic,V9-2H,43259,A180-1702,,4908,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43259,,PhysFish
-1249903,acoustic,V9-2H,43260,A180-1702,,4902,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43260,,PhysFish
-1249925,Acoustic,V9-2H,43286,A180-1702,,4909,,,,,,,,,,animal,,,,,,,,,,1,,,22,,,,,,,,,,,,,,,,A180-1702-43286,,PhysFish
-1712001,acoustic,T-MP13,1,S256,,3552,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-1,,,,,,,,,,,,,,,S256-1,,Tosenfjorden
-1712003,acoustic,T-MP13,3,S256,,3553,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-3,,,,,,,,,,,,,,,S256-3,,Tosenfjorden
-1712005,acoustic,T-MP13,5,S256,,3554,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-5,,,,,,,,,,,,,,,S256-5,,Tosenfjorden
-1712007,acoustic,T-MP13,7,S256,,3555,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-7,,,,,,,,,,,,,,,S256-7,,Tosenfjorden
-1712009,acoustic,T-MP13,9,S256,,3556,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-9,,,,,,,,,,,,,,,S256-9,,Tosenfjorden
-1712011,acoustic,T-MP13,11,S256,,3557,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-11,,,,,,,,,,,,,,,S256-11,,Tosenfjorden
-1712013,acoustic,T-MP13,13,S256,,3558,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-13,,,,,,,,,,,,,,,S256-13,,Tosenfjorden
-1712015,acoustic,T-MP13,15,S256,,3559,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-15,,,,,,,,,,,,,,,S256-15,,Tosenfjorden
-1712017,acoustic,T-MP13,17,S256,,3560,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-17,,,,,,,,,,,,,,,S256-17,,Tosenfjorden
-1712019,acoustic,T-MP13,19,S256,,3561,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-19,,,,,,,,,,,,,,,S256-19,,Tosenfjorden
-1645120,acoustic,T-MP13,20,S256,,3562,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-20,,,,,,,,,,,,,,,S256-20,,Tosenfjorden
-1712021,acoustic,T-MP13,21,S256,,3563,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-21,,,,,,,,,,,,,,,S256-21,,Tosenfjorden
-1712023,acoustic,T-MP13,23,S256,,3564,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-23,,,,,,,,,,,,,,,S256-23,,Tosenfjorden
-1712025,acoustic,T-MP13,25,S256,,3565,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-25,,,,,,,,,,,,,,,S256-25,,Tosenfjorden
-1712027,acoustic,T-MP13,27,S256,,3566,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-27,,,,,,,,,,,,,,,S256-27,,Tosenfjorden
-1712029,acoustic,T-MP13,29,S256,,3567,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-29,,,,,,,,,,,,,,,S256-29,,Tosenfjorden
-1712031,acoustic,T-MP13,31,S256,,3568,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-31,,,,,,,,,,,,,,,S256-31,,Tosenfjorden
-1712033,acoustic,T-MP13,33,S256,,3569,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-33,,,,,,,,,,,,,,,S256-33,,Tosenfjorden
-1712035,acoustic,T-MP13,35,S256,,3570,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-35,,,,,,,,,,,,,,,S256-35,,Tosenfjorden
-1712037,acoustic,T-MP13,37,S256,,3571,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-37,,,,,,,,,,,,,,,S256-37,,Tosenfjorden
-1712039,acoustic,T-MP13,39,S256,,3353,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-39,,,,,,,,,,,,,,,S256-39,,Tosenfjorden
-1510040,Acoustic,MP-13,40,S256,,3573,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-40,,,,,,,,,,,,,,,S256-40,,Tosenfjorden
-1518041,acoustic,COND-9,41,S256,,3574,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-41,,,,,,,,,,,,,,,S256-41,,Tosenfjorden
-1712043,acoustic,T-MP13,43,S256,,3575,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-43,,,,,,,,,,,,,,,S256-43,,Tosenfjorden
-1712045,acoustic,T-MP13,45,S256,,3576,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-45,,,,,,,,,,,,,,,S256-45,,Tosenfjorden
-1712047,acoustic,T-MP13,47,S256,,3577,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-47,,,,,,,,,,,,,,,S256-47,,Tosenfjorden
-1712049,acoustic,T-MP13,49,S256,,3578,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-49,,,,,,,,,,,,,,,S256-49,,Tosenfjorden
-1712051,acoustic,T-MP13,51,S256,,3579,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-51,,,,,,,,,,,,,,,S256-51,,Tosenfjorden
-1712053,acoustic,T-MP13,53,S256,,3580,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-53,,,,,,,,,,,,,,,S256-53,,Tosenfjorden
-1712055,acoustic,T-MP13,55,S256,,3581,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-55,,,,,,,,,,,,,,,S256-55,,Tosenfjorden
-1712056,Acoustic,T-MP13,56,S256,,3582,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-57,,,,,,,,,,,,,,,S256-56,,Tosenfjorden
-1712057,acoustic,T-MP13,57,S256,,3583,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-57,,,,,,,,,,,,,,,S256-57,,Tosenfjorden
-1645060,acoustic,Cond-MP-9-Long,60,S256,,3584,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-60,,,,,,,,,,,,,,,S256-60,,Tosenfjorden
-1645061,acoustic,Cond-MP-9-Long,61,S256,,3585,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-61,,,,,,,,,,,,,,,S256-61,,Tosenfjorden
-1645062,acoustic,Cond-MP-9-Long,62,S256,,3586,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-62,,,,,,,,,,,,,,,S256-62,,Tosenfjorden
-1645063,acoustic,Cond-MP-9-Long,63,S256,,3587,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-63,,,,,,,,,,,,,,,S256-63,,Tosenfjorden
-1645064,acoustic,Cond-MP-9-Long,64,S256,,3588,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-64,,,,,,,,,,,,,,,S256-64,,Tosenfjorden
-1645065,acoustic,Cond-MP-9-Long,65,S256,,3589,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-65,,,,,,,,,,,,,,,S256-65,,Tosenfjorden
-1645067,acoustic,Cond-MP-9-Long,67,S256,,3590,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-67,,,,,,,,,,,,,,,S256-67,,Tosenfjorden
-1645068,acoustic,Cond-MP-9-Long,68,S256,,3591,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-68,,,,,,,,,,,,,,,S256-68,,Tosenfjorden
-1645069,acoustic,Cond-MP-9-Long,69,S256,,3592,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-69,,,,,,,,,,,,,,,S256-69,,Tosenfjorden
-1645070,acoustic,Cond-MP-9-Long,70,S256,,3593,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-70,,,,,,,,,,,,,,,S256-70,,Tosenfjorden
-1645071,acoustic,Cond-MP-9-Long,71,S256,,3594,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-71,,,,,,,,,,,,,,,S256-71,,Tosenfjorden
-1645072,acoustic,Cond-MP-9-Long,72,S256,,3595,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-72,,,,,,,,,,,,,,,S256-72,,Tosenfjorden
-1645073,acoustic,Cond-MP-9-Long,73,S256,,3596,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-73,,,,,,,,,,,,,,,S256-73,,Tosenfjorden
-1645074,acoustic,Cond-MP-9-Long,74,S256,,3597,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-74,,,,,,,,,,,,,,,S256-74,,Tosenfjorden
-1645075,acoustic,Cond-MP-9-Long,75,S256,,3598,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-75,,,,,,,,,,,,,,,S256-75,,Tosenfjorden
-1645076,acoustic,Cond-MP-9-Long,76,S256,,3599,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-76,,,,,,,,,,,,,,,S256-76,,Tosenfjorden
-1645077,acoustic,Cond-MP-9-Long,77,S256,,3600,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-77,,,,,,,,,,,,,,,S256-77,,Tosenfjorden
-1645078,acoustic,Cond-MP-9-Long,78,S256,,3601,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-78,,,,,,,,,,,,,,,S256-78,,Tosenfjorden
-1645079,acoustic,Cond-MP-9-Long,79,S256,,3602,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-79,,,,,,,,,,,,,,,S256-79,,Tosenfjorden
-1645080,acoustic,Cond-MP-9-Long,80,S256,,3603,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-80,,,,,,,,,,,,,,,S256-80,,Tosenfjorden
-1645081,acoustic,Cond-MP-9-Long,81,S256,,3604,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-81,,,,,,,,,,,,,,,S256-81,,Tosenfjorden
-1645082,acoustic,Cond-MP-9-Long,82,S256,,3605,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-82,,,,,,,,,,,,,,,S256-82,,Tosenfjorden
-1645083,acoustic,Cond-MP-9-Long,83,S256,,3606,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-83,,,,,,,,,,,,,,,S256-83,,Tosenfjorden
-1645084,acoustic,Cond-MP-9-Long,84,S256,,3607,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-84,,,,,,,,,,,,,,,S256-84,,Tosenfjorden
-1645085,acoustic,Cond-MP-9-Long,85,S256,,3608,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-85,,,,,,,,,,,,,,,S256-85,,Tosenfjorden
-1645086,acoustic,Cond-MP-9-Long,86,S256,,3609,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-86,,,,,,,,,,,,,,,S256-86,,Tosenfjorden
-1645087,acoustic,Cond-MP-9-Long,87,S256,,3610,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-87,,,,,,,,,,,,,,,S256-87,,Tosenfjorden
-1645089,acoustic,Cond-MP-9-Long,89,S256,,3611,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-89,,,,,,,,,,,,,,,S256-89,,Tosenfjorden
-1645091,acoustic,Cond-MP-9-Long,91,S256,,3612,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-91,,,,,,,,,,,,,,,S256-91,,Tosenfjorden
-1645092,acoustic,Cond-MP-9-Long,92,S256,,3613,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-92,,,,,,,,,,,,,,,S256-92,,Tosenfjorden
-1645093,acoustic,Cond-MP-9-Long,93,S256,,3614,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-93,,,,,,,,,,,,,,,S256-93,,Tosenfjorden
-1645094,acoustic,Cond-MP-9-Long,94,S256,,3615,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-94,,,,,,,,,,,,,,,S256-94,,Tosenfjorden
-1645095,acoustic,Cond-MP-9-Long,95,S256,,3616,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-95,,,,,,,,,,,,,,,S256-95,,Tosenfjorden
-1645096,acoustic,Cond-MP-9-Long,96,S256,,3617,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-96,,,,,,,,,,,,,,,S256-96,,Tosenfjorden
-1645097,acoustic,Cond-MP-9-Long,97,S256,,3618,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-97,,,,,,,,,,,,,,,S256-97,,Tosenfjorden
-1645098,acoustic,Cond-MP-9-Long,98,S256,,3619,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-98,,,,,,,,,,,,,,,S256-98,,Tosenfjorden
-1645099,acoustic,Cond-MP-9-Long,99,S256,,3620,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-99,,,,,,,,,,,,,,,S256-99,,Tosenfjorden
-1645100,acoustic,Cond-MP-9-Long,100,S256,,3621,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-100,,,,,,,,,,,,,,,S256-100,,Tosenfjorden
-1645101,acoustic,Cond-MP-9-Long,101,S256,,3622,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-101,,,,,,,,,,,,,,,S256-101,,Tosenfjorden
-1634108,acoustic,ADT-LP-13,108,S256,,3506,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-108,,,,,,,,,,,,,,,S256-108,,Tosenfjorden
-1634110,acoustic,ADT-LP-13,110,S256,,3508,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-110,,,,,,,,,,,,,,,S256-110,,Tosenfjorden
-1645112,acoustic,ATT-MP-9-Long,112,S256,,3625,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-112,,,,,,,,,,,,,,,S256-112,,Tosenfjorden
-1645114,acoustic,T-MP13,114,S256,,3626,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-114,,,,,,,,,,,,,,,S256-114,,Tosenfjorden
-1645116,acoustic,ATT-MP-9-Long,116,S256,,3627,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-116,,,,,,,,,,,,,,,S256-116,,Tosenfjorden
-1645118,acoustic,ATT-MP-9-Long,118,S256,,3628,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-118,,,,,,,,,,,,,,,S256-118,,Tosenfjorden
-1645122,acoustic,ATT-MP-9-Long,122,S256,,3629,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-122,,,,,,,,,,,,,,,S256-122,,Tosenfjorden
-1645124,acoustic,ATT-MP-9-Long,124,S256,,3630,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-124,,,,,,,,,,,,,,,S256-124,,Tosenfjorden
-1712125,acoustic,T-MP13,125,S256,,3361,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-125,,,,,,,,,,,,,,,S256-125,,Tosenfjorden
-1712127,acoustic,T-MP13,127,S256,,3362,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-127,,,,,,,,,,,,,,,S256-127,,Tosenfjorden
-1712129,acoustic,T-MP13,129,S256,,3363,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-129,,,,,,,,,,,,,,,S256-129,,Tosenfjorden
-1712131,acoustic,T-MP13,131,S256,,3364,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-131,,,,,,,,,,,,,,,S256-131,,Tosenfjorden
-1712133,acoustic,T-MP13,133,S256,,3365,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-133,,,,,,,,,,,,,,,S256-133,,Tosenfjorden
-1712135,acoustic,T-MP13,135,S256,,3366,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-135,,,,,,,,,,,,,,,S256-135,,Tosenfjorden
-1712137,acoustic,T-MP13,137,S256,,3637,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-137,,,,,,,,,,,,,,,S256-137,,Tosenfjorden
-1712139,acoustic,T-MP13,139,S256,,3638,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-139,,,,,,,,,,,,,,,S256-139,,Tosenfjorden
-1712141,acoustic,T-MP13,141,S256,,3639,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-141,,,,,,,,,,,,,,,S256-141,,Tosenfjorden
-1712143,acoustic,T-MP13,143,S256,,3640,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-143,,,,,,,,,,,,,,,S256-143,,Tosenfjorden
-1712157,acoustic,T-MP9L,157,S256,,3641,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-157,,,,,,,,,,,,,,,S256-157,,Tosenfjorden
-1712159,acoustic,T-MP9L,159,S256,,3642,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-159,,,,,,,,,,,,,,,S256-159,,Tosenfjorden
-1712161,acoustic,T-MP9L,161,S256,,3643,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-161,,,,,,,,,,,,,,,S256-161,,Tosenfjorden
-1712163,acoustic,T-MP9L,163,S256,,3644,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-163,,,,,,,,,,,,,,,S256-163,,Tosenfjorden
-1712165,acoustic,T-MP9L,165,S256,,3645,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-165,,,,,,,,,,,,,,,S256-165,,Tosenfjorden
-1712167,acoustic,T-MP9L,167,S256,,3646,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-167,,,,,,,,,,,,,,,S256-167,,Tosenfjorden
-1712145,acoustic,T-MP13,169,S256,,3647,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-169,,,,,,,,,,,,,,,S256-169,,Tosenfjorden
-1712173,acoustic,T-MP9L,173,S256,,3648,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-173,,,,,,,,,,,,,,,S256-173,,Tosenfjorden
-1712175,acoustic,T-MP9L,175,S256,,3649,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-175,,,,,,,,,,,,,,,S256-175,,Tosenfjorden
-1712177,acoustic,T-MP9L,177,S256,,3650,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-177,,,,,,,,,,,,,,,S256-177,,Tosenfjorden
-1712179,acoustic,T-MP9L,179,S256,,3651,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-179,,,,,,,,,,,,,,,S256-179,,Tosenfjorden
-1712181,acoustic,T-MP9L,181,S256,,3652,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-181,,,,,,,,,,,,,,,S256-181,,Tosenfjorden
-1712183,acoustic,T-MP9L,183,S256,,3653,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-183,,,,,,,,,,,,,,,S256-183,,Tosenfjorden
-1712185,acoustic,T-MP9L,185,S256,,3654,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-185,,,,,,,,,,,,,,,S256-185,,Tosenfjorden
-1612472,acoustic,MP-13,472,R64K,,3655,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-472,,,,,,,,,,,,,,,R64K-472,,Tosenfjorden
-1612473,acoustic,MP-13,473,R64K,,3656,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-473,,,,,,,,,,,,,,,R64K-473,,Tosenfjorden
-1612474,acoustic,MP-13,474,R64K,,3657,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-474,,,,,,,,,,,,,,,R64K-474,,Tosenfjorden
-1612475,acoustic,MP-13,475,R64K,,3658,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-475,,,,,,,,,,,,,,,R64K-475,,Tosenfjorden
-1612476,acoustic,MP-13,476,R64K,,3659,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-476,,,,,,,,,,,,,,,R64K-476,,Tosenfjorden
-1612477,acoustic,MP-13,477,R64K,,3660,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-477,,,,,,,,,,,,,,,R64K-477,,Tosenfjorden
-1612478,acoustic,MP-13,478,R64K,,3661,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-478,,,,,,,,,,,,,,,R64K-478,,Tosenfjorden
-1612479,acoustic,MP-13,479,R64K,,3662,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-479,,,,,,,,,,,,,,,R64K-479,,Tosenfjorden
-1612480,acoustic,MP-13,480,R64K,,3663,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-480,,,,,,,,,,,,,,,R64K-480,,Tosenfjorden
-1612481,acoustic,MP-13,481,R64K,,3664,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-481,,,,,,,,,,,,,,,R64K-481,,Tosenfjorden
-1612482,acoustic,MP-13,482,R64K,,3665,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-482,,,,,,,,,,,,,,,R64K-482,,Tosenfjorden
-1612483,acoustic,MP-13,483,R64K,,3666,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-483,,,,,,,,,,,,,,,R64K-483,,Tosenfjorden
-1612484,acoustic,MP-13,484,R64K,,3667,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-484,,,,,,,,,,,,,,,R64K-484,,Tosenfjorden
-1612485,acoustic,MP-13,485,R64K,,3668,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-485,,,,,,,,,,,,,,,R64K-485,,Tosenfjorden
-1612486,acoustic,MP-13,486,R64K,,3669,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-486,,,,,,,,,,,,,,,R64K-486,,Tosenfjorden
-1612487,acoustic,MP-13,487,R64K,,3670,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-487,,,,,,,,,,,,,,,R64K-487,,Tosenfjorden
-1612488,acoustic,MP-13,488,R64K,,3671,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-488,,,,,,,,,,,,,,,R64K-488,,Tosenfjorden
-1612489,acoustic,MP-13,489,R64K,,3672,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-489,,,,,,,,,,,,,,,R64K-489,,Tosenfjorden
-1612490,acoustic,MP-13,490,R64K,,3673,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-490,,,,,,,,,,,,,,,R64K-490,,Tosenfjorden
-1612491,acoustic,MP-13,491,R64K,,3674,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-491,,,,,,,,,,,,,,,R64K-491,,Tosenfjorden
-1612492,acoustic,MP-13,492,R64K,,3675,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-492,,,,,,,,,,,,,,,R64K-492,,Tosenfjorden
-1612493,acoustic,MP-13,493,R64K,,3676,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-493,,,,,,,,,,,,,,,R64K-493,,Tosenfjorden
-1612494,acoustic,MP-13,494,R64K,,3677,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-494,,,,,,,,,,,,,,,R64K-494,,Tosenfjorden
-1612495,acoustic,MP-13,495,R64K,,3678,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-495,,,,,,,,,,,,,,,R64K-495,,Tosenfjorden
-1612496,acoustic,MP-13,496,R64K,,3679,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-496,,,,,,,,,,,,,,,R64K-496,,Tosenfjorden
-1612497,acoustic,MP-13,497,R64K,,3680,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-497,,,,,,,,,,,,,,,R64K-497,,Tosenfjorden
-1612498,acoustic,MP-13,498,R64K,,3681,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-498,,,,,,,,,,,,,,,R64K-498,,Tosenfjorden
-1612499,acoustic,MP-13,499,R64K,,3682,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-499,,,,,,,,,,,,,,,R64K-499,,Tosenfjorden
-1612500,acoustic,MP-13,500,R64K,,3683,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-500,,,,,,,,,,,,,,,R64K-500,,Tosenfjorden
-1612501,acoustic,MP-13,501,R64K,,3684,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-501,,,,,,,,,,,,,,,R64K-501,,Tosenfjorden
-1612510,acoustic,MP-13,510,R64K,,3685,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-510,,,,,,,,,,,,,,,R64K-510,,Tosenfjorden
-1612511,acoustic,MP-13,511,R64K,,3686,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-511,,,,,,,,,,,,,,,R64K-511,,Tosenfjorden
-1612512,acoustic,MP-13,512,R64K,,3687,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-512,,,,,,,,,,,,,,,R64K-512,,Tosenfjorden
-1612513,acoustic,MP-13,513,R64K,,3688,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-513,,,,,,,,,,,,,,,R64K-513,,Tosenfjorden
-1612514,acoustic,MP-13,514,R64K,,3689,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-514,,,,,,,,,,,,,,,R64K-514,,Tosenfjorden
-1612515,acoustic,MP-13,515,R64K,,3690,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-515,,,,,,,,,,,,,,,R64K-515,,Tosenfjorden
-1612516,acoustic,MP-13,516,R64K,,3691,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-516,,,,,,,,,,,,,,,R64K-516,,Tosenfjorden
-1612517,acoustic,MP-13,517,R64K,,3692,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-517,,,,,,,,,,,,,,,R64K-517,,Tosenfjorden
-1612518,acoustic,MP-13,518,R64K,,3693,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-518,,,,,,,,,,,,,,,R64K-518,,Tosenfjorden
-1612519,acoustic,MP-13,519,R64K,,3694,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-519,,,,,,,,,,,,,,,R64K-519,,Tosenfjorden
-1612520,acoustic,MP-13,520,R64K,,3695,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-520,,,,,,,,,,,,,,,R64K-520,,Tosenfjorden
-1612521,acoustic,MP-13,521,R64K,,3696,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-521,,,,,,,,,,,,,,,R64K-521,,Tosenfjorden
-1612522,acoustic,MP-13,522,R64K,,3697,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-522,,,,,,,,,,,,,,,R64K-522,,Tosenfjorden
-1612523,acoustic,MP-13,523,R64K,,3698,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-523,,,,,,,,,,,,,,,R64K-523,,Tosenfjorden
-1612524,acoustic,MP-13,524,R64K,,3699,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-524,,,,,,,,,,,,,,,R64K-524,,Tosenfjorden
-1612525,acoustic,MP-13,525,R64K,,3700,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-525,,,,,,,,,,,,,,,R64K-525,,Tosenfjorden
-1612526,acoustic,MP-13,526,R64K,,3701,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-526,,,,,,,,,,,,,,,R64K-526,,Tosenfjorden
-1612527,acoustic,MP-13,527,R64K,,3702,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-527,,,,,,,,,,,,,,,R64K-527,,Tosenfjorden
-1612528,acoustic,MP-13,528,R64K,,3703,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-528,,,,,,,,,,,,,,,R64K-528,,Tosenfjorden
-1612529,acoustic,MP-13,529,R64K,,3704,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-529,,,,,,,,,,,,,,,R64K-529,,Tosenfjorden
-1612530,acoustic,MP-13,530,R64K,,3705,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-530,,,,,,,,,,,,,,,R64K-530,,Tosenfjorden
-1612531,acoustic,MP-13,531,R64K,,3706,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-531,,,,,,,,,,,,,,,R64K-531,,Tosenfjorden
-1629568,acoustic,"ATID-LP-7,3-LONG",568,R64K,,3707,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-568,,,,,,,,,,,,,,,R64K-568,,Tosenfjorden
-1629570,acoustic,"ATID-LP-7,3-LONG",570,R64K,,3708,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-570,,,,,,,,,,,,,,,R64K-570,,Tosenfjorden
-1629571,acoustic,"ATID-LP-7,3-LONG",571,R64K,,3709,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-571,,,,,,,,,,,,,,,R64K-571,,Tosenfjorden
-1629572,acoustic,"ATID-LP-7,3-LONG",572,R64K,,3710,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-572,,,,,,,,,,,,,,,R64K-572,,Tosenfjorden
-1629573,acoustic,"ATID-LP-7,3-LONG",573,R64K,,3711,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-573,,,,,,,,,,,,,,,R64K-573,,Tosenfjorden
-1629574,acoustic,"ATID-LP-7,3-LONG",574,R64K,,3712,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-574,,,,,,,,,,,,,,,R64K-574,,Tosenfjorden
-1629575,acoustic,"ATID-LP-7,3-LONG",575,R64K,,3713,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-575,,,,,,,,,,,,,,,R64K-575,,Tosenfjorden
-1629576,acoustic,"ATID-LP-7,3-LONG",576,R64K,,3714,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-576,,,,,,,,,,,,,,,R64K-576,,Tosenfjorden
-1629577,acoustic,"ATID-LP-7,3-LONG",577,R64K,,3715,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-577,,,,,,,,,,,,,,,R64K-577,,Tosenfjorden
-1629578,acoustic,"ATID-LP-7,3-LONG",578,R64K,,3716,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-578,,,,,,,,,,,,,,,R64K-578,,Tosenfjorden
-1629578,acoustic,"ATID-LP-7,3-LONG",579,R64K,,3717,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-579,,,,,,,,,,,,,,,R64K-579,,Tosenfjorden
-1629580,acoustic,"ATID-LP-7,3-LONG",580,R64K,,3718,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-580,,,,,,,,,,,,,,,R64K-580,,Tosenfjorden
-1629581,acoustic,"ATID-LP-7,3-LONG",581,R64K,,3719,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-581,,,,,,,,,,,,,,,R64K-581,,Tosenfjorden
-1629582,acoustic,"ATID-LP-7,3-LONG",582,R64K,,3720,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-582,,,,,,,,,,,,,,,R64K-582,,Tosenfjorden
-1629583,acoustic,"ATID-LP-7,3-LONG",583,R64K,,3721,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-583,,,,,,,,,,,,,,,R64K-583,,Tosenfjorden
-1629584,acoustic,"ATID-LP-7,3-LONG",584,R64K,,3722,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-584,,,,,,,,,,,,,,,R64K-584,,Tosenfjorden
-1613694,acoustic,LP-7.3,694,R64K,,3723,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-694,,,,,,,,,,,,,,,R64K-694,,Tosenfjorden
-1613695,acoustic,LP-7.3,695,R64K,,3724,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-695,,,,,,,,,,,,,,,R64K-695,,Tosenfjorden
-1613696,acoustic,LP-7.3,696,R64K,,3725,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-696,,,,,,,,,,,,,,,R64K-696,,Tosenfjorden
-1613697,acoustic,LP-7.3,697,R64K,,3726,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-697,,,,,,,,,,,,,,,R64K-697,,Tosenfjorden
-1613698,acoustic,LP-7.3,698,R64K,,3727,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-698,,,,,,,,,,,,,,,R64K-698,,Tosenfjorden
-1613699,acoustic,LP-7.3,699,R64K,,3728,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-699,,,,,,,,,,,,,,,R64K-699,,Tosenfjorden
-1613700,acoustic,LP-7.3,700,R64K,,3729,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-700,,,,,,,,,,,,,,,R64K-700,,Tosenfjorden
-1613701,acoustic,LP-7.3,701,R64K,,3730,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-701,,,,,,,,,,,,,,,R64K-701,,Tosenfjorden
-1613702,acoustic,LP-7.3,702,R64K,,3731,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-702,,,,,,,,,,,,,,,R64K-702,,Tosenfjorden
-1613703,acoustic,LP-7.3,703,R64K,,3732,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-703,,,,,,,,,,,,,,,R64K-703,,Tosenfjorden
-1613704,acoustic,LP-7.3,704,R64K,,3733,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-704,,,,,,,,,,,,,,,R64K-704,,Tosenfjorden
-1613705,acoustic,LP-7.3,705,R64K,,3734,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-705,,,,,,,,,,,,,,,R64K-705,,Tosenfjorden
-1613706,acoustic,LP-7.3,706,R64K,,3735,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-706,,,,,,,,,,,,,,,R64K-706,,Tosenfjorden
-1613708,acoustic,LP-7.3,708,R64K,,3736,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-708,,,,,,,,,,,,,,,R64K-708,,Tosenfjorden
-1613709,acoustic,LP-7.3,709,R64K,,3737,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-709,,,,,,,,,,,,,,,R64K-709,,Tosenfjorden
-1613710,acoustic,LP-7.3,710,R64K,,3738,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-710,,,,,,,,,,,,,,,R64K-710,,Tosenfjorden
-1613711,acoustic,LP-7.3,711,R64K,,3739,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-711,,,,,,,,,,,,,,,R64K-711,,Tosenfjorden
-1613712,acoustic,LP-7.3,712,R64K,,3740,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-712,,,,,,,,,,,,,,,R64K-712,,Tosenfjorden
-1613719,acoustic,"ATID-MP-7,3",719,R64K,,3741,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-719,,,,,,,,,,,,,,,R64K-719,,Tosenfjorden
-1613720,acoustic,"ATID-MP-7,3",720,R64K,,3742,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-720,,,,,,,,,,,,,,,R64K-720,,Tosenfjorden
-1613721,acoustic,"ATID-MP-7,3",721,R64K,,3743,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-721,,,,,,,,,,,,,,,R64K-721,,Tosenfjorden
-1613722,acoustic,"ATID-MP-7,3",722,R64K,,3744,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-722,,,,,,,,,,,,,,,R64K-722,,Tosenfjorden
-1613723,acoustic,"ATID-MP-7,3",723,R64K,,3745,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-723,,,,,,,,,,,,,,,R64K-723,,Tosenfjorden
-1613724,acoustic,"ATID-MP-7,3",724,R64K,,3746,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-724,,,,,,,,,,,,,,,R64K-724,,Tosenfjorden
-1613725,acoustic,"ATID-MP-7,3",725,R64K,,3747,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-725,,,,,,,,,,,,,,,R64K-725,,Tosenfjorden
-1613726,acoustic,"ATID-MP-7,3",726,R64K,,3748,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-726,,,,,,,,,,,,,,,R64K-726,,Tosenfjorden
-1613727,acoustic,"ATID-MP-7,3",727,R64K,,3749,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-727,,,,,,,,,,,,,,,R64K-727,,Tosenfjorden
-1613728,acoustic,"ATID-MP-7,3",728,R64K,,3750,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-728,,,,,,,,,,,,,,,R64K-728,,Tosenfjorden
-1613729,acoustic,"ATID-MP-7,3",729,R64K,,3751,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-729,,,,,,,,,,,,,,,R64K-729,,Tosenfjorden
-1613730,acoustic,"ATID-MP-7,3",730,R64K,,3752,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-730,,,,,,,,,,,,,,,R64K-730,,Tosenfjorden
-1613731,acoustic,"ATID-MP-7,3",731,R64K,,3753,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-731,,,,,,,,,,,,,,,R64K-731,,Tosenfjorden
-1613732,acoustic,"ATID-MP-7,3",732,R64K,,3754,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-732,,,,,,,,,,,,,,,R64K-732,,Tosenfjorden
-1613733,acoustic,"ATID-MP-7,3",733,R64K,,3755,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-733,,,,,,,,,,,,,,,R64K-733,,Tosenfjorden
-1613734,acoustic,"ATID-MP-7,3",734,R64K,,3756,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-734,,,,,,,,,,,,,,,R64K-734,,Tosenfjorden
-1613735,acoustic,"ATID-MP-7,3",735,R64K,,3757,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-735,,,,,,,,,,,,,,,R64K-735,,Tosenfjorden
-1613736,acoustic,"ATID-MP-7,3",736,R64K,,3758,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-736,,,,,,,,,,,,,,,R64K-736,,Tosenfjorden
-1613737,acoustic,"ATID-MP-7,3",737,R64K,,3759,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-737,,,,,,,,,,,,,,,R64K-737,,Tosenfjorden
-1613738,acoustic,"ATID-MP-7,3",738,R64K,,3760,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-738,,,,,,,,,,,,,,,R64K-738,,Tosenfjorden
-1613739,acoustic,"ATID-MP-7,3",739,R64K,,3761,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-739,,,,,,,,,,,,,,,R64K-739,,Tosenfjorden
-1613740,acoustic,"ATID-MP-7,3",740,R64K,,3762,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-740,,,,,,,,,,,,,,,R64K-740,,Tosenfjorden
-1613741,acoustic,"ATID-MP-7,3",741,R64K,,3763,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-741,,,,,,,,,,,,,,,R64K-741,,Tosenfjorden
-1613742,acoustic,"ATID-MP-7,3",742,R64K,,3764,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-742,,,,,,,,,,,,,,,R64K-742,,Tosenfjorden
-1613743,acoustic,"ATID-MP-7,3",743,R64K,,3765,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-743,,,,,,,,,,,,,,,R64K-743,,Tosenfjorden
-17123058,acoustic,ID-LP7,3058,R64K,,3766,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3058,,,,,,,,,,,,,,,R64K-3058,,Tosenfjorden
-17123059,acoustic,ID-LP7,3059,R64K,,3767,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3059,,,,,,,,,,,,,,,R64K-3059,,Tosenfjorden
-17123060,acoustic,ID-LP7,3060,R64K,,3768,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3060,,,,,,,,,,,,,,,R64K-3060,,Tosenfjorden
-17123061,acoustic,ID-LP7,3061,R64K,,3769,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3061,,,,,,,,,,,,,,,R64K-3061,,Tosenfjorden
-17123062,acoustic,ID-LP7,3062,R64K,,3770,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3062,,,,,,,,,,,,,,,R64K-3062,,Tosenfjorden
-17123063,acoustic,LP-7.3,3063,R64K,,3771,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3063,,,,,,,,,,,,,,,R64K-3063,,Tosenfjorden
-17123064,acoustic,LP-7.3,3064,R64K,,3772,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3064,,,,,,,,,,,,,,,R64K-3064,,Tosenfjorden
-17123065,acoustic,LP-7.3,3065,R64K,,3773,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3065,,,,,,,,,,,,,,,R64K-3065,,Tosenfjorden
-17123066,acoustic,LP-7.3,3066,R64K,,3774,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3066,,,,,,,,,,,,,,,R64K-3066,,Tosenfjorden
-17123067,acoustic,LP-7.3,3067,R64K,,3775,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-3067,,,,,,,,,,,,,,,R64K-3067,,Tosenfjorden
-141002713,Acoustic,LP-7.3,2713,R64K,,3278,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2713,,,,,,,,,,,,,,,R64K-2713,,OTN-Hemnfjorden
-141002714,Acoustic,LP-7.3,2714,R64K,,3279,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2714,,,,,,,,,,,,,,,R64K-2714,,OTN-Hemnfjorden
-141002715,Acoustic,LP-7.3,2715,R64K,,3280,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2715,,,,,,,,,,,,,,,R64K-2715,,OTN-Hemnfjorden
-141002716,Acoustic,LP-7.3,2716,R64K,,3281,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2716,,,,,,,,,,,,,,,R64K-2716,,OTN-Hemnfjorden
-141002717,Acoustic,LP-7.3,2717,R64K,,3282,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2717,,,,,,,,,,,,,,,R64K-2717,,OTN-Hemnfjorden
-141002718,Acoustic,LP-7.3,2718,R64K,,3283,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2718,,,,,,,,,,,,,,,R64K-2718,,OTN-Hemnfjorden
-141002719,Acoustic,LP-7.3,2719,R64K,,3284,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2719,,,,,,,,,,,,,,,R64K-2719,,OTN-Hemnfjorden
-141002720,Acoustic,LP-7.3,2720,R64K,,3285,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2720,,,,,,,,,,,,,,,R64K-2720,,OTN-Hemnfjorden
-141002721,Acoustic,LP-7.3,2721,R64K,,3286,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2721,,,,,,,,,,,,,,,R64K-2721,,OTN-Hemnfjorden
-141002722,Acoustic,LP-7.3,2722,R64K,,3287,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2722,,,,,,,,,,,,,,,R64K-2722,,OTN-Hemnfjorden
-141002723,Acoustic,LP-7.3,2723,R64K,,3288,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2723,,,,,,,,,,,,,,,R64K-2723,,OTN-Hemnfjorden
-141002724,Acoustic,LP-7.3,2724,R64K,,3289,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2724,,,,,,,,,,,,,,,R64K-2724,,OTN-Hemnfjorden
-141002725,Acoustic,LP-7.3,2725,R64K,,3290,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2725,,,,,,,,,,,,,,,R64K-2725,,OTN-Hemnfjorden
-141002726,Acoustic,LP-7.3,2726,R64K,,3291,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2726,,,,,,,,,,,,,,,R64K-2726,,OTN-Hemnfjorden
-141002729,Acoustic,LP-7.3,2729,R64K,,3292,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2729,,,,,,,,,,,,,,,R64K-2729,,OTN-Hemnfjorden
-141002730,Acoustic,LP-7.3,2730,R64K,,3293,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2730,,,,,,,,,,,,,,,R64K-2730,,OTN-Hemnfjorden
-141002732,Acoustic,LP-7.3,2732,R64K,,3294,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2732,,,,,,,,,,,,,,,R64K-2732,,OTN-Hemnfjorden
-141002733,Acoustic,LP-7.3,2733,R64K,,3295,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2733,,,,,,,,,,,,,,,R64K-2733,,OTN-Hemnfjorden
-141002734,Acoustic,LP-7.3,2734,R64K,,3296,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2734,,,,,,,,,,,,,,,R64K-2734,,OTN-Hemnfjorden
-141002735,Acoustic,LP-7.3,2735,R64K,,3297,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2735,,,,,,,,,,,,,,,R64K-2735,,OTN-Hemnfjorden
-141002727,Acoustic,LP-7.3,2727,R64K,,3298,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2727,,,,,,,,,,,,,,,R64K-2727,,OTN-Hemnfjorden
-141002728,Acoustic,LP-7.3,2728,R64K,,3299,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2728,,,,,,,,,,,,,,,R64K-2728,,OTN-Hemnfjorden
-141002731,Acoustic,LP-7.3,2731,R64K,,3300,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2731,,,,,,,,,,,,,,,R64K-2731,,OTN-Hemnfjorden
-141002736,Acoustic,LP-7.3,2736,R64K,,3301,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2736,,,,,,,,,,,,,,,R64K-2736,,OTN-Hemnfjorden
-141002737,Acoustic,LP-7.3,2737,R64K,,3302,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2737,,,,,,,,,,,,,,,R64K-2737,,OTN-Hemnfjorden
-141002739,Acoustic,LP-7.3,2739,R64K,,3303,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2739,,,,,,,,,,,,,,,R64K-2739,,OTN-Hemnfjorden
-141002740,Acoustic,LP-7.3,2740,R64K,,3304,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2740,,,,,,,,,,,,,,,R64K-2740,,OTN-Hemnfjorden
-141002741,Acoustic,LP-7.3,2741,R64K,,3305,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2741,,,,,,,,,,,,,,,R64K-2741,,OTN-Hemnfjorden
-141002742,Acoustic,LP-7.3,2742,R64K,,3306,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2742,,,,,,,,,,,,,,,R64K-2742,,OTN-Hemnfjorden
-141002743,Acoustic,LP-7.3,2743,R64K,,3307,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2743,,,,,,,,,,,,,,,R64K-2743,,OTN-Hemnfjorden
-141002744,Acoustic,LP-7.3,2744,R64K,,3308,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2744,,,,,,,,,,,,,,,R64K-2744,,OTN-Hemnfjorden
-141002746,Acoustic,LP-7.3,2746,R64K,,3309,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2746,,,,,,,,,,,,,,,R64K-2746,,OTN-Hemnfjorden
-141002747,Acoustic,LP-7.3,2747,R64K,,3310,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2747,,,,,,,,,,,,,,,R64K-2747,,OTN-Hemnfjorden
-141002748,Acoustic,LP-7.3,2748,R64K,,3311,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2748,,,,,,,,,,,,,,,R64K-2748,,OTN-Hemnfjorden
-141002738,Acoustic,LP-7.3,2738,R64K,,3312,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2738,,,,,,,,,,,,,,,R64K-2738,,OTN-Hemnfjorden
-141002745,Acoustic,LP-7.3,2745,R64K,,3313,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2745,,,,,,,,,,,,,,,R64K-2745,,OTN-Hemnfjorden
-141002749,Acoustic,LP-7.3,2749,R64K,,3314,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2749,,,,,,,,,,,,,,,R64K-2749,,OTN-Hemnfjorden
-141002750,Acoustic,LP-7.3,2750,R64K,,3315,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2750,,,,,,,,,,,,,,,R64K-2750,,OTN-Hemnfjorden
-141002751,Acoustic,LP-7.3,2751,R64K,,3316,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2751,,,,,,,,,,,,,,,R64K-2751,,OTN-Hemnfjorden
-141002752,Acoustic,LP-7.3,2752,R64K,,3317,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2752,,,,,,,,,,,,,,,R64K-2752,,OTN-Hemnfjorden
-141002934,Acoustic,LP-7.3,2934,R64K,,3318,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2934,,,,,,,,,,,,,,,R64K-2934,,OTN-Hemnfjorden
-141002935,Acoustic,LP-7.3,2935,R64K,,3319,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2935,,,,,,,,,,,,,,,R64K-2935,,OTN-Hemnfjorden
-141002937,Acoustic,LP-7.3,2937,R64K,,3320,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2937,,,,,,,,,,,,,,,R64K-2937,,OTN-Hemnfjorden
-141002938,Acoustic,LP-7.3,2938,R64K,,3321,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2938,,,,,,,,,,,,,,,R64K-2938,,OTN-Hemnfjorden
-141002939,Acoustic,LP-7.3,2939,R64K,,3322,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2939,,,,,,,,,,,,,,,R64K-2939,,OTN-Hemnfjorden
-141002940,Acoustic,LP-7.3,2940,R64K,,3323,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2940,,,,,,,,,,,,,,,R64K-2940,,OTN-Hemnfjorden
-141002941,Acoustic,LP-7.3,2941,R64K,,3324,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2941,,,,,,,,,,,,,,,R64K-2941,,OTN-Hemnfjorden
-141002942,Acoustic,LP-7.3,2942,R64K,,3325,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2942,,,,,,,,,,,,,,,R64K-2942,,OTN-Hemnfjorden
-141002943,Acoustic,LP-7.3,2943,R64K,,3326,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2943,,,,,,,,,,,,,,,R64K-2943,,OTN-Hemnfjorden
-141002936,Acoustic,LP-7.3,2936,R64K,,3327,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1303-2936,,,,,,,,,,,,,,,R64K-2936,,OTN-Hemnfjorden
-1712001,acoustic,T-MP13,1,S256,,3552,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-1,,,,,,,,,,,,,,,S256-1,,Skjerstadfjorden
-1712003,acoustic,T-MP13,3,S256,,3553,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-3,,,,,,,,,,,,,,,S256-3,,Skjerstadfjorden
-1712005,acoustic,T-MP13,5,S256,,3554,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-5,,,,,,,,,,,,,,,S256-5,,Skjerstadfjorden
-1712007,acoustic,T-MP13,7,S256,,3555,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-7,,,,,,,,,,,,,,,S256-7,,Skjerstadfjorden
-1712009,acoustic,T-MP13,9,S256,,3556,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-9,,,,,,,,,,,,,,,S256-9,,Skjerstadfjorden
-1712011,acoustic,T-MP13,11,S256,,3557,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-11,,,,,,,,,,,,,,,S256-11,,Skjerstadfjorden
-1712013,acoustic,T-MP13,13,S256,,3558,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-13,,,,,,,,,,,,,,,S256-13,,Skjerstadfjorden
-1712015,acoustic,T-MP13,15,S256,,3559,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-15,,,,,,,,,,,,,,,S256-15,,Skjerstadfjorden
-1712017,acoustic,T-MP13,17,S256,,3560,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-17,,,,,,,,,,,,,,,S256-17,,Skjerstadfjorden
-1712019,acoustic,T-MP13,19,S256,,3561,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-19,,,,,,,,,,,,,,,S256-19,,Skjerstadfjorden
-1712021,acoustic,T-MP13,21,S256,,3563,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-21,,,,,,,,,,,,,,,S256-21,,Skjerstadfjorden
-1712023,acoustic,T-MP13,23,S256,,3564,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-23,,,,,,,,,,,,,,,S256-23,,Skjerstadfjorden
-1712025,acoustic,T-MP13,25,S256,,3565,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-25,,,,,,,,,,,,,,,S256-25,,Skjerstadfjorden
-1712027,acoustic,T-MP13,27,S256,,3566,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-27,,,,,,,,,,,,,,,S256-27,,Skjerstadfjorden
-1712029,acoustic,T-MP13,29,S256,,3567,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-29,,,,,,,,,,,,,,,S256-29,,Skjerstadfjorden
-1712031,acoustic,T-MP13,31,S256,,3568,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-31,,,,,,,,,,,,,,,S256-31,,Skjerstadfjorden
-1712033,acoustic,T-MP13,33,S256,,3569,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-33,,,,,,,,,,,,,,,S256-33,,Skjerstadfjorden
-1712035,acoustic,T-MP13,35,S256,,3570,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-35,,,,,,,,,,,,,,,S256-35,,Skjerstadfjorden
-1712037,acoustic,T-MP13,37,S256,,3571,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-37,,,,,,,,,,,,,,,S256-37,,Skjerstadfjorden
-1712039,acoustic,T-MP13,39,S256,,3353,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-39,,,,,,,,,,,,,,,S256-39,,Skjerstadfjorden
-1712041,acoustic,T-MP13,41,S256,,3354,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-41,,,,,,,,,,,,,,,S256-41,,Skjerstadfjorden
-1712043,acoustic,T-MP13,43,S256,,3575,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-43,,,,,,,,,,,,,,,S256-43,,Skjerstadfjorden
-1712045,acoustic,T-MP13,45,S256,,3576,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-45,,,,,,,,,,,,,,,S256-45,,Skjerstadfjorden
-1712047,acoustic,T-MP13,47,S256,,3577,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-47,,,,,,,,,,,,,,,S256-47,,Skjerstadfjorden
-1712049,acoustic,T-MP13,49,S256,,3578,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-49,,,,,,,,,,,,,,,S256-49,,Skjerstadfjorden
-1712051,acoustic,T-MP13,51,S256,,3579,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-51,,,,,,,,,,,,,,,S256-51,,Skjerstadfjorden
-1712053,acoustic,T-MP13,53,S256,,3580,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-53,,,,,,,,,,,,,,,S256-53,,Skjerstadfjorden
-1712125,acoustic,T-MP13,125,S256,,3361,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-125,,,,,,,,,,,,,,,S256-125,,Skjerstadfjorden
-1712127,acoustic,T-MP13,127,S256,,3362,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-127,,,,,,,,,,,,,,,S256-127,,Skjerstadfjorden
-1712129,acoustic,T-MP13,129,S256,,3363,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-129,,,,,,,,,,,,,,,S256-129,,Skjerstadfjorden
-1712131,acoustic,T-MP13,131,S256,,3364,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-131,,,,,,,,,,,,,,,S256-131,,Skjerstadfjorden
-1712133,acoustic,T-MP13,133,S256,,3365,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-133,,,,,,,,,,,,,,,S256-133,,Skjerstadfjorden
-1712135,acoustic,T-MP13,135,S256,,3366,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-135,,,,,,,,,,,,,,,S256-135,,Skjerstadfjorden
-1712145,acoustic,T-MP13,145,S256,,3367,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-145,,,,,,,,,,,,,,,S256-145,,Skjerstadfjorden
-1712149,acoustic,T-MP13,149,S256,,3368,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-149,,,,,,,,,,,,,,,S256-149,,Skjerstadfjorden
-1712155,acoustic,T-MP13,155,S256,,3369,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-155,,,,,,,,,,,,,,,S256-155,,Skjerstadfjorden
-1712167,acoustic,T-MP9L,167,S256,,3646,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-167,,,,,,,,,,,,,,,S256-167,,Skjerstadfjorden
-1712169,acoustic,T-MP13,169,S256,,3371,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-169,,,,,,,,,,,,,,,S256-169,,Skjerstadfjorden
-1712171,acoustic,T-MP13,171,S256,,3372,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-171,,,,,,,,,,,,,,,S256-171,,Skjerstadfjorden
-1712173,acoustic,T-MP9L,173,S256,,3648,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-173,,,,,,,,,,,,,,,S256-173,,Skjerstadfjorden
-1712175,acoustic,T-MP9L,175,S256,,3649,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-175,,,,,,,,,,,,,,,S256-175,,Skjerstadfjorden
-1712177,acoustic,T-MP9L,177,S256,,3650,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-177,,,,,,,,,,,,,,,S256-177,,Skjerstadfjorden
-1712179,acoustic,T-MP9L,179,S256,,3651,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-179,,,,,,,,,,,,,,,S256-179,,Skjerstadfjorden
-1712181,acoustic,T-MP9L,181,S256,,3652,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-181,,,,,,,,,,,,,,,S256-181,,Skjerstadfjorden
-1712183,acoustic,T-MP9L,183,S256,,3653,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-183,,,,,,,,,,,,,,,S256-183,,Skjerstadfjorden
-1712189,acoustic,T-MP13,189,S256,,3379,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-189,,,,,,,,,,,,,,,S256-189,,Skjerstadfjorden
-1712191,acoustic,T-MP13,191,S256,,3380,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-191,,,,,,,,,,,,,,,S256-191,,Skjerstadfjorden
-1712239,acoustic,T-MP13,239,S256,,3381,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-239,,,,,,,,,,,,,,,S256-239,,Skjerstadfjorden
-1634071,Acoustic,ADT-LP-13,71,S256,,3469,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-071,,,,,,,,,,,,,,,S256-71,,Skjerstadfjorden
-1634072,Acoustic,ADT-LP-13,72,S256,,3470,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-072,,,,,,,,,,,,,,,S256-72,,Skjerstadfjorden
-1634073,Acoustic,ADT-LP-13,73,S256,,3471,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-073,,,,,,,,,,,,,,,S256-73,,Skjerstadfjorden
-1634074,Acoustic,ADT-LP-13,74,S256,,3472,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-074,,,,,,,,,,,,,,,S256-74,,Skjerstadfjorden
-1634075,Acoustic,ADT-LP-13,75,S256,,3473,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-075,,,,,,,,,,,,,,,S256-75,,Skjerstadfjorden
-1634076,Acoustic,ADT-LP-13,76,S256,,3474,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-076,,,,,,,,,,,,,,,S256-76,,Skjerstadfjorden
-1634077,Acoustic,ADT-LP-13,77,S256,,3475,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-077,,,,,,,,,,,,,,,S256-77,,Skjerstadfjorden
-1634078,Acoustic,ADT-LP-13,78,S256,,3476,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-078,,,,,,,,,,,,,,,S256-78,,Skjerstadfjorden
-1634079,Acoustic,ADT-LP-13,79,S256,,3477,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-079,,,,,,,,,,,,,,,S256-79,,Skjerstadfjorden
-1634080,Acoustic,ADT-LP-13,80,S256,,3478,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-080,,,,,,,,,,,,,,,S256-80,,Skjerstadfjorden
-1634081,Acoustic,ADT-LP-13,81,S256,,3479,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-081,,,,,,,,,,,,,,,S256-81,,Skjerstadfjorden
-1634082,Acoustic,ADT-LP-13,82,S256,,3480,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-082,,,,,,,,,,,,,,,S256-82,,Skjerstadfjorden
-1634083,Acoustic,ADT-LP-13,83,S256,,3481,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-083,,,,,,,,,,,,,,,S256-83,,Skjerstadfjorden
-1634084,Acoustic,ADT-LP-13,84,S256,,3482,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-084,,,,,,,,,,,,,,,S256-84,,Skjerstadfjorden
-1634085,Acoustic,ADT-LP-13,85,S256,,3483,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-085,,,,,,,,,,,,,,,S256-85,,Skjerstadfjorden
-1634086,Acoustic,ADT-LP-13,86,S256,,3484,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-086,,,,,,,,,,,,,,,S256-86,,Skjerstadfjorden
-1634087,Acoustic,ADT-LP-13,87,S256,,3485,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-087,,,,,,,,,,,,,,,S256-87,,Skjerstadfjorden
-1634088,Acoustic,ADT-LP-13,88,S256,,4910,,,,,,,,,,animal,,,,,,,,,,2,,,21,,,,,,,,,,,,,,,,S256-88,,Skjerstadfjorden
-1634089,Acoustic,ADT-LP-13,89,S256,,3487,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-089,,,,,,,,,,,,,,,S256-89,,Skjerstadfjorden
-1634090,acoustic,ADT-LP-13,90,S256,,3488,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-90,,,,,,,,,,,,,,,S256-90,,Skjerstadfjorden
-1634091,acoustic,ADT-LP-13,91,S256,,3489,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-91,,,,,,,,,,,,,,,S256-91,,Skjerstadfjorden
-1634092,acoustic,ADT-LP-13,92,S256,,3490,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-92,,,,,,,,,,,,,,,S256-92,,Skjerstadfjorden
-1634093,acoustic,ADT-LP-13,93,S256,,3491,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-93,,,,,,,,,,,,,,,S256-93,,Skjerstadfjorden
-1634094,acoustic,ADT-LP-13,94,S256,,3492,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-94,,,,,,,,,,,,,,,S256-94,,Skjerstadfjorden
-1634095,acoustic,ADT-LP-13,95,S256,,3493,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-95,,,,,,,,,,,,,,,S256-95,,Skjerstadfjorden
-1634096,acoustic,ADT-LP-13,96,S256,,3494,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-96,,,,,,,,,,,,,,,S256-96,,Skjerstadfjorden
-1634097,acoustic,ADT-LP-13,97,S256,,3495,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-97,,,,,,,,,,,,,,,S256-97,,Skjerstadfjorden
-1634098,acoustic,ADT-LP-13,98,S256,,3496,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-98,,,,,,,,,,,,,,,S256-98,,Skjerstadfjorden
-1634099,acoustic,ADT-LP-13,99,S256,,3497,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-99,,,,,,,,,,,,,,,S256-99,,Skjerstadfjorden
-1634100,acoustic,ADT-LP-13,100,S256,,3498,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-100,,,,,,,,,,,,,,,S256-100,,Skjerstadfjorden
-1634101,acoustic,ADT-LP-13,101,S256,,3499,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-101,,,,,,,,,,,,,,,S256-101,,Skjerstadfjorden
-1634102,acoustic,ADT-LP-13,102,S256,,3500,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-102,,,,,,,,,,,,,,,S256-102,,Skjerstadfjorden
-1634103,acoustic,ADT-LP-13,103,S256,,3501,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-103,,,,,,,,,,,,,,,S256-103,,Skjerstadfjorden
-1634104,acoustic,ADT-LP-13,104,S256,,3502,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-104,,,,,,,,,,,,,,,S256-104,,Skjerstadfjorden
-1634105,acoustic,ADT-LP-13,105,S256,,3503,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-105,,,,,,,,,,,,,,,S256-105,,Skjerstadfjorden
-1634106,acoustic,ADT-LP-13,106,S256,,3504,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-106,,,,,,,,,,,,,,,S256-106,,Skjerstadfjorden
-1634107,acoustic,ADT-LP-13,107,S256,,3505,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-107,,,,,,,,,,,,,,,S256-107,,Skjerstadfjorden
-1634108,acoustic,ADT-LP-13,108,S256,,3506,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-108,,,,,,,,,,,,,,,S256-108,,Skjerstadfjorden
-1634109,acoustic,ADT-LP-13,109,S256,,3507,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-109,,,,,,,,,,,,,,,S256-109,,Skjerstadfjorden
-1634110,acoustic,ADT-LP-13,110,S256,,3508,,,,,,,,,,animal,,,,,,,,,,2,,,21,A69-1105-110,,,,,,,,,,,,,,,S256-110,,Skjerstadfjorden
-1105816,Acoustic,V13-1x,283,A69-1601,,4716,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-283,,Artevigo
-1105817,Acoustic,V13-1x,284,A69-1601,,4717,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-284,,Artevigo
-1105818,Acoustic,V13-1x,285,A69-1601,,4718,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-285,,Artevigo
-1105819,Acoustic,V13-1x,286,A69-1601,,4719,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-286,,Artevigo
-1105820,Acoustic,V13-1x,287,A69-1601,,4720,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-287,,Artevigo
-1105821,Acoustic,V13-1x,288,A69-1601,,4721,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-288,,Artevigo
-1105822,Acoustic,V13-1x,289,A69-1601,,4722,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-289,,Artevigo
-1105823,Acoustic,V13-1x,290,A69-1601,,4723,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-290,,Artevigo
-1105824,Acoustic,V13-1x,291,A69-1601,,4724,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-291,,Artevigo
-1105825,Acoustic,V13-1x,292,A69-1601,,4725,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-292,,Artevigo
-1105826,Acoustic,V13-1x,293,A69-1601,,4726,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-293,,Artevigo
-1105827,Acoustic,V13-1x,294,A69-1601,,4727,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-294,,Artevigo
-1105828,Acoustic,V13-1x,295,A69-1601,,4728,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-295,,Artevigo
-1105829,Acoustic,V13-1x,296,A69-1601,,4729,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-296,,Artevigo
-1105830,Acoustic,V13-1x,297,A69-1601,,4730,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-297,,Artevigo
-1105831,Acoustic,V13-1x,298,A69-1601,,4731,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-298,,Artevigo
-1105832,Acoustic,V13-1x,299,A69-1601,,4732,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-299,,Artevigo
-1105833,Acoustic,V13-1x,300,A69-1601,,4733,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-300,,Artevigo
-1105835,Acoustic,V13-1x,302,A69-1601,,4734,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-302,,Artevigo
-1105836,Acoustic,V9-2x,303,A69-1601,,4735,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-303,,Artevigo
-1105837,Acoustic,V9-2x,304,A69-1601,,4736,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-304,,Artevigo
-1105838,Acoustic,V9-2x,305,A69-1601,,4737,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-305,,Artevigo
-1105839,Acoustic,V9-2x,306,A69-1601,,4738,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-306,,Artevigo
-1112324,Acoustic,V13-1x,429,A69-1601,,4739,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-429,,Artevigo
-1112327,Acoustic,V13-1x,432,A69-1601,,4740,,,,,,,,,,animal,,,,,,,,,,1,,,24,,,,,,,,,,,,,,,,A69-1601-432,,Artevigo
-1053587,acoustic,V9P-1x-069k-1-100m,116,A69-1105,,4959,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-116,,ARAISOLA02
-1053588,acoustic,V9P-1x-069k-1-100m,117,A69-1105,,4960,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-117,,ARAISOLA02
-1053589,acoustic,V9P-1x-069k-1-100m,118,A69-1105,,4961,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-118,,ARAISOLA02
-1053590,acoustic,V9P-1x-069k-1-100m,119,A69-1105,,4962,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-119,,ARAISOLA02
-1053591,acoustic,V9P-1x-069k-1-100m,120,A69-1105,,4963,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-120,,ARAISOLA02
-1053592,acoustic,V9P-1x-069k-1-100m,121,A69-1105,,4964,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-121,,ARAISOLA02
-1053593,acoustic,V9P-1x-069k-1-100m,122,A69-1105,,4965,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-122,,ARAISOLA02
-1053594,acoustic,V9P-1x-069k-1-100m,123,A69-1105,,4966,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-123,,ARAISOLA02
-1053595,acoustic,V9P-1x-069k-1-100m,124,A69-1105,,4967,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-124,,ARAISOLA02
-1053596,acoustic,V9P-1x-069k-1-100m,125,A69-1105,,4968,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-125,,ARAISOLA02
-1212913,acoustic,V9P-2x-069k-1-0068m,137,A69-1105,,5021,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-137,,ARAISOLA03
-1212914,acoustic,V9P-2x-069k-1-0068m,138,A69-1105,,5022,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-138,,ARAISOLA03
-1212915,acoustic,V9P-2x-069k-1-0068m,139,A69-1105,,5023,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-139,,ARAISOLA03
-1212916,acoustic,V9P-2x-069k-1-0068m,140,A69-1105,,5024,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-140,,ARAISOLA03
-1212917,acoustic,V9P-2x-069k-1-0068m,141,A69-1105,,5025,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-141,,ARAISOLA03
-1212918,acoustic,V9P-2x-069k-1-0068m,142,A69-1105,,5026,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-142,,ARAISOLA03
-1212919,acoustic,V9P-2x-069k-1-0068m,143,A69-1105,,5027,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-143,,ARAISOLA03
-1212920,acoustic,V9P-2x-069k-1-0068m,144,A69-1105,,5028,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-144,,ARAISOLA03
-1212921,acoustic,V9P-2x-069k-1-0068m,145,A69-1105,,5029,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-145,,ARAISOLA03
-0000,Acoustic,V9,11,A69-1008,,5115,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1008-11,,SARTELARAM
-0000,Acoustic,V9,13,A69-1008,,5116,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1008-13,,SARTELARAM
-0000,Acoustic,V9,14,A69-1008,,5117,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1008-14,,SARTELARAM
-0000,Acoustic,V9,16,A69-1008,,5118,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1008-16,,SARTELARAM
-1104178,acoustic,V9-2x-069k-1,40931,A69-1303,,4969,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40931,,SARTELTG
-1104183,acoustic,V9-2x-069k-1,40936,A69-1303,,4974,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40936,,SARTELTG
-1104188,acoustic,V9-2x-069k-1,40941,A69-1303,,4979,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40941,,SARTELTG
-1104179,acoustic,V9-2x-069k-1,40932,A69-1303,,4970,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40932,,SARTELTG
-1104180,acoustic,V9-2x-069k-1,40933,A69-1303,,4971,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40933,,SARTELTG
-1104181,acoustic,V9-2x-069k-1,40934,A69-1303,,4972,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40934,,SARTELTG
-1104182,acoustic,V9-2x-069k-1,40935,A69-1303,,4973,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40935,,SARTELTG
-1104184,acoustic,V9-2x-069k-1,40937,A69-1303,,4975,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40937,,SARTELTG
-1104185,acoustic,V9-2x-069k-1,40938,A69-1303,,4976,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40938,,SARTELTG
-1104186,acoustic,V9-2x-069k-1,40939,A69-1303,,4977,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40939,,SARTELTG
-1104187,acoustic,V9-2x-069k-1,40940,A69-1303,,4978,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-40940,,SARTELTG
-1078134,acoustic,V9-2x-069k-1,60618,A69-1303,,4980,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60618,,SARTELTG
-1078135,acoustic,V9-2x-069k-1,60619,A69-1303,,4981,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60619,,SARTELTG
-1078136,acoustic,V9-2x-069k-1,60620,A69-1303,,4982,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60620,,SARTELTG
-1078137,acoustic,V9-2x-069k-1,60621,A69-1303,,4983,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60621,,SARTELTG
-1078138,acoustic,V9-2x-069k-1,60622,A69-1303,,4984,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60622,,SARTELTG
-1078139,acoustic,V9-2x-069k-1,60623,A69-1303,,4985,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60623,,SARTELTG
-1078140,acoustic,V9-2x-069k-1,60624,A69-1303,,4986,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60624,,SARTELTG
-1078141,acoustic,V9-2x-069k-1,60625,A69-1303,,4987,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60625,,SARTELTG
-1078142,acoustic,V9-2x-069k-1,60626,A69-1303,,4988,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60626,,SARTELTG
-1078143,acoustic,V9-2x-069k-1,60627,A69-1303,,4989,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60627,,SARTELTG
-1078144,acoustic,V9-2x-069k-1,60628,A69-1303,,4990,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60628,,SARTELTG
-1078145,acoustic,V9-2x-069k-1,60629,A69-1303,,4991,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1303-60629,,SARTELTG
-1078147,acoustic,V9P-1x-069k-1-100m,229,A69-1105,,4993,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-229,,SARTELZINGARO
-1078148,acoustic,V9P-1x-069k-1-100m,230,A69-1105,,4994,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-230,,SARTELZINGARO
-1078149,acoustic,V9P-1x-069k-1-100m,231,A69-1105,,4995,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-231,,SARTELZINGARO
-1078157,acoustic,V9P-1x-069k-1-100m,239,A69-1105,,5003,,,,,,,,,,animal,,,,,,,,,,1,,,15,,,,,,,,,,,,,,,,A69-1105-239,,SARTELZINGARO
-1189960,acoustic,V9-2x,17238,A69-1601,Saulius Stakenas,5196,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17238,,SEMP
-1189967,acoustic,V9-2x,17245,A69-1601,Saulius Stakenas,5203,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17245,,SEMP
-1189965,acoustic,V9-2x,17243,A69-1601,Saulius Stakenas,5201,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17243,,SEMP
-1189966,acoustic,V9-2x,17244,A69-1601,Saulius Stakenas,5202,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17244,,SEMP
-1192853,acoustic,V9-2x,3765,A69-1601,Saulius Stakenas,5156,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-3765,,SEMP
-1189964,acoustic,V9-2x,17242,A69-1601,Saulius Stakenas,5200,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17242,,SEMP
-1189961,acoustic,V9-2x,17239,A69-1601,Saulius Stakenas,5197,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17239,,SEMP
-1192855,acoustic,V9-2x,3767,A69-1601,Saulius Stakenas,5158,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-3767,,SEMP
-1189977,acoustic,V13-1x,17279,A69-1601,Saulius Stakenas,5174,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17279,,SEMP
-1189963,acoustic,V9-2x,17241,A69-1601,Saulius Stakenas,5199,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17241,,SEMP
-1192877,acoustic,V13-1x,18209,A69-1601,Saulius Stakenas,5138,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18209,,SEMP
-1192874,acoustic,V13-1x,18206,A69-1601,Saulius Stakenas,5135,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18206,,SEMP
-1192867,acoustic,V13-1x,17477,A69-1601,Saulius Stakenas,5150,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17477,,SEMP
-1192873,acoustic,V13-1x,18205,A69-1601,Saulius Stakenas,5134,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18205,,SEMP
-1189987,acoustic,V13-1x,17289,A69-1601,Saulius Stakenas,5184,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17289,,SEMP
-1192875,acoustic,V13-1x,18207,A69-1601,Saulius Stakenas,5136,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18207,,SEMP
-1189982,acoustic,V13-1x,17284,A69-1601,Saulius Stakenas,5179,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17284,,SEMP
-1189983,acoustic,V13-1x,17285,A69-1601,Saulius Stakenas,5180,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17285,,SEMP
-1189978,acoustic,V13-1x,17280,A69-1601,Saulius Stakenas,5175,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17280,,SEMP
-1189981,acoustic,V13-1x,17283,A69-1601,Saulius Stakenas,5178,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17283,,SEMP
-1189979,acoustic,V13-1x,17281,A69-1601,Saulius Stakenas,5176,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17281,,SEMP
-1189984,acoustic,V13-1x,17286,A69-1601,Saulius Stakenas,5181,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17286,,SEMP
-1189973,acoustic,V13-1x,17275,A69-1601,Saulius Stakenas,5170,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17275,,SEMP
-1192869,acoustic,V13-1x,17479,A69-1601,Saulius Stakenas,5152,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17479,,SEMP
-1189991,acoustic,V13-1x,17293,A69-1601,Saulius Stakenas,5188,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17293,,SEMP
-1189976,acoustic,V13-1x,17278,A69-1601,Saulius Stakenas,5173,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17278,,SEMP
-1189986,acoustic,V13-1x,17288,A69-1601,Saulius Stakenas,5183,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17288,,SEMP
-1189980,acoustic,V13-1x,17282,A69-1601,Saulius Stakenas,5177,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17282,,SEMP
-1192872,acoustic,V13-1x,17482,A69-1601,Saulius Stakenas,5155,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17482,,SEMP
-1189985,acoustic,V13-1x,17287,A69-1601,Saulius Stakenas,5182,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17287,,SEMP
-1189975,acoustic,V13-1x,17277,A69-1601,Saulius Stakenas,5172,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17277,,SEMP
-1189988,acoustic,V13-1x,17290,A69-1601,Saulius Stakenas,5185,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17290,,SEMP
-1189992,acoustic,V13-1x,17294,A69-1601,Saulius Stakenas,5189,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17294,,SEMP
-1192868,acoustic,V13-1x,17478,A69-1601,Saulius Stakenas,5151,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17478,,SEMP
-1189993,acoustic,V13-1x,17295,A69-1601,Saulius Stakenas,5190,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17295,,SEMP
-1189968,acoustic,V13-1x,17270,A69-1601,Saulius Stakenas,5165,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17270,,SEMP
-1189972,acoustic,V13-1x,17274,A69-1601,Saulius Stakenas,5169,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17274,,SEMP
-1189969,acoustic,V13-1x,17271,A69-1601,Saulius Stakenas,5166,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17271,,SEMP
-1189970,acoustic,V13-1x,17272,A69-1601,Saulius Stakenas,5167,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17272,,SEMP
-1189974,acoustic,V13-1x,17276,A69-1601,Saulius Stakenas,5171,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17276,,SEMP
-1189971,acoustic,V13-1x,17273,A69-1601,Saulius Stakenas,5168,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17273,,SEMP
-1192876,acoustic,V13-1x,18208,A69-1601,Saulius Stakenas,5137,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18208,,SEMP
-1189994,acoustic,V13-1x,17296,A69-1601,Saulius Stakenas,5191,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17296,,SEMP
-1189990,acoustic,V13-1x,17292,A69-1601,Saulius Stakenas,5187,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17292,,SEMP
-1189989,acoustic,V13-1x,17291,A69-1601,Saulius Stakenas,5186,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17291,,SEMP
-1192854,acoustic,V9-2x,3766,A69-1601,Saulius Stakenas,5157,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-3766,,SEMP
-1192856,acoustic,V13-1x,3768,A69-1601,Saulius Stakenas,5159,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-3768,,SEMP
-1189958,acoustic,V9-2x,17236,A69-1601,Saulius Stakenas,5194,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17236,,SEMP
-1192857,acoustic,V13-1x,3769,A69-1601,Saulius Stakenas,5160,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-3769,,SEMP
-1192882,acoustic,V13-1x,18214,A69-1601,Saulius Stakenas,5143,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18214,,SEMP
-1189956,acoustic,V9-2x,17234,A69-1601,Saulius Stakenas,5192,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17234,,SEMP
-1189957,acoustic,V9-2x,17235,A69-1601,Saulius Stakenas,5193,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17235,,SEMP
-1192860,acoustic,V13-1x,3772,A69-1601,Saulius Stakenas,5163,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-3772,,SEMP
-1189959,acoustic,V9-2x,17237,A69-1601,Saulius Stakenas,5195,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17237,,SEMP
-1192878,acoustic,V13-1x,18210,A69-1601,Saulius Stakenas,5139,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18210,,SEMP
-1192864,acoustic,V13-1x,17474,A69-1601,Saulius Stakenas,5147,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17474,,SEMP
-1192861,acoustic,V13-1x,3773,A69-1601,Saulius Stakenas,5164,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-3773,,SEMP
-1192865,acoustic,V13-1x,17475,A69-1601,Saulius Stakenas,5148,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17475,,SEMP
-1192881,acoustic,V13-1x,18213,A69-1601,Saulius Stakenas,5142,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18213,,SEMP
-1192883,acoustic,V13-1x,18215,A69-1601,Saulius Stakenas,5144,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18215,,SEMP
-1192859,acoustic,V13-1x,3771,A69-1601,Saulius Stakenas,5162,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-3771,,SEMP
-1189962,acoustic,V9-2x,17240,A69-1601,Saulius Stakenas,5198,,30,90,H,,,159,,,animal,20,50,H,30,60,H,5,15,70,1,,,30,,,,,,30,90,H,3650,,,,,,,A69-1601-17240,,SEMP
-1192880,acoustic,V13-1x,18212,A69-1601,Saulius Stakenas,5141,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18212,,SEMP
-1192879,acoustic,V13-1x,18211,A69-1601,Saulius Stakenas,5140,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-18211,,SEMP
-1192858,Acoustic,V13-1x,3770,A69-1601,Saulius Stakenas,5161,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-3770,,SEMP
-1192862,acoustic,V13-1x,17472,A69-1601,Saulius Stakenas,5145,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17472,,SEMP
-1192866,acoustic,V13-1x,17476,A69-1601,Saulius Stakenas,5149,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17476,,SEMP
-1192870,acoustic,V13-1x,17480,A69-1601,Saulius Stakenas,5153,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17480,,SEMP
-1192863,acoustic,V13-1x,17473,A69-1601,Saulius Stakenas,5146,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17473,,SEMP
-1192871,acoustic,V13-1x,17481,A69-1601,Saulius Stakenas,5154,,15,35,H,,,262,,,animal,20,50,H,40,100,H,45,105,3650,1,,,30,,,,,,,,L,0,,,,,,,A69-1601-17481,,SEMP
