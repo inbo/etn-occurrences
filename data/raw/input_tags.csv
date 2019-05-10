@@ -127,14 +127,10 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1128936,Acoustic,V7-4x,3556,A69-1303,DAVID BUYSSE,213,,45,95,L,,allTags_readyForDb.csv,157,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1303-3556,ENDED,2011_rivierprik
 1145367,Acoustic,V13-1x,29919,A69-1601,DAVID BUYSSE,214,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29919,ENDED,2012_leopoldkanaal
 1145368,Acoustic,V13-1x,29920,A69-1601,DAVID BUYSSE,215,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29920,ENDED,2013_albertkanaal
-1145368,Acoustic,V13-1x,29920,A69-1601,DAVID BUYSSE,215,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29920,ENDED,2013_albertkanaal
-1145368,Acoustic,V13-1x,29920,A69-1601,DAVID BUYSSE,215,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29920,ENDED,2012_leopoldkanaal
 1145368,Acoustic,V13-1x,29920,A69-1601,DAVID BUYSSE,215,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29920,ENDED,2012_leopoldkanaal
 1145370,Acoustic,V13-1x,29922,A69-1601,DAVID BUYSSE,217,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29922,ENDED,2012_leopoldkanaal
 1145371,Acoustic,V13-1x,29923,A69-1601,DAVID BUYSSE,218,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29923,ENDED,2012_leopoldkanaal
 1145372,Acoustic,V13-1x,29924,A69-1601,DAVID BUYSSE,219,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29924,ENDED,2012_leopoldkanaal
-1145373,Acoustic,V13-1x,29925,A69-1601,DAVID BUYSSE,220,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29925,ENDED,2012_leopoldkanaal
-1145373,Acoustic,V13-1x,29925,A69-1601,DAVID BUYSSE,220,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29925,ENDED,2012_leopoldkanaal
 1145373,Acoustic,V13-1x,29925,A69-1601,DAVID BUYSSE,220,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29925,ENDED,2012_leopoldkanaal
 1145373,Acoustic,V13-1x,29925,A69-1601,DAVID BUYSSE,220,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29925,ENDED,2012_leopoldkanaal
 1145374,Acoustic,V13-1x,29926,A69-1601,DAVID BUYSSE,221,,80,160,L,,allTags_readyForDb.csv,1117,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-29926,ENDED,2012_leopoldkanaal
@@ -384,8 +380,6 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1214076,Acoustic,V7-2x,34485,A69-1601,ANS MOUTON,617,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34485,ENDED,2013_albertkanaal
 1214077,Acoustic,V7-2x,34486,A69-1601,ANS MOUTON,618,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34486,ENDED,2013_albertkanaal
 1214077,Acoustic,V7-2x,34486,A69-1601,ANS MOUTON,618,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34486,ENDED,2013_albertkanaal
-1214077,Acoustic,V7-2x,34486,A69-1601,ANS MOUTON,618,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34486,ENDED,2013_albertkanaal
-1214077,Acoustic,V7-2x,34486,A69-1601,ANS MOUTON,618,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34486,ENDED,2013_albertkanaal
 1214078,Acoustic,V7-2x,34487,A69-1601,ANS MOUTON,619,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34487,ENDED,2013_albertkanaal
 1214079,Acoustic,V7-2x,34488,A69-1601,ANS MOUTON,620,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34488,ENDED,2013_albertkanaal
 1214080,Acoustic,V7-2x,34489,A69-1601,ANS MOUTON,621,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34489,ENDED,2013_albertkanaal
@@ -403,8 +397,6 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1214091,Acoustic,V7-2x,34500,A69-1601,ANS MOUTON,632,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34500,ENDED,2013_albertkanaal
 1214092,Acoustic,V7-2x,34501,A69-1601,ANS MOUTON,633,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34501,ENDED,2013_albertkanaal
 1214093,Acoustic,V7-2x,34502,A69-1601,ANS MOUTON,634,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34502,ENDED,2013_albertkanaal
-1214094,Acoustic,V7-2x,34503,A69-1601,ANS MOUTON,635,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34503,ENDED,2013_albertkanaal
-1214094,Acoustic,V7-2x,34503,A69-1601,ANS MOUTON,635,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34503,ENDED,2013_albertkanaal
 1214094,Acoustic,V7-2x,34503,A69-1601,ANS MOUTON,635,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34503,ENDED,2013_albertkanaal
 1214094,Acoustic,V7-2x,34503,A69-1601,ANS MOUTON,635,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34503,ENDED,2013_albertkanaal
 1214095,Acoustic,V7-2x,34504,A69-1601,ANS MOUTON,636,,15,30,L,,allTags_readyForDb.csv,64,,069k,animal,,,,,,,,,,1,,,4,,,,,,,,,,,,,,,,A69-1601-34504,ENDED,2013_albertkanaal
@@ -520,12 +512,8 @@ serial_number,type,model,id_code,tag_code_space,owner_pi,id_pk,activation_date,m
 1097334,Acoustic,V9-1x,20693,A69-1303,JAN REUBENS,56,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,6,,,,,,,,,,,,,,,,A69-1303-20693,ENDED,phd_reubens
 1097335,Acoustic,V9-1x,20695,A69-1303,JAN REUBENS,57,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20695,ENDED,phd_reubens
 1097335,Acoustic,V9-1x,20695,A69-1303,JAN REUBENS,57,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20695,ENDED,phd_reubens
-1097335,Acoustic,V9-1x,20695,A69-1303,JAN REUBENS,57,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20695,ENDED,phd_reubens
-1097335,Acoustic,V9-1x,20695,A69-1303,JAN REUBENS,57,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20695,ENDED,phd_reubens
 1097336,Acoustic,V9-1x,20696,A69-1303,JAN REUBENS,58,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20696,ENDED,phd_reubens
 1097337,Acoustic,V9-1x,20697,A69-1303,JAN REUBENS,59,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20697,ENDED,phd_reubens
-1097338,Acoustic,V9-1x,20698,A69-1303,JAN REUBENS,60,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20698,ENDED,phd_reubens
-1097338,Acoustic,V9-1x,20698,A69-1303,JAN REUBENS,60,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20698,ENDED,phd_reubens
 1097338,Acoustic,V9-1x,20698,A69-1303,JAN REUBENS,60,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20698,ENDED,phd_reubens
 1097338,Acoustic,V9-1x,20698,A69-1303,JAN REUBENS,60,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20698,ENDED,phd_reubens
 1097339,Acoustic,V9-1x,20699,A69-1303,JAN REUBENS,61,,110,250,L,,allTags_readyForDb.csv,405,,069k,animal,,,,,,,,,,1,,,7,,,,,,,,,,,,,,,,A69-1303-20699,ENDED,phd_reubens

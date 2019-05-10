@@ -32,6 +32,7 @@ library(magrittr)       # To use %<>% pipes
 library(here)           # To find files
 library(janitor)        # To clean input data
 library(etn)            # To interact with ETN
+library(lubridate)      # To process date and time information
 ```
 
 # Read source data
@@ -75,7 +76,7 @@ input_animals <-
 We only need tag information from these specific animal project. Filter out the rest:
 
 ```{r}
-input_tags %<>% inner_join(
+input_tags %<>% semi_join(
   select(input_animals, tag_full_id),
   by = "tag_full_id")
 ```
@@ -633,17 +634,15 @@ emof_capture_occurrence %<>% select(eventID, occurrenceID, everything())
 
 ## Surgery event
 
-### Anaesthetic
+### Related to animals
+
+#### Anaesthetic
 
 See [issue 45](https://github.com/inbo/etn-occurrences/issues/45)
 
 ```{r}
 emof_anaesthetic <- input_animals
 ```
-
-measurementType = "anaesthetic"
-measuremntUnit = "anaesthetic concentration"
-measurementValue = "anaesthetic concentration"
 
 Inspect `anaesthetic_concentration`:
 
@@ -673,7 +672,7 @@ emof_anaesthetic %<>%
   mutate(dwc_measurementUnit = "ml/l")
 ```
 
-### Post operation holding period
+#### Post operation holding period
 
 See [issue46](https://github.com/inbo/etn-occurrences/issues/46)
 
@@ -681,7 +680,7 @@ See [issue46](https://github.com/inbo/etn-occurrences/issues/46)
 emof_post_op <- input_animals
 ```
 
-Remove all values for which post operation holding period is not empty (only concerns one value):
+Remove all values for which post operation holding period is empty (only concerns one value):
 
 ```{r}
 emof_post_op %<>% filter(!is.na(post_op_holding_period)) 
@@ -696,6 +695,20 @@ emof_post_op <-
     mutate(dwc_measurementValue = "") %>% 
     mutate(dwc_measurementUnit = "")
 ```
+
+### Related to tags
+
+#### Tag full id
+
+```{r}
+emof_tag_full_id <- input_tags
+```
+
+
+```{r}
+emof
+```
+
 
 Combine `emof_surgery` and `emof_post_op`:
 
