@@ -332,25 +332,25 @@ Map metadata fields:
 ### type
 
 ```{r}
-event %<>% mutate(dwc_type = "event" )
+event %<>% mutate(meta_type = "event" )
 ```
 
 ### modified
 
 ```{r}
-event %<>% mutate(dwc_modified = date_modified)
+event %<>% mutate(meta_modified = date_modified)
 ```
 
 ### language
 
 ```{r}
-event %<>% mutate(dwc_language = "en")
+event %<>% mutate(meta_language = "en")
 ```
 
 ### license
 
 ```{r}
-event %<>% mutate(dwc_license = "http://creativecommons.org/publicdomain/zero/1.0/")
+event %<>% mutate(meta_license = "http://creativecommons.org/publicdomain/zero/1.0/")
 ```
 
 ### rightsHolder
@@ -358,7 +358,7 @@ event %<>% mutate(dwc_license = "http://creativecommons.org/publicdomain/zero/1.
 See [issue 69](https://github.com/inbo/etn/issues/69)
 
 ```{r}
-event %<>% mutate(dwc_rightsHolder = "")
+event %<>% mutate(meta_rightsHolder = "")
 ```
 
 ### institutionCode
@@ -366,25 +366,25 @@ event %<>% mutate(dwc_rightsHolder = "")
 See [issue 69](https://github.com/inbo/etn/issues/69)
 
 ```{r}
-event %<>% mutate(dwc_institutionCode = "")
+event %<>% mutate(meta_institutionCode = "")
 ```
 
 ### datasetID
 
 ```{r}
-event %<>% mutate(dwc_datasetID = "")
+event %<>% mutate(meta_datasetID = "")
 ```
 
 ### datasetName
 
 ```{r}
-event %<>% mutate(dwc_datasetName = "Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)")
+event %<>% mutate(meta_datasetName = "Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)")
 ```
 
 ### basisOfRecord
 
 ```{r}
-event %<>% mutate(dwc_basisOfRecord = "humanObservation")
+event %<>% mutate(meta_basisOfRecord = "humanObservation")
 ```
 
 ### geodeticDatum
@@ -800,13 +800,13 @@ rm(emof_anaesthetic, emof_post_op, emof_tag_full_id, emof_serial_number, emof_te
 Map ´eventID`:
 
 ```{r}
-emof_surgery %<>% mutate(dwc_eventID = paste(projectcode, id_pk,"event-surgery", sep = ":")) 
+emof_surgery_event %<>% mutate(dwc_eventID = paste(projectcode, id_pk,"event-surgery", sep = ":")) 
 ```
 
 ### occurrenceID
 
 ```{r}
-emof_surgery %<>% mutate(dwc_occurrenceID = "") 
+emof_surgery_event %<>% mutate(dwc_occurrenceID = "") 
 ```
 
 ### Post-processing
@@ -814,19 +814,19 @@ emof_surgery %<>% mutate(dwc_occurrenceID = "")
 Keep columns with `dwc_` prefix
 
 ```{r}
-emof_surgery %<>% select(starts_with("dwc_"))
+emof_surgery_event %<>% select(starts_with("dwc_"))
 ```
 
 Remove "dwc_prefix"
 
 ```{r}
-colnames(emof_surgery) <- str_remove(colnames(emof_surgery), "dwc_")
+colnames(emof_surgery_event) <- str_remove(colnames(emof_surgery_event), "dwc_")
 ```
 
 Rearrange colunms:
 
 ```{r}
-emof_surgery %<>% select(eventID, occurrenceID, everything())
+emof_surgery_event %<>% select(eventID, occurrenceID, everything())
 ```
 
 Map Extended Measerement or Facts extension:
