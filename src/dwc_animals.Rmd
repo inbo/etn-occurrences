@@ -319,13 +319,13 @@ see [issue11](https://github.com/inbo/etn-occurrences/issues/11)
 event_release %<>% mutate(dwc_decimalLongitude = release_longitude)
 ```
 
-## Static event core terms
-
 Combine both `event_capture`, `event_surgery` and `event_release` to one `Event Core`:
 
 ```{r}
 event <- bind_rows(event_capture, event_surgery, event_release)
 ```
+
+## Static event core terms
 
 Map metadata fields:
 
@@ -399,39 +399,8 @@ event %<>% mutate(dwc_geodeticDatum = "WGS84")
 event %<>% mutate(dwc_coordinateUncertaintyInMeters = "30") 
 ```
 
-
-## Post-processing
-
-Select all columns starting with prefix `dwc_` and `dwc_meta_`:
-
-```{r}
-event %<>% select(starts_with("dwc_"))
-```
-
-Rearrange columns:
-
-```{r}
-event %<>% select(starts_with("dwc_meta_"), everything())
-```
-
-Remove prefix `dwc_` and `dwc_meta_`:
-
-```{r}
-colnames(event) <- str_remove(colnames(event), "dwc_")
-colnames(event) <- str_remove(colnames(event), "meta_")
-```
-
-Preview:
-
-```{r}
-event %>% head()
-```
-
-Export data:
-
-```{r}
-write_csv(event, path = "../data/processed/event.csv", na = "")
-```
+There's a one to one relation between the event core and the occurrence extension. For this reason, the 
+terms from the occurrence extension can be mapped togeterh with the terms from the event core.
 
 # Occurrence Extension
 
