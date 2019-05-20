@@ -73,7 +73,7 @@ input_animals <-
     filter(!(projectname == "PhD Jan Reubens" & scientific_name == "Sentinel"))
 ```
 
-We only need tag information from these specific animal project. Filter out the rest:
+We only need tag information the tags used in these specific animal project. Filter out the rest:
 
 ```{r}
 input_tags %<>% semi_join(
@@ -94,13 +94,12 @@ Both source datasets are assumed to be tidy and need no further data processing 
 
 We here map the data to [Darwin Core Event](http://rs.gbif.org/core/dwc_event_2016_06_21.xml).
 
-The event core includes data of three separate events (overview in [issue 31](https://github.com/inbo/etn-occurrences/issues/31):
+The event core includes data for three types of events (overview in [issue 31](https://github.com/inbo/etn-occurrences/issues/31):
 - Capture event
 - Surgery event
 - Release event
 
-For a specific animal, each event differs in its date, location and protocol. 
-We will thus map each event separately, combine them afterwards into one `event` core and add (1) metadata fields and (2) static fields that are independent from the specific event
+We will map each event separately as `capture_event`, `surgery_event` and `release_event`, combine them afterwards into one `event` core and add (1) metadata fields and (2) static Darwin Core fields (fields unrelated to the specific event)
 
 ## Capture event
 
@@ -120,13 +119,10 @@ At first inspection, `capture_depth` appears to be empty. We need to verify this
 
 ```{r}
 event_capture %>% 
-  summarize(non_na_records = sum(!is.na(capture_depth)))
-  
+  summarize(non_NA_records = sum(!is.na(capture_depth)))
 ```
 
 `capture_depth` is thus not considered in this mapping as it is empty.
-
-View content and structure of `event_capture`:
 
 ### eventID
 
@@ -155,6 +151,8 @@ event_capture %<>% mutate(dwc_samplingProtocol = capture_method)
 ```{r}
 unique(!is.na(parse_date_time(event_capture$catched_date_time,orders="ymd_HMS")))
 ```
+
+Map `eventDate`:
 
 ```{r}
 event_capture %<>% mutate(dwc_eventDate = catched_date_time)
@@ -186,7 +184,7 @@ event_capture %<>% mutate(dwc_decimalLongitude = capture_longitude)
 
 ## Surgery Event
 
-For a discussion on the amount of records to include in the surgery event, see [issue 47](https://github.com/inbo/etn-occurrences/issues/47). At this point, we will only include records with surgery data available.
+At this point, not all surgery date and/or location information is provided in `input_animals`, see [issue 47](https://github.com/inbo/etn-occurrences/issues/47) and [issue 43] (https://github.com/inbo/etn-occurrences/issues/43). Although all date information will be provided eventually, we will now only include records with surgery data available.
 
 ```{r}
 event_surgery <- input_animals %>% filter(!is.na(date_of_surgery))
@@ -200,27 +198,12 @@ event_surgery %>%
   head(n = 30)
 ```
 
-At first inspection, `surgery_latitude` and `surgery_longitude` appear to be empty. We need to verify this:
-
-```{r}
-event_surgery %>% 
-  summarize(non_na_records = sum(!is.na(surgery_latitude))) 
-```
-
-```{r}
-event_surgery %>% 
-  summarize(non_na_records = sum(!is.na(surgery_longitude)))
-  
-```
-
-Both are empty at this point, but see [issue 43](https://github.com/inbo/etn-occurrences/issues/43)
-
 ### eventID
 
 EventID is a combination between:
 - `projectcode`: refering to the animal project
 - `id_pk`: unique identifier for a specific animal
-- `event_release`
+- `event_surgery`
 
 ```{r}
 event_surgery %<>% mutate(dwc_eventID = paste(projectcode, id_pk,"event-surgery", sep = ":")) 
@@ -233,6 +216,8 @@ event_surgery %<>% mutate(dwc_samplingProtocol = "surgery")
 ```
 
 ### eventDate
+
+See [issue 47](https://github.com/inbo/etn-occurrences/issues/47)
 
 `date_of_surgery` should follow ISO-8601 format (yyyy-mm-ddThh:mm:ssZ; as in: 2017-06-27T12:00:00Z):
 (this means that the )
@@ -277,14 +262,15 @@ This is an overview of the information related to the surgery event:
 
 ```{r}
 event_release %>% 
-  select(projectname, id_pk, utc_release_date_time, release_location, release_latitude, release_longitude) %>% 
-  head(n = 50)
+  select(projectname, id_pk, utc_release_date_time, release_location, release_latitude, release_longitude) %>%   head(n = 30)
 ```
 
-NOTE TO SELF: START REVIEWING THE SCRIPT HERE:
-
-
 ### eventID
+
+EventID is a combination between:
+- `projectcode`: refering to the animal project
+- `id_pk`: unique identifier for a specific animal
+- `event_release`
 
 ```{r}
 event_release %<>% mutate(dwc_eventID = paste(projectcode, id_pk,"event-release", sep = ":")) 
@@ -299,6 +285,11 @@ event_release %<>% mutate(dwc_samplingProtocol = "")
 ### eventDate
 
 see [issue40](https://github.com/inbo/etn-occurrences/issues/40)
+`utc_release_date_time` should follow ISO-8601 format (yyyy-mm-ddThh:mm:ssZ; as in: 2017-06-27T12:00:00Z):
+
+```{r}
+unique(!is.na(parse_date_time(event_release$utc_release_date_time,orders="ymd_HMS")))
+```
 
 ```{r}
 event_release %<>% mutate(dwc_eventDate = utc_release_date_time) 
@@ -328,7 +319,7 @@ see [issue11](https://github.com/inbo/etn-occurrences/issues/11)
 event_release %<>% mutate(dwc_decimalLongitude = release_longitude)
 ```
 
-## Stable event core terms
+## Static event core terms
 
 Combine both `event_capture`, `event_surgery` and `event_release` to one `Event Core`:
 
@@ -341,58 +332,60 @@ Map metadata fields:
 ### type
 
 ```{r}
-event %<>% mutate(meta_type = "event" )
+event %<>% mutate(dwc_meta_type = "event" )
 ```
 
 ### modified
 
 ```{r}
-event %<>% mutate(meta_modified = date_modified)
+event %<>% mutate(dwc_meta_modified = date_modified)
 ```
 
 ### language
 
 ```{r}
-event %<>% mutate(meta_language = "en")
+event %<>% mutate(dwc_meta_language = "en")
 ```
 
 ### license
 
 ```{r}
-event %<>% mutate(meta_license = "http://creativecommons.org/publicdomain/zero/1.0/")
+event %<>% mutate(dwc_meta_license = "http://creativecommons.org/publicdomain/zero/1.0/")
 ```
 
-### rightsHolder:			my_tags::tag_owner_organisation
+### rightsHolder
+
+See [issue 69](https://github.com/inbo/etn/issues/69)
 
 ```{r}
-event %<>% mutate()
+event %<>% mutate(dwc_meta_rightsHolder = "")
 ```
 
-### institutionCode:		my_tags::tag_owner_organisation
+### institutionCode
+
+See [issue 69](https://github.com/inbo/etn/issues/69)
 
 ```{r}
-event %<>% mutate()
+event %<>% mutate(dwc_meta_institutionCode = "")
 ```
 
 ### datasetID
 
 ```{r}
-event %<>% mutate(meta_datasetID = "")
+event %<>% mutate(dwc_meta_datasetID = "")
 ```
 
-### datasetName				
+### datasetName
 
 ```{r}
-event %<>% mutate(meta_datasetName = "Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)")
+event %<>% mutate(dwc_meta_datasetName = "Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)")
 ```
 
-### basisOfRecord:			humanObservation??
+### basisOfRecord
 
 ```{r}
-event %<>% mutate(meta_basisOfRecord = "humanObservation")
+event %<>% mutate(dwc_meta_basisOfRecord = "humanObservation")
 ```
-
-Map `geodeticDatum` and `coordinateUncertaintyInMeters`:
 
 ### geodeticDatum
 
@@ -404,6 +397,40 @@ event %<>% mutate(dwc_geodeticDatum = "WGS84")
 
 ```{r}
 event %<>% mutate(dwc_coordinateUncertaintyInMeters = "30") 
+```
+
+
+## Post-processing
+
+Select all columns starting with prefix `dwc_` and `dwc_meta_`:
+
+```{r}
+event %<>% select(starts_with("dwc_"))
+```
+
+Rearrange columns:
+
+```{r}
+event %<>% select(starts_with("dwc_meta_"), everything())
+```
+
+Remove prefix `dwc_` and `dwc_meta_`:
+
+```{r}
+colnames(event) <- str_remove(colnames(event), "dwc_")
+colnames(event) <- str_remove(colnames(event), "meta_")
+```
+
+Preview:
+
+```{r}
+event %>% head()
+```
+
+Export data:
+
+```{r}
+write_csv(event, path = "../data/processed/event.csv", na = "")
 ```
 
 # Occurrence Extension
@@ -664,6 +691,7 @@ First, we need to separate `anaesthetic_concentration` into its value and unit:
 emof_anaesthetic %<>% separate(anaesthetic_concentration, into = c("value", "unit"), sep = "m", remove = F)
 ```
 
+Map `dwc_measurementType`, `dwc_measurementValue` and `measurementUnit`:
 
 ```{r}
 emof_anaesthetic %<>% 
@@ -701,19 +729,96 @@ emof_post_op <-
 #### Tag full id
 
 ```{r}
-emof_tag_full_id <- input_tags
+emof_tag_full_id <- input_tags %>% 
+    mutate(dwc_measurementType = "Tag full identifier") %>% 
+    mutate(dwc_measurementValue = tag_full_id) %>% 
+    mutate(dwc_measurementUnit = "")
 ```
 
+#### Tag serial number
 
 ```{r}
-emof
+emof_serial_number <- input_tags %>% 
+    mutate(dwc_measurementType = "Tag serial number") %>% 
+    mutate(dwc_measurementValue = serial_number) %>% 
+    mutate(dwc_measurementUnit = "")
 ```
 
-
-Combine `emof_surgery` and `emof_post_op`:
+#### Telemetry type
 
 ```{r}
-emof_surgery <- bind_rows(emof_anaesthetic, emof_post_op)
+emof_telemetry_type <- input_tags %>% 
+    mutate(dwc_measurementType = "Telemetry type") %>% 
+    mutate(dwc_measurementValue = type) %>% 
+    mutate(dwc_measurementUnit = "")
+```
+
+#### Tag model
+
+```{r}
+emof_tag_model <- input_tags %>% 
+    mutate(dwc_measurementType = "Tag model") %>% 
+    mutate(dwc_measurementValue = model) %>% 
+    mutate(dwc_measurementUnit = "")
+```
+
+#### Tag sensor type
+
+See [issue 50](https://github.com/inbo/etn-occurrences/issues/50)
+
+```{r}
+emof_sensor_type <- input_tags %>% 
+    filter(!is.na(sensor_type)) %>% 
+    mutate(dwc_measurementType = "Tag sensor type") %>% 
+    mutate(dwc_measurementValue = sensor_type) %>% 
+    mutate(dwc_measurementUnit = "")
+```
+
+#### Tag status
+
+See [Issue 51](https://github.com/inbo/etn-occurrences/issues/51)
+
+```{r}
+emof_tag_status <- input_tags %>% 
+    mutate(dwc_measurementType = "Tag status") %>% 
+    mutate(dwc_measurementValue = status) %>% 
+    mutate(dwc_measurementUnit = "")
+```
+
+#### Tag estimated lifetime
+
+```{r}
+emof_tag_estimated_life <- input_tags %>% 
+    mutate(dwc_measurementType = "Tag estimated lifetime") %>% 
+    mutate(dwc_measurementValue = estimated_lifetime) %>% 
+    mutate(dwc_measurementUnit = "days")
+```
+
+#### Tag emission frequency
+
+```{r}
+emof_tag_frequence <- input_tags %>% 
+    mutate(dwc_measurementType = "Tag emission frequency") %>% 
+    mutate(dwc_measurementValue = 
+             as.character(
+               as.numeric(str_remove(input_tags$frequency, "k")) * 1000)) %>% 
+    mutate(dwc_measurementUnit = "Hz")
+```
+
+Combine all `emof_` files:
+
+```{r}
+emof_surgery <- bind_rows(
+  emof_anaesthetic,
+  emof_post_op,
+  emof_tag_full_id,
+  emof_serial_number,
+  emof_telemetry_type,
+  emof_tag_model,
+  emof_sensor_type,
+  emof_tag_status,
+  emof_tag_estimated_life,
+  emof_tag_frequence)
 ```
 
 ### eventID
