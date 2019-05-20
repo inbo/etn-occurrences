@@ -332,25 +332,25 @@ Map metadata fields:
 ### type
 
 ```{r}
-event %<>% mutate(dwc_meta_type = "event" )
+event %<>% mutate(dwc_type = "event" )
 ```
 
 ### modified
 
 ```{r}
-event %<>% mutate(dwc_meta_modified = date_modified)
+event %<>% mutate(dwc_modified = date_modified)
 ```
 
 ### language
 
 ```{r}
-event %<>% mutate(dwc_meta_language = "en")
+event %<>% mutate(dwc_language = "en")
 ```
 
 ### license
 
 ```{r}
-event %<>% mutate(dwc_meta_license = "http://creativecommons.org/publicdomain/zero/1.0/")
+event %<>% mutate(dwc_license = "http://creativecommons.org/publicdomain/zero/1.0/")
 ```
 
 ### rightsHolder
@@ -358,7 +358,7 @@ event %<>% mutate(dwc_meta_license = "http://creativecommons.org/publicdomain/ze
 See [issue 69](https://github.com/inbo/etn/issues/69)
 
 ```{r}
-event %<>% mutate(dwc_meta_rightsHolder = "")
+event %<>% mutate(dwc_rightsHolder = "")
 ```
 
 ### institutionCode
@@ -366,25 +366,25 @@ event %<>% mutate(dwc_meta_rightsHolder = "")
 See [issue 69](https://github.com/inbo/etn/issues/69)
 
 ```{r}
-event %<>% mutate(dwc_meta_institutionCode = "")
+event %<>% mutate(dwc_institutionCode = "")
 ```
 
 ### datasetID
 
 ```{r}
-event %<>% mutate(dwc_meta_datasetID = "")
+event %<>% mutate(dwc_datasetID = "")
 ```
 
 ### datasetName
 
 ```{r}
-event %<>% mutate(dwc_meta_datasetName = "Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)")
+event %<>% mutate(dwc_datasetName = "Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)")
 ```
 
 ### basisOfRecord
 
 ```{r}
-event %<>% mutate(dwc_meta_basisOfRecord = "humanObservation")
+event %<>% mutate(dwc_basisOfRecord = "humanObservation")
 ```
 
 ### geodeticDatum
@@ -489,8 +489,8 @@ emof_length1 <-
   input_animals %>% 
     filter(!is.na(length)) %>% 
     mutate(dwc_measurementType = length_type) %>% 
-    mutate(dwc_measurementUnit = length_units) %>% 
-    mutate(dwc_measurementValue = as.character(length))
+    mutate(dwc_measurementValue = as.character(length)) %>% 
+    mutate(dwc_measurementUnit = length_units)
 ```
 
 Length2 data
@@ -500,8 +500,8 @@ emof_length2 <-
   input_animals %>% 
     filter(!is.na(length2)) %>% 
     mutate(dwc_measurementType = length2_type) %>% 
-    mutate(dwc_measurementUnit = length2_units) %>% 
-    mutate(dwc_measurementValue = as.character(length2))
+    mutate(dwc_measurementValue = as.character(length2)) %>% 
+    mutate(dwc_measurementUnit = length2_units)
 ```
 
 Length3 data
@@ -511,8 +511,8 @@ emof_length3 <-
   input_animals %>% 
     filter(!is.na(length3)) %>% 
     mutate(dwc_measurementType = length3_type) %>% 
-    mutate(dwc_measurementUnit = length3_units) %>% 
-    mutate(dwc_measurementValue = as.character(length3))
+    mutate(dwc_measurementValue = as.character(length3)) %>% 
+    mutate(dwc_measurementUnit = length3_units) 
 ```
 
 Length4 data
@@ -522,8 +522,8 @@ emof_length4 <-
   input_animals %>% 
     filter(!is.na(length4)) %>% 
     mutate(dwc_measurementType = length4_type) %>% 
-    mutate(dwc_measurementUnit = length4_units) %>% 
-    mutate(dwc_measurementValue = as.character(length4))
+    mutate(dwc_measurementValue = as.character(length4)) %>% 
+    mutate(dwc_measurementUnit = length4_units)
 ```
 
 ### Weight data
@@ -533,8 +533,8 @@ emof_weight <-
   input_animals %>% 
     filter(!is.na(weight)) %>% 
     mutate(dwc_measurementType = "weight") %>% 
-    mutate(dwc_measurementUnit = weight_units) %>% 
-    mutate(dwc_measurementValue = as.character(weight))
+    mutate(dwc_measurementValue = as.character(weight)) %>% 
+    mutate(dwc_measurementUnit = weight_units)
 ```
 
 ### Life stage
@@ -544,8 +544,8 @@ emof_lifestage <-
   input_animals %>% 
     filter(!is.na(life_stage)) %>% 
     mutate(dwc_measurementType = "life stage") %>% 
-    mutate(dwc_measurementUnit = "") %>% 
-    mutate(dwc_measurementValue = life_stage)
+    mutate(dwc_measurementValue = life_stage) %>%
+    mutate(dwc_measurementUnit = "")  
 ```
 
 ### Age
@@ -555,8 +555,8 @@ emof_age <-
   input_animals %>% 
     filter(!is.na(age)) %>% 
     mutate(dwc_measurementType = "age") %>% 
-    mutate(dwc_measurementUnit = age_units) %>% 
-    mutate(dwc_measurementValue = as.character(age))  
+    mutate(dwc_measurementValue = as.character(age)) %>% 
+    mutate(dwc_measurementUnit = age_units)
 ```
 
 ### Sex
@@ -566,8 +566,8 @@ emof_sex <-
   input_animals %>% 
     filter(!is.na(sex)) %>% 
     mutate(dwc_measurementType = "sex") %>% 
-    mutate(dwc_measurementUnit = "") %>% 
-    mutate(dwc_measurementValue = sex)  
+    mutate(dwc_measurementValue = sex) %>%   
+    mutate(dwc_measurementUnit = "")
 ```
 
 ### Origin
@@ -577,18 +577,26 @@ emof_origin <-
   input_animals %>% 
     filter(!is.na(wild_or_hatchery)) %>% 
     mutate(dwc_measurementType = "origin") %>% 
-    mutate(dwc_measurementUnit = "") %>% 
-    mutate(dwc_measurementValue = wild_or_hatchery)  
+    mutate(dwc_measurementValue = wild_or_hatchery) %>%  
+    mutate(dwc_measurementUnit = "") 
 ```
 
 Combine all information:
 
 ```{r}
 emof_capture_occurrence <-
-  bind_rows(emof_length1, emof_length2, emof_length3, emof_length4, emof_weight, emof_lifestage, emof_age, emof_sex, emof_origin)
+  bind_rows(emof_length1, 
+            emof_length2, 
+            emof_length3, 
+            emof_length4, 
+            emof_weight, 
+            emof_lifestage, 
+            emof_age, 
+            emof_sex, 
+            emof_origin)
 ```
 
-Remove dataframes:
+Remove intermediary dataframes:
 
 ```{r}
 rm(emof_length1, emof_length2, emof_length3, emof_length4, emof_weight, emof_lifestage, emof_age, emof_sex, emof_origin)
@@ -630,9 +638,9 @@ emof_capture_occurrence %<>% select(eventID, occurrenceID, everything())
 
 ## Surgery event
 
-### Related to animals
+Extended Measurements or Facts related to animal information
 
-#### Anaesthetic
+### Anaesthetic
 
 See [issue 45](https://github.com/inbo/etn-occurrences/issues/45)
 
@@ -664,38 +672,27 @@ Map `dwc_measurementType`, `dwc_measurementValue` and `measurementUnit`:
 
 ```{r}
 emof_anaesthetic %<>% 
-  mutate(dwc_measurementType = "anaesthetic") %>% 
+  mutate(dwc_measurementType = "anaesthetic concentration") %>% 
   mutate(dwc_measurementValue = value) %>% 
   mutate(dwc_measurementUnit = "ml/l")
 ```
 
-#### Post operation holding period
+### Post operation holding period
 
-See [issue46](https://github.com/inbo/etn-occurrences/issues/46)
-
-```{r}
-emof_post_op <- input_animals
-```
-
-Remove all values for which post operation holding period is empty (only concerns one value):
+See [issue46](https://github.com/inbo/etn-occurrences/issues/46). Wait for further mapping.
 
 ```{r}
-emof_post_op %<>% filter(!is.na(post_op_holding_period)) 
-```
-
-Wait for further mapping for [issue46](https://github.com/inbo/etn-occurrences/issues/46) to be resolved.
-
-```{r}
-emof_post_op <-
-  emof_post_op %>% 
+emof_post_op <- 
+  input_animals %>% 
+    filter(!is.na(post_op_holding_period)) %>% 
     mutate(dwc_measurementType = "") %>% 
     mutate(dwc_measurementValue = "") %>% 
-    mutate(dwc_measurementUnit = "")
+    mutate(dwc_measurementUnit = "")  
 ```
 
-### Related to tags
+Extended Measurements or Facts related to tag information
 
-#### Tag full id
+### Tag full id
 
 ```{r}
 emof_tag_full_id <- input_tags %>% 
@@ -704,7 +701,9 @@ emof_tag_full_id <- input_tags %>%
     mutate(dwc_measurementUnit = "")
 ```
 
-#### Tag serial number
+### Tag serial number
+
+For a discussion on erroneous serial numbers, see comment in issue [48](https://github.com/inbo/etn-occurrences/issues/48#issuecomment-489000672)
 
 ```{r}
 emof_serial_number <- input_tags %>% 
@@ -713,7 +712,7 @@ emof_serial_number <- input_tags %>%
     mutate(dwc_measurementUnit = "")
 ```
 
-#### Telemetry type
+### Telemetry type
 
 ```{r}
 emof_telemetry_type <- input_tags %>% 
@@ -722,7 +721,7 @@ emof_telemetry_type <- input_tags %>%
     mutate(dwc_measurementUnit = "")
 ```
 
-#### Tag model
+### Tag model
 
 ```{r}
 emof_tag_model <- input_tags %>% 
@@ -731,7 +730,7 @@ emof_tag_model <- input_tags %>%
     mutate(dwc_measurementUnit = "")
 ```
 
-#### Tag sensor type
+### Tag sensor type
 
 See [issue 50](https://github.com/inbo/etn-occurrences/issues/50)
 
@@ -743,7 +742,7 @@ emof_sensor_type <- input_tags %>%
     mutate(dwc_measurementUnit = "")
 ```
 
-#### Tag status
+### Tag status
 
 See [Issue 51](https://github.com/inbo/etn-occurrences/issues/51)
 
@@ -754,7 +753,7 @@ emof_tag_status <- input_tags %>%
     mutate(dwc_measurementUnit = "")
 ```
 
-#### Tag estimated lifetime
+### Tag estimated lifetime
 
 ```{r}
 emof_tag_estimated_life <- input_tags %>% 
@@ -763,7 +762,7 @@ emof_tag_estimated_life <- input_tags %>%
     mutate(dwc_measurementUnit = "days")
 ```
 
-#### Tag emission frequency
+### Tag emission frequency
 
 ```{r}
 emof_tag_frequence <- input_tags %>% 
@@ -777,7 +776,7 @@ emof_tag_frequence <- input_tags %>%
 Combine all `emof_` files:
 
 ```{r}
-emof_surgery <- bind_rows(
+emof_surgery_event <- bind_rows(
   emof_anaesthetic,
   emof_post_op,
   emof_tag_full_id,
@@ -788,6 +787,12 @@ emof_surgery <- bind_rows(
   emof_tag_status,
   emof_tag_estimated_life,
   emof_tag_frequence)
+```
+
+Remove intermediary dataframes:
+
+```{r}
+rm(emof_anaesthetic, emof_post_op, emof_tag_full_id, emof_serial_number, emof_telemetry_type, emof_tag_model, emof_sensor_type, emof_tag_status, emof_tag_estimated_life, emof_tag_frequence)
 ```
 
 ### eventID
@@ -827,6 +832,12 @@ emof_surgery %<>% select(eventID, occurrenceID, everything())
 Map Extended Measerement or Facts extension:
 
 ```{r}
-emof <- bind_rows(emof_capture_occurrence, emof_surgery)
+emof <- bind_rows(emof_capture_occurrence, emof_surgery_event)
+```
+
+Write csv:
+
+```{r}
+write.csv(emof, "../data/processed/emof.csv")
 ```
 
