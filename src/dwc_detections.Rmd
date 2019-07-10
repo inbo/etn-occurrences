@@ -1,0 +1,348 @@
+---
+title: "Import detections data"
+subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
+author:
+- Lien Reysehove
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+#  pdf_document:
+#    df_print: kable
+#    number_sections: yes
+#    toc: yes
+#    toc_depth: 3
+---
+
+# Setup 
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Install packages
+
+```{r}
+library(tidyverse)      # To do data science
+library(magrittr)       # To use %<>% pipes
+library(here)           # To find files
+library(janitor)        # To clean input data
+library(etn)            # To interact with ETN
+library(lubridate)      # To process date and time information
+library(glue)
+library(odbc)
+```
+
+# Read source data
+
+Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
+
+```{r}
+my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
+```
+
+# Inspect datasets
+
+Create view of `vliz.detections_view`:
+
+```{r}
+query <- glue_sql(
+    "SELECT *
+    FROM vliz.detections_view
+    LIMIT 1000
+    ",
+    .con = my_con)
+  
+detections_subset <- dbGetQuery(my_con, query)
+as_tibble(detections_subset)
+```
+
+Create view of `vliz.animals_view`:
+
+```{r}
+query <- glue_sql(
+    "SELECT *
+    FROM vliz.animals_view
+    LIMIT 1000
+    ",
+    .con = my_con
+  )
+  
+animals_subset <- dbGetQuery(my_con, query)
+as_tibble(animals_subset)
+```
+
+Create view of `vliz.deployments_view`:
+
+```{r}
+query <- glue_sql(
+    "SELECT *
+    FROM vliz.deployments_view
+    LIMIT 1000
+    ",
+    .con = my_con
+  )
+  
+deployments_subset <- dbGetQuery(my_con, query)
+as_tibble(deployments_subset)
+```
+
+Create view of `vliz.receivers`:
+
+```{r}
+receivers_query <- glue_sql("
+      SELECT * 
+      FROM vliz.receivers
+      LIMIT 1000
+",
+.con = my_con
+  )
+
+receivers_subset <- dbGetQuery(my_con, receivers_query)
+as_tibble(receivers_subset)
+```
+
+# Select transmitter and receiver information
+
+Select all tag information from all animal projects of interest:
+
+```{r}
+detections_query <- glue_sql(
+    "SELECT DISTINCT transmitter
+    FROM vliz.detections_view AS detections
+    WHERE 
+      (animal_project_code = '2011_rivierprik' 
+        OR animal_project_code = '2012_leopoldkanaal'
+        OR animal_project_code = '2013_albertkanaal'
+        OR animal_project_code = '2014_demer'
+        OR animal_project_code = '2015_dijle'
+        OR (animal_project_code = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
+        OR animal_project_code = 'homarus'
+        OR animal_project_code = 'phd_reubens')
+      AND NOT scientific_name = 'Sentinel'
+      AND NOT scientific_name = 'Sync tag'" ,
+    .con = my_con)
+
+all_tags <- dbGetQuery(my_con, detections_query)
+as_tibble(all_tags)
+```
+
+Create vector `transmitter`, to incorporate later in SQL selection criterium:
+
+```{r}
+transmitter <- all_tags %>% pull(transmitter)
+```
+
+Information in `transmitter` should also be in `animal_detections`. 
+
+```{r}
+detections_query <- glue_sql(
+    "SELECT transmitter
+    FROM vliz.detections_view AS detections
+    WHERE 
+      transmitter IN ({transmitter*})
+      AND transmitter NOT IN
+        (SELECT tag_full_id
+        FROM vliz.animals_view
+        WHERE tag_full_id = detections.transmitter)",
+    transmitter = transmitter,
+    .con = my_con
+  )
+
+tags_not_my_animals <- dbGetQuery(my_con, detections_query)
+as_tibble(tags_not_my_animals)
+```
+
+Inspect receiver information:
+
+```{r}
+detections_query <- glue_sql(
+    "SELECT DISTINCT receiver 
+    FROM vliz.detections_view AS detections
+    WHERE transmitter IN ({transmitter*})",
+    transmitter = transmitter,
+    .con = my_con
+  )
+
+receivers <- dbGetQuery(my_con, detections_query)
+as_tibble(receivers)
+```
+
+Use information in receiver to select on receiver information in `vliz.deployments_view`
+
+```{r}
+receivers <- receivers %>% pull(receiver)
+```
+
+# Detection date information
+
+Inspect date information present in `vliz_deployments.view`:
+
+```{r}
+query <- glue_sql(
+    "SELECT receiver, drop_dead_date, download_date_time, deploy_date_time, recover_date_time
+    FROM vliz.deployments_view
+    WHERE receiver IN ({receiver*})
+    ORDER BY receiver
+    ",
+    receiver = receivers,
+    .con = my_con)
+
+query_output <- dbGetQuery(my_con, query)
+as_tibble(query_output)
+```
+
+## Deployment date
+
+Check `deploy_date_time`, `recover_date_time` and `comments`
+
+```{r}
+query <- glue_sql(
+    "SELECT deploy_date_time, recover_date_time, comments 
+    FROM vliz.deployments_view
+    LIMIT 1000",
+    .con = my_con)
+
+deployments <- dbGetQuery(my_con, query)
+as_tibble(deployments)
+```
+
+Check whether `deploy_date_time` falls before `recover_date_time`:
+
+```{r}
+query <- glue_sql(
+    "SELECT receiver, deploy_date_time, recover_date_time, comments 
+    FROM vliz.deployments_view
+    WHERE deploy_date_time > recover_date_time
+    ORDER BY receiver",
+    .con = my_con)
+
+deployments <- dbGetQuery(my_con, query)
+as_tibble(deployments)
+```
+
+
+
+
+Check for empty date information for `deploy_date_time`:
+
+```{r}
+query <- glue_sql(
+    "SELECT receiver, deploy_date_time 
+    FROM vliz.detections_view
+    WHERE transmitter IN ({transmitter*})
+      AND deploy_date_time IS NULL
+    LIMIT 10",
+    transmitter = transmitter,
+    .con = my_con)
+
+query <- dbGetQuery(my_con, query)
+as_tibble(query)
+
+```
+
+Check whether `deploy_date_time` in `vliz_detection.view` is included in and equals information in the  `vliz_deployments_view` column with the same name:
+
+```{r}
+query <- glue_sql(
+    "SELECT a.deployReceiver, a.deployDate, b.detectReceiver, b.detectDate
+     FROM
+        (SELECT count(receiver), receiver AS deployReceiver, deploy_date_time AS deployDate
+        FROM vliz.deployments_view
+        WHERE receiver IN ({receiver*})        
+        GROUP BY deployReceiver, deployDate)  a
+    FULL JOIN 
+        (SELECT count(receiver), receiver AS detectReceiver, deploy_date_time AS detectDate
+        FROM vliz.detections_view
+        WHERE transmitter IN ({transmitter*})        
+        GROUP BY detectReceiver, detectDate) b
+    ON a.deployReceiver = b.detectReceiver AND a.deployDate = b.detectDate
+    ",
+    receiver = receivers,
+    transmitter = transmitter,
+    .con = my_con)
+
+deployment_date_time <- dbGetQuery(my_con, query)
+as_tibble(deployment_date_time)
+```
+
+All receiver x date information combinations from the detections table should be included in the deployments table, i.e. `deployreceiver` should not contain empty values after this join:
+
+```{r}
+deployment_date_time %>% filter(is.na(deployreceiver))
+```
+
+In some cases, a given receiver will not detect any of the targeted transmitters. These receiver x date information might be excluded from the Darwin Core mapping.
+
+```{r}
+deployment_date_time %>% filter(is.na(detectreceiver))
+```
+
+This code inspects whether `drop_dead_date` falls before `deploy_date_time`:
+
+```{r}
+deployments_query <- glue_sql(
+    "SELECT count(receiver), receiver
+    FROM vliz.deployments_view
+    WHERE 
+        receiver IN ({receiver*})
+        AND drop_dead_date < deploy_date_time
+    GROUP BY receiver
+    ORDER BY count(receiver) DESC
+    ",
+    receiver = receivers,
+    .con = my_con)
+
+deployment_dates <- dbGetQuery(my_con, deployments_query)
+as_tibble(deployment_dates)
+```
+
+# Location information
+
+Inspect `station_name`:
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(receiver), receiver, station_name
+    FROM vliz.deployments_view
+    GROUP BY receiver, station_name
+    ORDER BY station_name",
+    .con = my_con)
+
+station_names <- dbGetQuery(my_con, query)
+as_tibble(station_names)
+```
+
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(location_name), station_name, location_name, location_description
+    FROM vliz.deployments_view
+    GROUP BY station_name, location_name, location_description
+    ORDER BY station_name",
+    .con = my_con)
+
+deployment_locations <- dbGetQuery(my_con, query)
+as_tibble(deployment_locations)
+```
+
+Make subsets to make the interpretation easier:
+1. Inspect empty values for `station_name`:
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(location_name), station_name, location_name, location_description
+    FROM vliz.deployments_view
+    WHERE station_name = '' OR station_name IS NULL
+    GROUP BY station_name, location_name, location_description
+    ORDER BY station_name",
+    .con = my_con)
+
+deployments <- dbGetQuery(my_con, query)
+as_tibble(deployments)
+```
+
