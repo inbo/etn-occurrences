@@ -84,8 +84,8 @@ input_tags %<>% semi_join(
 Save to CSV:
 
 ```{r}
-write_csv(input_animals, here("data", "raw", "input_animals.csv"), na = "")
-write_csv(input_tags, here("data", "raw", "input_tags.csv"), na = "")
+write_csv(input_animals, "../data/raw/input_animals.csv", na = "")
+write_csv(input_tags, "../data/raw/input_tags.csv", na = "")
 ```
 
 Both source datasets are assumed to be tidy and do not require further data processing before mapping.
@@ -172,7 +172,7 @@ event_capture %<>% mutate(dwc_locality = capture_location)
 See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 
 ```{r}
-event_capture %<>% mutate(dwc_decimalLatitude = sprintf("%.7f", round(capture_latitude, digits = 5)))
+event_capture %<>% mutate(dwc_decimalLatitude = round(capture_latitude, digits = 5))
 ```
 
 ### decimalLongitude
@@ -180,7 +180,7 @@ event_capture %<>% mutate(dwc_decimalLatitude = sprintf("%.7f", round(capture_la
 See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 
 ```{r}
-event_capture %<>% mutate(dwc_decimalLongitude = sprintf("%.7f", round(capture_longitude, digits = 5)))
+event_capture %<>% mutate(dwc_decimalLongitude = round(capture_longitude, digits = 5))
 ```
 
 ## Surgery Event
@@ -295,7 +295,7 @@ event_release %<>% mutate(dwc_locality = release_location)
 See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 
 ```{r}
-event_release %<>% mutate(dwc_decimalLatitude = sprintf("%.7f", round(release_latitude, digits = 5)))
+event_release %<>% mutate(dwc_decimalLatitude = round(release_latitude, digits = 5))
 ```
 
 ### decimalLongitude
@@ -303,7 +303,7 @@ event_release %<>% mutate(dwc_decimalLatitude = sprintf("%.7f", round(release_la
 See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 
 ```{r}
-event_release %<>% mutate(dwc_decimalLongitude = sprintf("%.7f", round(release_longitude, digits = 5)))
+event_release %<>% mutate(dwc_decimalLongitude = round(release_longitude, digits = 5))
 ```
 
 Combine `event_capture`, `event_surgery` and `event_release` to one `Event Core`:
@@ -462,7 +462,7 @@ head(event)
 Export data:
 
 ```{r}
-write_csv(event, here("data", "processed", "event.csv"), na = "")
+write_csv(event, "../data/processed/event.csv", na = "")
 ```
 
 # Extended Measurements or Facts Extension
@@ -534,7 +534,7 @@ emof_lifestage <-
   filter(!is.na(life_stage)) %>%
   mutate(dwc_measurementType = "life stage") %>%
   mutate(dwc_measurementValue = life_stage) %>%
-  mutate(dwc_measurementUnit = "")
+  mutate(dwc_measurementUnit = "durif life stage")
 ```
 
 ### Age
@@ -671,13 +671,17 @@ emof_anaesthetic %<>%
 
 See [issue 46](https://github.com/inbo/etn-occurrences/issues/46).
 
+Seperate time into its value and unit, and map to Darwin Core terms:
+
 ```{r}
 emof_post_op <- 
-  input_animals %>%
-  filter(!is.na(post_op_holding_period)) %>% 
-  mutate(dwc_measurementType = "") %>%
-  mutate(dwc_measurementValue = "") %>% 
-  mutate(dwc_measurementUnit = "")  
+  input_animals %>% 
+    filter(!is.na(post_op_holding_period)) %>% 
+    separate(post_op_holding_period, into = c("value", "unit"), sep = " ", remove = FALSE) %>% 
+    mutate(dwc_measurementType = "post-operation holding period") %>%
+    mutate(dwc_measurementValue = value) %>% 
+    mutate(dwc_measurementUnit = unit) %>% 
+    select(-value, - unit)
 ```
 
 ### Tag full id
@@ -707,6 +711,7 @@ emof_serial_number <-
 ```{r}
 emof_telemetry_type <-
   input_tags %>%
+  mutate(type = recode(type, "Acoustic" = "acoustic")) %>% 
   mutate(dwc_measurementType = "telemetry type") %>%
   mutate(dwc_measurementValue = type) %>%
   mutate(dwc_measurementUnit = "")
@@ -730,6 +735,9 @@ See [issue 50](https://github.com/inbo/etn-occurrences/issues/50).
 emof_sensor_type <-
   input_tags %>%
   filter(!is.na(sensor_type)) %>%
+  mutate(sensor_type = recode(sensor_type, 
+                              "P" = "pressure",
+                              "A" = "acceleration")) %>% 
   mutate(dwc_measurementType = "tag sensor type") %>%
   mutate(dwc_measurementValue = sensor_type) %>%
   mutate(dwc_measurementUnit = "")
@@ -833,5 +841,5 @@ emof <- bind_rows(emof_capture_occurrence, emof_surgery_event)
 Write csv:
 
 ```{r}
-write.csv(emof, here("data", "processed", "emof.csv"), na = "")
+write.csv(emof , "../data/processed/emof.csv", na = "")
 ```
