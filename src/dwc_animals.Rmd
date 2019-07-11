@@ -161,8 +161,6 @@ event_capture %<>% mutate(dwc_eventDate = catched_date_time)
 
 ### locality
 
-See [issue 34](https://github.com/inbo/etn-occurrences/issues/34).
-
 ```{r}
 event_capture %<>% mutate(dwc_locality = capture_location)
 ```
@@ -272,7 +270,7 @@ event_release %<>% mutate(dwc_samplingProtocol = "release")
 
 ### eventDate
 
-See [issue 40](https://github.com/inbo/etn-occurrences/issues/40). `utc_release_date_time` should follow ISO-8601 format (`yyyy-mm-ddThh:mm:ssZ`). Test:
+`utc_release_date_time` should follow ISO-8601 format (`yyyy-mm-ddThh:mm:ssZ`). Test:
 
 ```{r}
 unique(!is.na(parse_date_time(event_release$utc_release_date_time,orders="ymd_HMS")))
@@ -744,8 +742,6 @@ emof_sensor_type <-
 ```
 
 ### Tag status
-
-See [issue 51](https://github.com/inbo/etn-occurrences/issues/51).
 
 ```{r}
 emof_tag_status <-
