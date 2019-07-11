@@ -841,5 +841,5 @@ emof <- bind_rows(emof_capture_occurrence, emof_surgery_event)
 Write csv:
 
 ```{r}
-write.csv(emof , "../data/processed/emof.csv", na = "")
+write.csv(emof , "../data/processed/emof.csv", na = "", row.names = FALSE)
 ```
