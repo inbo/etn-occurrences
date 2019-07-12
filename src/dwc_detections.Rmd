@@ -303,13 +303,13 @@ as_tibble(deployment_dates)
 
 # Location information
 
-Inspect `station_name`:
+Inspect `station_name`, `location_name` and `location_description`:
 
 ```{r}
 query <- glue_sql(
-    "SELECT COUNT(receiver), receiver, station_name
+    "SELECT COUNT(receiver), receiver, station_name, location_name, location_description
     FROM vliz.deployments_view
-    GROUP BY receiver, station_name
+    GROUP BY receiver, station_name, location_name, location_description
     ORDER BY station_name",
     .con = my_con)
 
@@ -331,6 +331,7 @@ as_tibble(deployment_locations)
 ```
 
 Make subsets to make the interpretation easier:
+
 1. Inspect empty values for `station_name`:
 
 ```{r}
@@ -346,3 +347,56 @@ deployments <- dbGetQuery(my_con, query)
 as_tibble(deployments)
 ```
 
+Conclusion: `station_name` is almost always provided. We use this as main determinant of `locality`. 
+
+```{r}
+query <- glue_sql(
+    "SELECT DISTINCT station_name, location_name
+    FROM vliz.deployments_view
+    WHERE NOT (station_name = '' OR station_name IS NULL)
+    ORDER BY station_name",
+    .con = my_con)
+
+localities <- dbGetQuery(my_con, query)
+as_tibble(localities)
+```
+
+Export location information for further interpretation:
+
+```{r}
+
+```
+
+
+
+2. Inspect empty values for `location_name`:
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(location_name), station_name, location_name, location_description
+    FROM vliz.deployments_view
+    WHERE (location_name = '' or location_name is NULL)
+    GROUP BY station_name, location_name, location_description
+    ORDER BY station_name",
+    .con = my_con)
+
+deployments <- dbGetQuery(my_con, query)
+as_tibble(deployments)
+```
+
+In 84 cases, no location_name is provided. We will map `station_name` _only_ in that case.
+
+3. Inspect non-empty values for `location_description`:
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(location_name), station_name, location_name, location_description
+    FROM vliz.deployments_view
+    WHERE NOT (location_description = '' or location_description is NULL)
+    GROUP BY station_name, location_name, location_description
+    ORDER BY station_name",
+    .con = my_con)
+
+deployments <- dbGetQuery(my_con, query)
+as_tibble(deployments)
+```
