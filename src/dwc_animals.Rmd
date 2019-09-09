@@ -183,10 +183,8 @@ event_capture %<>% mutate(dwc_decimalLongitude = round(capture_longitude, digits
 
 ## Surgery Event
 
-At this point, not all surgery date and/or location information is provided in `input_animals` (see [issue 47](https://github.com/inbo/etn-occurrences/issues/47) and [issue 43] (https://github.com/inbo/etn-occurrences/issues/43)). Although all date information will be provided eventually, we will now only include records with a surgery date.
-
 ```{r}
-event_surgery <- input_animals %>% filter(!is.na(date_of_surgery))
+event_surgery <- input_animals
 ```
 
 This is an overview of the information related to the surgery event:
@@ -211,7 +209,18 @@ event_surgery %<>% mutate(dwc_samplingProtocol = "surgery")
 
 ### eventDate
 
-See [issue 47](https://github.com/inbo/etn-occurrences/issues/47). `date_of_surgery` should follow ISO-8601 format (`yyyy-mm-ddThh:mm:ssZ`). Test:
+Inspect `date_of_surgery`:
+
+```{r}
+event_surgery %>% 
+  group_by(date_of_surgery) %>% 
+  count() %>% 
+  arrange(desc(n))
+```
+
+See [issue 47](https://github.com/inbo/etn-occurrences/issues/47). `date_of_surgery` can be considered to be the same as `catched_date_time`
+
+should follow ISO-8601 format (`yyyy-mm-ddThh:mm:ssZ`). Test:
 
 ```{r}
 unique(!is.na(parse_date_time(event_surgery$date_of_surgery, orders = "ymd_HMS")))
