@@ -53,7 +53,7 @@ Create view of `vliz.detections_view`:
 query <- glue_sql(
     "SELECT *
     FROM vliz.detections_view
-    LIMIT 1000
+    LIMIT 100000
     ",
     .con = my_con)
   
@@ -67,7 +67,7 @@ Create view of `vliz.animals_view`:
 query <- glue_sql(
     "SELECT *
     FROM vliz.animals_view
-    LIMIT 1000
+    LIMIT 100000
     ",
     .con = my_con
   )
@@ -82,7 +82,7 @@ Create view of `vliz.deployments_view`:
 query <- glue_sql(
     "SELECT *
     FROM vliz.deployments_view
-    LIMIT 1000
+    LIMIT 100000
     ",
     .con = my_con
   )
@@ -91,13 +91,19 @@ deployments_subset <- dbGetQuery(my_con, query)
 as_tibble(deployments_subset)
 ```
 
+The query returns a dataset of 3248 records. This means that the `deployments_subset` actually includes all data from `vliz.deployments_view`. 
+
+```{r}
+deployments <- deployments_subset
+```
+
 Create view of `vliz.receivers`:
 
 ```{r}
 receivers_query <- glue_sql("
       SELECT * 
       FROM vliz.receivers
-      LIMIT 1000
+      LIMIT 100000
 ",
 .con = my_con
   )
@@ -108,75 +114,174 @@ as_tibble(receivers_subset)
 
 # Select transmitter and receiver information
 
-Select all tag information from all animal projects of interest:
+We select all transmitter and receiver information (see [ETN Data Policy](http://www.lifewatch.be/etn/assets/docs/ETN-DataPolicy.pdf)):
+
+> Receiver moratorium: there is no moratorium for receiver information. 
+> Tag moratorium: there is no moratorium for tag information.
+> Deployment moratorium: there is no moratorium for deployment information. All
+metadata is made publicly available immediately after installation. All open
+deployments (i.e. without an end date) will be visualized on a map on the ETN Data
+Portal. In exceptional cases, a deployment moratorium can be requested, with the ETN
+Data Committee reviewing requests. 
+
+## Explore deployment information
+
+### Receiver
 
 ```{r}
-detections_query <- glue_sql(
-    "SELECT DISTINCT transmitter
-    FROM vliz.detections_view AS detections
-    WHERE 
-      (animal_project_code = '2011_rivierprik' 
-        OR animal_project_code = '2012_leopoldkanaal'
-        OR animal_project_code = '2013_albertkanaal'
-        OR animal_project_code = '2014_demer'
-        OR animal_project_code = '2015_dijle'
-        OR (animal_project_code = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-        OR animal_project_code = 'homarus'
-        OR animal_project_code = 'phd_reubens')
-      AND NOT scientific_name = 'Sentinel'
-      AND NOT scientific_name = 'Sync tag'" ,
-    .con = my_con)
-
-all_tags <- dbGetQuery(my_con, detections_query)
-as_tibble(all_tags)
+deployments %>% group_by(receiver) %>% count() %>% arrange(desc(n))
 ```
 
-Create vector `transmitter`, to incorporate later in SQL selection criterium:
+### Receiver status
 
 ```{r}
-transmitter <- all_tags %>% pull(transmitter)
+deployments %>% group_by(receiver_status) %>% count() %>% arrange(desc(n))
 ```
 
-Information in `transmitter` should also be in `animal_detections`. 
+### Project name
 
 ```{r}
-detections_query <- glue_sql(
-    "SELECT transmitter
-    FROM vliz.detections_view AS detections
-    WHERE 
-      transmitter IN ({transmitter*})
-      AND transmitter NOT IN
-        (SELECT tag_full_id
-        FROM vliz.animals_view
-        WHERE tag_full_id = detections.transmitter)",
-    transmitter = transmitter,
-    .con = my_con
-  )
-
-tags_not_my_animals <- dbGetQuery(my_con, detections_query)
-as_tibble(tags_not_my_animals)
+deployments %>% 
+  group_by(projectname) %>% 
+  count() %>% 
+  arrange(projectname)
 ```
 
-Inspect receiver information:
+Check which of these projectnames are no valid network project (should be zero):
 
 ```{r}
-detections_query <- glue_sql(
-    "SELECT DISTINCT receiver 
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitter*})",
-    transmitter = transmitter,
-    .con = my_con
-  )
-
-receivers <- dbGetQuery(my_con, detections_query)
-as_tibble(receivers)
+deployments %>% 
+  group_by(projectname) %>% 
+  count() %>% 
+  arrange(projectname) %>% 
+  anti_join(
+    select(get_projects(my_con, project_type = "network"), name),
+    by = c("projectname" = "name")
+)
 ```
 
-Use information in receiver to select on receiver information in `vliz.deployments_view`
+### Drop dead date
 
 ```{r}
-receivers <- receivers %>% pull(receiver)
+deployments %>% group_by(drop_dead_date) %>% count() %>% arrange(desc(n))
 ```
+
+### deploy_date time and recover_date_time
+
+Inspect both `deploy_date_time` and `recover_date_time`:
+
+```{r}
+deployments %>% 
+  group_by(deploy_date_time, recover_date_time) %>% 
+  count() %>% 
+  arrange(desc(n))
+```
+
+Check for empty values in `deploy_date_time`, `recover_date_time` or both:
+
+```{r}
+deployments %>% 
+  mutate(deploy_date_time = as.character(deploy_date_time)) %>% 
+  mutate(recover_date_time = as.character(recover_date_time)) %>% 
+  mutate(empty_dates = case_when(
+    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date",
+    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date",
+    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date",
+    TRUE ~ "date")) %>% 
+  group_by(empty_dates) %>% 
+  count()
+```
+
+All receivers except one have at least a deployment date.
+Retrieve record for which there is no date information whatsoever:
+
+```{r}
+deployments %>% 
+  mutate(deploy_date_time = as.character(deploy_date_time)) %>% 
+  mutate(recover_date_time = as.character(recover_date_time)) %>% 
+  mutate(empty_dates = case_when(
+    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date",
+    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date",
+    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date",
+    TRUE ~ "date")) %>% 
+  filter(empty_dates == "no date") %>% 
+  select(receiver, receiver_status, projectname, id_pk)
+```
+
+Retrieve receiver deployments for which `recover_date_time` falls before `deploy_date_time`:
+
+```{r}
+deployments %>% 
+  mutate(deploy_date_time = as.character(deploy_date_time)) %>% 
+  mutate(recover_date_time = as.character(recover_date_time)) %>% 
+  mutate(empty_dates = case_when(
+    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date",
+    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date",
+    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date",
+    TRUE ~ "date")) %>% 
+  filter(recover_date_time < deploy_date_time) %>% 
+  arrange(receiver) %>% 
+  select(receiver, recover_date_time, deploy_date_time, id_pk, projectname)
+```
+
+### Bottom depth, riser_length, instrument_depth
+
+```{r}
+deployments %>% 
+  group_by(bottom_depth, riser_length, instrument_depth) %>% 
+  count() %>% 
+  arrange(desc(n))
+```
+
+Unit of `bottom_depth`: metres
+Unit of `riser_length`: metres
+unit of `instrument_depth`: metres
+
+Select those records with a unit in `bottom_depth` (see #58)
+
+```{r}
+deployments %>% 
+  filter(str_detect(bottom_depth,"m")) %>% 
+  select(receiver, id_pk, bottom_depth, projectcode) %>% 
+  arrange(receiver)
+```
+
+### UTC synchronisation date time
+
+```{r}
+deployments %>% 
+  group_by(sync_date_time) %>% 
+  count() %>% 
+  arrange(desc(n))
+```
+
+### Comments
+
+```{r}
+deployments %>% 
+  group_by(comments) %>% 
+  count() %>% 
+  arrange(desc(n))
+```
+
+### id_pk
+
+Should all be unique (output should be empty)
+
+```{r}
+deployments %>% get_dupes(id_pk)
+```
+
+### location name
+
+```{r}
+deployments %>% 
+  filter(!is.na(location_name) | location_name == "") %>%
+  group_by(location_name, projectname) %>% 
+  count() %>% 
+  arrange(location_name)
+```
+
 
 # Detection date information
 
@@ -364,7 +469,7 @@ as_tibble(localities)
 Export location information for further interpretation:
 
 ```{r}
-
+write.csv(localities, "../data/interim/localities.csv")
 ```
 
 
