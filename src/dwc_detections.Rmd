@@ -175,7 +175,7 @@ deployments %>%
   arrange(projectname)
 ```
 
-Check which of these projectnames are no valid network project (should be zero):
+Check whether these projectnames are valid network project (should be zero):
 
 ```{r}
 deployments %>% 
@@ -212,16 +212,16 @@ deployments %>%
   mutate(deploy_date_time = as.character(deploy_date_time)) %>% 
   mutate(recover_date_time = as.character(recover_date_time)) %>% 
   mutate(empty_dates = case_when(
-    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date",
-    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date",
-    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date",
-    TRUE ~ "date")) %>% 
+    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date available",
+    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date available",
+    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date information available",
+    TRUE ~ "deploy and recover date available")) %>% 
   group_by(empty_dates) %>% 
   count()
 ```
 
-All receivers except one have at least a deployment date.
-Retrieve record for which there is no date information whatsoever:
+All receivers have at least a deployment date available.
+Retrieve record for which there is no recover date information whatsoever:
 
 ```{r}
 deployments %>% 
