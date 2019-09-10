@@ -1,0 +1,915 @@
+"","location_name","projectname","n"
+"1","Aberdeen Bay","Aberdeen 2017",35
+"2","","Albertkanaal",7
+"3","1","Albertkanaal",3
+"4","10","Albertkanaal",3
+"5","11","Albertkanaal",2
+"6","12","Albertkanaal",3
+"7","13","Albertkanaal",2
+"8","14","Albertkanaal",1
+"9","15","Albertkanaal",1
+"10","16","Albertkanaal",5
+"11","2","Albertkanaal",5
+"12","9","Albertkanaal",5
+"13","ak-30","Albertkanaal",1
+"14","ak-34","Albertkanaal",7
+"15","Boudewijnsluis Albertkanaal","Albertkanaal",9
+"16","Boudewijnsluis Schelde","Albertkanaal",8
+"17","brug kanaalweg Tessenderlo","Albertkanaal",2
+"18","Dessel-Schoten","Albertkanaal",5
+"19","Diepenbeek SA","Albertkanaal",12
+"20","Diepenbeek SO","Albertkanaal",4
+"21","duwvaartsluis Ham","Albertkanaal",7
+"22","Genk SA","Albertkanaal",12
+"23","Genk SO","Albertkanaal",11
+"24","Genk SO1","Albertkanaal",3
+"25","Ham SA","Albertkanaal",14
+"26","Ham Sluis Midden","Albertkanaal",7
+"27","Ham SO","Albertkanaal",15
+"28","Hasselt SA","Albertkanaal",3
+"29","Hasselt SO","Albertkanaal",13
+"30","HH1","Albertkanaal",6
+"31","HH10","Albertkanaal",3
+"32","HH11","Albertkanaal",4
+"33","HH2","Albertkanaal",6
+"34","HH3","Albertkanaal",6
+"35","HH4","Albertkanaal",6
+"36","HH5","Albertkanaal",4
+"37","HH9","Albertkanaal",4
+"38","Kanaal Dessel - Herentals","Albertkanaal",4
+"39","Kwaadmechelen -Dessel","Albertkanaal",5
+"40","Olen SA","Albertkanaal",10
+"41","Olen SO","Albertkanaal",13
+"42","Royersluis Albertkanaal","Albertkanaal",9
+"43","Royersluis Schelde","Albertkanaal",9
+"44","S02","Albertkanaal",7
+"45","S07","Albertkanaal",5
+"46","S08","Albertkanaal",8
+"47","S09","Albertkanaal",4
+"48","S09-2","Albertkanaal",5
+"49","S10","Albertkanaal",7
+"50","S12","Albertkanaal",8
+"51","S13","Albertkanaal",9
+"52","S14","Albertkanaal",8
+"53","S15","Albertkanaal",8
+"54","S16","Albertkanaal",8
+"55","S17","Albertkanaal",8
+"56","S18","Albertkanaal",8
+"57","SA Hasselt","Albertkanaal",7
+"58","Schelde-Rijn verbinding","Albertkanaal",7
+"59","sluis Ham","Albertkanaal",2
+"60","sluis Ham RO","Albertkanaal",6
+"61","SO Diepenbeek","Albertkanaal",7
+"62","Terbekstraat (Tervant) thv geronoveerd huis","Albertkanaal",6
+"63","Terhulzen  Beringen, LO thv Style kapsalon","Albertkanaal",6
+"64","Toevoerkanaal","Albertkanaal",5
+"65","Toevoerkanaal ","Albertkanaal",1
+"66","TOEVOERKANAAL","Albertkanaal",1
+"67","Uitzet SO 1","Albertkanaal",9
+"68","Uitzet SO2","Albertkanaal",11
+"69","Wijnegem SA","Albertkanaal",8
+"70","Wijnegem SO","Albertkanaal",10
+"71","Zandvlietsluis Albertkanaal","Albertkanaal",7
+"72","Zandvlietsluis Schelde","Albertkanaal",7
+"73","zuid willemsvaart","Albertkanaal",1
+"74","Zuid-Willemsvaart","Albertkanaal",1
+"75","ar01","ARAISOLA02",1
+"76","ar02","ARAISOLA02",1
+"77","ar03","ARAISOLA02",2
+"78","ar04","ARAISOLA02",2
+"79","ar05","ARAISOLA02",1
+"80","ar06","ARAISOLA02",1
+"81","ar07","ARAISOLA02",1
+"82","ar08","ARAISOLA02",1
+"83","ar09","ARAISOLA02",1
+"84","r01","ARAISOLA03",2
+"85","r02","ARAISOLA03",2
+"86","r03","ARAISOLA03",2
+"87","r04","ARAISOLA03",2
+"88","r05","ARAISOLA03",2
+"89","r06","ARAISOLA03",1
+"90","r07","ARAISOLA03",2
+"91","r08","ARAISOLA03",2
+"92","r09","ARAISOLA03",1
+"93","r10","ARAISOLA03",2
+"94","r11","ARAISOLA03",2
+"95","r12","ARAISOLA03",2
+"96","r13","ARAISOLA03",2
+"97","r14","ARAISOLA03",1
+"98","r15","ARAISOLA03",1
+"99","vinhos 1","Artevigo",1
+"100","vinhos 10","Artevigo",1
+"101","vinhos 11","Artevigo",2
+"102","vinhos 12","Artevigo",1
+"103","vinhos 2","Artevigo",1
+"104","vinhos 3","Artevigo",1
+"105","vinhos 4","Artevigo",1
+"106","vinhos 5","Artevigo",1
+"107","vinhos 6","Artevigo",1
+"108","vinhos 7","Artevigo",1
+"109","vinhos 8","Artevigo",1
+"110","vinhos 9","Artevigo",1
+"111","Monte da Guia","Azorean acoustic receiver network",37
+"112","APPA E","BECORV",2
+"113","APPA N","BECORV",2
+"114","APPA S","BECORV",2
+"115","APPA W","BECORV",1
+"116","Barra Faro Olhão","BECORV",1
+"117","Guadiana estuary","BECORV",2
+"118","Portimão","BECORV",1
+"119","Bovenschelde - 400m SO monding Maarkebeek","Bovenschelde",3
+"120","Bovenschelde - 400m SO monding Zwalm","Bovenschelde",6
+"121","Bovenschelde - Halverwege Asper/Oudenaarde","Bovenschelde",3
+"122","Bovenschelde - Halverwege Merelbeke/Asper","Bovenschelde",3
+"123","Bovenschelde - Kop Sluismuur Asper","Bovenschelde",6
+"124","Bovenschelde - Kop Sluismuur Oudenaarde","Bovenschelde",4
+"125","Bovenschelde - Stroomop Complex Asper","Bovenschelde",6
+"126","Bovenschelde - Stroomop Complex Kerkhove","Bovenschelde",1
+"127","Bovenschelde - Stroomop Complex Oudenaarde","Bovenschelde",5
+"128","Bovenschelde - Stroomop Stuw Tijarm","Bovenschelde",5
+"129","Bovenschelde - Stuwgeul Asper","Bovenschelde",6
+"130","Bovenschelde - Stuwgeul Kerkhove","Bovenschelde",3
+"131","Bovenschelde - Stuwgeul Oudenaarde","Bovenschelde",4
+"132","Kanaal Gent-Oostende - Lovendegem","Bovenschelde",2
+"133","Leie - Stroomaf Complex St-Baafs-vijve","Bovenschelde",2
+"134","Maarkebeek - onder eerste knelpunt","Bovenschelde",1
+"135","Nevengeul Asper (Afwaarts)","Bovenschelde",3
+"136","Nevengeul Asper (Midden)","Bovenschelde",3
+"137","Nevengeul Asper (Opwaarts)","Bovenschelde",3
+"138","Nevengeul Oudenaarde (Afwaarts)","Bovenschelde",3
+"139","Nevengeul Oudenaarde (Midden)","Bovenschelde",5
+"140","Nevengeul Oudenaarde (Opwaarts)","Bovenschelde",4
+"141","Noordervak Ringvaart - Stroomaf Complex Evergem","Bovenschelde",2
+"142","Tijarm - Begin Tijarm","Bovenschelde",2
+"143","Tijarm - Stuw","Bovenschelde",3
+"144","Westervak Ringvaart - Stroomop Complex Merelbeke","Bovenschelde",3
+"145","Westervak Ringvaart - Stroomop v d 2 Leiemondingen (Watersportbaan)","Bovenschelde",2
+"146","Zeeschelde - Dendermonde - Ponton Brandweer","Bovenschelde",3
+"147","Zeeschelde - Schellebelle - Voetveer","Bovenschelde",3
+"148","Zeeschelde - Staketsels Melle","Bovenschelde",2
+"149","Zuidervak Ringvaart - Brug Merelbeke","Bovenschelde",3
+"150","Zwalm - Stroomaf TerBiest - Schuisplanklos","Bovenschelde",3
+"151","","BPNS",1
+"152","500m","BPNS",1
+"153","B05 Belwind","BPNS",2
+"154","Belreef1","BPNS",1
+"155","Belwind C05-AR1","BPNS",2
+"156","Belwind C05-AR2","BPNS",1
+"157","Belwind C05-AR3","BPNS",2
+"158","Belwind C05-AR6","BPNS",12
+"159","BIRKENFILS","BPNS",1
+"160","Blackfish","BPNS",1
+"161","Boei bij Reefballs C-Power","BPNS",1
+"162","Boudewijn","BPNS",1
+"163","bpns-B05Belwind","BPNS",1
+"164","bpns-BelwindReefballs","BPNS",6
+"165","bpns-BIRKENFELS","BPNS",6
+"166","bpns_CNB01","BPNS",1
+"167","bpns-CNB02","BPNS",1
+"168","bpns-CNB03","BPNS",1
+"169","bpns-CNB04","BPNS",1
+"170","bpns-CNB05","BPNS",2
+"171","bpns-CNB06","BPNS",2
+"172","bpns-CNB07","BPNS",2
+"173","bpns-CNB08","BPNS",2
+"174","bpns-CNB09","BPNS",3
+"175","bpns-CNB10","BPNS",1
+"176","bpns-CNB11","BPNS",1
+"177","bpns-CNB12","BPNS",1
+"178","bpns-CNB13","BPNS",3
+"179","bpns-CNB14","BPNS",1
+"180","bpns-CPowerReefballs","BPNS",6
+"181","bpns-Kilmore","BPNS",2
+"182","bpns-LottoBuoy","BPNS",6
+"183","bpns-nieuwpoortbank","BPNS",2
+"184","bpns-NIEUWPOORTKUST8","BPNS",5
+"185","bpns-NobelwindG10","BPNS",1
+"186","bpns-Noordede","BPNS",2
+"187","bpns-OH1","BPNS",1
+"188","bpns-OOSTDYCK","BPNS",1
+"189","bpns-RYCO","BPNS",2
+"190","bpns-WKSabrina","BPNS",2
+"191","bpns-WZ","BPNS",1
+"192","Buitenratel","BPNS",5
+"193","C05 Belwind","BPNS",1
+"194","D1","BPNS",11
+"195","Duc de Normandie, Shipwreck","BPNS",1
+"196","GARDEN CITY","BPNS",4
+"197","KB-2","BPNS",11
+"198","Kilmore, shipwreck","BPNS",1
+"199","Middelkerkebank","BPNS",7
+"200","mobiele receiver","BPNS",1
+"201","Nieuwpoortbank","BPNS",2
+"202","Nieuwpoort Kust 8","BPNS",2
+"203","NOORD HINDER SE","BPNS",3
+"204","O6","BPNS",1
+"205","O 6 OOSTENDE","BPNS",13
+"206","OOST – DYCK","BPNS",10
+"207","RTNZ01","BPNS",1
+"208","RTNZ02","BPNS",1
+"209","RTNZ03","BPNS",1
+"210","RTNZ04","BPNS",1
+"211","RTNZ05","BPNS",1
+"212","RTNZ06","BPNS",1
+"213","RTNZ07","BPNS",1
+"214","S4","BPNS",13
+"215","S 7","BPNS",7
+"216","Trapegeer","BPNS",4
+"217","tripode bij reefballs Belwind","BPNS",1
+"218","Vandamme","BPNS",1
+"219","VG2","BPNS",11
+"220","VG-2","BPNS",1
+"221","W1","BPNS",13
+"222","WENDUINE BANK W","BPNS",16
+"223","Whitley","BPNS",6
+"224","WK12","BPNS",12
+"225","WK14","BPNS",13
+"226","WK-Sabrina","BPNS",1
+"227","WZ","BPNS",12
+"228","ZAND4","BPNS",5
+"229","Zeebrugge East 1","BPNS",1
+"230","Zeebrugge East 2","BPNS",1
+"231","Zeebrugge East 3","BPNS",1
+"232","Zeebrugge West 1","BPNS",1
+"233","Zeebrugge West 2","BPNS",1
+"234","Zeebrugge West 3","BPNS",1
+"235","ZOKN","BPNS",3
+"236","ZW1","BPNS",4
+"237","bpns-Belwindreefballs-CPOD","cpodnetwork",2
+"238","bpns-Birkenfels","cpodnetwork",2
+"239","bpns-Buitenratel","cpodnetwork",3
+"240","bpns-Cpowerreefballs-CPOD","cpodnetwork",3
+"241","bpns-G-88","cpodnetwork",3
+"242","bpns-Gardencity","cpodnetwork",2
+"243","bpns-HMS Grafton","cpodnetwork",4
+"244","bpns-Nautica Ena","cpodnetwork",4
+"245","bpns-Sigurd Faulbaums","cpodnetwork",3
+"246","bpns-Westhinder","cpodnetwork",2
+"247","Alhos E","DAbecasis PhD",7
+"248","Alpertuche","DAbecasis PhD",2
+"249","Alpertuche_Fora","DAbecasis PhD",3
+"250","Anicha_in","DAbecasis PhD",1
+"251","Anicha_out","DAbecasis PhD",1
+"252","Cabo_Afonso","DAbecasis PhD",1
+"253","Calhau_dos_Alhos","DAbecasis PhD",4
+"254","Coelho","DAbecasis PhD",1
+"255","F1","DAbecasis PhD",2
+"256","F2","DAbecasis PhD",2
+"257","F3","DAbecasis PhD",1
+"258","F4","DAbecasis PhD",1
+"259","F5","DAbecasis PhD",1
+"260","F6","DAbecasis PhD",1
+"261","Galapos_1","DAbecasis PhD",1
+"262","Lagosteiros","DAbecasis PhD",1
+"263","Morcegos","DAbecasis PhD",7
+"264","PNA2","DAbecasis PhD",1
+"265","Risco","DAbecasis PhD",2
+"266","RiscoWombat","DAbecasis PhD",1
+"267","WP015","DAbecasis PhD",5
+"268","WP016","DAbecasis PhD",4
+"269","WP017","DAbecasis PhD",4
+"270","Afwateringskanaal","DAK 2018-2019",1
+"271","Bergediepsluis west Oosterschelde","DAK 2018-2019",1
+"272","Bergsediepsluis oost Bergesediep","DAK 2018-2019",1
+"273","Franeker boezem","DAK 2018-2019",1
+"274","Harlingen haven paal 2b","DAK 2018-2019",1
+"275","Harlingen Kanaal voor huis Boersma","DAK 2018-2019",1
+"276","Hitzum boezem","DAK 2018-2019",1
+"277","Hitzum polder","DAK 2018-2019",1
+"278","Markiezaatsmeer","DAK 2018-2019",1
+"279","Noordoostkant Kreekraksluis","DAK 2018-2019",1
+"280","Noordwestkant Kreekraksluis","DAK 2018-2019",1
+"281","Schelde-Rijnkanaal Noord","DAK 2018-2019",1
+"282","Tzum boezem","DAK 2018-2019",1
+"283","Tzum polder","DAK 2018-2019",1
+"284","Zuidkant Kreekraksluis","DAK 2018-2019",1
+"285","4","Demer",1
+"286","AAN_GB2_RODEMER","Demer",1
+"287","de-12","Demer",5
+"288","de-13","Demer",2
+"289","de-14","Demer",3
+"290","de-7","Demer",4
+"291","de-9","Demer",1
+"292","fietsersbrug aarschot","Demer",1
+"293","IN_KB_TUNNEL","Demer",1
+"294","IN_KS_ROZWDEMER","Demer",1
+"295","IN_MZ_RODEMER","Demer",1
+"296","IN_VB_LODEMER","Demer",1
+"297","IN_VB_ROZB","Demer",1
+"298","Messelbroek","Demer",3
+"299","rommelaar","Demer",1
+"300","Rommelaar","Demer",1
+"301","SA_GB_RODEMER","Demer",1
+"302","SA Hasselt","Demer",2
+"303","SA_KS_LOZB","Demer",1
+"304","SA_KS_RODEMER","Demer",1
+"305","SA_RIF_LODEMER","Demer",1
+"306","SA_SB_LODE","Demer",1
+"307","SA_SB_RODEMER","Demer",2
+"308","SA_SB_RODE_VOETGANGERS","Demer",1
+"309","SO2_KS_RODEMER","Demer",1
+"310","SO_KS_LODEMER","Demer",2
+"311","SO_KS_LOZB","Demer",1
+"312","SO_MZ_ROZB","Demer",1
+"313","SO_SB_RODEMER","Demer",1
+"314","SO_ZICHEM_DEMER","Demer",1
+"315","Testelt","Demer",1
+"316","","Dijle",26
+"317","m-2","Dijle",2
+"318","M-2","Dijle",1
+"319","M-3","Dijle",4
+"320","m-4","Dijle",2
+"321","M-4A","Dijle",2
+"322","M-5","Dijle",3
+"323","M-6","Dijle",5
+"324","Mulzenbrug","Dijle",2
+"325","Rupel","Dijle",9
+"326","test Rotselaar","Dijle",2
+"327","Ringkøbing mouth","DTU-Skjern",64
+"328","Skjern estuary","DTU-Skjern",43
+"329","1","EMMN",1
+"330","10","EMMN",1
+"331","100","EMMN",1
+"332","11","EMMN",1
+"333","12","EMMN",1
+"334","13","EMMN",1
+"335","14","EMMN",1
+"336","15","EMMN",1
+"337","16","EMMN",1
+"338","17","EMMN",1
+"339","18","EMMN",1
+"340","19","EMMN",1
+"341","2","EMMN",1
+"342","20","EMMN",1
+"343","21","EMMN",1
+"344","22","EMMN",1
+"345","23","EMMN",2
+"346","24","EMMN",1
+"347","25","EMMN",1
+"348","26","EMMN",1
+"349","27","EMMN",1
+"350","28","EMMN",1
+"351","29","EMMN",1
+"352","3","EMMN",1
+"353","30","EMMN",1
+"354","31","EMMN",1
+"355","32","EMMN",1
+"356","33","EMMN",1
+"357","34","EMMN",3
+"358","35","EMMN",1
+"359","36","EMMN",1
+"360","37","EMMN",2
+"361","38","EMMN",1
+"362","39","EMMN",1
+"363","4","EMMN",1
+"364","40","EMMN",1
+"365","41","EMMN",1
+"366","42","EMMN",1
+"367","43","EMMN",1
+"368","44","EMMN",1
+"369","45","EMMN",1
+"370","5","EMMN",1
+"371","59","EMMN",1
+"372","6","EMMN",1
+"373","7","EMMN",1
+"374","8","EMMN",1
+"375","9","EMMN",1
+"376","A","ESGL",2
+"377","AM1","ESGL",2
+"378","AM2","ESGL",2
+"379","AM3","ESGL",2
+"380","AV1","ESGL",2
+"381","AV2","ESGL",2
+"382","AV3","ESGL",2
+"383","B1","ESGL",2
+"384","B2","ESGL",2
+"385","BB","ESGL",2
+"386","BOX0","ESGL",1
+"387","C","ESGL",2
+"388","C1","ESGL",2
+"389","C10","ESGL",2
+"390","C11","ESGL",2
+"391","C12","ESGL",2
+"392","C13","ESGL",2
+"393","C14","ESGL",2
+"394","C15","ESGL",2
+"395","C2","ESGL",2
+"396","C3","ESGL",2
+"397","C4","ESGL",2
+"398","C5","ESGL",2
+"399","C6","ESGL",2
+"400","C7","ESGL",2
+"401","C8","ESGL",2
+"402","C9","ESGL",2
+"403","CA","ESGL",2
+"404","CN","ESGL",2
+"405","D","ESGL",2
+"406","EBB1","ESGL",1
+"407","EBB2","ESGL",2
+"408","Ebis","ESGL",1
+"409","ECA","ESGL",2
+"410","EMA","ESGL",2
+"411","I","ESGL",2
+"412","MA","ESGL",2
+"413","Downstrea IG II, left bank, Romania","IG II Fish Pass",3
+"414","Downstrea IG II, right bank, Serbia","IG II Fish Pass",2
+"415","Mouth of the Gogosu branch","IG II Fish Pass",1
+"416","Pristol village","IG II Fish Pass",1
+"417","Romanian  Ship Lock located on Gogosu branch","IG II Fish Pass",1
+"418","Romanian Turbine no.1","IG II Fish Pass",1
+"419","Ruse town, right bank, Bulgaria","IG II Fish Pass",1
+"420"," Spillway located upstream on Gogosu branch","IG II Fish Pass",1
+"421","12","Inforbiomares",2
+"422","13","Inforbiomares",2
+"423","14","Inforbiomares",2
+"424","15","Inforbiomares",2
+"425","16","Inforbiomares",2
+"426","17","Inforbiomares",2
+"427","19","Inforbiomares",2
+"428","21","Inforbiomares",2
+"429","22","Inforbiomares",2
+"430","23","Inforbiomares",2
+"431","24","Inforbiomares",2
+"432","26","Inforbiomares",2
+"433","35","Inforbiomares",2
+"434","3 milhas","Inforbiomares",2
+"435","5","Inforbiomares",2
+"436","6","Inforbiomares",2
+"437","7","Inforbiomares",2
+"438","8","Inforbiomares",2
+"439","Arrábida","Inforbiomares",3
+"440","Arrábida - Cabo Afonso - WP28","Inforbiomares",1
+"441","Baia Armação - estrutura dos Kelps","Inforbiomares",1
+"442","Baleeira","Inforbiomares",2
+"443","Fim total","Inforbiomares",2
+"444","Jardim das Gorgonias","Inforbiomares",2
+"445","Pedra Bonita","Inforbiomares",2
+"446","Pedra do Leao","Inforbiomares",1
+"447","PNA 1","Inforbiomares",1
+"448","PNA2","Inforbiomares",1
+"449","Ponta da Passagem","Inforbiomares",1
+"450","River_popa","Inforbiomares",1
+"451","River Popa","Inforbiomares",1
+"452","Portelet Bay NE","Jersey Coastal Fish Tracking",1
+"453","Portelet Bay NW","Jersey Coastal Fish Tracking",1
+"454","Portelet Bay SE","Jersey Coastal Fish Tracking",1
+"455","Portelet Bay SW","Jersey Coastal Fish Tracking",1
+"456","BOEREKREEK MONDING ROESELAREKREEK","Leopoldkanaal",1
+"457","BOEREKREEK NATUURRESERVAAT","Leopoldkanaal",2
+"458","Braakman","Leopoldkanaal",1
+"459","Braakman 1","Leopoldkanaal",4
+"460","Braakman 2","Leopoldkanaal",1
+"461","Braakman 3","Leopoldkanaal",1
+"462","Braakman 4","Leopoldkanaal",1
+"463","Braakman 5","Leopoldkanaal",1
+"464","GROTE GEUL NOTARIS","Leopoldkanaal",2
+"465","GROTE GEUL UITSTROOM","Leopoldkanaal",2
+"466","GROTE KIL SO","Leopoldkanaal",2
+"467","Haven SA Braakman","Leopoldkanaal",2
+"468","Houten brug SA gemaal","Leopoldkanaal",4
+"469","Isabella-400m SA uitwatering Legemeersa","Leopoldkanaal",1
+"470","Isabella-400m SO Stenenschuurbrug","Leopoldkanaal",1
+"471","Isabella-800m SA uitwatering Legemeersa","Leopoldkanaal",1
+"472","ISABELLAGELEED SA STUW","Leopoldkanaal",1
+"473","Isabellageleed SO stuw","Leopoldkanaal",1
+"474","Isabellakanaal","Leopoldkanaal",1
+"475","Isabella- Stenenschuurbrug","Leopoldkanaal",2
+"476","Legemeersbeek 1a","Leopoldkanaal",2
+"477","Legemeersbeek 2","Leopoldkanaal",1
+"478","LEOPOLDKANAAL BRUG WATERVLIET","Leopoldkanaal",1
+"479","LEOPOLDKANAAL MONDING BOEREKREEK","Leopoldkanaal",3
+"480","Leopoldkanaal nood zoekt troost","Leopoldkanaal",4
+"481","Leopoldkanaal Strobrugge","Leopoldkanaal",2
+"482","LEOPOLDKANAAL ZONNEBRUG","Leopoldkanaal",2
+"483","Notelaarsbrug","Leopoldkanaal",1
+"484","SA stuw St Laureins","Leopoldkanaal",3
+"485","SO stuw St Laureins","Leopoldkanaal",1
+"486","STUW SINT LAUREINS SO (vervanging)","Leopoldkanaal",3
+"487","Toevoerkanaal Isabellagemaal","Leopoldkanaal",4
+"488","VLIETBEEK SA","Leopoldkanaal",2
+"489","VLIETBEEK SO","Leopoldkanaal",1
+"490","Zeebrugge SA uitwatering zout","Leopoldkanaal",1
+"491","Zeebrugge zoet","Leopoldkanaal",2
+"492","ZWARTESLUISBEEK","Leopoldkanaal",2
+"493","Zwartesluisbeek SO Fuiken 1","Leopoldkanaal",1
+"494","Doel nuclear plant","Lifewatch",2
+"495","15 Aalborg","Limfjord",2
+"496","16 Aalborg","Limfjord",2
+"497","Aggersund","Limfjord",2
+"498","Hals1","Limfjord",2
+"499","Hals2","Limfjord",2
+"500","Karup","Limfjord",2
+"501","Simested","Limfjord",2
+"502","Sundstrup","Limfjord",4
+"503","","Maas",1
+"504","3","Maas",5
+"505","4","Maas",5
+"506","5","Maas",3
+"507","6","Maas",3
+"508","7","Maas",3
+"509","8","Maas",5
+"510","8' Maas RO thv METRO","Maas",12
+"511","9'","Maas",1
+"512","LO stroomaf sluizencomplex Limmel (Julianakanaal), aan steigerpaal","Maas",2
+"513","LO stroomop sluizen Afferden","Maas",3
+"514","LO stroomop stuw Afferden","Maas",2
+"515","LO stroomop stuw Borgharen, aan ingang vistrap","Maas",6
+"516","ma-1","Maas",4
+"517","ma-4","Maas",3
+"518","ma-5","Maas",3
+"519","Maas SA barrage Monsin","Maas",3
+"520","Maas SA Borgharen","Maas",6
+"521","RO stroomop sluizen Afferden","Maas",3
+"522","RO stroomop stuw Afferden","Maas",3
+"523","RO stroomop stuw Borgharen (aan boompje)","Maas",3
+"524","RO Zuid-Willemsvaart Borgharen (aan meetstation)","Maas",1
+"525","Plymouth","MBA_Massmo",6
+"526","Wavehub","MBA_Wavehub",6
+"527","Plymouth","MBA_Whitsand",8
+"528","BP-1","Moray Firth 2016",1
+"529","BP-2","Moray Firth 2016",1
+"530","BP-3","Moray Firth 2016",1
+"531","BP-4","Moray Firth 2016",1
+"532","BP-5","Moray Firth 2016",1
+"533","BP-6","Moray Firth 2016",1
+"534","ES-1","Moray Firth 2016",1
+"535","ES-2","Moray Firth 2016",1
+"536","FW-1","Moray Firth 2016",1
+"537","IN-1","Moray Firth 2016",1
+"538","IN-2","Moray Firth 2016",1
+"539","IN-3","Moray Firth 2016",1
+"540","IN-4","Moray Firth 2016",1
+"541","IN-5","Moray Firth 2016",1
+"542","IN-6","Moray Firth 2016",1
+"543","IN-7","Moray Firth 2016",1
+"544","MS-1","Moray Firth 2016",1
+"545","MS-10","Moray Firth 2016",1
+"546","MS-11","Moray Firth 2016",1
+"547","MS-12","Moray Firth 2016",1
+"548","MS-13","Moray Firth 2016",1
+"549","MS-14","Moray Firth 2016",1
+"550","MS-15","Moray Firth 2016",1
+"551","MS-16","Moray Firth 2016",1
+"552","MS-17","Moray Firth 2016",1
+"553","MS-18","Moray Firth 2016",1
+"554","MS-19","Moray Firth 2016",1
+"555","MS-2","Moray Firth 2016",1
+"556","MS-20","Moray Firth 2016",1
+"557","MS-21","Moray Firth 2016",1
+"558","MS-22","Moray Firth 2016",1
+"559","MS-23","Moray Firth 2016",1
+"560","MS-24","Moray Firth 2016",1
+"561","MS-25","Moray Firth 2016",1
+"562","MS-26","Moray Firth 2016",1
+"563","MS-27","Moray Firth 2016",1
+"564","MS-28","Moray Firth 2016",1
+"565","MS-29","Moray Firth 2016",1
+"566","MS-3","Moray Firth 2016",1
+"567","MS-30","Moray Firth 2016",1
+"568","MS-31","Moray Firth 2016",1
+"569","MS-32","Moray Firth 2016",1
+"570","MS-33","Moray Firth 2016",1
+"571","MS-34","Moray Firth 2016",1
+"572","MS-35","Moray Firth 2016",1
+"573","MS-36","Moray Firth 2016",1
+"574","MS-37","Moray Firth 2016",1
+"575","MS-38","Moray Firth 2016",1
+"576","MS-39","Moray Firth 2016",1
+"577","MS-4","Moray Firth 2016",1
+"578","MS-40","Moray Firth 2016",2
+"579","MS-5","Moray Firth 2016",1
+"580","MS-6","Moray Firth 2016",1
+"581","MS-7","Moray Firth 2016",1
+"582","MS-8","Moray Firth 2016",1
+"583","MS-9","Moray Firth 2016",1
+"584","SU-1","Moray Firth 2016",1
+"585","SU-2","Moray Firth 2016",1
+"586","SU-3","Moray Firth 2016",1
+"587","SU-4","Moray Firth 2016",1
+"588","SU-5","Moray Firth 2016",1
+"589","SU-6","Moray Firth 2016",1
+"590","SU-7","Moray Firth 2016",1
+"591","","Noordzeekanaal 2017-2018",1
+"592","10 meter voor gemaal linkerzijde","Noordzeekanaal 2017-2018",1
+"593","2 meter vanaf kant","Noordzeekanaal 2017-2018",2
+"594","40 meter voor kanaal","Noordzeekanaal 2017-2018",1
+"595","Aan drie palen","Noordzeekanaal 2017-2018",1
+"596","Achter gemaal","Noordzeekanaal 2017-2018",2
+"597","Achter sluis","Noordzeekanaal 2017-2018",1
+"598","Bij kleine sluis","Noordzeekanaal 2017-2018",1
+"599","Bij palenrij rechts","Noordzeekanaal 2017-2018",1
+"600","Gemaal binnenkant","Noordzeekanaal 2017-2018",1
+"601","Gemaalkom","Noordzeekanaal 2017-2018",2
+"602","Grote vaart","Noordzeekanaal 2017-2018",1
+"603","Kade bij huis ","Noordzeekanaal 2017-2018",1
+"604","Kleine sluis","Noordzeekanaal 2017-2018",1
+"605","KNRM steiger","Noordzeekanaal 2017-2018",1
+"606","Markermeerzijde midden","Noordzeekanaal 2017-2018",1
+"607","Markermeerzijde Noord","Noordzeekanaal 2017-2018",1
+"608","Markermeerzijde zuid","Noordzeekanaal 2017-2018",1
+"609","Midden voor gemaal","Noordzeekanaal 2017-2018",2
+"610","Noordzeekanaal midden","Noordzeekanaal 2017-2018",1
+"611","Noordzeekanaal noord","Noordzeekanaal 2017-2018",1
+"612","Noordzeekanaal zuid","Noordzeekanaal 2017-2018",1
+"613","noordzijde","Noordzeekanaal 2017-2018",16
+"614","NZK zijde","Noordzeekanaal 2017-2018",3
+"615","overzijde kanaal","Noordzeekanaal 2017-2018",1
+"616","Overzijde Spaarne","Noordzeekanaal 2017-2018",1
+"617","Polderzijde","Noordzeekanaal 2017-2018",2
+"618","Rechts","Noordzeekanaal 2017-2018",1
+"619","Slootje","Noordzeekanaal 2017-2018",1
+"620","Sluizen","Noordzeekanaal 2017-2018",1
+"621","Uitwateringskanaal","Noordzeekanaal 2017-2018",1
+"622","Vaart kanoclub","Noordzeekanaal 2017-2018",1
+"623","Vaart polder in","Noordzeekanaal 2017-2018",1
+"624","Vaart vanaf gemaal","Noordzeekanaal 2017-2018",1
+"625","Voor brug","Noordzeekanaal 2017-2018",1
+"626","Voor gemaal","Noordzeekanaal 2017-2018",2
+"627","Voor sluis","Noordzeekanaal 2017-2018",2
+"628","Voor sluis links","Noordzeekanaal 2017-2018",1
+"629","Zaan","Noordzeekanaal 2017-2018",1
+"630","zuidzijde","Noordzeekanaal 2017-2018",12
+"631","Gaulosen 1","NTNU-Gaulosen",1
+"632","Gaulosen 10","NTNU-Gaulosen",1
+"633","Gaulosen 11","NTNU-Gaulosen",1
+"634","Gaulosen 12","NTNU-Gaulosen",1
+"635","Gaulosen 13","NTNU-Gaulosen",1
+"636","Gaulosen 14","NTNU-Gaulosen",1
+"637","Gaulosen 15","NTNU-Gaulosen",1
+"638","Gaulosen 16","NTNU-Gaulosen",1
+"639","Gaulosen 17","NTNU-Gaulosen",1
+"640","Gaulosen 18","NTNU-Gaulosen",1
+"641","Gaulosen 19","NTNU-Gaulosen",1
+"642","Gaulosen 2","NTNU-Gaulosen",1
+"643","Gaulosen 3","NTNU-Gaulosen",1
+"644","Gaulosen 4","NTNU-Gaulosen",1
+"645","Gaulosen 5","NTNU-Gaulosen",1
+"646","Gaulosen 6","NTNU-Gaulosen",1
+"647","Gaulosen 7","NTNU-Gaulosen",1
+"648","Gaulosen 8","NTNU-Gaulosen",1
+"649","Gaulosen 9","NTNU-Gaulosen",1
+"650","v2lnr","OTN-Hemnfjorden",161
+"651","v2lchases","OTN-Skjerstadfjorden",103
+"652","Tosenfjorden","OTN-Tosenfjorden",105
+"653","MPA Palma","paintedcomber",16
+"654","PC4C-A5-1","PC4C",1
+"655","PC4C-A5-2","PC4C",1
+"656","PC4C-A5-3","PC4C",1
+"657","PC4C-A5-4","PC4C",1
+"658","PC4C-A5-5","PC4C",1
+"659","PC4C-A5-6","PC4C",1
+"660","PC4C-A6-1","PC4C",1
+"661","PC4C-A7-1","PC4C",1
+"662","PC4C-A7-2","PC4C",1
+"663","PC4C-A7-3","PC4C",1
+"664","PC4C-A7-4","PC4C",1
+"665","PC4C-A7-5","PC4C",1
+"666","PC4C-A7-6","PC4C",1
+"667","PC4C-A8-1","PC4C",1
+"668","PC4C-B08-1","PC4C",1
+"669","PC4C-B08-2","PC4C",1
+"670","PC4C-B08-3","PC4C",1
+"671","PC4C-B08-4","PC4C",1
+"672","PC4C-B08-5","PC4C",1
+"673","PC4C-B08-6","PC4C",1
+"674","PC4C-B09-1","PC4C",1
+"675","PC4C-B10-1","PC4C",1
+"676","PC4C-B10-2","PC4C",1
+"677","PC4C-B10-3","PC4C",1
+"678","PC4C-B10-4","PC4C",1
+"679","PC4C-B10-5","PC4C",1
+"680","PC4C-B10-6","PC4C",1
+"681","PC4C-B6-1","PC4C",1
+"682","PC4C-B6-2","PC4C",1
+"683","PC4C-B6-3","PC4C",1
+"684","PC4C-B6-4","PC4C",1
+"685","PC4C-B6-5","PC4C",1
+"686","PC4C-B6-6","PC4C",1
+"687","PC4C-B7-1","PC4C",1
+"688","PC4C-C05-1","PC4C",1
+"689","PC4C-C05-10","PC4C",1
+"690","PC4C-C05-2","PC4C",3
+"691","PC4C-C05-3","PC4C",1
+"692","PC4C-C05-4","PC4C",1
+"693","PC4C-C05-5","PC4C",1
+"694","PC4C-C05-6","PC4C",1
+"695","PC4C-C05-7","PC4C",1
+"696","PC4C-C05-8","PC4C",1
+"697","PC4C-C05-9","PC4C",2
+"698","PC4C-C08-1","PC4C",1
+"699","PC4C-C09-1","PC4C",1
+"700","PC4C-C09-2","PC4C",1
+"701","PC4C-C09-3","PC4C",1
+"702","PC4C-C09-4","PC4C",1
+"703","PC4C-C09-5","PC4C",1
+"704","PC4C-C09-6","PC4C",1
+"705","PC4C-C10-1","PC4C",1
+"706","PC4C-F05-1","PC4C",1
+"707","PC4C-F05-2","PC4C",3
+"708","PC4C-F05-3","PC4C",1
+"709","PC4C-F05-4","PC4C",1
+"710","PC4C-F05-5","PC4C",3
+"711","PC4C-F05-6","PC4C",1
+"712","PC4C-F05-7","PC4C",1
+"713","PC4C-F05-8","PC4C",1
+"714","Argelès Harbour","PhD Barbara Koeck",1
+"715","Artifical Reef Leucate-Le Barcarès","PhD Barbara Koeck",6
+"716","Canet Harbour","PhD Barbara Koeck",1
+"717","Cap Leucate","PhD Barbara Koeck",7
+"718","Collioure","PhD Barbara Koeck",3
+"719","Le Barcares Harbour","PhD Barbara Koeck",1
+"720","Leucate Harbour","PhD Barbara Koeck",1
+"721","Saint Cyprien Harbour","PhD Barbara Koeck",1
+"722","Sainte Marie Harbour","PhD Barbara Koeck",1
+"723","Saint Nazaire Harbour","PhD Barbara Koeck",1
+"724","Banyuls Cerbere MPA","PhD Jeremy Pastor",14
+"725","Dubh Loch","PhysFish",13
+"726","VLVS1","Saeftinghe",1
+"727","VLVS10","Saeftinghe",1
+"728","VLVS11","Saeftinghe",1
+"729","VLVS12","Saeftinghe",1
+"730","VLVS13","Saeftinghe",1
+"731","VLVS14","Saeftinghe",1
+"732","VLVS15","Saeftinghe",1
+"733","VLVS2","Saeftinghe",1
+"734","VLVS3","Saeftinghe",1
+"735","VLVS4","Saeftinghe",1
+"736","VLVS5","Saeftinghe",1
+"737","VLVS6","Saeftinghe",2
+"738","VLVS7","Saeftinghe",1
+"739","VLVS8","Saeftinghe",1
+"740","VLVS9","Saeftinghe",1
+"741","ID1-C","SARTELARAM",3
+"742","ID1-E","SARTELARAM",3
+"743","ID1-N","SARTELARAM",3
+"744","ID1-S","SARTELARAM",3
+"745","ID1-W","SARTELARAM",1
+"746","ID-NE","SARTELARAM",3
+"747","ID-NW","SARTELARAM",3
+"748","ID-SE","SARTELARAM",3
+"749","ID-SW","SARTELARAM",3
+"750","R 1","SARTELTG",1
+"751","R 10","SARTELTG",1
+"752","R 11","SARTELTG",1
+"753","R 12","SARTELTG",1
+"754","R 13","SARTELTG",1
+"755","R 14","SARTELTG",1
+"756","R 15","SARTELTG",1
+"757","R 2","SARTELTG",1
+"758","R 3","SARTELTG",1
+"759","R 4","SARTELTG",1
+"760","R 5","SARTELTG",1
+"761","R 6","SARTELTG",1
+"762","R 7","SARTELTG",1
+"763","R 8","SARTELTG",1
+"764","R 9","SARTELTG",1
+"765","R 0","SARTELZINGARO",1
+"766","R 1","SARTELZINGARO",1
+"767","R 10","SARTELZINGARO",1
+"768","R 11","SARTELZINGARO",1
+"769","R 12","SARTELZINGARO",1
+"770","R 2","SARTELZINGARO",1
+"771","R 3","SARTELZINGARO",1
+"772","R 4","SARTELZINGARO",1
+"773","R 5","SARTELZINGARO",1
+"774","R 6","SARTELZINGARO",1
+"775","R 7","SARTELZINGARO",1
+"776","R 8","SARTELZINGARO",1
+"777","R 9","SARTELZINGARO",1
+"778","Above Kaunas HPP","Semp Lithuania",4
+"779","Below Kaunas HPP","Semp Lithuania",4
+"780","Klaipeda strait","Semp Lithuania",4
+"781","Rusne","Semp Lithuania",4
+"782","Afwateringskanaal","Swimway Vechte",1
+"783","Beneden Regge","Swimway Vechte",1
+"784","De Haandrik beneden","Swimway Vechte",1
+"785","De Haandrik boven","Swimway Vechte",1
+"786","De Haandrik grens","Swimway Vechte",1
+"787","Diffelen beneden","Swimway Vechte",1
+"788","Diffelen boven","Swimway Vechte",1
+"789","Diffelen nevengeul","Swimway Vechte",1
+"790","Dinkel","Swimway Vechte",1
+"791","Hardenberg beneden","Swimway Vechte",1
+"792","Hardenberg boven","Swimway Vechte",1
+"793","Hardenberg vistrap","Swimway Vechte",1
+"794","Junne beneden","Swimway Vechte",1
+"795","Junne Boven","Swimway Vechte",1
+"796","Monding Vecht","Swimway Vechte",1
+"797","Neuenhaus klaranlage beneden","Swimway Vechte",1
+"798","Neuenhaus klaranlage boven","Swimway Vechte",1
+"799","Neuenhaus LuchthookstraBe beneden","Swimway Vechte",1
+"800","Neuenhaus LuchthookstraBe boven","Swimway Vechte",1
+"801","Nevengeul Junne","Swimway Vechte",1
+"802","Nordhorn Kornmuhlenarm","Swimway Vechte",1
+"803","Nordhorn Neumarkt","Swimway Vechte",1
+"804","Nordhorn Parkstrasse ","Swimway Vechte",1
+"805","Ommerkanaal","Swimway Vechte",1
+"806","Tinholt beneden","Swimway Vechte",1
+"807","Tinholt boven","Swimway Vechte",1
+"808","Vechterweerd Beneden","Swimway Vechte",1
+"809","Vechterweerd boven","Swimway Vechte",2
+"810","Vilsteren beneden","Swimway Vechte",1
+"811","Vilsteren boven","Swimway Vechte",1
+"812","Vilsteren nevengeul","Swimway Vechte",1
+"813","R01","Thorntonbank",3
+"814","R02","Thorntonbank",1
+"815","R03","Thorntonbank",2
+"816","R04","Thorntonbank",3
+"817","R05","Thorntonbank",3
+"818","R06","Thorntonbank",2
+"819","R07","Thorntonbank",2
+"820","R08","Thorntonbank",3
+"821","R09","Thorntonbank",4
+"822","R10","Thorntonbank",4
+"823","R11","Thorntonbank",1
+"824","","Westerschelde 1",2
+"825","250m","Westerschelde 1",2
+"826","DL-12","Westerschelde 1",10
+"827","DL-7","Westerschelde 1",12
+"828","DL-9","Westerschelde 1",10
+"829","GVW-SP","Westerschelde 1",12
+"830","OG-10","Westerschelde 1",11
+"831","OGDL","Westerschelde 1",11
+"832","SP-2","Westerschelde 1",12
+"833","STEEN","Westerschelde 1",12
+"834","TRAWL","Westerschelde 1",12
+"835","W-6","Westerschelde 1",12
+"836","W7","Westerschelde 1",5
+"837","W-7","Westerschelde 1",1
+"838","WN-2","Westerschelde 1",14
+"839","ws-W7","Westerschelde 1",2
+"840","","Westerschelde 2",2
+"841","10 VQ(3)5s","Westerschelde 2",12
+"842","11 ISO 8s 13","Westerschelde 2",10
+"843","12 ISO 4s 11","Westerschelde 2",2
+"844","13 Q 2C","Westerschelde 2",1
+"845","14 Q25","Westerschelde 2",11
+"846","15 Obstn K","Westerschelde 2",1
+"847","16 Iso 8s 25B","Westerschelde 2",2
+"848","17 Iso 8s 18","Westerschelde 2",10
+"849","18 Iso 4s 16","Westerschelde 2",1
+"850","19 14","Westerschelde 2",1
+"851","1 PPB","Westerschelde 2",5
+"852","1 PPC","Westerschelde 2",6
+"853","20 Iso 8s 12A","Westerschelde 2",1
+"854","21 Iso 4s 23","Westerschelde 2",13
+"855","25A","Westerschelde 2",9
+"856","25B","Westerschelde 2",9
+"857","2 PPB","Westerschelde 2",6
+"858","2 PPC","Westerschelde 2",5
+"859","3 A5","Westerschelde 2",12
+"860","4 A3","Westerschelde 2",12
+"861","5 A1","Westerschelde 2",1
+"862","6 VQ 15 A","Westerschelde 2",12
+"863","7 Q 15","Westerschelde 2",12
+"864","8 ISO 8s 6","Westerschelde 2",11
+"865","9 ISO 4s 4","Westerschelde 2",11
+"866","A1","Westerschelde 2",11
+"867","Boei 14","Westerschelde 2",3
+"868","Boei Iso 8s 12A","Westerschelde 2",11
+"869","Iso 4s 16","Westerschelde 2",10
+"870","Obstn K","Westerschelde 2",1
+"871","Q2C","Westerschelde 2",11
+"872","ws-11","Westerschelde 2",10
+"873","ws-14","Westerschelde 2",5
+"874","ws-borssele","Westerschelde 2",1
+"875","","Westerschelde 3",14
+"876","42A","Westerschelde 3",5
+"877","53","Westerschelde 3",5
+"878","53A","Westerschelde 3",5
+"879","55","Westerschelde 3",5
+"880","F42","Westerschelde 3",6
+"881","FZ2","Westerschelde 3",2
+"882","ws_HW6","Westerschelde 3",6
+"883","","Zeeschelde",22
+"884","Aanlegsteiger Palingplaat","Zeeschelde",1
+"885","Beneden Nete Lier","Zeeschelde",4
+"886","Beneden Nete Walem SO Rupel","Zeeschelde",6
+"887","Berlare","Zeeschelde",8
+"888","Bornem","Zeeschelde",7
+"889","Branst","Zeeschelde",8
+"890","Buggenhout","Zeeschelde",7
+"891","Buoy near Palingplaat","Zeeschelde",7
+"892","BURCHT","Zeeschelde",7
+"893","Dendermonde","Zeeschelde",9
+"894","Durme Hamveer","Zeeschelde",7
+"895","Fort Liefkenshoek","Zeeschelde",7
+"896","Fort Lilo","Zeeschelde",8
+"897","Gontrode","Zeeschelde",16
+"898","Grote Nete Lier","Zeeschelde",4
+"899","Hamme","Zeeschelde",7
+"900","Hemiksem","Zeeschelde",7
+"901","Kleine Nete Lier","Zeeschelde",4
+"902","Kruibeke","Zeeschelde",9
+"903","s-1","Zeeschelde",6
+"904","s-2a","Zeeschelde",1
+"905","s-4b","Zeeschelde",1
+"906","Schelde Dendermonde","Zeeschelde",8
+"907","Schelde Vlassenbroek","Zeeschelde",7
+"908","Sint-Amands","Zeeschelde",7
+"909","Temse","Zeeschelde",7
+"910","Veer Bazel","Zeeschelde",5
+"911","Veer Bzael","Zeeschelde",2
+"912","Wetteren","Zeeschelde",7
+"913","Wichelen","Zeeschelde",7
+"914","Zele","Zeeschelde",7

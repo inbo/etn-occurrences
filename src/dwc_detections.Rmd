@@ -255,7 +255,9 @@ deployments %>%
   arrange(desc(n))
 ```
 
-### Comments
+### comments
+
+See [issue 59](https://github.com/inbo/etn-occurrences/issues/59)
 
 ```{r}
 deployments %>% 
@@ -274,14 +276,22 @@ deployments %>% get_dupes(id_pk)
 
 ### location name
 
+Generate `deployment_locations` to export as intermediate file:
+
 ```{r}
-deployments %>% 
-  filter(!is.na(location_name) | location_name == "") %>%
-  group_by(location_name, projectname) %>% 
-  count() %>% 
-  arrange(location_name)
+deployment_locations <-
+  deployments %>% 
+    filter(!is.na(location_name) | location_name == "") %>%
+    group_by(location_name, projectname) %>% 
+    count() %>% 
+    arrange(projectname)
 ```
 
+Export as .csv to be reviewed by experts:
+
+```{r}
+write.csv(deployment_locations, "../data/interim/deployment_locations.csv", na = "")
+```
 
 # Detection date information
 
