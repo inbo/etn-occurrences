@@ -170,7 +170,11 @@ event_capture %<>% mutate(dwc_locality = capture_location)
 See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 
 ```{r}
-event_capture %<>% mutate(dwc_decimalLatitude = round(capture_latitude, digits = 5))
+event_capture %<>% mutate(dwc_decimalLatitude = case_when(
+  capture_location == "hatchery Erezée" ~ 50.30605,
+  TRUE ~ round(capture_latitude, digits = 5)
+  )
+)
 ```
 
 ### decimalLongitude
@@ -178,7 +182,11 @@ event_capture %<>% mutate(dwc_decimalLatitude = round(capture_latitude, digits =
 See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 
 ```{r}
-event_capture %<>% mutate(dwc_decimalLongitude = round(capture_longitude, digits = 5))
+event_capture %<>% mutate(dwc_decimalLongitude = case_when(
+  capture_location == "hatchery Erezée" ~ 5.54259,
+  TRUE ~ round(capture_longitude, digits = 5)
+  )
+)
 ```
 
 ## Surgery Event
@@ -198,7 +206,14 @@ event_surgery %>%
 ### eventID
 
 ```{r}
-event_surgery %<>% mutate(dwc_eventID = paste("urn:catalog:etn", projectcode, id_pk, "event-surgery", sep = ":"))
+event_surgery %<>% 
+  mutate(dwc_eventID = paste(
+    "urn:catalog:etn", 
+    projectcode, 
+    id_pk, 
+    "event-surgery", 
+    sep = ":")
+    )
 ```
 
 ### samplingProtocol
@@ -218,7 +233,16 @@ event_surgery %>%
   arrange(desc(n))
 ```
 
-See [issue 47](https://github.com/inbo/etn-occurrences/issues/47). `date_of_surgery` can be considered to be the same as `catched_date_time`
+See [issue 47](https://github.com/inbo/etn-occurrences/issues/47). If the date of surgery is not provided, `date_of_surgery` can be considered to be the same as `catched_date_time`.
+
+```{r}
+event_surgery %<>% mutate(
+  date_of_surgery = case_when(
+    is.na(date_of_surgery) ~ catched_date_time,
+    TRUE ~ date_of_surgery
+  )
+)
+```
 
 should follow ISO-8601 format (`yyyy-mm-ddThh:mm:ssZ`). Test:
 
@@ -232,24 +256,37 @@ event_surgery %<>% mutate(dwc_eventDate = date_of_surgery)
 
 ### locality
 
-See [issue 42](https://github.com/inbo/etn-occurrences/issues/42).
+See [issue 42](https://github.com/inbo/etn-occurrences/issues/42) and [issue 47](https://github.com/inbo/etn-occurrences/issues/47)
 
 ```{r}
-event_surgery %<>% mutate(dwc_locality = surgery_location) 
+event_surgery %<>% mutate(dwc_locality = case_when(
+  capture_location == "hatchery Erezée" ~ capture_location,
+  TRUE ~ surgery_location)
+)
 ```
 
 ### decimalLatitude
 
-At this point, no `decimalLatitude` has been provided. This should be integrated asap. See [issue 43](https://github.com/inbo/etn-occurrences/issues/43).
+See [issue 47](https://github.com/inbo/etn-occurrences/issues/47)
 
 ```{r}
-event_surgery %<>% mutate(dwc_decimalLatitude = as.numeric("")) 
+event_surgery %<>% mutate(dwc_decimalLatitude = case_when(
+  capture_location == "hatchery Erezée" ~ 50.30605,
+  TRUE ~ round(surgery_latitude, digits = 5)
+  )
+)
 ```
 
 ### decimalLongitude
 
+See [issue 47](https://github.com/inbo/etn-occurrences/issues/47)
+
 ```{r}
-event_surgery %<>% mutate(dwc_decimalLongitude = as.numeric("")) 
+event_surgery %<>% mutate(dwc_decimalLongitude = case_when(
+  capture_location == "hatchery Erezée" ~ 5.54259,
+  TRUE ~ round(surgery_longitude, digits = 5)
+  )
+)
 ```
 
 ## Release Event
@@ -268,7 +305,15 @@ event_release %>%
 ### eventID
 
 ```{r}
-event_release %<>% mutate(dwc_eventID = paste("urn:catalog:etn", projectcode, id_pk, "event-release", sep = ":"))
+event_release %<>% 
+  mutate(dwc_eventID = paste(
+    "urn:catalog:etn", 
+    projectcode, 
+    id_pk, 
+    "event-release", 
+    sep = ":"
+    )
+)
 ```
 
 ### samplingProtocol
