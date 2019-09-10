@@ -1,458 +1,458 @@
-"","projectname","location_name","location_description","n"
-"1","Albertkanaal","","brug Gompelbaan; LO thv hoge schouw ",1
-"2","Albertkanaal","","Genenbosstraat Lummen RO SA van de brug ",2
-"3","Albertkanaal","","kanaal dessel kwaadmechelen ;waterhoek (olmensebaan 126; Balen) ; net SA burg LO",2
-"4","Albertkanaal","","SO brug zandstraat/bergstraat  Ham; RO aan groen bord",2
-"5","Albertkanaal","1","onder de brug, aan de pilaar van de brug ' belle-île'",3
-"6","Albertkanaal","10","RO albertkanaal; onder de brug; straatnaam rue ile Monsin",3
-"7","Albertkanaal","11","RO Maas aan een trapje; thv sociéte Mantegro",2
-"8","Albertkanaal","12","RO Albertkanaal; aan een trapje, ter hoogte van pont d’Hermalle-sous-Argenteau",2
-"9","Albertkanaal","16","LO Albertkanaal; Kannes ter hoogte van kleine haven ",5
-"10","Albertkanaal","2","onder de brug, aan de pilaar van de brug ' gramme'",5
-"11","Albertkanaal","9","aan de meettoestellen LO Maas; SO barrage van Monsin",5
-"12","Albertkanaal","ak-30",,1
-"13","Albertkanaal","ak-34","Brug Gestelseweg adres: Bukenberg Balen",3
-"14","Albertkanaal","ak-34","Brug Gestelseweg adres: Bukenberg Balen: geplaatst in tip van geleiding",4
-"15","Albertkanaal","Boudewijnsluis Albertkanaal","trapje steiger",3
-"16","Albertkanaal","Boudewijnsluis Albertkanaal","trapje steiger; Ordamdijkstraat, Antwerpen",6
-"17","Albertkanaal","Boudewijnsluis Schelde","grijs uitkijkpostje",3
-"18","Albertkanaal","Boudewijnsluis Schelde","grijs uitkijkpostje; boudewijnsluis, Antwerpen",5
-"19","Albertkanaal","brug kanaalweg Tessenderlo","brug kanaalweg Tessenderlo",2
-"20","Albertkanaal","Dessel-Schoten","voorbij woonboten aan laatste wilg ; adres: sluizenstraat, Villerslei Schoten",3
-"21","Albertkanaal","Dessel-Schoten","voorbij woonboten aan laatste wilg ; adres: sluizenstraat, Villerslei Schoten ",2
-"22","Albertkanaal","Diepenbeek SA","beugel tussen overgang rechte naar schuine oever; adres: Havenlaan, Diepenbeek",12
-"23","Albertkanaal","Diepenbeek SO","aan meetkast; adres: havenlaan Diepenbeek",4
-"24","Albertkanaal","duwvaartsluis Ham",,3
-"25","Albertkanaal","duwvaartsluis Ham","sluis ham duwvaart",4
-"26","Albertkanaal","Genk SA","aan knik in betonnen wand; oogvijs; Swinnewijerweg Genk",12
-"27","Albertkanaal","Genk SO","nieuwe locatie: niet meer aan steiger, nu aan beugel 50m verder SO op LO ; Swinnewijerweg Genk",10
-"28","Albertkanaal","Genk SO","staketsel; Swinnewijerweg Genk ",1
-"29","Albertkanaal","Genk SO1","nieuwe locatie: twintig meter verder stroomop aan trapje; Vossenkuilstraat/ Hoefaertweg, Bilzen",3
-"30","Albertkanaal","Ham SA",,14
-"31","Albertkanaal","Ham Sluis Midden",,1
-"32","Albertkanaal","Ham Sluis Midden","meerhoutstraat/sluisstraat in Ham",1
-"33","Albertkanaal","Ham Sluis Midden","sluis ham midden
+projectname,location_name,location_description,n
+Albertkanaal,"",brug Gompelbaan; LO thv hoge schouw ,1
+Albertkanaal,"",Genenbosstraat Lummen RO SA van de brug ,2
+Albertkanaal,"",kanaal dessel kwaadmechelen ;waterhoek (olmensebaan 126; Balen) ; net SA burg LO,2
+Albertkanaal,"",SO brug zandstraat/bergstraat  Ham; RO aan groen bord,2
+Albertkanaal,1,"onder de brug, aan de pilaar van de brug ' belle-île'",3
+Albertkanaal,10,RO albertkanaal; onder de brug; straatnaam rue ile Monsin,3
+Albertkanaal,11,RO Maas aan een trapje; thv sociéte Mantegro,2
+Albertkanaal,12,"RO Albertkanaal; aan een trapje, ter hoogte van pont d’Hermalle-sous-Argenteau",2
+Albertkanaal,16,LO Albertkanaal; Kannes ter hoogte van kleine haven ,5
+Albertkanaal,2,"onder de brug, aan de pilaar van de brug ' gramme'",5
+Albertkanaal,9,aan de meettoestellen LO Maas; SO barrage van Monsin,5
+Albertkanaal,ak-30,,1
+Albertkanaal,ak-34,Brug Gestelseweg adres: Bukenberg Balen,3
+Albertkanaal,ak-34,Brug Gestelseweg adres: Bukenberg Balen: geplaatst in tip van geleiding,4
+Albertkanaal,Boudewijnsluis Albertkanaal,trapje steiger,3
+Albertkanaal,Boudewijnsluis Albertkanaal,"trapje steiger; Ordamdijkstraat, Antwerpen",6
+Albertkanaal,Boudewijnsluis Schelde,grijs uitkijkpostje,3
+Albertkanaal,Boudewijnsluis Schelde,"grijs uitkijkpostje; boudewijnsluis, Antwerpen",5
+Albertkanaal,brug kanaalweg Tessenderlo,brug kanaalweg Tessenderlo,2
+Albertkanaal,Dessel-Schoten,"voorbij woonboten aan laatste wilg ; adres: sluizenstraat, Villerslei Schoten",3
+Albertkanaal,Dessel-Schoten,"voorbij woonboten aan laatste wilg ; adres: sluizenstraat, Villerslei Schoten ",2
+Albertkanaal,Diepenbeek SA,"beugel tussen overgang rechte naar schuine oever; adres: Havenlaan, Diepenbeek",12
+Albertkanaal,Diepenbeek SO,aan meetkast; adres: havenlaan Diepenbeek,4
+Albertkanaal,duwvaartsluis Ham,,3
+Albertkanaal,duwvaartsluis Ham,sluis ham duwvaart,4
+Albertkanaal,Genk SA,aan knik in betonnen wand; oogvijs; Swinnewijerweg Genk,12
+Albertkanaal,Genk SO,"nieuwe locatie: niet meer aan steiger, nu aan beugel 50m verder SO op LO ; Swinnewijerweg Genk",10
+Albertkanaal,Genk SO,staketsel; Swinnewijerweg Genk ,1
+Albertkanaal,Genk SO1,"nieuwe locatie: twintig meter verder stroomop aan trapje; Vossenkuilstraat/ Hoefaertweg, Bilzen",3
+Albertkanaal,Ham SA,,14
+Albertkanaal,Ham Sluis Midden,,1
+Albertkanaal,Ham Sluis Midden,meerhoutstraat/sluisstraat in Ham,1
+Albertkanaal,Ham Sluis Midden,"sluis ham midden
 meerhoutstraat/sluisstraat in Ham",5
-"34","Albertkanaal","Ham SO","nieuwe locatie: 100m SO aan trapje op LO",15
-"35","Albertkanaal","Hasselt SA",,3
-"36","Albertkanaal","Hasselt SO","beugel tussen overgang rechte naar schuine oever; adres: boksbeemdenstraat; Hasselt",13
-"37","Albertkanaal","HH1","Slachthuiskaai, Hasselt",6
-"38","Albertkanaal","HH10","kanaal dessel kwaadmechelen ;waterhoek (olmensebaan 126; Balen) ; net SA burg LO",3
-"39","Albertkanaal","HH11","brug Gompelbaan; LO thv hoge schouw",4
-"40","Albertkanaal","HH2","St Amandusstraat (Hasselt), LO thv bord jaagpad, SO waar de parallelweg afbuigt",6
-"41","Albertkanaal","HH3","Klein Spanjestraat (Hasselt), LO 1km SA van de brug thv infrabel peilbuis",6
-"42","Albertkanaal","HH4","Doelenlaan Heusden zolder, RO tussen brug westlaan en bocht SO; thv gele schildering SO van de toren aan de overkant",6
-"43","Albertkanaal","HH5","Genenbosstraat Lummen RO SA van de brug",4
-"44","Albertkanaal","HH9","SO brug zandstraat/bergstraat  Ham; RO aan groen bord",4
-"45","Albertkanaal","Kanaal Dessel - Herentals","einde steiger SO laatste sluiscomplex, onder laatste rooster adres: Herenthoutseweg 110; Herentals",4
-"46","Albertkanaal","Kwaadmechelen -Dessel","Brug Gestelseweg, adres: Bukenberg (Balen)",5
-"47","Albertkanaal","Olen SA","LO; 1 km na sluis, 100m voor brug aan trap; adres: sluizenweg Olen",9
-"48","Albertkanaal","Olen SO","trapje;  adres: sluizenweg Olen",13
-"49","Albertkanaal","Royersluis Albertkanaal","trapje in kademuur RO",4
-"50","Albertkanaal","Royersluis Albertkanaal","trapje in kademuur RO. litouwenstraat, antwerpen",5
-"51","Albertkanaal","Royersluis Schelde","staketsel opgelet enkel te bereiken met LW",3
-"52","Albertkanaal","Royersluis Schelde","staketsel opgelet enkel te bereiken met LW; Noordkasteel-zuid, Antwerpen",6
-"53","Albertkanaal","S02","VPS netwerk Ham",7
-"54","Albertkanaal","S07","VPS netwerk Ham",5
-"55","Albertkanaal","S08","VPS netwerk Ham",8
-"56","Albertkanaal","S09","VPS netwerk Ham",4
-"57","Albertkanaal","S09-2",,5
-"58","Albertkanaal","S10","VPS netwerk Ham",7
-"59","Albertkanaal","S12","VPS netwerk Ham",8
-"60","Albertkanaal","S13","VPS netwerk Ham",9
-"61","Albertkanaal","S14","VPS netwerk Ham",8
-"62","Albertkanaal","S15","VPS netwerk Ham",8
-"63","Albertkanaal","S16","VPS netwerk Ham",8
-"64","Albertkanaal","S17","VPS netwerk Ham",8
-"65","Albertkanaal","S18","VPS netwerk Ham",8
-"66","Albertkanaal","SA Hasselt","beugel tussen overgang rechte naar schuine oever; adres: sasstraat Hasselt",6
-"67","Albertkanaal","SA Hasselt","beugel tussen overgang rechte naar schuine oever; adres: sasstraat Hasselt ",1
-"68","Albertkanaal","Schelde-Rijn verbinding","haak in kademuur aan knik in betonnen wand",3
-"69","Albertkanaal","Schelde-Rijn verbinding","haak in kademuur aan knik in betonnen wand, Noordland, Antwerpen",4
-"70","Albertkanaal","sluis Ham","midden van de sluis, so van de sluis",2
-"71","Albertkanaal","sluis Ham RO",,3
-"72","Albertkanaal","sluis Ham RO","sluis Ham RO",3
-"73","Albertkanaal","SO Diepenbeek","stijgbeugel tussen meetkast en balustrade",7
-"74","Albertkanaal","Terbekstraat (Tervant) thv geronoveerd huis","Terbekstraat (Tervant) thv geronoveerd huis",6
-"75","Albertkanaal","Terhulzen  Beringen, LO thv Style kapsalon","Terhulzen  Beringen, LO thv Style kapsalon",6
-"76","Albertkanaal","Toevoerkanaal","ter hoogte van inox meetkast",5
-"77","Albertkanaal","Toevoerkanaal ","ter hoogte van inox meetkast",1
-"78","Albertkanaal","TOEVOERKANAAL","TOEVOERKANAAL AAN DE SLUIZEN IN HAM",1
-"79","Albertkanaal","Uitzet SO 1","brug Eigenbilzen; adres: Hoefaertweg Bilzen",9
-"80","Albertkanaal","Uitzet SO2","1ste brug SO splitsing Zuid-Willemsvaart thv Veldwezelt; adres trekweg cavei, Lindestraat, Lanaken",11
-"81","Albertkanaal","Wijnegem SA","aan ponton met metalen roosters; adres: albertkanaalbaan Schilde (Wijnegem)",8
-"82","Albertkanaal","Wijnegem SO","ponton watervogels trapje RO (natuurlijke oever gaat over in schuine oever) adres stokerijstraat Schilde (wijnegem)",10
-"83","Albertkanaal","Zandvlietsluis Albertkanaal","Heeft een nieuwe locatie gekregen, op rechteroever deze keer, te bereiken via jaagpad Schelde-Rijnkanaal.",4
-"84","Albertkanaal","Zandvlietsluis Albertkanaal","trap",3
-"85","Albertkanaal","Zandvlietsluis Schelde","in de muur met bevestiging van potloodfuiken",3
-"86","Albertkanaal","Zandvlietsluis Schelde","in de muur met bevestiging van potloodfuiken; oudedijkweg, Antwerpen",4
-"87","Albertkanaal","zuid willemsvaart",,1
-"88","Albertkanaal","Zuid-Willemsvaart","1ste brug na monding; adres bernerstraat Lanaken",1
-"89","Bovenschelde","Bovenschelde - 400m SO monding Maarkebeek",,3
-"90","Bovenschelde","Bovenschelde - 400m SO monding Zwalm",,6
-"91","Bovenschelde","Bovenschelde - Halverwege Asper/Oudenaarde",,3
-"92","Bovenschelde","Bovenschelde - Halverwege Merelbeke/Asper",,3
-"93","Bovenschelde","Bovenschelde - Kop Sluismuur Asper",,6
-"94","Bovenschelde","Bovenschelde - Kop Sluismuur Oudenaarde",,4
-"95","Bovenschelde","Bovenschelde - Stroomop Complex Asper",,6
-"96","Bovenschelde","Bovenschelde - Stroomop Complex Oudenaarde",,5
-"97","Bovenschelde","Bovenschelde - Stroomop Stuw Tijarm",,5
-"98","Bovenschelde","Bovenschelde - Stuwgeul Asper",,6
-"99","Bovenschelde","Bovenschelde - Stuwgeul Kerkhove",,3
-"100","Bovenschelde","Bovenschelde - Stuwgeul Oudenaarde",,4
-"101","Bovenschelde","Kanaal Gent-Oostende - Lovendegem",,2
-"102","Bovenschelde","Leie - Stroomaf Complex St-Baafs-vijve",,2
-"103","Bovenschelde","Maarkebeek - onder eerste knelpunt",,1
-"104","Bovenschelde","Nevengeul Asper (Afwaarts)",,3
-"105","Bovenschelde","Nevengeul Asper (Midden)",,3
-"106","Bovenschelde","Nevengeul Asper (Opwaarts)",,3
-"107","Bovenschelde","Nevengeul Oudenaarde (Afwaarts)",,3
-"108","Bovenschelde","Nevengeul Oudenaarde (Midden)",,5
-"109","Bovenschelde","Nevengeul Oudenaarde (Opwaarts)",,3
-"110","Bovenschelde","Noordervak Ringvaart - Stroomaf Complex Evergem",,2
-"111","Bovenschelde","Tijarm - Begin Tijarm",,2
-"112","Bovenschelde","Tijarm - Stuw",,3
-"113","Bovenschelde","Westervak Ringvaart - Stroomop Complex Merelbeke",,3
-"114","Bovenschelde","Westervak Ringvaart - Stroomop v d 2 Leiemondingen (Watersportbaan)",,2
-"115","Bovenschelde","Zeeschelde - Dendermonde - Ponton Brandweer",,3
-"116","Bovenschelde","Zeeschelde - Schellebelle - Voetveer",,3
-"117","Bovenschelde","Zeeschelde - Staketsels Melle",,2
-"118","Bovenschelde","Zuidervak Ringvaart - Brug Merelbeke",,3
-"119","Bovenschelde","Zwalm - Stroomaf TerBiest - Schuisplanklos",,3
-"120","BPNS","500m",,1
-"121","BPNS","Belreef1",,1
-"122","BPNS","Belwind C05-AR1","",2
-"123","BPNS","Belwind C05-AR6",,6
-"124","BPNS","Belwind C05-AR6","",6
-"125","BPNS","bpns-BIRKENFELS",,1
-"126","BPNS","bpns-CNB05",,2
-"127","BPNS","bpns-CNB07",,2
-"128","BPNS","bpns-Kilmore",,1
-"129","BPNS","bpns-Noordede",,2
-"130","BPNS","bpns-OH1",,1
-"131","BPNS","bpns-OOSTDYCK",,1
-"132","BPNS","bpns-RYCO",,2
-"133","BPNS","Buitenratel",,1
-"134","BPNS","D1",,3
-"135","BPNS","D1","",4
-"136","BPNS","KB-2",,11
-"137","BPNS","Middelkerkebank",,7
-"138","BPNS","mobiele receiver","",1
-"139","BPNS","Nieuwpoortbank",,2
-"140","BPNS","O6",,1
-"141","BPNS","O 6 OOSTENDE",,7
-"142","BPNS","OOST – DYCK",,9
-"143","BPNS","RTNZ04",,1
-"144","BPNS","S4",,5
-"145","BPNS","S4","",6
-"146","BPNS","S 7",,6
-"147","BPNS","tripode bij reefballs Belwind","",1
-"148","BPNS","Vandamme",,1
-"149","BPNS","VG2",,11
-"150","BPNS","VG-2",,1
-"151","BPNS","W1",,4
-"152","BPNS","W1","",3
-"153","BPNS","Whitley",,6
-"154","BPNS","WK12",,9
-"155","BPNS","Zeebrugge East 1",,1
-"156","BPNS","Zeebrugge East 2",,1
-"157","cpodnetwork","bpns-Birkenfels",,2
-"158","cpodnetwork","bpns-Cpowerreefballs-CPOD",,1
-"159","cpodnetwork","bpns-HMS Grafton",,1
-"160","cpodnetwork","bpns-Sigurd Faulbaums",,1
-"161","Demer","4","aan voetgangersbrug in de zwarte beek op rechter oever aan een boom",1
-"162","Demer","AAN_GB2_RODEMER","fietsersbrug pilaar RO",1
-"163","Demer","de-12",,2
-"164","Demer","de-12","LO Demer net SA van de steunbeer aan oogvijs",2
-"165","Demer","de-12","Sint-Amands, nabij 'De Veerman'",1
-"166","Demer","de-13","aan voetgangersbrug in de zwarte beek op rechter oever aan een boom",2
-"167","Demer","de-14","RO brug R12 (thv McDonalds) (enkel bij laag water bereikbaar)",3
-"168","Demer","de-7",,1
-"169","Demer","de-7","RO Grote Vijver rond seinpaal 15 (enkel bij laag water bereikbaar)",3
-"170","Demer","de-9","LO rond wateruitlaat",1
-"171","Demer","fietsersbrug aarschot","fietserbrug Demer thv zwembad Aarschot; adres demervallei 9; aarschot",1
-"172","Demer","IN_KB_TUNNEL","in de zijbeek die uitmondt in de Demer aan de steunbeer, met pin in muur van het tunneltje",1
-"173","Demer","IN_KS_ROZWDEMER","aan de klepstuw, net stroomaf met pin in beton van de klepstuw op rechter oever",1
-"174","Demer","IN_MZ_RODEMER","aan monding zwarte beek op rechter oever in de Demer (dikke boom)",1
-"175","Demer","IN_VB_LODEMER","aan pilaar voetgangersbrug op linker oever in de demer",1
-"176","Demer","IN_VB_ROZB","aan voetgangersbrug in de zwarte beek op rechter oever aan een boom",1
-"177","Demer","Messelbroek",,2
-"178","Demer","Messelbroek","bord jaagpad verboden toegang",1
-"179","Demer","rommelaar","mogelijks worden de 2 betonnen paaltjes weggehaald, dus bamboestok met verf geplaatst op oever; kabel aan piket bij waterlijn, 2e bamboestok in piket; adres: rommelaar 88; aarschot",1
-"180","Demer","Rommelaar","2 paaltjes in de grond",1
-"181","Demer","SA_GB_RODEMER","stroomaf grote brug in Diest op rechter oever aan boom",1
-"182","Demer","SA Hasselt","beugel tussen overgang rechte naar schuine oever; adres: sasstraat Hasselt",2
-"183","Demer","SA_KS_LOZB","eerste receiver stroomaf van de klepstuw op linker oever in de zwarte beek aan een piket",1
-"184","Demer","SA_KS_RODEMER","eerste receiver stroomaf van de klepstuw in de Demer aan piket op rechter oever",1
-"185","Demer","SA_RIF_LODEMER","doorrijden tot verkeersbord verboden of baantje inrijden aan nr139 op grote boom",1
-"186","Demer","SA_SB_LODE","aan oogvijs in beton aan/stroomaf grote steunbeer",1
-"187","Demer","SA_SB_RODEMER","stroomaf van de steunbeer op rechter oever Demer aan een boom; nieuwe locatie 10 m meer SA",2
-"188","Demer","SA_SB_RODE_VOETGANGERS","aan pilaar voetgangersbrug op linker oever in de demer",1
-"189","Demer","SO2_KS_RODEMER","tweede receiver stroomop van de klepstuw in de demer op rechter oever aan boom",1
-"190","Demer","SO_KS_LODEMER","eerste receiver stroomop van de klepstuw in de Demer aan piket",2
-"191","Demer","SO_KS_LOZB","eerste receiver stroomop klepstuw in de zwarte beek op linker oever aan boom of piket?",1
-"192","Demer","SO_MZ_ROZB","eerste receiver stroomop vd monding vd zwarte beek in de zwarte beek, aan boompje",1
-"193","Demer","SO_SB_RODEMER","eerste receiver stroomop steunbeer in Demer aan boompje op rechter oever",1
-"194","Demer","SO_ZICHEM_DEMER","maagdentoren aan meettoestellen HIC; steenweg Diest, ernest Claesstraat",1
-"195","Demer","Testelt","bord jaagpad verboden toegang; net na uitmonding leigracht in Demer",1
-"196","Dijle","","LO onder Mulzenbrug",4
-"197","Dijle","","LO rond wateruitlaat",3
-"198","Dijle","","RO brug R12 (thv McDonalds) (enkel bij laag water bereikbaar)",3
-"199","Dijle","","RO Grote Vijver rond seinpaal 15 (enkel bij laag water bereikbaar)",3
-"200","Dijle","","SA stuw, LO aan hek W&Z",4
-"201","Dijle","","SO stuw, LO op top ""eilandje""",5
-"202","Dijle","","stroomaf de stuw, op rechteroever recht tegenover de M-4",4
-"203","Dijle","m-2","LO rond wateruitlaat, Hanswijk De Brecht 8, Mechelen",2
-"204","Dijle","M-2","LO rond wateruitlaat",1
-"205","Dijle","M-3","SO stuw, LO op top ""eilandje""",2
-"206","Dijle","M-3","SO stuw, LO op top ""eilandje""
+Albertkanaal,Ham SO,nieuwe locatie: 100m SO aan trapje op LO,15
+Albertkanaal,Hasselt SA,,3
+Albertkanaal,Hasselt SO,beugel tussen overgang rechte naar schuine oever; adres: boksbeemdenstraat; Hasselt,13
+Albertkanaal,HH1,"Slachthuiskaai, Hasselt",6
+Albertkanaal,HH10,kanaal dessel kwaadmechelen ;waterhoek (olmensebaan 126; Balen) ; net SA burg LO,3
+Albertkanaal,HH11,brug Gompelbaan; LO thv hoge schouw,4
+Albertkanaal,HH2,"St Amandusstraat (Hasselt), LO thv bord jaagpad, SO waar de parallelweg afbuigt",6
+Albertkanaal,HH3,"Klein Spanjestraat (Hasselt), LO 1km SA van de brug thv infrabel peilbuis",6
+Albertkanaal,HH4,"Doelenlaan Heusden zolder, RO tussen brug westlaan en bocht SO; thv gele schildering SO van de toren aan de overkant",6
+Albertkanaal,HH5,Genenbosstraat Lummen RO SA van de brug,4
+Albertkanaal,HH9,SO brug zandstraat/bergstraat  Ham; RO aan groen bord,4
+Albertkanaal,Kanaal Dessel - Herentals,"einde steiger SO laatste sluiscomplex, onder laatste rooster adres: Herenthoutseweg 110; Herentals",4
+Albertkanaal,Kwaadmechelen -Dessel,"Brug Gestelseweg, adres: Bukenberg (Balen)",5
+Albertkanaal,Olen SA,"LO; 1 km na sluis, 100m voor brug aan trap; adres: sluizenweg Olen",9
+Albertkanaal,Olen SO,trapje;  adres: sluizenweg Olen,13
+Albertkanaal,Royersluis Albertkanaal,trapje in kademuur RO,4
+Albertkanaal,Royersluis Albertkanaal,"trapje in kademuur RO. litouwenstraat, antwerpen",5
+Albertkanaal,Royersluis Schelde,staketsel opgelet enkel te bereiken met LW,3
+Albertkanaal,Royersluis Schelde,"staketsel opgelet enkel te bereiken met LW; Noordkasteel-zuid, Antwerpen",6
+Albertkanaal,S02,VPS netwerk Ham,7
+Albertkanaal,S07,VPS netwerk Ham,5
+Albertkanaal,S08,VPS netwerk Ham,8
+Albertkanaal,S09,VPS netwerk Ham,4
+Albertkanaal,S09-2,,5
+Albertkanaal,S10,VPS netwerk Ham,7
+Albertkanaal,S12,VPS netwerk Ham,8
+Albertkanaal,S13,VPS netwerk Ham,9
+Albertkanaal,S14,VPS netwerk Ham,8
+Albertkanaal,S15,VPS netwerk Ham,8
+Albertkanaal,S16,VPS netwerk Ham,8
+Albertkanaal,S17,VPS netwerk Ham,8
+Albertkanaal,S18,VPS netwerk Ham,8
+Albertkanaal,SA Hasselt,beugel tussen overgang rechte naar schuine oever; adres: sasstraat Hasselt,6
+Albertkanaal,SA Hasselt,beugel tussen overgang rechte naar schuine oever; adres: sasstraat Hasselt ,1
+Albertkanaal,Schelde-Rijn verbinding,haak in kademuur aan knik in betonnen wand,3
+Albertkanaal,Schelde-Rijn verbinding,"haak in kademuur aan knik in betonnen wand, Noordland, Antwerpen",4
+Albertkanaal,sluis Ham,"midden van de sluis, so van de sluis",2
+Albertkanaal,sluis Ham RO,,3
+Albertkanaal,sluis Ham RO,sluis Ham RO,3
+Albertkanaal,SO Diepenbeek,stijgbeugel tussen meetkast en balustrade,7
+Albertkanaal,Terbekstraat (Tervant) thv geronoveerd huis,Terbekstraat (Tervant) thv geronoveerd huis,6
+Albertkanaal,"Terhulzen  Beringen, LO thv Style kapsalon","Terhulzen  Beringen, LO thv Style kapsalon",6
+Albertkanaal,Toevoerkanaal,ter hoogte van inox meetkast,5
+Albertkanaal,Toevoerkanaal ,ter hoogte van inox meetkast,1
+Albertkanaal,TOEVOERKANAAL,TOEVOERKANAAL AAN DE SLUIZEN IN HAM,1
+Albertkanaal,Uitzet SO 1,brug Eigenbilzen; adres: Hoefaertweg Bilzen,9
+Albertkanaal,Uitzet SO2,"1ste brug SO splitsing Zuid-Willemsvaart thv Veldwezelt; adres trekweg cavei, Lindestraat, Lanaken",11
+Albertkanaal,Wijnegem SA,aan ponton met metalen roosters; adres: albertkanaalbaan Schilde (Wijnegem),8
+Albertkanaal,Wijnegem SO,ponton watervogels trapje RO (natuurlijke oever gaat over in schuine oever) adres stokerijstraat Schilde (wijnegem),10
+Albertkanaal,Zandvlietsluis Albertkanaal,"Heeft een nieuwe locatie gekregen, op rechteroever deze keer, te bereiken via jaagpad Schelde-Rijnkanaal.",4
+Albertkanaal,Zandvlietsluis Albertkanaal,trap,3
+Albertkanaal,Zandvlietsluis Schelde,in de muur met bevestiging van potloodfuiken,3
+Albertkanaal,Zandvlietsluis Schelde,"in de muur met bevestiging van potloodfuiken; oudedijkweg, Antwerpen",4
+Albertkanaal,zuid willemsvaart,,1
+Albertkanaal,Zuid-Willemsvaart,1ste brug na monding; adres bernerstraat Lanaken,1
+Bovenschelde,Bovenschelde - 400m SO monding Maarkebeek,,3
+Bovenschelde,Bovenschelde - 400m SO monding Zwalm,,6
+Bovenschelde,Bovenschelde - Halverwege Asper/Oudenaarde,,3
+Bovenschelde,Bovenschelde - Halverwege Merelbeke/Asper,,3
+Bovenschelde,Bovenschelde - Kop Sluismuur Asper,,6
+Bovenschelde,Bovenschelde - Kop Sluismuur Oudenaarde,,4
+Bovenschelde,Bovenschelde - Stroomop Complex Asper,,6
+Bovenschelde,Bovenschelde - Stroomop Complex Oudenaarde,,5
+Bovenschelde,Bovenschelde - Stroomop Stuw Tijarm,,5
+Bovenschelde,Bovenschelde - Stuwgeul Asper,,6
+Bovenschelde,Bovenschelde - Stuwgeul Kerkhove,,3
+Bovenschelde,Bovenschelde - Stuwgeul Oudenaarde,,4
+Bovenschelde,Kanaal Gent-Oostende - Lovendegem,,2
+Bovenschelde,Leie - Stroomaf Complex St-Baafs-vijve,,2
+Bovenschelde,Maarkebeek - onder eerste knelpunt,,1
+Bovenschelde,Nevengeul Asper (Afwaarts),,3
+Bovenschelde,Nevengeul Asper (Midden),,3
+Bovenschelde,Nevengeul Asper (Opwaarts),,3
+Bovenschelde,Nevengeul Oudenaarde (Afwaarts),,3
+Bovenschelde,Nevengeul Oudenaarde (Midden),,5
+Bovenschelde,Nevengeul Oudenaarde (Opwaarts),,3
+Bovenschelde,Noordervak Ringvaart - Stroomaf Complex Evergem,,2
+Bovenschelde,Tijarm - Begin Tijarm,,2
+Bovenschelde,Tijarm - Stuw,,3
+Bovenschelde,Westervak Ringvaart - Stroomop Complex Merelbeke,,3
+Bovenschelde,Westervak Ringvaart - Stroomop v d 2 Leiemondingen (Watersportbaan),,2
+Bovenschelde,Zeeschelde - Dendermonde - Ponton Brandweer,,3
+Bovenschelde,Zeeschelde - Schellebelle - Voetveer,,3
+Bovenschelde,Zeeschelde - Staketsels Melle,,2
+Bovenschelde,Zuidervak Ringvaart - Brug Merelbeke,,3
+Bovenschelde,Zwalm - Stroomaf TerBiest - Schuisplanklos,,3
+BPNS,500m,,1
+BPNS,Belreef1,,1
+BPNS,Belwind C05-AR1,"",2
+BPNS,Belwind C05-AR6,,6
+BPNS,Belwind C05-AR6,"",6
+BPNS,bpns-BIRKENFELS,,1
+BPNS,bpns-CNB05,,2
+BPNS,bpns-CNB07,,2
+BPNS,bpns-Kilmore,,1
+BPNS,bpns-Noordede,,2
+BPNS,bpns-OH1,,1
+BPNS,bpns-OOSTDYCK,,1
+BPNS,bpns-RYCO,,2
+BPNS,Buitenratel,,1
+BPNS,D1,,3
+BPNS,D1,"",4
+BPNS,KB-2,,11
+BPNS,Middelkerkebank,,7
+BPNS,mobiele receiver,"",1
+BPNS,Nieuwpoortbank,,2
+BPNS,O6,,1
+BPNS,O 6 OOSTENDE,,7
+BPNS,OOST – DYCK,,9
+BPNS,RTNZ04,,1
+BPNS,S4,,5
+BPNS,S4,"",6
+BPNS,S 7,,6
+BPNS,tripode bij reefballs Belwind,"",1
+BPNS,Vandamme,,1
+BPNS,VG2,,11
+BPNS,VG-2,,1
+BPNS,W1,,4
+BPNS,W1,"",3
+BPNS,Whitley,,6
+BPNS,WK12,,9
+BPNS,Zeebrugge East 1,,1
+BPNS,Zeebrugge East 2,,1
+cpodnetwork,bpns-Birkenfels,,2
+cpodnetwork,bpns-Cpowerreefballs-CPOD,,1
+cpodnetwork,bpns-HMS Grafton,,1
+cpodnetwork,bpns-Sigurd Faulbaums,,1
+Demer,4,aan voetgangersbrug in de zwarte beek op rechter oever aan een boom,1
+Demer,AAN_GB2_RODEMER,fietsersbrug pilaar RO,1
+Demer,de-12,,2
+Demer,de-12,LO Demer net SA van de steunbeer aan oogvijs,2
+Demer,de-12,"Sint-Amands, nabij 'De Veerman'",1
+Demer,de-13,aan voetgangersbrug in de zwarte beek op rechter oever aan een boom,2
+Demer,de-14,RO brug R12 (thv McDonalds) (enkel bij laag water bereikbaar),3
+Demer,de-7,,1
+Demer,de-7,RO Grote Vijver rond seinpaal 15 (enkel bij laag water bereikbaar),3
+Demer,de-9,LO rond wateruitlaat,1
+Demer,fietsersbrug aarschot,fietserbrug Demer thv zwembad Aarschot; adres demervallei 9; aarschot,1
+Demer,IN_KB_TUNNEL,"in de zijbeek die uitmondt in de Demer aan de steunbeer, met pin in muur van het tunneltje",1
+Demer,IN_KS_ROZWDEMER,"aan de klepstuw, net stroomaf met pin in beton van de klepstuw op rechter oever",1
+Demer,IN_MZ_RODEMER,aan monding zwarte beek op rechter oever in de Demer (dikke boom),1
+Demer,IN_VB_LODEMER,aan pilaar voetgangersbrug op linker oever in de demer,1
+Demer,IN_VB_ROZB,aan voetgangersbrug in de zwarte beek op rechter oever aan een boom,1
+Demer,Messelbroek,,2
+Demer,Messelbroek,bord jaagpad verboden toegang,1
+Demer,rommelaar,"mogelijks worden de 2 betonnen paaltjes weggehaald, dus bamboestok met verf geplaatst op oever; kabel aan piket bij waterlijn, 2e bamboestok in piket; adres: rommelaar 88; aarschot",1
+Demer,Rommelaar,2 paaltjes in de grond,1
+Demer,SA_GB_RODEMER,stroomaf grote brug in Diest op rechter oever aan boom,1
+Demer,SA Hasselt,beugel tussen overgang rechte naar schuine oever; adres: sasstraat Hasselt,2
+Demer,SA_KS_LOZB,eerste receiver stroomaf van de klepstuw op linker oever in de zwarte beek aan een piket,1
+Demer,SA_KS_RODEMER,eerste receiver stroomaf van de klepstuw in de Demer aan piket op rechter oever,1
+Demer,SA_RIF_LODEMER,doorrijden tot verkeersbord verboden of baantje inrijden aan nr139 op grote boom,1
+Demer,SA_SB_LODE,aan oogvijs in beton aan/stroomaf grote steunbeer,1
+Demer,SA_SB_RODEMER,stroomaf van de steunbeer op rechter oever Demer aan een boom; nieuwe locatie 10 m meer SA,2
+Demer,SA_SB_RODE_VOETGANGERS,aan pilaar voetgangersbrug op linker oever in de demer,1
+Demer,SO2_KS_RODEMER,tweede receiver stroomop van de klepstuw in de demer op rechter oever aan boom,1
+Demer,SO_KS_LODEMER,eerste receiver stroomop van de klepstuw in de Demer aan piket,2
+Demer,SO_KS_LOZB,eerste receiver stroomop klepstuw in de zwarte beek op linker oever aan boom of piket?,1
+Demer,SO_MZ_ROZB,"eerste receiver stroomop vd monding vd zwarte beek in de zwarte beek, aan boompje",1
+Demer,SO_SB_RODEMER,eerste receiver stroomop steunbeer in Demer aan boompje op rechter oever,1
+Demer,SO_ZICHEM_DEMER,"maagdentoren aan meettoestellen HIC; steenweg Diest, ernest Claesstraat",1
+Demer,Testelt,bord jaagpad verboden toegang; net na uitmonding leigracht in Demer,1
+Dijle,"",LO onder Mulzenbrug,4
+Dijle,"",LO rond wateruitlaat,3
+Dijle,"",RO brug R12 (thv McDonalds) (enkel bij laag water bereikbaar),3
+Dijle,"",RO Grote Vijver rond seinpaal 15 (enkel bij laag water bereikbaar),3
+Dijle,"","SA stuw, LO aan hek W&Z",4
+Dijle,"","SO stuw, LO op top ""eilandje""",5
+Dijle,"","stroomaf de stuw, op rechteroever recht tegenover de M-4",4
+Dijle,m-2,"LO rond wateruitlaat, Hanswijk De Brecht 8, Mechelen",2
+Dijle,M-2,LO rond wateruitlaat,1
+Dijle,M-3,"SO stuw, LO op top ""eilandje""",2
+Dijle,M-3,"SO stuw, LO op top ""eilandje""
 Nekkerspoel-borcht, Mechelen",2
-"207","Dijle","m-4","SA stuw, LO aan hek W&Z
+Dijle,m-4,"SA stuw, LO aan hek W&Z
 Nekkerspoel-borcht, Mechelen",2
-"208","Dijle","M-4A","stroomaf de stuw, op rechteroever recht tegenover de M-4",2
-"209","Dijle","M-5","RO brug R12 (thv McDonalds) (enkel bij laag water bereikbaar)",1
-"210","Dijle","M-5","RO brug R12 (thv McDonalds) (enkel bij laag water bereikbaar)
+Dijle,M-4A,"stroomaf de stuw, op rechteroever recht tegenover de M-4",2
+Dijle,M-5,RO brug R12 (thv McDonalds) (enkel bij laag water bereikbaar),1
+Dijle,M-5,"RO brug R12 (thv McDonalds) (enkel bij laag water bereikbaar)
 Guido Gezellelaan 4, Mechelen",2
-"211","Dijle","M-6","RO Grote Vijver rond seinpaal 15 (enkel bij laag water bereikbaar)",1
-"212","Dijle","M-6","RO Grote Vijver rond seinpaal 15 (enkel bij laag water bereikbaar)
+Dijle,M-6,RO Grote Vijver rond seinpaal 15 (enkel bij laag water bereikbaar),1
+Dijle,M-6,"RO Grote Vijver rond seinpaal 15 (enkel bij laag water bereikbaar)
 Zandvoortstraat 21, Mechelen",4
-"213","Dijle","Mulzenbrug","LO onder Mulzenbrug, Brugstraat/Neerstraat, Mechelen",2
-"214","Dijle","Rupel",,2
-"215","Dijle","Rupel","Hoofd1; Willebroek",3
-"216","Dijle","Rupel","KNRS Kajakclub, Legastraat 1 Niel",3
-"217","Dijle","Rupel","Rupel, LO Hamerdijk (enkel bij laag water bereikbaar)",1
-"218","Dijle","test Rotselaar",,2
-"219","Leopoldkanaal","BOEREKREEK MONDING ROESELAREKREEK","",1
-"220","Leopoldkanaal","BOEREKREEK NATUURRESERVAAT",,1
-"221","Leopoldkanaal","BOEREKREEK NATUURRESERVAAT","langs dijk leopoldkanaal",1
-"222","Leopoldkanaal","Braakman","",1
-"223","Leopoldkanaal","Braakman 1",,4
-"224","Leopoldkanaal","Braakman 2",,1
-"225","Leopoldkanaal","Braakman 3","",1
-"226","Leopoldkanaal","Braakman 4","",1
-"227","Leopoldkanaal","Braakman 5","nieuwe locatie: LO, SO kleine brug, aan knotwilg",1
-"228","Leopoldkanaal","GROTE GEUL NOTARIS","natuurpuntoever recht voor 1ste steiger",2
-"229","Leopoldkanaal","GROTE GEUL UITSTROOM","aan boomwortel",2
-"230","Leopoldkanaal","GROTE KIL SO",,1
-"231","Leopoldkanaal","GROTE KIL SO","LO uitstroom",1
-"232","Leopoldkanaal","Haven SA Braakman","DOW",2
-"233","Leopoldkanaal","Houten brug SA gemaal",,2
-"234","Leopoldkanaal","Houten brug SA gemaal","Braakman 6, nieuwe locatie: RO, 150m SA brug aan  meidoorn",2
-"235","Leopoldkanaal","Isabella-400m SA uitwatering Legemeersa","",1
-"236","Leopoldkanaal","Isabella-400m SO Stenenschuurbrug","",1
-"237","Leopoldkanaal","Isabella-800m SA uitwatering Legemeersa","",1
-"238","Leopoldkanaal","ISABELLAGELEED SA STUW","aan balustrade op hoek LO",1
-"239","Leopoldkanaal","Isabellageleed SO stuw","",1
-"240","Leopoldkanaal","Isabellakanaal","Boomgaard",1
-"241","Leopoldkanaal","Isabella- Stenenschuurbrug","20m SO steneschuurbrug RO aan vlierstruik waterlijn",2
-"242","Leopoldkanaal","Legemeersbeek 1a",,1
-"243","Leopoldkanaal","Legemeersbeek 1a","Slachthuiskaai, Hasselt",1
-"244","Leopoldkanaal","Legemeersbeek 2","SO op RO",1
-"245","Leopoldkanaal","LEOPOLDKANAAL BRUG WATERVLIET","50m richting zeebrugge van brug, RO",1
-"246","Leopoldkanaal","LEOPOLDKANAAL MONDING BOEREKREEK",,3
-"247","Leopoldkanaal","Leopoldkanaal nood zoekt troost",,1
-"248","Leopoldkanaal","Leopoldkanaal nood zoekt troost","Brug dijk Boekhoute",3
-"249","Leopoldkanaal","Leopoldkanaal Strobrugge","Maldegem",1
-"250","Leopoldkanaal","Leopoldkanaal Strobrugge","Maldegem; nieuwe locatie: 200m SO brug LO aan boom",1
-"251","Leopoldkanaal","LEOPOLDKANAAL ZONNEBRUG",,2
-"252","Leopoldkanaal","Notelaarsbrug","100 SO Notelaarsbrug Leopoldkanaal R0, aan populier waterlijn",1
-"253","Leopoldkanaal","SA stuw St Laureins","nieuwe locatie: verder SA, in 1e bocht ( ter hoogte van tuin) aan meidoorn",3
-"254","Leopoldkanaal","SO stuw St Laureins","",1
-"255","Leopoldkanaal","STUW SINT LAUREINS SO (vervanging)",,3
-"256","Leopoldkanaal","Toevoerkanaal Isabellagemaal",,1
-"257","Leopoldkanaal","Toevoerkanaal Isabellagemaal","SO gemaal",3
-"258","Leopoldkanaal","VLIETBEEK SA","Landweg de zutter nr 33",2
-"259","Leopoldkanaal","VLIETBEEK SO","Holleweg 18",1
-"260","Leopoldkanaal","Zeebrugge SA uitwatering zout","",1
-"261","Leopoldkanaal","Zeebrugge zoet",,1
-"262","Leopoldkanaal","ZWARTESLUISBEEK",,1
-"263","Leopoldkanaal","ZWARTESLUISBEEK","2de brug",1
-"264","Leopoldkanaal","Zwartesluisbeek SO Fuiken 1","Badjasmadam",1
-"265","Maas","3","SO monding Ourthe, trapje RO",3
-"266","Maas","3","SO monding Ourthe, trapje RO ",2
-"267","Maas","4","LO Maas; aan een trapje ter hoogte van congresgebouw ( palais des congrés)",5
-"268","Maas","5","LO afleidingskanaal; bij mediacité",3
-"269","Maas","6","Maas LO; aan een trapje aan het Aaquarium",3
-"270","Maas","7","RO afledingskanaal; voor de brug 'Bressoux'; ter hoogte van rue Douffet",3
-"271","Maas","8","Op het 'eiland' waar Maas en afleidingskanaal samenvloeien",5
-"272","Maas","8' Maas RO thv METRO","Maas RO thv METRO",12
-"273","Maas","LO stroomaf sluizencomplex Limmel (Julianakanaal), aan steigerpaal","RO stroomaf sluizencomplex Limmel ( Julianakanaal) aan ijzeren staketsel",2
-"274","Maas","LO stroomop sluizen Afferden","LO stroomop sluizen Afferden",3
-"275","Maas","LO stroomop stuw Afferden","LO stroomop stuw Afferden",2
-"276","Maas","LO stroomop stuw Borgharen, aan ingang vistrap","LO stroomop stuw Borgharen, aan ingang vistrap",6
-"277","Maas","ma-1","RO stroomop stuw Borgharen (aan boompje)",1
-"278","Maas","ma-1","RO stroomop stuw Borgharen (aan boompje)
+Dijle,Mulzenbrug,"LO onder Mulzenbrug, Brugstraat/Neerstraat, Mechelen",2
+Dijle,Rupel,,2
+Dijle,Rupel,Hoofd1; Willebroek,3
+Dijle,Rupel,"KNRS Kajakclub, Legastraat 1 Niel",3
+Dijle,Rupel,"Rupel, LO Hamerdijk (enkel bij laag water bereikbaar)",1
+Dijle,test Rotselaar,,2
+Leopoldkanaal,BOEREKREEK MONDING ROESELAREKREEK,"",1
+Leopoldkanaal,BOEREKREEK NATUURRESERVAAT,,1
+Leopoldkanaal,BOEREKREEK NATUURRESERVAAT,langs dijk leopoldkanaal,1
+Leopoldkanaal,Braakman,"",1
+Leopoldkanaal,Braakman 1,,4
+Leopoldkanaal,Braakman 2,,1
+Leopoldkanaal,Braakman 3,"",1
+Leopoldkanaal,Braakman 4,"",1
+Leopoldkanaal,Braakman 5,"nieuwe locatie: LO, SO kleine brug, aan knotwilg",1
+Leopoldkanaal,GROTE GEUL NOTARIS,natuurpuntoever recht voor 1ste steiger,2
+Leopoldkanaal,GROTE GEUL UITSTROOM,aan boomwortel,2
+Leopoldkanaal,GROTE KIL SO,,1
+Leopoldkanaal,GROTE KIL SO,LO uitstroom,1
+Leopoldkanaal,Haven SA Braakman,DOW,2
+Leopoldkanaal,Houten brug SA gemaal,,2
+Leopoldkanaal,Houten brug SA gemaal,"Braakman 6, nieuwe locatie: RO, 150m SA brug aan  meidoorn",2
+Leopoldkanaal,Isabella-400m SA uitwatering Legemeersa,"",1
+Leopoldkanaal,Isabella-400m SO Stenenschuurbrug,"",1
+Leopoldkanaal,Isabella-800m SA uitwatering Legemeersa,"",1
+Leopoldkanaal,ISABELLAGELEED SA STUW,aan balustrade op hoek LO,1
+Leopoldkanaal,Isabellageleed SO stuw,"",1
+Leopoldkanaal,Isabellakanaal,Boomgaard,1
+Leopoldkanaal,Isabella- Stenenschuurbrug,20m SO steneschuurbrug RO aan vlierstruik waterlijn,2
+Leopoldkanaal,Legemeersbeek 1a,,1
+Leopoldkanaal,Legemeersbeek 1a,"Slachthuiskaai, Hasselt",1
+Leopoldkanaal,Legemeersbeek 2,SO op RO,1
+Leopoldkanaal,LEOPOLDKANAAL BRUG WATERVLIET,"50m richting zeebrugge van brug, RO",1
+Leopoldkanaal,LEOPOLDKANAAL MONDING BOEREKREEK,,3
+Leopoldkanaal,Leopoldkanaal nood zoekt troost,,1
+Leopoldkanaal,Leopoldkanaal nood zoekt troost,Brug dijk Boekhoute,3
+Leopoldkanaal,Leopoldkanaal Strobrugge,Maldegem,1
+Leopoldkanaal,Leopoldkanaal Strobrugge,Maldegem; nieuwe locatie: 200m SO brug LO aan boom,1
+Leopoldkanaal,LEOPOLDKANAAL ZONNEBRUG,,2
+Leopoldkanaal,Notelaarsbrug,"100 SO Notelaarsbrug Leopoldkanaal R0, aan populier waterlijn",1
+Leopoldkanaal,SA stuw St Laureins,"nieuwe locatie: verder SA, in 1e bocht ( ter hoogte van tuin) aan meidoorn",3
+Leopoldkanaal,SO stuw St Laureins,"",1
+Leopoldkanaal,STUW SINT LAUREINS SO (vervanging),,3
+Leopoldkanaal,Toevoerkanaal Isabellagemaal,,1
+Leopoldkanaal,Toevoerkanaal Isabellagemaal,SO gemaal,3
+Leopoldkanaal,VLIETBEEK SA,Landweg de zutter nr 33,2
+Leopoldkanaal,VLIETBEEK SO,Holleweg 18,1
+Leopoldkanaal,Zeebrugge SA uitwatering zout,"",1
+Leopoldkanaal,Zeebrugge zoet,,1
+Leopoldkanaal,ZWARTESLUISBEEK,,1
+Leopoldkanaal,ZWARTESLUISBEEK,2de brug,1
+Leopoldkanaal,Zwartesluisbeek SO Fuiken 1,Badjasmadam,1
+Maas,3,"SO monding Ourthe, trapje RO",3
+Maas,3,"SO monding Ourthe, trapje RO ",2
+Maas,4,LO Maas; aan een trapje ter hoogte van congresgebouw ( palais des congrés),5
+Maas,5,LO afleidingskanaal; bij mediacité,3
+Maas,6,Maas LO; aan een trapje aan het Aaquarium,3
+Maas,7,RO afledingskanaal; voor de brug 'Bressoux'; ter hoogte van rue Douffet,3
+Maas,8,Op het 'eiland' waar Maas en afleidingskanaal samenvloeien,5
+Maas,8' Maas RO thv METRO,Maas RO thv METRO,12
+Maas,"LO stroomaf sluizencomplex Limmel (Julianakanaal), aan steigerpaal",RO stroomaf sluizencomplex Limmel ( Julianakanaal) aan ijzeren staketsel,2
+Maas,LO stroomop sluizen Afferden,LO stroomop sluizen Afferden,3
+Maas,LO stroomop stuw Afferden,LO stroomop stuw Afferden,2
+Maas,"LO stroomop stuw Borgharen, aan ingang vistrap","LO stroomop stuw Borgharen, aan ingang vistrap",6
+Maas,ma-1,RO stroomop stuw Borgharen (aan boompje),1
+Maas,ma-1,"RO stroomop stuw Borgharen (aan boompje)
 Borgharenweg 30, Maastricht",3
-"279","Maas","ma-4","RO Zuid-Willemsvaart Borgharen (aan meetstation)
+Maas,ma-4,"RO Zuid-Willemsvaart Borgharen (aan meetstation)
 Kleine dijkje/Bosscherweg, Maastricht",3
-"280","Maas","ma-5","RO stroomaf sluizencomplex Limmel ( Julianakanaal) aan ijzeren staketsel",3
-"281","Maas","Maas SA barrage Monsin",,3
-"282","Maas","Maas SA Borgharen",,1
-"283","Maas","Maas SA Borgharen","aan meetconstructie waterpeil, ter hoogte van trailerhelling
+Maas,ma-5,RO stroomaf sluizencomplex Limmel ( Julianakanaal) aan ijzeren staketsel,3
+Maas,Maas SA barrage Monsin,,3
+Maas,Maas SA Borgharen,,1
+Maas,Maas SA Borgharen,"aan meetconstructie waterpeil, ter hoogte van trailerhelling
 Halstraat, Borgharen",3
-"284","Maas","Maas SA Borgharen","RO stroomaf stuw Borgharen (aan metalen profiel in water)",1
-"285","Maas","Maas SA Borgharen","RO stroomaf stuw Borgharen; meer stroomaf aan klein meetstation 
+Maas,Maas SA Borgharen,RO stroomaf stuw Borgharen (aan metalen profiel in water),1
+Maas,Maas SA Borgharen,"RO stroomaf stuw Borgharen; meer stroomaf aan klein meetstation 
 Halstraat, Maasmechelen",1
-"286","Maas","RO stroomop sluizen Afferden","RO stroomop sluizen Afferden",3
-"287","Maas","RO stroomop stuw Afferden","RO stroomop stuw Afferden",3
-"288","Maas","RO stroomop stuw Borgharen (aan boompje)","RO stroomop stuw Borgharen (aan boompje)",3
-"289","Noordzeekanaal 2017-2018","","Twee stenen",1
-"290","Noordzeekanaal 2017-2018","Aan drie palen","Enkele steen. Eerste palenrij, meest rechtse paal vanaf brug, richting brug uitgelegd",1
-"291","Noordzeekanaal 2017-2018","Gemaal binnenkant","Twee stenen",1
-"292","Noordzeekanaal 2017-2018","Gemaalkom","Twee stenen, kantsteen 1 meter achter hek",1
-"293","Noordzeekanaal 2017-2018","Midden voor gemaal","Twee stenen",1
-"294","Noordzeekanaal 2017-2018","Uitwateringskanaal","Twee stenen",1
-"295","Noordzeekanaal 2017-2018","Voor gemaal","Twee stenen",1
-"296","PC4C","PC4C-B08-1",,1
-"297","PC4C","PC4C-B10-2",,1
-"298","PC4C","PC4C-C05-1",,1
-"299","PC4C","PC4C-C05-2",,1
-"300","PC4C","PC4C-C05-9",,1
-"301","PC4C","PC4C-C09-3",,1
-"302","PC4C","PC4C-C09-5",,1
-"303","PC4C","PC4C-C10-1",,1
-"304","Saeftinghe","VLVS10","VLVS10",1
-"305","Saeftinghe","VLVS3","VLVS3",1
-"306","Saeftinghe","VLVS5","VLVS5",1
-"307","Saeftinghe","VLVS6","VLVS6",1
-"308","Saeftinghe","VLVS6","VLVS6
+Maas,RO stroomop sluizen Afferden,RO stroomop sluizen Afferden,3
+Maas,RO stroomop stuw Afferden,RO stroomop stuw Afferden,3
+Maas,RO stroomop stuw Borgharen (aan boompje),RO stroomop stuw Borgharen (aan boompje),3
+Noordzeekanaal 2017-2018,"",Twee stenen,1
+Noordzeekanaal 2017-2018,Aan drie palen,"Enkele steen. Eerste palenrij, meest rechtse paal vanaf brug, richting brug uitgelegd",1
+Noordzeekanaal 2017-2018,Gemaal binnenkant,Twee stenen,1
+Noordzeekanaal 2017-2018,Gemaalkom,"Twee stenen, kantsteen 1 meter achter hek",1
+Noordzeekanaal 2017-2018,Midden voor gemaal,Twee stenen,1
+Noordzeekanaal 2017-2018,Uitwateringskanaal,Twee stenen,1
+Noordzeekanaal 2017-2018,Voor gemaal,Twee stenen,1
+PC4C,PC4C-B08-1,,1
+PC4C,PC4C-B10-2,,1
+PC4C,PC4C-C05-1,,1
+PC4C,PC4C-C05-2,,1
+PC4C,PC4C-C05-9,,1
+PC4C,PC4C-C09-3,,1
+PC4C,PC4C-C09-5,,1
+PC4C,PC4C-C10-1,,1
+Saeftinghe,VLVS10,VLVS10,1
+Saeftinghe,VLVS3,VLVS3,1
+Saeftinghe,VLVS5,VLVS5,1
+Saeftinghe,VLVS6,VLVS6,1
+Saeftinghe,VLVS6,"VLVS6
 Aan 2de houten paal",1
-"309","Saeftinghe","VLVS7","VLVS7",1
-"310","Saeftinghe","VLVS8","VLVS8",1
-"311","Swimway Vechte","Nevengeul Junne",,1
-"312","Thorntonbank","R01",,3
-"313","Thorntonbank","R02",,1
-"314","Thorntonbank","R03",,2
-"315","Thorntonbank","R04",,3
-"316","Thorntonbank","R05",,3
-"317","Thorntonbank","R06",,2
-"318","Thorntonbank","R07",,2
-"319","Thorntonbank","R08",,3
-"320","Thorntonbank","R09",,4
-"321","Thorntonbank","R10",,4
-"322","Westerschelde 1","","",2
-"323","Westerschelde 1","250m",,2
-"324","Westerschelde 1","DL-7",,12
-"325","Westerschelde 1","DL-9",,5
-"326","Westerschelde 1","GVW-SP",,10
-"327","Westerschelde 1","OGDL",,6
-"328","Westerschelde 1","OGDL","",5
-"329","Westerschelde 1","SP-2",,6
-"330","Westerschelde 1","SP-2","",6
-"331","Westerschelde 1","STEEN",,9
-"332","Westerschelde 1","STEEN","",2
-"333","Westerschelde 1","TRAWL",,4
-"334","Westerschelde 1","TRAWL","",6
-"335","Westerschelde 1","W-6",,6
-"336","Westerschelde 1","W-6","",6
-"337","Westerschelde 1","W7",,2
-"338","Westerschelde 1","WN-2",,7
-"339","Westerschelde 2","","",2
-"340","Westerschelde 2","10 VQ(3)5s","Centraal in de Schelde",12
-"341","Westerschelde 2","11 ISO 8s 13","Centraal in de Schelde",10
-"342","Westerschelde 2","12 ISO 4s 11","Centraal in de Schelde",2
-"343","Westerschelde 2","13 Q 2C","Rechteroever in de Schelde",1
-"344","Westerschelde 2","14 Q25","Linkeroever opwaarts Braakmanhaven",11
-"345","Westerschelde 2","15 Obstn K","Linkeroever opwaarts Braakmanhaven",1
-"346","Westerschelde 2","16 Iso 8s 25B","Linkeroever opwaarts Braakmanhaven",1
-"347","Westerschelde 2","17 Iso 8s 18",,1
-"348","Westerschelde 2","17 Iso 8s 18","Pas van Terneuzen",9
-"349","Westerschelde 2","18 Iso 4s 16","Pas van Terneuzen",1
-"350","Westerschelde 2","19 14","Pas van Terneuzen",1
-"351","Westerschelde 2","1 PPB","Paulinapolder",5
-"352","Westerschelde 2","1 PPC","Paulinapolder",6
-"353","Westerschelde 2","20 Iso 8s 12A","Pas van Terneuzen",1
-"354","Westerschelde 2","21 Iso 4s 23","Linkeroever afwaarts Braakmanhaven",13
-"355","Westerschelde 2","25A","former K",8
-"356","Westerschelde 2","25B","Linkeroever opwaarts Braakmanhaven",9
-"357","Westerschelde 2","2 PPB","Paulinapolder",6
-"358","Westerschelde 2","2 PPC","Paulinapolder",5
-"359","Westerschelde 2","3 A5","Ankerzone Springergeul",12
-"360","Westerschelde 2","4 A3",,11
-"361","Westerschelde 2","4 A3","Ankerzone Springergeul",1
-"362","Westerschelde 2","5 A1","Ankerzone Springergeul",1
-"363","Westerschelde 2","6 VQ 15 A","Ingang Springergeul",12
-"364","Westerschelde 2","7 Q 15","Linkeroever afwaarts van de Springergeul",12
-"365","Westerschelde 2","8 ISO 8s 6","Centraal in de Schelde",11
-"366","Westerschelde 2","9 ISO 4s 4","Centraal in de Schelde",11
-"367","Westerschelde 2","A1",,6
-"368","Westerschelde 2","A1","",5
-"369","Westerschelde 2","Boei Iso 8s 12A","Pas van Terneuzen",11
-"370","Westerschelde 2","Iso 4s 16","Pas van Terneuzen",10
-"371","Westerschelde 2","Obstn K",,1
-"372","Westerschelde 2","Q2C","Rechteroever in de Schelde",11
-"373","Westerschelde 2","ws-11",,10
-"374","Westerschelde 2","ws-14",,5
-"375","Westerschelde 3","","",14
-"376","Westerschelde 3","42A",,5
-"377","Westerschelde 3","53",,5
-"378","Westerschelde 3","53A",,5
-"379","Westerschelde 3","55",,5
-"380","Westerschelde 3","F42","F42",6
-"381","Westerschelde 3","FZ2",,1
-"382","Westerschelde 3","FZ2","FZ2",1
-"383","Westerschelde 3","ws_HW6",,6
-"384","Zeeschelde","","Berlare",2
-"385","Zeeschelde","","Buggenhout",2
-"386","Zeeschelde","","Buitenland 58-60, Bornem; onder de brug",2
-"387","Zeeschelde","","Burcht",1
-"388","Zeeschelde","","Dijkstraat 186, Zele; vanaf stroomopwaarts 2de wilg (= vanaf de boot)",2
-"389","Zeeschelde","","Driegoten 66, Hamme, thv controlehuisje, aan houten constructie",2
-"390","Zeeschelde","","Fort Liefkenshoek",1
-"391","Zeeschelde","","Fort Lilo",1
-"392","Zeeschelde","","Gontrode Heirweg 4 Melle, onder de brug",1
-"393","Zeeschelde","","Heusdenbaan 60 Melle; RO, stroomaf brug (thv knik)",1
-"394","Zeeschelde","","Nabij 'Zates'",1
-"395","Zeeschelde","","Scheldeboord 33, Hemiksem; onder brug van overzetboot Jan Van Eyck",2
-"396","Zeeschelde","","Sint-Amands, nabij 'De Veerman'",1
-"397","Zeeschelde","","Veer Bazel",1
-"398","Zeeschelde","","Wilfordkaai 5, Temse; aan meerpaal nabij brug",2
-"399","Zeeschelde","Beneden Nete Lier","Rechteroever, aan uitwateringsbuis, uit te lezen rond laag water
+Saeftinghe,VLVS7,VLVS7,1
+Saeftinghe,VLVS8,VLVS8,1
+Swimway Vechte,Nevengeul Junne,,1
+Thorntonbank,R01,,3
+Thorntonbank,R02,,1
+Thorntonbank,R03,,2
+Thorntonbank,R04,,3
+Thorntonbank,R05,,3
+Thorntonbank,R06,,2
+Thorntonbank,R07,,2
+Thorntonbank,R08,,3
+Thorntonbank,R09,,4
+Thorntonbank,R10,,4
+Westerschelde 1,"","",2
+Westerschelde 1,250m,,2
+Westerschelde 1,DL-7,,12
+Westerschelde 1,DL-9,,5
+Westerschelde 1,GVW-SP,,10
+Westerschelde 1,OGDL,,6
+Westerschelde 1,OGDL,"",5
+Westerschelde 1,SP-2,,6
+Westerschelde 1,SP-2,"",6
+Westerschelde 1,STEEN,,9
+Westerschelde 1,STEEN,"",2
+Westerschelde 1,TRAWL,,4
+Westerschelde 1,TRAWL,"",6
+Westerschelde 1,W-6,,6
+Westerschelde 1,W-6,"",6
+Westerschelde 1,W7,,2
+Westerschelde 1,WN-2,,7
+Westerschelde 2,"","",2
+Westerschelde 2,10 VQ(3)5s,Centraal in de Schelde,12
+Westerschelde 2,11 ISO 8s 13,Centraal in de Schelde,10
+Westerschelde 2,12 ISO 4s 11,Centraal in de Schelde,2
+Westerschelde 2,13 Q 2C,Rechteroever in de Schelde,1
+Westerschelde 2,14 Q25,Linkeroever opwaarts Braakmanhaven,11
+Westerschelde 2,15 Obstn K,Linkeroever opwaarts Braakmanhaven,1
+Westerschelde 2,16 Iso 8s 25B,Linkeroever opwaarts Braakmanhaven,1
+Westerschelde 2,17 Iso 8s 18,,1
+Westerschelde 2,17 Iso 8s 18,Pas van Terneuzen,9
+Westerschelde 2,18 Iso 4s 16,Pas van Terneuzen,1
+Westerschelde 2,19 14,Pas van Terneuzen,1
+Westerschelde 2,1 PPB,Paulinapolder,5
+Westerschelde 2,1 PPC,Paulinapolder,6
+Westerschelde 2,20 Iso 8s 12A,Pas van Terneuzen,1
+Westerschelde 2,21 Iso 4s 23,Linkeroever afwaarts Braakmanhaven,13
+Westerschelde 2,25A,former K,8
+Westerschelde 2,25B,Linkeroever opwaarts Braakmanhaven,9
+Westerschelde 2,2 PPB,Paulinapolder,6
+Westerschelde 2,2 PPC,Paulinapolder,5
+Westerschelde 2,3 A5,Ankerzone Springergeul,12
+Westerschelde 2,4 A3,,11
+Westerschelde 2,4 A3,Ankerzone Springergeul,1
+Westerschelde 2,5 A1,Ankerzone Springergeul,1
+Westerschelde 2,6 VQ 15 A,Ingang Springergeul,12
+Westerschelde 2,7 Q 15,Linkeroever afwaarts van de Springergeul,12
+Westerschelde 2,8 ISO 8s 6,Centraal in de Schelde,11
+Westerschelde 2,9 ISO 4s 4,Centraal in de Schelde,11
+Westerschelde 2,A1,,6
+Westerschelde 2,A1,"",5
+Westerschelde 2,Boei Iso 8s 12A,Pas van Terneuzen,11
+Westerschelde 2,Iso 4s 16,Pas van Terneuzen,10
+Westerschelde 2,Obstn K,,1
+Westerschelde 2,Q2C,Rechteroever in de Schelde,11
+Westerschelde 2,ws-11,,10
+Westerschelde 2,ws-14,,5
+Westerschelde 3,"","",14
+Westerschelde 3,42A,,5
+Westerschelde 3,53,,5
+Westerschelde 3,53A,,5
+Westerschelde 3,55,,5
+Westerschelde 3,F42,F42,6
+Westerschelde 3,FZ2,,1
+Westerschelde 3,FZ2,FZ2,1
+Westerschelde 3,ws_HW6,,6
+Zeeschelde,"",Berlare,2
+Zeeschelde,"",Buggenhout,2
+Zeeschelde,"","Buitenland 58-60, Bornem; onder de brug",2
+Zeeschelde,"",Burcht,1
+Zeeschelde,"","Dijkstraat 186, Zele; vanaf stroomopwaarts 2de wilg (= vanaf de boot)",2
+Zeeschelde,"","Driegoten 66, Hamme, thv controlehuisje, aan houten constructie",2
+Zeeschelde,"",Fort Liefkenshoek,1
+Zeeschelde,"",Fort Lilo,1
+Zeeschelde,"","Gontrode Heirweg 4 Melle, onder de brug",1
+Zeeschelde,"","Heusdenbaan 60 Melle; RO, stroomaf brug (thv knik)",1
+Zeeschelde,"",Nabij 'Zates',1
+Zeeschelde,"","Scheldeboord 33, Hemiksem; onder brug van overzetboot Jan Van Eyck",2
+Zeeschelde,"","Sint-Amands, nabij 'De Veerman'",1
+Zeeschelde,"",Veer Bazel,1
+Zeeschelde,"","Wilfordkaai 5, Temse; aan meerpaal nabij brug",2
+Zeeschelde,Beneden Nete Lier,"Rechteroever, aan uitwateringsbuis, uit te lezen rond laag water
 Ouderijstraat",4
-"400","Zeeschelde","Beneden Nete Walem SO Rupel","Linkeroever, aan vaarbaken, uit te lezen rond laag water
+Zeeschelde,Beneden Nete Walem SO Rupel,"Linkeroever, aan vaarbaken, uit te lezen rond laag water
 Emiel Engelsstraat, Mechelen",6
-"401","Zeeschelde","Berlare","Berlare LO, Niet afh van getij; Nieuwdonk Berlare",8
-"402","Zeeschelde","Bornem","Buitenland 58-60, Bornem; RO onder de brug (aanlegsteiger)",7
-"403","Zeeschelde","Branst","Bovenstraat 152, Branst Nabij 'Zates', Niet afhankelijk van getij, RO",8
-"404","Zeeschelde","Buggenhout","Buggenhout, Briel 28, RO aan boom SA van staketsel",7
-"405","Zeeschelde","Buoy near Palingplaat","Buoy near Palingplaat",7
-"406","Zeeschelde","BURCHT","Burcht, RO aan bord 'zinker olieleiding' ; petroleumkaai/benzineweg, jaagpad nemen aan Q8",7
-"407","Zeeschelde","Dendermonde","Steenweg van Grembergen 45, Dendermonde; thv oude fabriek, trap over dijk, aan wilg",2
-"408","Zeeschelde","Dendermonde","Steenweg van Grembergen 45, Dendermonde; thv oude fabriek, trap over dijk, aan wilg LO",7
-"409","Zeeschelde","Durme Hamveer","Rechterpeiler, rechterzijde & stroomafzijde Mirabrug",7
-"410","Zeeschelde","Fort Liefkenshoek","Fort Liefkenshoek, Ketenislaan 3, Beveren",7
-"411","Zeeschelde","Fort Lilo","Fort Lilo, Scheldelaan Antwerpen",8
-"412","Zeeschelde","Gontrode","Gontrode Heirweg 4 Melle, onder de brug",16
-"413","Zeeschelde","Grote Nete Lier","Rechteroever, onderaan aan trap uitwatering, uit te lezen rond laag water
+Zeeschelde,Berlare,"Berlare LO, Niet afh van getij; Nieuwdonk Berlare",8
+Zeeschelde,Bornem,"Buitenland 58-60, Bornem; RO onder de brug (aanlegsteiger)",7
+Zeeschelde,Branst,"Bovenstraat 152, Branst Nabij 'Zates', Niet afhankelijk van getij, RO",8
+Zeeschelde,Buggenhout,"Buggenhout, Briel 28, RO aan boom SA van staketsel",7
+Zeeschelde,Buoy near Palingplaat,Buoy near Palingplaat,7
+Zeeschelde,BURCHT,"Burcht, RO aan bord 'zinker olieleiding' ; petroleumkaai/benzineweg, jaagpad nemen aan Q8",7
+Zeeschelde,Dendermonde,"Steenweg van Grembergen 45, Dendermonde; thv oude fabriek, trap over dijk, aan wilg",2
+Zeeschelde,Dendermonde,"Steenweg van Grembergen 45, Dendermonde; thv oude fabriek, trap over dijk, aan wilg LO",7
+Zeeschelde,Durme Hamveer,"Rechterpeiler, rechterzijde & stroomafzijde Mirabrug",7
+Zeeschelde,Fort Liefkenshoek,"Fort Liefkenshoek, Ketenislaan 3, Beveren",7
+Zeeschelde,Fort Lilo,"Fort Lilo, Scheldelaan Antwerpen",8
+Zeeschelde,Gontrode,"Gontrode Heirweg 4 Melle, onder de brug",16
+Zeeschelde,Grote Nete Lier,"Rechteroever, onderaan aan trap uitwatering, uit te lezen rond laag water
 Kesselsesteenweg 114",4
-"414","Zeeschelde","Hamme","Driegoten 66, Hamme, thv controlehuisje, aan houten constructie (paaltjes); LO",7
-"415","Zeeschelde","Hemiksem","Scheldeboord 33, Hemiksem; RO SA overzetboot Jan Van Eyck aan overstort",7
-"416","Zeeschelde","Kleine Nete Lier","Linkeroever, aan oogvijzen 20m stroomaf siphon
+Zeeschelde,Hamme,"Driegoten 66, Hamme, thv controlehuisje, aan houten constructie (paaltjes); LO",7
+Zeeschelde,Hemiksem,"Scheldeboord 33, Hemiksem; RO SA overzetboot Jan Van Eyck aan overstort",7
+Zeeschelde,Kleine Nete Lier,"Linkeroever, aan oogvijzen 20m stroomaf siphon
 Rivierstraat",4
-"417","Zeeschelde","Kruibeke","Kruibeeksesteenweg 24, Kruibeke; Nabij Xella, op militair domein",2
-"418","Zeeschelde","Kruibeke","Kruibeeksesteenweg 24, Kruibeke; Nabij Xella, op militair domein
+Zeeschelde,Kruibeke,"Kruibeeksesteenweg 24, Kruibeke; Nabij Xella, op militair domein",2
+Zeeschelde,Kruibeke,"Kruibeeksesteenweg 24, Kruibeke; Nabij Xella, op militair domein
 Sleutelshof 17, Burcht, LO",7
-"419","Zeeschelde","s-1","Andere locatie omwille van slijk:
+Zeeschelde,s-1,"Andere locatie omwille van slijk:
 Stukje stroomaf vorige locatie aan zelfde oever; aan uitstroom vijver",6
-"420","Zeeschelde","s-2a",,1
-"421","Zeeschelde","s-4b","Sint-Amands, nabij 'De Veerman'",1
-"422","Zeeschelde","Schelde Dendermonde","Rechteroever, aan ponton
+Zeeschelde,s-2a,,1
+Zeeschelde,s-4b,"Sint-Amands, nabij 'De Veerman'",1
+Zeeschelde,Schelde Dendermonde,"Rechteroever, aan ponton
 Vlassenbroek/ Killeweg, Dendermonde",4
-"423","Zeeschelde","Schelde Dendermonde","Rechteroever, aan ponton
+Zeeschelde,Schelde Dendermonde,"Rechteroever, aan ponton
 Vlassenbroek/ Killeweg, Dendermonde
 
 Deze is bevestigd ter hoogte van een uitwatering dmv een ketting onderaan de trap.
 Kan met laagwater vanaf de kant uitgelezen worden of met de boot.",4
-"424","Zeeschelde","Schelde Vlassenbroek","Linkeroever, aan helling overzet (niet de aanlegsteiger)
+Zeeschelde,Schelde Vlassenbroek,"Linkeroever, aan helling overzet (niet de aanlegsteiger)
 Baasrodeveerstraat, Vlassenbroek",7
-"425","Zeeschelde","Sint-Amands","Kaai 22,Sint-Amands, LO nabij 'De Veerman', niet afhankelijk van getij",7
-"426","Zeeschelde","Temse","Wilfordkaai 5, Temse; aan laatste trapje aan kademuur, LO. afhankelijk van getij",3
-"427","Zeeschelde","Temse","Wilfordkaai 5, Temse; aan meerpaal, 300 m stroomop van vorige locatie nabij brug. afhankelijk van getij, LO",1
-"428","Zeeschelde","Temse","Wilfordkaai 5, Temse; aan meerpaal nabij brug, niet afhankelijk van getij, LO",3
-"429","Zeeschelde","Veer Bazel","Kallebeek 1, Kruibeke, Veer Bazel, niet afhankelijk van getij, LO",5
-"430","Zeeschelde","Veer Bzael","Kallebeek 1, Kruibeke, Veer Bazel, niet afhankelijk van getij, LO",2
-"431","Zeeschelde","Wetteren","Rechteroever, onderaan aan uitwatering, uit te lezen rond laag water
+Zeeschelde,Sint-Amands,"Kaai 22,Sint-Amands, LO nabij 'De Veerman', niet afhankelijk van getij",7
+Zeeschelde,Temse,"Wilfordkaai 5, Temse; aan laatste trapje aan kademuur, LO. afhankelijk van getij",3
+Zeeschelde,Temse,"Wilfordkaai 5, Temse; aan meerpaal, 300 m stroomop van vorige locatie nabij brug. afhankelijk van getij, LO",1
+Zeeschelde,Temse,"Wilfordkaai 5, Temse; aan meerpaal nabij brug, niet afhankelijk van getij, LO",3
+Zeeschelde,Veer Bazel,"Kallebeek 1, Kruibeke, Veer Bazel, niet afhankelijk van getij, LO",5
+Zeeschelde,Veer Bzael,"Kallebeek 1, Kruibeke, Veer Bazel, niet afhankelijk van getij, LO",2
+Zeeschelde,Wetteren,"Rechteroever, onderaan aan uitwatering, uit te lezen rond laag water
 Zijderdijk, Wetteren",7
-"432","Zeeschelde","Wichelen","Linkeroever, onderaan aan uitwatering, uit te lezen rond laag water
+Zeeschelde,Wichelen,"Linkeroever, onderaan aan uitwatering, uit te lezen rond laag water
 Aard, Wichelen",7
-"433","Zeeschelde","Zele","Dijkstraat 186, Zele; vanaf stroomopwaarts 2de wilg (= vanaf de boot), LO",7
+Zeeschelde,Zele,"Dijkstraat 186, Zele; vanaf stroomopwaarts 2de wilg (= vanaf de boot), LO",7
