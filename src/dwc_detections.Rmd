@@ -221,19 +221,20 @@ deployments %>%
 ```
 
 All receivers have at least a deployment date available.
-Retrieve record for which there is no recover date information whatsoever:
+Retrieve record for which there is no recover date information available:
 
 ```{r}
 deployments %>% 
   mutate(deploy_date_time = as.character(deploy_date_time)) %>% 
   mutate(recover_date_time = as.character(recover_date_time)) %>% 
   mutate(empty_dates = case_when(
-    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date",
-    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date",
-    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date",
-    TRUE ~ "date")) %>% 
-  filter(empty_dates == "no date") %>% 
-  select(receiver, receiver_status, projectname, id_pk)
+    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date available",
+    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date available",
+    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date information available",
+    TRUE ~ "deploy and recover date available")) %>% 
+  filter(empty_dates == "no recover date available") %>% 
+  select(receiver, receiver_status, projectname, id_pk) %>% 
+  arrange(receiver_status)
 ```
 
 Retrieve receiver deployments for which `recover_date_time` falls before `deploy_date_time`:
@@ -243,10 +244,10 @@ deployments %>%
   mutate(deploy_date_time = as.character(deploy_date_time)) %>% 
   mutate(recover_date_time = as.character(recover_date_time)) %>% 
   mutate(empty_dates = case_when(
-    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date",
-    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date",
-    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date",
-    TRUE ~ "date")) %>% 
+    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date available",
+    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date available",
+    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date information available",
+    TRUE ~ "deploy and recover date available"))%>% 
   filter(recover_date_time < deploy_date_time) %>% 
   arrange(receiver) %>% 
   select(receiver, recover_date_time, deploy_date_time, id_pk, projectname)
@@ -319,7 +320,7 @@ head(deployment_locations, n = 300)
 Export as .csv to be reviewed by experts:
 
 ```{r}
-write.csv(deployment_locations, "../data/interim/deployment_locations.csv", na = "")
+write_csv(deployment_locations, "../data/interim/deployment_locations.csv", na = "")
 ```
 
 ### deployment latitude and longitude
@@ -332,3 +333,61 @@ deployments %>%
   count()
 ```
 
+### recover latitude and longitude
+
+Inspect recover latitude and longitude:
+
+```{r}
+deployments %>% 
+  group_by(recover_lat, recover_long) %>% 
+  count()
+```
+
+Some values for `recover_lat` and `recover_long` are rather odd. 
+- Zero values for `recover_lat` and `recover_long`
+- Extreme low (5) values for `recover_lat`
+- Negative or extreme high values (20) for `recover_long`
+
+1. Identify zero values for `recover_lat` and `recover_long`:
+
+```{r}
+deployments %>% 
+  filter(recover_lat == 0 |
+           recover_long == 0) %>% 
+  select(projectname, id_pk, recover_date_time) %>% 
+  arrange(projectname) 
+```
+
+2. Identify deviating values for `recover_lat`:
+
+```{r}
+deployments %>% 
+  filter(recover_lat != 0 & recover_lat < 50) %>% 
+  select(projectname, id_pk, recover_lat, recover_long) %>% 
+  arrange(projectname) 
+```
+
+3. Identify deviating values for `recover_long`:
+
+```{r}
+deployments %>% 
+  filter(recover_long != 0 & (recover_long < 0 | recover_long > 10)) %>% 
+  select(projectname, id_pk, recover_lat, recover_long) %>% 
+  arrange(projectname) 
+```
+
+### station name
+
+```{r}
+deployments %>% group_by(station_name) %>% count()
+```
+
+
+### intended latitude and longitude
+
+
+```{r}
+deployments %>% 
+  group_by(intended_lat, intended_long) %>% 
+  count()
+```
