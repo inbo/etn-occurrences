@@ -390,7 +390,13 @@ event_release %<>% mutate(dwc_eventDate = utc_release_date_time)
 See [issue 41](https://github.com/inbo/etn-occurrences/issues/41).
 
 ```{r}
-event_release %<>% mutate(dwc_locality = release_location)
+event_release %<>% mutate(dwc_locality = case_when(
+  release_location == "Genk" ~ "Upstream shipping lock Genk",
+  release_location == "Diepenbeek" ~ "Upstream shipping lock Diepenbeek",
+  release_location == "Hasselt" ~ "Upstream shipping lock Hasselt",
+  TRUE ~ release_location,
+  projectname == "2013 Albertkanaal" & is.na(release_location) ~ capture_location)
+)
 ```
 
 ### decimalLatitude
@@ -398,7 +404,11 @@ event_release %<>% mutate(dwc_locality = release_location)
 See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 
 ```{r}
-event_release %<>% mutate(dwc_decimalLatitude = round(release_latitude, digits = 5))
+event_release %<>% mutate(dwc_decimalLatitude = case_when(
+  projectname == "2013 Albertkanaal" & is.na(release_location) ~ capture_latitude,
+  TRUE ~ round(release_latitude, digits = 5)
+  )
+)
 ```
 
 ### decimalLongitude
@@ -406,7 +416,11 @@ event_release %<>% mutate(dwc_decimalLatitude = round(release_latitude, digits =
 See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 
 ```{r}
-event_release %<>% mutate(dwc_decimalLongitude = round(release_longitude, digits = 5))
+event_release %<>% mutate(dwc_decimalLongitude = case_when(
+  projectname == "2013 Albertkanaal" & is.na(release_location) ~ capture_longitude,  
+  TRUE ~ round(release_longitude, digits = 5)
+  )
+)
 ```
 
 Combine `event_capture`, `event_surgery` and `event_release` to one `Event Core`:
