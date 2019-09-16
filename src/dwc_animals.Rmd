@@ -162,7 +162,18 @@ event_capture %<>% mutate(dwc_eventDate = catched_date_time)
 ### locality
 
 ```{r}
-event_capture %<>% mutate(dwc_locality = capture_location)
+event_capture %<>% mutate(dwc_locality = case_when(
+  (capture_location == "Genk" |
+     capture_location == "Upstream draining channel Genk" |
+     capture_location == "sluis Genk" |
+     capture_location == "shipping lock Genk") ~ "Shipping lock Genk",
+  (capture_location == "Diepenbeek" |
+     capture_location == "Upstream drainage channel Diepenbeek") ~ "Shipping lock Diepenbeek",
+  (capture_location == "Hasselt" | 
+     capture_location == "Upstream drainage channel Hasselt") ~ "Shipping lock Hasselt",
+  TRUE ~ capture_location
+  )
+)
 ```
 
 ### decimalLatitude
@@ -172,6 +183,14 @@ See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 ```{r}
 event_capture %<>% mutate(dwc_decimalLatitude = case_when(
   capture_location == "hatchery Erezée" ~ 50.30605,
+  (capture_location == "Genk" |
+     capture_location == "Upstream draining channel Genk" |
+     capture_location == "sluis Genk" |
+     capture_location == "shipping lock Genk") ~ 50.93564,
+  (capture_location == "Diepenbeek" |
+     capture_location == "Upstream drainage channel Diepenbeek") ~ 50.93803,
+  (capture_location == "Hasselt" | 
+     capture_location == "Upstream drainage channel Hasselt") ~ 50.93803,
   TRUE ~ round(capture_latitude, digits = 5)
   )
 )
@@ -184,6 +203,14 @@ See [issue 11](https://github.com/inbo/etn-occurrences/issues/11).
 ```{r}
 event_capture %<>% mutate(dwc_decimalLongitude = case_when(
   capture_location == "hatchery Erezée" ~ 5.54259,
+  (capture_location == "Genk" |
+     capture_location == "Upstream draining channel Genk" |
+     capture_location == "sluis Genk" |
+     capture_location == "shipping lock Genk") ~ 5.49701,
+  (capture_location == "Diepenbeek" |
+     capture_location == "Upstream drainage channel Diepenbeek") ~ 5.43731,
+  (capture_location == "Hasselt" | 
+     capture_location == "Upstream drainage channel Hasselt") ~ 5.43731,
   TRUE ~ round(capture_longitude, digits = 5)
   )
 )
@@ -256,11 +283,19 @@ event_surgery %<>% mutate(dwc_eventDate = date_of_surgery)
 
 ### locality
 
-See [issue 42](https://github.com/inbo/etn-occurrences/issues/42) and [issue 47](https://github.com/inbo/etn-occurrences/issues/47)
+See [issue 47](https://github.com/inbo/etn-occurrences/issues/47)
 
 ```{r}
 event_surgery %<>% mutate(dwc_locality = case_when(
   capture_location == "hatchery Erezée" ~ capture_location,
+    (capture_location == "Genk" |
+     capture_location == "Upstream draining channel Genk" |
+     capture_location == "sluis Genk" |
+     capture_location == "shipping lock Genk") ~ "Shipping lock Genk",
+  (capture_location == "Diepenbeek" |
+     capture_location == "Upstream drainage channel Diepenbeek") ~ "Shipping lock Diepenbeek",
+  (capture_location == "Hasselt" | 
+     capture_location == "Upstream drainage channel Hasselt") ~ "Shipping lock Hasselt",
   TRUE ~ surgery_location)
 )
 ```
@@ -272,6 +307,14 @@ See [issue 47](https://github.com/inbo/etn-occurrences/issues/47)
 ```{r}
 event_surgery %<>% mutate(dwc_decimalLatitude = case_when(
   capture_location == "hatchery Erezée" ~ 50.30605,
+  (capture_location == "Genk" |
+     capture_location == "Upstream draining channel Genk" |
+     capture_location == "sluis Genk" |
+     capture_location == "shipping lock Genk") ~ 50.93564,
+  (capture_location == "Diepenbeek" |
+     capture_location == "Upstream drainage channel Diepenbeek") ~ 50.93803,
+  (capture_location == "Hasselt" | 
+     capture_location == "Upstream drainage channel Hasselt") ~ 50.93803,
   TRUE ~ round(surgery_latitude, digits = 5)
   )
 )
@@ -284,6 +327,14 @@ See [issue 47](https://github.com/inbo/etn-occurrences/issues/47)
 ```{r}
 event_surgery %<>% mutate(dwc_decimalLongitude = case_when(
   capture_location == "hatchery Erezée" ~ 5.54259,
+  (capture_location == "Genk" |
+     capture_location == "Upstream draining channel Genk" |
+     capture_location == "sluis Genk" |
+     capture_location == "shipping lock Genk") ~ 5.49701,
+  (capture_location == "Diepenbeek" |
+     capture_location == "Upstream drainage channel Diepenbeek") ~ 5.43731,
+  (capture_location == "Hasselt" | 
+     capture_location == "Upstream drainage channel Hasselt") ~ 5.43731,
   TRUE ~ round(surgery_longitude, digits = 5)
   )
 )
