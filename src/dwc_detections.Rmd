@@ -37,7 +37,7 @@ library(glue)
 library(odbc)
 ```
 
-# Read source data
+# Connect to database
 
 Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
 
@@ -45,22 +45,17 @@ Get username/password from environment (therefore requires this script to be run
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-# Select transmitter and reciever information
+# Select transmitters
 
-Inspect `vliz.animals_view`:
+We need to retrieve the transmitter and receivers involved in the following animal projects:
 
-```{r}
-query <- glue_sql(
-    "SELECT *
-    FROM vliz.animals_view
-    LIMIT 100000
-    ",
-    .con = my_con
-  )
-  
-animals_subset <- dbGetQuery(my_con, query)
-as_tibble(animals_subset)
-```
+- 2012 Leopoldkanaal
+- 2013 Albertkanaal (excluding Sync tag data)
+- 2014 Demer
+- 2015 Dijle
+- 2015 Phd Verhelst (only for _Anguilla anguilla_)
+- Homarus
+- Phd Reubens (only for _Gadus morhua_)
 
 Select all tag information from all animal projects of interest:
 
@@ -85,32 +80,29 @@ transmitters <- dbGetQuery(my_con, detections_query)
 as_tibble(transmitters)
 ```
 
-Create vector `transmitters`, to incorporate later in SQL selection criterium:
+Create vector `transmitters`. We will use this information later to extract all information relating to these specific transmitters.
 
 ```{r}
 transmitters <- transmitters %>% pull(transmitter)
 ```
 
-Information in the vector `transmitters` should also be in `vliz.animals_view`. The following code selects for all transmitters that **do not occur** in the `vliz.animals_view` table. This should ideally return an empty tibble:
+Inspect how many detections are related to these specific transmitters:
 
 ```{r}
 detections_query <- glue_sql(
-    "SELECT transmitter
+    "SELECT COUNT(id_pk) 
     FROM vliz.detections_view AS detections
-    WHERE 
-      transmitter IN ({transmitters*})
-      AND transmitter NOT IN
-        (SELECT tag_full_id
-        FROM vliz.animals_view
-        WHERE tag_full_id = detections.transmitter)",
+    WHERE transmitter IN ({transmitters*})",
     transmitters = transmitters,
     .con = my_con
   )
-tags_not_my_animals <- dbGetQuery(my_con, detections_query)
-as_tibble(tags_not_my_animals)
+receivers <- dbGetQuery(my_con, detections_query)
+as_tibble(receivers)
 ```
 
-Extract all receiver information involved in the detection of the specific transmitters:
+# Select receivers
+
+Extract all receivers involved in the detections of the specific transmitters:
 
 ```{r}
 detections_query <- glue_sql(
@@ -124,7 +116,7 @@ receivers <- dbGetQuery(my_con, detections_query)
 as_tibble(receivers)
 ```
 
-Use information in receiver to select on receiver information in `vliz.deployments_view`
+Create vector `receivers`. We will use this information to extract all receiver deployments.
 
 ```{r}
 receivers <- receivers %>% pull(receiver)
@@ -149,8 +141,36 @@ as_tibble(deployments)
 Export `deployments` as .csv:
 
 ```{r}
-write_csv(deployments, "../data/interim/deployments.csv", na = "")
+write_csv(deployments, "../data/raw/deployments.csv", na = "")
 ```
+
+Extract all receiver metadata for the specific receivers:
+
+```{r}
+query <- glue_sql(
+    "SELECT *
+    FROM vliz.receivers",
+    .con = my_con)
+
+deployments <- dbGetQuery(my_con, query)
+as_tibble(deployments)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Explore deployment information
 
