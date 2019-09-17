@@ -19,9 +19,9 @@ download_detections <- function(sql_file, download_directory, animal_ids,
       print(paste(animal_id, ": ", detections_file, "already exists, skipping download"))
     } else {
       print(paste(animal_id, ": downloading data"))
-      gps_sql <- glue_sql(read_file(sql_file), .con = connection)
+      detections_sql <- glue_sql(read_file(sql_file), .con = connection)
       detections <- tryCatch({
-        dbGetQuery(con, gps_sql)
+        dbGetQuery(con, detections_sql)
       }, error = function(e) {
         return(NA)
       })
