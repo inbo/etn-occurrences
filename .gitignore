@@ -37,5 +37,4 @@ vignettes/*.pdf
 .DS_Store
 
 # Data
-/data/raw/*
-!/data/raw/etn_dump.csv
+
