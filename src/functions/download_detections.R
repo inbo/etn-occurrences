@@ -16,23 +16,16 @@ download_detections <- function(sql_file, download_directory, animal_ids,
 
     # Query and download data
     if (file.exists(detections_file) && !overwrite) {
-      print(paste(animal_id, ": ", detections_file, "already exists, skipping download"))
+      warning(paste(animal_id, ": ", detections_file, "already exists, skipping download"))
     } else {
-      print(paste(animal_id, ": downloading data"))
+      message(paste(animal_id, ": downloading data"))
       detections_sql <- glue_sql(read_file(sql_file), .con = connection)
-      detections <- tryCatch({
-        dbGetQuery(con, detections_sql)
+      tryCatch({
+         detections <- dbGetQuery(con, detections_sql)
+         write_csv(detections, path = detections_file, na = "")
       }, error = function(e) {
-        return(NA)
+        stop(e)
       })
-
-      if (nrow(detections) != 0 && is.na(detections)) {
-        # detections = NA will be the case if there was an error in SQL conn.
-        # break loop and don't write to file
-        break
-      } else {
-        write_csv(detections, path = detections_file, na = "")
-      }
     }
   }
 }
