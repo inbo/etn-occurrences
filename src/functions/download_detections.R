@@ -21,7 +21,7 @@ download_detections <- function(sql_file, download_directory, animal_ids,
       message(paste(animal_id, ": downloading data"))
       detections_sql <- glue_sql(read_file(sql_file), .con = connection)
       tryCatch({
-         detections <- dbGetQuery(con, detections_sql)
+         detections <- dbGetQuery(connection, detections_sql)
          write_csv(detections, path = detections_file, na = "")
       }, error = function(e) {
         stop(e)
