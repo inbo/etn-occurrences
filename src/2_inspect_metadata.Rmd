@@ -64,7 +64,6 @@ deployments_query <- glue_sql(
         OR projectcode = 'ws1'
         OR projectcode = 'ws2'
         OR projectcode = 'ws3'    
-    
     ",
     .con = my_con)
 
