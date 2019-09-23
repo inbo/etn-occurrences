@@ -45,35 +45,46 @@ Get username/password from environment (therefore requires this script to be run
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-# Import transmitter and receiver data:
+# Deployments event
 
-Deployments data:
-
-```{r}
-deployments <- read.delim(file = "../data/raw/deployments.csv", sep = ",")
-```
-
-Receiver data:
+Extract all receivers involved in the detections of the specific animal projects listed earlier. We can't select on specific animal projects in the `vliz.deployments_view` table. Hence, we use the network projects included in the animal projects.
 
 ```{r}
-receivers <- read.delim(file = "../data/raw/receivers.csv", sep = ",")
+deployments_query <- glue_sql(
+    "SELECT *
+      FROM vliz.deployments_view AS deployments
+      WHERE projectcode = 'albert'
+        OR projectcode = 'bovenschelde'
+        OR projectcode = 'bpns'
+        OR projectcode = 'demer'
+        OR projectcode = 'dijle'
+        OR projectcode = 'leopoldkanaal'
+        OR projectcode = 'maas'
+        OR projectcode = 'saeftinghe'
+        OR projectcode = 'ws1'
+        OR projectcode = 'ws2'
+        OR projectcode = 'ws3'    
+    
+    ",
+    .con = my_con)
+
+deployments_data<- dbGetQuery(my_con, deployments_query)
+as_tibble(deployments_data)
 ```
 
-## Explore deployment information
-
-### receiver
+## receiver
 
 ```{r}
 deployments %>% group_by(receiver) %>% count() %>% arrange(desc(n))
 ```
 
-### receiver status
+## receiver status
 
 ```{r}
 deployments %>% group_by(receiver_status) %>% count() %>% arrange(desc(n))
 ```
 
-### project name
+## project name
 
 ```{r}
 deployments %>% 
