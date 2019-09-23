@@ -23,16 +23,25 @@ Get username/password from environment (therefore requires this script to be run
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-Query data:
+# Query data:
 
-# Get metadata
+##  Deployment event:
 
 Query data:
 
 ```{r get_ref_data}
 event_deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_event_deployments.sql")), .con = my_con)
-deployments_data <- dbGetQuery(my_con, event_deployments_sql)
+event_deployments_data <- dbGetQuery(my_con, event_deployments_sql)
 ```
+
+Export as .csv:
+
+```{r}
+write_csv(event_deployments_data,
+          here::here("data","processed", "dwc_event_deployments.csv"),
+          na = "")
+```
+
 
 # Get detections
 
