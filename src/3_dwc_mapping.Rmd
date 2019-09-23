@@ -12,6 +12,7 @@ library(tidyverse)
 library(DBI)
 library(here)
 library(glue)
+library(etn)
 ```
 
 # Connect to database
@@ -29,8 +30,8 @@ Query data:
 Query data:
 
 ```{r get_ref_data}
-deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_detections.sql")), .con = my_con)
-deployments_data <- dbGetQuery(my_con, deployments_sql)
+event_deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_event_deployments.sql")), .con = my_con)
+deployments_data <- dbGetQuery(my_con, event_deployments_sql)
 ```
 
 # Get detections
