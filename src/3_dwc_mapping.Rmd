@@ -1,0 +1,65 @@
+
+# Setup 
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Install packages
+
+```{r}
+library(tidyverse)
+library(DBI)
+library(here)
+library(glue)
+```
+
+# Connect to database
+
+Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
+
+```{r}
+my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
+```
+
+Query data:
+
+# Get metadata
+
+Query data:
+
+```{r get_ref_data}
+deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_detections.sql")), .con = my_con)
+deployments_data <- dbGetQuery(my_con, deployments_sql)
+```
+
+# Get detections
+
+Load custom function to iterate over animal ids:
+
+```{r}
+source(here::here("src", "functions", "download_detections.R"))
+```
+
+Query and save data (one csv file per animal id):
+
+```{r}
+download_detections(
+  sql_file = here::here("sql", "dwc_occ_detections.sql"),
+  download_directory = here::here("data", "processed"),
+  animal_ids = c(1,2353, 2348),
+  con = my_con,
+  overwrite = FALSE
+)
+```
+
+```{r}
+
+sql <- glue_sql("SELECT *
+FROM vliz.detections_view
+WHERE
+  animal_id_pk = 2353
+LIMIT 10", .con = my_con)
+data <- dbGetQuery(my_con, sql)
+```
+

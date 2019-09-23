@@ -34,7 +34,6 @@ library(janitor)        # To clean input data
 library(etn)            # To interact with ETN
 library(lubridate)      # To process date and time information
 library(glue)
-library(odbc)
 ```
 
 # Connect to database
@@ -122,16 +121,23 @@ Create vector `receivers`. We will use this information to extract all receiver 
 receivers <- receivers %>% pull(receiver)
 ```
 
-Extract all deployment information for the specific receivers:
+Extract all deployment information for the specific network projects:
 
 ```{r}
 query <- glue_sql(
     "SELECT *
-    FROM vliz.deployments_view
-    WHERE receiver IN ({receiver*})
-    ORDER BY receiver
-    ",
-    receiver = receivers,
+      FROM vliz.deployments_view AS deployments
+      WHERE projectcode = 'albert'
+        OR projectname = 'bovenschelde'
+        OR projectname = 'bpns'
+        OR projectname = 'demer'
+        OR projectname = 'dijle'
+        OR projectname = 'leopoldkanaal'
+        OR projectname = 'maas'
+        OR projectname = 'saeftinghe'
+        OR projectname = 'ws1'
+        OR projectname = 'ws2'
+        OR projectname = 'ws3'    ",
     .con = my_con)
 
 deployments <- dbGetQuery(my_con, query)
@@ -149,15 +155,31 @@ Extract all receiver metadata for the specific receivers:
 ```{r}
 query <- glue_sql(
     "SELECT *
-    FROM vliz.receivers",
+    FROM vliz.receivers
+    WHERE receiver IN ({receiver*})
+    ORDER BY receiver
+    ",
+    receiver = receivers,
     .con = my_con)
 
-receivers <- dbGetQuery(my_con, query)
-as_tibble(receivers)
+receiver_metadata <- dbGetQuery(my_con, query)
+as_tibble(receiver_metadata)
 ```
 
 Export `receivers` as .csv:
 
 ```{r}
-write_csv(receivers, "../data/raw/receivers.csv", na = "")
+write_csv(receiver_metadata, "../data/raw/receivers.csv", na = "")
+```
+
+# Inspect all deployments
+
+```{r}
+all_deployments_query <- glue_sql(
+    "SELECT *
+     FROM vliz.deployments_view AS deployments",
+    .con = my_con
+  )
+all_deployments <- dbGetQuery(my_con, all_deployments_query)
+as_tibble(all_deployments)
 ```
