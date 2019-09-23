@@ -217,8 +217,7 @@ Generate `deployment_locations` to export as intermediate file:
 ```{r}
 deployment_locations <-
   deployments %>% 
-    filter(!is.na(location_name) | location_name == "") %>%
-    group_by(projectname, location_name, location_description) %>% 
+    group_by(projectname, station_name, location_name, location_description) %>% 
     count() %>% 
     arrange(projectname)
 head(deployment_locations, n = 300)
