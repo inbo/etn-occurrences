@@ -44,7 +44,7 @@ Get username/password from environment (therefore requires this script to be run
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-# Select transmitters
+# Select detections
 
 We need to retrieve the transmitter and receivers involved in the following animal projects:
 
@@ -99,29 +99,9 @@ receivers <- dbGetQuery(my_con, detections_query)
 as_tibble(receivers)
 ```
 
-# Select receivers
+# Select deployments
 
-Extract all receivers involved in the detections of the specific transmitters listed earlier:
-
-```{r}
-detections_query <- glue_sql(
-    "SELECT DISTINCT receiver 
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})",
-    transmitters = transmitters,
-    .con = my_con
-  )
-receivers <- dbGetQuery(my_con, detections_query)
-as_tibble(receivers)
-```
-
-Create vector `receivers`. We will use this information to extract all receiver deployments.
-
-```{r}
-receivers <- receivers %>% pull(receiver)
-```
-
-Extract all deployment information for the specific network projects:
+Extract all receivers involved in the detections of the specific animal projects listed earlier. We can't select on specific animal projects here. Hence, we use the network projects included in the animal projects.
 
 ```{r}
 query <- glue_sql(
@@ -150,36 +130,3 @@ Export `deployments` as .csv:
 write_csv(deployments, "../data/raw/deployments.csv", na = "")
 ```
 
-Extract all receiver metadata for the specific receivers:
-
-```{r}
-query <- glue_sql(
-    "SELECT *
-    FROM vliz.receivers
-    WHERE receiver IN ({receiver*})
-    ORDER BY receiver
-    ",
-    receiver = receivers,
-    .con = my_con)
-
-receiver_metadata <- dbGetQuery(my_con, query)
-as_tibble(receiver_metadata)
-```
-
-Export `receivers` as .csv:
-
-```{r}
-write_csv(receiver_metadata, "../data/raw/receivers.csv", na = "")
-```
-
-# Inspect all deployments
-
-```{r}
-all_deployments_query <- glue_sql(
-    "SELECT *
-     FROM vliz.deployments_view AS deployments",
-    .con = my_con
-  )
-all_deployments <- dbGetQuery(my_con, all_deployments_query)
-as_tibble(all_deployments)
-```
