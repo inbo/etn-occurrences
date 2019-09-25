@@ -16,6 +16,8 @@
 
 SELECT
 
+--- Metadata terms:
+
   'Event'::text as type,
   'en'::text as language,
   'http://creativecommons.org/publicdomain/zero/1.0/'::text as license,
@@ -25,6 +27,9 @@ SELECT
   'Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)'::text as datasetName,
   'INBO'::text as institutionCode,
   'MachineObservation'::text as basisOfRecord,
+
+--- Taxon Core terms:
+
   'urn:catalog:etn:receiver:' || receiver_fk || ':event-receiver-deployment' as eventID,
   '' as samplingProtocol,
     CASE
@@ -42,6 +47,7 @@ SELECT
   30::numeric as coordinateUncertaintyInMeters
 
 FROM vliz.deployments_view AS deployments
+
 WHERE projectcode = 'albert'
     OR projectcode = 'bovenschelde'
     OR projectcode = 'bpns'
