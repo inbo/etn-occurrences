@@ -46,7 +46,7 @@ my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 
 # Select detections
 
-We need to retrieve the transmitter and receivers involved in the following animal projects:
+We need to retrieve the detection data related to the following animal projects:
 
 - 2012 Leopoldkanaal
 - 2013 Albertkanaal (excluding Sync tag data)
