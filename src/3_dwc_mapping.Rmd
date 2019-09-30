@@ -25,7 +25,7 @@ my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 
 # Query data:
 
-## Animal event:
+## Animal event data:
 
 Query animal metadata:
 
@@ -34,13 +34,13 @@ event_animals_sql <- glue_sql(read_file(here::here("sql", "dwc_animals_event.sql
 event_animals_data <- dbGetQuery(my_con, event_animals_sql)
 ```
 
-Test temporary sql file:
+Export data
 
 ```{r}
-temp_mapping_sql <- glue_sql(read_file(here::here("sql", "temp_mapping_file.sql")), .con = my_con)
-temp_mapping_data <- dbGetQuery(my_con, temp_mapping_sql)
+event_animals_data %>% 
+  write_csv(here::here("data","processed", "dwc_animals_event.csv"),
+            na = "")
 ```
-
 
 
 ##  Deployment event:
