@@ -222,3 +222,91 @@ WHERE
     OR projectcode = 'phd_reubens')
   AND NOT scientific_name = 'Sentinel'
   AND NOT scientific_name = 'Sync tag'
+
+
+UNION ALL
+
+
+SELECT
+
+--- Metadata terms:
+
+  'Event'::text as type,
+  date_modified::text as modified,
+  'en'::text as language,
+  'http://creativecommons.org/publicdomain/zero/1.0/'::text as license,
+   owner_organization::text as rightsholder,
+   owner_organization::text as institutionCode,
+  ''::text as datasetID,
+  'Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)'::text as datasetName,
+  'HumanObservation'::text as basisOfRecord,
+
+-- Taxon Core terms:
+
+  'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-release' as eventID,
+  'release'::text as samplingProtocol,
+
+--- EventDate
+
+  to_char(utc_release_date_time, 'YYYY-MM-DD') AS eventDate
+  ,
+
+--- locality
+
+  CASE
+    WHEN release_location = 'Genk' THEN 'Upstream shipping lock Genk'::text
+    WHEN release_location = 'Diepenbeek' THEN 'Upstream shipping lock Diepenbeek'::text
+    WHEN release_location = 'Hasselt' THEN 'Upstream shipping lock Hasselt'::text
+    WHEN projectname = '2013 Albertkanaal' AND release_location iS NULL THEN capture_location::text
+  ELSE release_location::text
+  END AS locality
+  ,
+
+--- decimalLatitude
+
+  CASE
+    WHEN projectname = '2013 Albertkanaal' AND release_location iS NULL THEN ROUND(capture_latitude::numeric, 5)
+  ELSE ROUND(release_latitude::numeric, 5)
+  END AS decimalLatitude
+  ,
+
+--- decimalLongitude
+
+  CASE
+    WHEN projectname = '2013 Albertkanaal' AND release_location iS NULL THEN ROUND(capture_longitude::numeric, 5)
+  ELSE ROUND(release_longitude::numeric, 5)
+  END AS decimalLongitude
+
+
+FROM vliz.animals_view
+
+WHERE
+
+-- The following animal projects are being used in the animal projects of interest:
+
+--- 2011 Rivierprik
+--- 2012 Leopoldkanaal
+--- 2013 Albertkanaal
+--- 2014 Demer
+--- 2015 Dijle
+--- 2015 PhD Verhelst (only for _Anguilla anguilla_)
+--- Homarus
+--- PhD Jan Reuben
+
+--- We exclude data from the following scientific names (not an animal):
+
+--- Sync tag
+--- Sentinel
+
+
+  (projectcode = '2011_rivierprik'
+    OR projectcode = '2012_leopoldkanaal'
+    OR projectcode = '2013_albertkanaal'
+    OR projectcode = '2014_demer'
+    OR projectcode = '2015_dijle'
+    OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
+    OR projectcode = 'homarus'
+    OR projectcode = 'phd_reubens')
+  AND NOT scientific_name = 'Sentinel'
+  AND NOT scientific_name = 'Sync tag'
+
