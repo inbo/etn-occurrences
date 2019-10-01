@@ -130,3 +130,37 @@ Export `deployments` as .csv:
 write_csv(deployments, "../data/raw/deployments.csv", na = "")
 ```
 
+
+# Select receivers
+
+```{r}
+query <- glue_sql("
+      SELECT DISTINCT 
+        receivers.* ,
+        deployments.projectcode,
+        etn_group.name as owner_organisation
+      FROM vliz.receivers
+        JOIN vliz.deployments_view deployments ON (receivers.id_pk = deployments.receiver_fk)
+        JOIN vliz.etn_group AS etn_group ON (receivers.owner_group_fk = etn_group.id_pk)
+       WHERE projectcode = 'albert'
+        OR projectcode = 'bovenschelde'
+        OR projectcode = 'bpns'
+        OR projectcode = 'demer'
+        OR projectcode = 'dijle'
+        OR projectcode = 'leopoldkanaal'
+        OR projectcode = 'maas'
+        OR projectcode = 'saeftinghe'
+        OR projectcode = 'ws1'
+        OR projectcode = 'ws2'
+        OR projectcode = 'ws3'    ",
+      .con = my_con)
+
+receivers <- dbGetQuery(my_con, query)
+as_tibble(receivers)
+```
+
+Export `receivers` as .csv:
+
+```{r}
+write_csv(receivers, "../data/raw/receivers.csv", na = "")
+```
