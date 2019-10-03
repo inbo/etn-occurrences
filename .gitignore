@@ -37,8 +37,5 @@ vignettes/*.pdf
 .DS_Store
 
 # Data
-<<<<<<< HEAD
 data/raw/input_detections.csv
-=======
->>>>>>> b370e89f85d780998efa86d375525a383fda3199
-
+data/processed/dwc_occ_detections_*
