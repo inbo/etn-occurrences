@@ -44,61 +44,6 @@ Get username/password from environment (therefore requires this script to be run
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-# Select detections
-
-We need to retrieve the detection data related to the following animal projects:
-
-- 2012 Leopoldkanaal
-- 2013 Albertkanaal (excluding Sync tag data)
-- 2014 Demer
-- 2015 Dijle
-- 2015 Phd Verhelst (only for _Anguilla anguilla_)
-- Homarus
-- Phd Reubens (only for _Gadus morhua_)
-
-Select all tag information from all animal projects of interest:
-
-```{r}
-detections_query <- glue_sql(
-    "SELECT DISTINCT transmitter
-    FROM vliz.detections_view AS detections
-    WHERE 
-      (animal_project_code = '2011_rivierprik' 
-        OR animal_project_code = '2012_leopoldkanaal'
-        OR animal_project_code = '2013_albertkanaal'
-        OR animal_project_code = '2014_demer'
-        OR animal_project_code = '2015_dijle'
-        OR (animal_project_code = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-        OR animal_project_code = 'homarus'
-        OR animal_project_code = 'phd_reubens')
-      AND NOT scientific_name = 'Sentinel'
-      AND NOT scientific_name = 'Sync tag'" ,
-    .con = my_con)
-
-transmitters <- dbGetQuery(my_con, detections_query)
-as_tibble(transmitters)
-```
-
-Create vector `transmitters`. We will use this information later to extract all information relating to these specific transmitters.
-
-```{r}
-transmitters <- transmitters %>% pull(transmitter)
-```
-
-Inspect how many detections are related to these specific transmitters:
-
-```{r}
-detections_query <- glue_sql(
-    "SELECT COUNT(id_pk) 
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})",
-    transmitters = transmitters,
-    .con = my_con
-  )
-receivers <- dbGetQuery(my_con, detections_query)
-as_tibble(receivers)
-```
-
 # Select deployments
 
 Extract all receivers involved in the detections of the specific animal projects listed earlier. We can't select on specific animal projects here. Hence, we use the network projects included in the animal projects.
@@ -129,7 +74,6 @@ Export `deployments` as .csv:
 ```{r}
 write_csv(deployments, "../data/raw/deployments.csv", na = "")
 ```
-
 
 # Select receivers
 
@@ -164,3 +108,4 @@ Export `receivers` as .csv:
 ```{r}
 write_csv(receivers, "../data/raw/receivers.csv", na = "")
 ```
+
