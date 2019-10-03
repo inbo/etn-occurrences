@@ -44,6 +44,87 @@ Get username/password from environment (therefore requires this script to be run
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
+
+# Select Animals data
+
+Extract all information related to the following animal projects:
+
+- 2012 Leopoldkanaal
+- 2013 Albertkanaal (excluding Sync tag data)
+- 2014 Demer
+- 2015 Dijle
+- 2015 Phd Verhelst (only for _Anguilla anguilla_)
+- Homarus
+- Phd Reubens (only for _Gadus morhua_)
+
+```{r}
+query <- glue_sql(
+    "SELECT *
+    FROM vliz.animals_view
+    WHERE 
+      (projectcode = '2011_rivierprik' 
+        OR projectcode = '2012_leopoldkanaal'
+        OR projectcode = '2013_albertkanaal'
+        OR projectcode = '2014_demer'
+        OR projectcode = '2015_dijle'
+        OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
+        OR projectcode = 'homarus'
+        OR projectcode = 'phd_reubens')
+      AND NOT scientific_name = 'Sentinel'
+      AND NOT scientific_name = 'Sync tag'
+    " ,
+    .con = my_con)
+
+animals <- dbGetQuery(my_con, query)
+as_tibble(animals)
+```
+
+Save data in `raw`:
+
+```{r}
+animals %>% write_csv(here::here("data", "raw", "animals.csv"), na = "")
+```
+
+# Select transmitter data
+
+Select `tag_full_id` and save as separate vector:
+
+```{r}
+tag_full_id <- animals %>% pull(tag_full_id)
+```
+
+Select tag information fomr `vliz_tags`:
+
+```{r}
+query <- glue_sql(
+    "SELECT tags.*, animals.projectcode, animals.scientific_name
+     FROM vliz.tags
+        LEFT JOIN vliz.animal_tag_release ON (animal_tag_release.tag_fk = tags.id_pk)
+        LEFT JOIN vliz.animals_view animals ON (animals.id_pk = animal_tag_release.animal_fk)
+    WHERE 
+      (projectcode = '2011_rivierprik' 
+        OR projectcode = '2012_leopoldkanaal'
+        OR projectcode = '2013_albertkanaal'
+        OR projectcode = '2014_demer'
+        OR projectcode = '2015_dijle'
+        OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
+        OR projectcode = 'homarus'
+        OR projectcode = 'phd_reubens')
+      AND NOT scientific_name = 'Sentinel'
+      AND NOT scientific_name = 'Sync tag'
+    ", 
+    .con = my_con)
+
+transmitters <- dbGetQuery(my_con, query)
+as_tibble(transmitters)
+```
+
+Export transmitters data:
+
+```{r}
+transmitters %>% write_csv(here::here("data", "raw", "transmitters.csv"), na = "")
+```
+
 # Select deployments
 
 Extract all receivers involved in the detections of the specific animal projects listed earlier. We can't select on specific animal projects here. Hence, we use the network projects included in the animal projects.
