@@ -12,8 +12,6 @@
 -- Westerschelde 3
 -- Zeeschelde
 
--- Other
-
 SELECT
 
 -- Metadata terms:

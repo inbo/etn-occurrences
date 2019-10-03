@@ -30,38 +30,83 @@ my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 Query animal metadata:
 
 ```{r}
-event_animals_sql <- glue_sql(read_file(here::here("sql", "dwc_animals_event.sql")), .con = my_con)
-event_animals_data <- dbGetQuery(my_con, event_animals_sql)
+animals_event_sql <- glue_sql(read_file(here::here("sql", "dwc_animals_event.sql")), .con = my_con)
+animals_event_data <- dbGetQuery(my_con, animals_event_sql)
 ```
 
-Export data
+Export data:
 
 ```{r}
-event_animals_data %>% 
+animals_event_data %>% 
   write_csv(here::here("data","processed", "dwc_animals_event.csv"),
             na = "")
 ```
 
+## Animal occurrence data
 
-##  Deployment event:
+Query animal occurrence data:
+
+```{r}
+animals_occ_sql <- glue_sql(read_file(here::here("sql", "dwc_animals_occ.sql")), .con = my_con)
+animals_occ_data <- dbGetQuery(my_con, animals_occ_sql)
+```
+
+Export data:
+
+```{r}
+animals_occ_data %>% 
+  write_csv(here::here("data","processed", "dwc_animals_occ.csv"),
+            na = "")
+```
+
+##  Deployment event
 
 Query data:
 
 ```{r get_ref_data}
-event_deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_event_deployments.sql")), .con = my_con)
-event_deployments_data <- dbGetQuery(my_con, event_deployments_sql)
+deployments_event_sql <- glue_sql(read_file(here::here("sql", "dwc_deployments_event.sql")), .con = my_con)
+deployments_event_data <- dbGetQuery(my_con, deployments_event_sql)
 ```
 
 Export as .csv:
 
 ```{r}
-write_csv(event_deployments_data,
+write_csv(deployments_event_data,
           here::here("data","processed", "dwc_event_deployments.csv"),
           na = "")
 ```
 
+## Detections occurrences
 
-# Get detections
+Define all animal ids required for the selection of the appropriate detections:
+
+```{r}
+query <- glue_sql(
+    "SELECT DISTINCT id_pk
+    FROM vliz.animals_view
+    WHERE 
+      (projectcode = '2011_rivierprik' 
+      OR projectcode = '2012_leopoldkanaal'
+      OR projectcode = '2013_albertkanaal'
+      OR projectcode = '2014_demer'
+      OR projectcode = '2015_dijle'
+      OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
+        OR projectcode = 'homarus'
+        OR projectcode = 'phd_reubens')
+      AND NOT scientific_name = 'Sentinel'
+      AND NOT scientific_name = 'Sync tag'
+    " ,
+    .con = my_con)
+
+animal_ids <- dbGetQuery(my_con, query)
+as_tibble(animal_ids)
+```
+
+Generate vector `animal_ids`:
+
+```{r}
+animal_ids <- animal_ids %>% pull(id_pk)
+```
 
 Load custom function to iterate over animal ids:
 
@@ -73,21 +118,12 @@ Query and save data (one csv file per animal id):
 
 ```{r}
 download_detections(
-  sql_file = here::here("sql", "dwc_occ_detections.sql"),
+  sql_file = here::here("sql", "dwc_detections_occ.sql"),
   download_directory = here::here("data", "processed"),
-  animal_ids = c(1,2353, 2348),
+  animal_id_pk = animal_ids,
   con = my_con,
   overwrite = FALSE
 )
 ```
 
-```{r}
-
-sql <- glue_sql("SELECT *
-FROM vliz.detections_view
-WHERE
-  animal_id_pk = 2353
-LIMIT 10", .con = my_con)
-data <- dbGetQuery(my_con, sql)
-```
 
