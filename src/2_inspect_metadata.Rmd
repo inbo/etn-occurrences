@@ -45,341 +45,6 @@ Get username/password from environment (therefore requires this script to be run
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-# Animals event
-
-Extract all information related to the following animal projects:
-
-- 2012 Leopoldkanaal
-- 2013 Albertkanaal (excluding Sync tag data)
-- 2014 Demer
-- 2015 Dijle
-- 2015 Phd Verhelst (only for _Anguilla anguilla_)
-- Homarus
-- Phd Reubens (only for _Gadus morhua_)
-
-```{r}
-query <- glue_sql(
-    "SELECT *
-    FROM vliz.animals_view
-    WHERE 
-      (projectcode = '2011_rivierprik' 
-        OR projectcode = '2012_leopoldkanaal'
-        OR projectcode = '2013_albertkanaal'
-        OR projectcode = '2014_demer'
-        OR projectcode = '2015_dijle'
-        OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-        OR projectcode = 'homarus'
-        OR projectcode = 'phd_reubens')
-      AND NOT scientific_name = 'Sentinel'
-      AND NOT scientific_name = 'Sync tag'
-    " ,
-    .con = my_con)
-
-animals <- dbGetQuery(my_con, query)
-as_tibble(animals)
-```
-
-Save data in `raw`:
-
-```{r}
-animals %>% write_csv(here::here("data", "raw", "animals.csv"), na = "")
-```
-
-Select `tag_full_id` and save as separate vector:
-
-```{r}
-tag_full_id <- animals %>% pull(tag_full_id)
-```
-
-Select tag information fomr `vliz_tags`:
-
-```{r}
-query <- glue_sql(
-    "SELECT tags.*, animals.projectcode, animals.scientific_name
-     FROM vliz.tags
-        LEFT JOIN vliz.animal_tag_release ON (animal_tag_release.tag_fk = tags.id_pk)
-        LEFT JOIN vliz.animals_view animals ON (animals.id_pk = animal_tag_release.animal_fk)
-    WHERE 
-      (projectcode = '2011_rivierprik' 
-        OR projectcode = '2012_leopoldkanaal'
-        OR projectcode = '2013_albertkanaal'
-        OR projectcode = '2014_demer'
-        OR projectcode = '2015_dijle'
-        OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-        OR projectcode = 'homarus'
-        OR projectcode = 'phd_reubens')
-      AND NOT scientific_name = 'Sentinel'
-      AND NOT scientific_name = 'Sync tag'
-    ", 
-    .con = my_con)
-
-transmitters <- dbGetQuery(my_con, query)
-as_tibble(transmitters)
-```
-
-Export transmitters data:
-
-```{r}
-transmitters %>% write_csv(here::here("data", "raw", "transmitters.csv"), na = "")
-```
-
-# Deployments event
-
-Extract all receivers involved in the detections of the specific animal projects listed earlier. We can't select on specific animal projects in the `vliz.deployments_view` table. Hence, we use the network projects included in the animal projects:
-
-- albert
-- bovenschelde
-- bpns
-- demer
-- dijle
-- leopoldkanaal
-- maas
-- saertinghe
-- ws1
-- ws2
-- ws3
-
-Make vector including all these network projects:
-
-```{r}
-network_projects <- c("albert", "bovenschelde", "bpns", "demer", "dijle", "leopoldkanaal", "maas", "saertinghe", "ws1", "ws2", "ws3")
-```
-
-
-```{r}
-deployments_query <- glue_sql(
-    "SELECT *
-      FROM vliz.deployments_view AS deployments
-      WHERE projectcode IN ({projectcode*})
-    ",
-    projectcode = network_projects,
-    .con = my_con)
-
-deployments_data<- dbGetQuery(my_con, deployments_query)
-as_tibble(deployments_data)
-```
-
-Count the number of rows:
-
-```{r}
-query <- glue_sql(
-    "SELECT COUNT(*)
-      FROM vliz.deployments_view AS deployments
-      WHERE projectcode IN ({projectcode*})
-    ",
-    projectcode = network_projects,
-    .con = my_con)
-
-number_of_deployment <- dbGetQuery(my_con, query)
-as_tibble(number_of_deployment)
-```
-
-## receiver
-
-```{r}
-deployments_data %>% group_by(receiver) %>% count() %>% arrange(desc(n))
-```
-
-## receiver status
-
-```{r}
-deployments_data %>% group_by(receiver_status) %>% count() %>% arrange(desc(n))
-```
-
-## project name
-
-```{r}
-deployments_data %>% 
-  group_by(projectname) %>% 
-  count() %>% 
-  arrange(projectname)
-```
-
-Check whether these projectnames are valid network project (should be zero):
-
-```{r}
-deployments_data %>% 
-  group_by(projectname) %>% 
-  count() %>% 
-  arrange(projectname) %>% 
-  anti_join(
-    select(get_projects(my_con, project_type = "network"), name),
-    by = c("projectname" = "name")
-)
-```
-
-## drop dead date
-
-```{r}
-deployments_data %>% group_by(drop_dead_date) %>% count() %>% arrange(desc(n))
-```
-
-### deploy and recover date
-
-Inspect both `deploy_date_time` and `recover_date_time`:
-
-```{r}
-deployments_data %>% 
-  group_by(deploy_date_time, recover_date_time) %>% 
-  count() %>% 
-  arrange(desc(n))
-```
-
-Check for empty values in `deploy_date_time`, `recover_date_time` or both:
-
-```{r}
-deployments_data %>% 
-  mutate(deploy_date_time = as.character(deploy_date_time)) %>% 
-  mutate(recover_date_time = as.character(recover_date_time)) %>% 
-  mutate(empty_dates = case_when(
-    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date available",
-    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date available",
-    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date information available",
-    TRUE ~ "deploy and recover date available")) %>% 
-  group_by(empty_dates) %>% 
-  count()
-```
-
-All receivers have at least a deployment date available.
-Retrieve record for which there is no recover date information available:
-
-```{r}
-deployments_data %>% 
-  mutate(deploy_date_time = as.character(deploy_date_time)) %>% 
-  mutate(recover_date_time = as.character(recover_date_time)) %>% 
-  mutate(empty_dates = case_when(
-    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date available",
-    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date available",
-    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date information available",
-    TRUE ~ "deploy and recover date available")) %>% 
-  filter(empty_dates == "no recover date available") %>% 
-  select(receiver, receiver_status, projectname, id_pk) %>% 
-  arrange(receiver_status)
-```
-
-Retrieve receiver deployments for which `recover_date_time` falls before `deploy_date_time`:
-
-```{r}
-deployments_data %>% 
-  mutate(deploy_date_time = as.character(deploy_date_time)) %>% 
-  mutate(recover_date_time = as.character(recover_date_time)) %>% 
-  mutate(empty_dates = case_when(
-    is.na(deploy_date_time) & !is.na(recover_date_time) ~ "no deploy date available",
-    !is.na(deploy_date_time) & is.na(recover_date_time) ~ "no recover date available",
-    is.na(deploy_date_time) & is.na(recover_date_time) ~ "no date information available",
-    TRUE ~ "deploy and recover date available"))%>% 
-  filter(recover_date_time < deploy_date_time) %>% 
-  arrange(receiver) %>% 
-  select(receiver, recover_date_time, deploy_date_time, id_pk, projectname)
-```
-
-### bottom depth, riser length and instrument depth
-
-```{r}
-deployments_data %>% 
-  group_by(bottom_depth, riser_length, instrument_depth) %>% 
-  count() %>% 
-  arrange(desc(n))
-```
-
-Unit of `bottom_depth`: metres
-Unit of `riser_length`: metres
-unit of `instrument_depth`: metres
-
-## UTC synchronisation date time
-
-```{r}
-deployments_data %>% 
-  group_by(sync_date_time) %>% 
-  count() %>% 
-  arrange(desc(n))
-```
-
-## comments
-
-See [issue 59](https://github.com/inbo/etn-occurrences/issues/59)
-
-```{r}
-deployments_data %>% 
-  group_by(comments) %>% 
-  count() %>% 
-  arrange(desc(n))
-```
-
-## id_pk
-
-Should all be unique (output should be an empty table)
-
-```{r}
-deployments %>% get_dupes(id_pk)
-```
-
-## location name
-
-Generate `deployment_locations` to export as intermediate file:
-
-```{r}
-deployment_locations <-
-  deployments_data %>% 
-    group_by(projectname, station_name, location_name, location_description) %>% 
-    count() %>% 
-    arrange(projectname)
-head(deployment_locations, n = 300)
-```
-
-Export as .csv to be reviewed by experts:
-
-```{r}
-write_csv(deployment_locations, "../data/interim/deployment_locations.csv", na = "")
-```
-
-## deployment latitude and longitude
-
-Inspect deployment latitude and longitude:
-
-```{r}
-deployments_data %>% 
-  group_by(deploy_lat, deploy_long) %>% 
-  count()
-```
-
-## recover latitude and longitude
-
-Inspect recover latitude and longitude:
-
-```{r}
-deployments_data %>% 
-  group_by(recover_lat, recover_long) %>% 
-  count()
-```
-
-Some values for `recover_lat` and `recover_long` are rather odd. 
-- Zero values for `recover_lat` and `recover_long`
-
-Identify zero values for `recover_lat` and `recover_long`:
-
-```{r}
-deployments_data %>% 
-  filter(recover_lat == 0 |
-           recover_long == 0) %>% 
-  select(projectname, id_pk, recover_date_time) %>% 
-  arrange(projectname) 
-```
-
-## station name
-
-```{r}
-deployments_data %>% group_by(station_name) %>% count()
-```
-
-## intended latitude and longitude
-
-```{r}
-deployments_data %>% 
-  group_by(intended_lat, intended_long) %>% 
-  count()
-```
-
 # Detection occurrences
 
 We need to retrieve the detection data related to the following animal projects:
@@ -392,129 +57,148 @@ We need to retrieve the detection data related to the following animal projects:
 - Homarus
 - Phd Reubens (only for _Gadus morhua_)
 
-Select all specifc transmitters involved in the detection of the specific animals:
+We select the specific values for `animal_id_pk`, which correspond with the `id_pk` from the animals table. This will be the dataset we will be processing for the occurrence extension.
 
 ```{r}
 query <- glue_sql(
-    "SELECT DISTINCT transmitter
-    FROM vliz.detections_view AS detections
+    "SELECT DISTINCT id_pk
+    FROM vliz.animals_view
     WHERE 
-      (animal_project_code = '2011_rivierprik' 
-        OR animal_project_code = '2012_leopoldkanaal'
-        OR animal_project_code = '2013_albertkanaal'
-        OR animal_project_code = '2014_demer'
-        OR animal_project_code = '2015_dijle'
-        OR (animal_project_code = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-        OR animal_project_code = 'homarus'
-        OR animal_project_code = 'phd_reubens')
+      (projectcode = '2011_rivierprik' 
+      OR projectcode = '2012_leopoldkanaal'
+      OR projectcode = '2013_albertkanaal'
+      OR projectcode = '2014_demer'
+      OR projectcode = '2015_dijle'
+      OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
+        OR projectcode = 'homarus'
+        OR projectcode = 'phd_reubens')
       AND NOT scientific_name = 'Sentinel'
       AND NOT scientific_name = 'Sync tag'
     " ,
     .con = my_con)
 
-transmitters <- dbGetQuery(my_con, query)
-as_tibble(transmitters)
+animal_id_pk <- dbGetQuery(my_con, query)
+as_tibble(animal_id_pk)
 ```
 
-Extract subset from the database for inspection:
+Generate vector `animal_id_pk`:
+
+```{r}
+animal_id_pk <- animal_id_pk %>% pull(id_pk)
+```
+
+Extract detection data from the specific values for `animal_id_pk`:
 
 ```{r}
 query <- glue_sql(
-    "SELECT *
-    FROM vliz.detections_view AS detections
-    WHERE 
-      (animal_project_code = '2011_rivierprik' 
-        OR animal_project_code = '2012_leopoldkanaal'
-        OR animal_project_code = '2013_albertkanaal'
-        OR animal_project_code = '2014_demer'
-        OR animal_project_code = '2015_dijle'
-        OR (animal_project_code = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-        OR animal_project_code = 'homarus'
-        OR animal_project_code = 'phd_reubens')
-      AND NOT scientific_name = 'Sentinel'
-      AND NOT scientific_name = 'Sync tag'
-    LIMIT 100000
-    " ,
+    "SELECT COUNT(*)
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    LIMIT 10",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
 detections <- dbGetQuery(my_con, query)
 as_tibble(detections)
 ```
 
-Create vector `transmitters`. We will use this information later to extract all information relating to these specific transmitters.
+## Receiver
 
-```{r}
-transmitters <- transmitters %>% pull(transmitter)
-```
-
-To be sure that we don't select animal projects out of the scope of this paper, we here define the animal projects as a selection criterion:
-
-- 2012 Leopoldkanaal
-- 2013 Albertkanaal (excluding Sync tag data)
-- 2014 Demer
-- 2015 Dijle
-- 2015 Phd Verhelst (only for _Anguilla anguilla_)
-- Homarus
-- Phd Reubens (only for _Gadus morhua_)
-
-```{r}
-animal_projects <- c("2012_leopoldkanaal", "2013_albertkanaal", "2014_demer", "2015_dijle", "2015_phd_verhelst", "homarus", "phd_reubens")
-```
-
-Inspect how many detections are related to these specific transmitters:
+Amount of non-zero records:
 
 ```{r}
 query <- glue_sql(
-    "SELECT COUNT(*) 
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
-    .con = my_con
-  )
-amount_of_detections <- dbGetQuery(my_con, query)
-as_tibble(amount_of_detections)
+    "SELECT COUNT(receiver)
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    LIMIT 10",
+    animals_id_pk = animal_id_pk,
+    .con = my_con)
+
+detection_receivers <- dbGetQuery(my_con, query)
+as_tibble(detection_receivers)
+```
+
+## Transmitter
+
+Amount of non-zero records:
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(transmitter)
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    LIMIT 10",
+    animals_id_pk = animal_id_pk,
+    .con = my_con)
+
+detection_transmitter <- dbGetQuery(my_con, query)
+as_tibble(detection_transmitter)
 ```
 
 ## Transmitter name
 
+Amount of non-zero records:
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(transmitter_name)
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
+    .con = my_con)
+
+detection_transmitter_name <- dbGetQuery(my_con, query)
+as_tibble(detection_transmitter_name)
+```
+
+Inspect top 100 values for `transmitter_name`:
+
 ```{r}
 query <- glue_sql(
     "SELECT DISTINCT transmitter_name
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    LIMIT 100",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-distinct_transmitter_names <- dbGetQuery(my_con, query)
-as_tibble(distinct_transmitter_names)
+detection_transmitter_name_100 <- dbGetQuery(my_con, query)
+as_tibble(detection_transmitter_name_100)
 ```
 
-Conclusion: this field is empty for all required detection data
 
 ## Transmitter serial
+
+Amount of non-zero records:
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(transmitter_serial)
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
+    .con = my_con)
+
+detection_transmitter_serial <- dbGetQuery(my_con, query)
+as_tibble(detection_transmitter_serial)
+```
+
+Top 100 values for `transmitter_serial`:
 
 ```{r}
 query <- glue_sql(
     "SELECT DISTINCT transmitter_serial
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    LIMIT 100",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-distinct_transmitter_names <- dbGetQuery(my_con, query)
-as_tibble(distinct_transmitter_names)
+detection_transmitter_serial_100 <- dbGetQuery(my_con, query)
+as_tibble(detection_transmitter_serial_100)
 ```
 
-Conclusion: this field is empty for all required detection data
 
 ## Sensor value and sensor unit
 
@@ -523,16 +207,13 @@ Show amount of non-NULL values in `sensor_value`:
 ```{r}
 query <- glue_sql(
     "SELECT COUNT(sensor_value)
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-non_null_sensor_values <- dbGetQuery(my_con, query)
-as_tibble(non_null_sensor_values)
+detection_sensor_value <- dbGetQuery(my_con, query)
+as_tibble(detection_sensor_value)
 ```
 
 Show amount of non-NULL values in `sensor_unit`:
@@ -540,16 +221,13 @@ Show amount of non-NULL values in `sensor_unit`:
 ```{r}
 query <- glue_sql(
     "SELECT COUNT(sensor_unit)
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-non_null_sensor_units <- dbGetQuery(my_con, query)
-as_tibble(non_null_sensor_units)
+detection_sensor_unit <- dbGetQuery(my_con, query)
+as_tibble(detection_sensor_unit)
 ```
 
 Show content of non-Null values for `sensor_value` and `sensor_unit`:
@@ -558,17 +236,16 @@ Show content of non-Null values for `sensor_value` and `sensor_unit`:
 query <- glue_sql(
     "SELECT DISTINCT sensor_value, sensor_unit
     FROM vliz.detections_view AS detections
-     WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ORDER BY sensor_value
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    ORDER BY sensor_value",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-distinct_sensor_value_unit <- dbGetQuery(my_con, query)
-as_tibble(distinct_sensor_value_unit)
+detection_distinct_sensor_value_unit <- dbGetQuery(my_con, query)
+as_tibble(detection_distinct_sensor_value_unit)
 ```
+
+Conclusion: no deviating sensor units/values
 
 ## Sensor2 value and sensor2 unit
 
@@ -577,16 +254,13 @@ Show amount of non-NULL values in `sensor2_value`:
 ```{r}
 query <- glue_sql(
     "SELECT COUNT(sensor2_value)
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-non_null_sensor2_values <- dbGetQuery(my_con, query)
-as_tibble(non_null_sensor2_values)
+detection_sensor2_value <- dbGetQuery(my_con, query)
+as_tibble(detection_sensor2_value)
 ```
 
 Show amount of non-NULL values in `sensor2_unit`:
@@ -594,16 +268,13 @@ Show amount of non-NULL values in `sensor2_unit`:
 ```{r}
 query <- glue_sql(
     "SELECT COUNT(sensor2_unit)
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-non_null_sensor2_units <- dbGetQuery(my_con, query)
-as_tibble(non_null_sensor2_units)
+detection_sensor2_unit <- dbGetQuery(my_con, query)
+as_tibble(detection_sensor2_unit)
 ```
 
 Show content of non-Null values for `sensor2_value` and `sensor2_unit`:
@@ -612,54 +283,79 @@ Show content of non-Null values for `sensor2_value` and `sensor2_unit`:
 query <- glue_sql(
     "SELECT DISTINCT sensor2_value, sensor2_unit
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    ORDER BY sensor2_value",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-distinct_sensor_value_unit <- dbGetQuery(my_con, query)
-as_tibble(distinct_sensor_value_unit)
+detection_distinct_sensor2_value_unit <- dbGetQuery(my_con, query)
+as_tibble(detection_distinct_sensor2_value_unit)
 ```
 
-## Datetime
+## station_name
 
-Inspect amount of non-NULL values:
+Amount of non-zero records:
 
 ```{r}
 query <- glue_sql(
-    "SELECT COUNT (datetime)
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    "SELECT COUNT(station_name)
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-non_null_datetime <- dbGetQuery(my_con, query)
-as_tibble(non_null_datetime)
+detection_station_name <- dbGetQuery(my_con, query)
+as_tibble(detection_station_name)
 ```
 
-Inspect datetime information:
+Show combination between `station_name` and `deployment_station_name`:
+
+```{r}
+query <- glue_sql(
+    "SELECT DISTINCT station_name, deployment_station_name
+    FROM vliz.detections_view AS detections
+    WHERE animal_id_pk IN ({animal_id_pk*})
+      AND NOT station_name = ''
+      AND NOT station_name = deployment_station_name
+    ORDER BY station_name",
+    animals_id_pk = animal_id_pk,
+    .con = my_con)
+
+detection_station_name_comparison <- dbGetQuery(my_con, query)
+as_tibble(detection_station_name_comparison)
+```
+
+## datetime
+
+Amount of non-zero records:
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(datetime)
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
+    .con = my_con)
+
+detection_datetime <- dbGetQuery(my_con, query)
+as_tibble(detection_datetime)
+```
+
+Inspect `datetime` information:
 
 ```{r}
 query <- glue_sql(
     "SELECT DISTINCT datetime, COUNT(datetime)
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})
     GROUP BY datetime
     ORDER BY count(datetime) DESC
-    LIMIT 100
-    " ,
-    transmitters = transmitters,
-    animals = animal_projects,    
+    LIMIT 100",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-first_100_distinct_datetime <- dbGetQuery(my_con, query)
-as_tibble(first_100_distinct_datetime)
+detection_datetime_100 <- dbGetQuery(my_con, query)
+as_tibble(detection_datetime_100)
 ```
 
 Select minimum and maxiumum dates:
@@ -668,75 +364,75 @@ Select minimum and maxiumum dates:
 query <- glue_sql(
     "SELECT MIN (datetime), MAX(datetime)
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
+    WHERE animal_id_pk IN ({animal_id_pk*})
     " ,
-    transmitters = transmitters,
-    animals = animal_projects,
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-min_max_datetime <- dbGetQuery(my_con, query)
-as_tibble(min_max_datetime)
+detection_min_max_datetime <- dbGetQuery(my_con, query)
+as_tibble(detection_min_max_datetime)
 ```
-
-Potentials to screen for: 
-- Are all values for `datetime` conform the ISO date 8601 standard?
 
 ## id_pk
 
-Retrieve amount of unique values for `id_pk`:
+```{r}
+query <- glue_sql(
+    "SELECT COUNT(id_pk)
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
+    .con = my_con)
+
+detection_id_pk <- dbGetQuery(my_con, query)
+as_tibble(detection_id_pk)
+```
+
+Should be equal to the amount of unique values of `id_pk`:
 
 ```{r}
 query <- glue_sql(
     "SELECT COUNT(DISTINCT id_pk)
-    FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-    ",
-    transmitters = transmitters,
-    animals = animal_projects,
+    FROM vliz.detections_view
+    WHERE animal_id_pk IN ({animal_id_pk*})",
+    animals_id_pk = animal_id_pk,
     .con = my_con)
 
-amount_distinct_id_pk <- dbGetQuery(my_con, query)
-as_tibble(amount_distinct_id_pk)
+detection_id_pk_unique <- dbGetQuery(my_con, query)
+as_tibble(detection_id_pk_unique)
 ```
 
 ## latitude and longitude
 
-Inspect latitude information for non-NULL and non-zero values :
+Inspect amount of non-NULL and non-zero values for latitude :
 
 ```{r}
 query <- glue_sql(
     "SELECT COUNT (latitude)
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
+    WHERE animal_id_pk IN ({animal_id_pk*})
       AND NOT latitude = 0
     " ,
-    transmitters = transmitters,
-    animals = animal_projects,    
+    animal_id_pk = animal_id_pk,  
     .con = my_con)
 
-zero_latitude <- dbGetQuery(my_con, query)
-as_tibble(zero_latitude)
+detection_non_zero_latitude <- dbGetQuery(my_con, query)
+as_tibble(detection_non_zero_latitude)
 ```
 
-Inspect longitude information for non-NULL and non-zero values :
+Inspect amount of non-NULL and non-zero values for longitude :
 
 ```{r}
 query <- glue_sql(
     "SELECT COUNT (longitude)
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
+    WHERE animal_id_pk IN ({animal_id_pk*})
       AND NOT longitude = 0
     " ,
-    transmitters = transmitters,
-    animals = animal_projects,    
+    animal_id_pk = animal_id_pk,  
     .con = my_con)
 
-zero_longitude <- dbGetQuery(my_con, query)
-as_tibble(zero_longitude)
+detection_non_zero_longitude <- dbGetQuery(my_con, query)
+as_tibble(detection_non_zero_longitude)
 ```
 
 Inspect, ter comparison, all non-NULL values for deployment_lat:
@@ -745,15 +441,14 @@ Inspect, ter comparison, all non-NULL values for deployment_lat:
 query <- glue_sql(
     "SELECT COUNT (deployment_lat)
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
+    WHERE animal_id_pk IN ({animal_id_pk*})
+      AND NOT deployment_lat = 0
     " ,
-    transmitters = transmitters,
-    animals = animal_projects,    
+    animal_id_pk = animal_id_pk,  
     .con = my_con)
 
-non_NULL_deployment_lat <- dbGetQuery(my_con, query)
-as_tibble(non_NULL_deployment_lat)
+detection_non_zero_deployment_lat <- dbGetQuery(my_con, query)
+as_tibble(detection_non_zero_deployment_lat)
 ```
 
 and for `deployment_long`:
@@ -762,35 +457,115 @@ and for `deployment_long`:
 query <- glue_sql(
     "SELECT COUNT (deployment_long)
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
+    WHERE animal_id_pk IN ({animal_id_pk*})
+      AND NOT deployment_long = 0
     " ,
-    transmitters = transmitters,
-    animals = animal_projects,    
+    animal_id_pk = animal_id_pk,  
     .con = my_con)
 
-non_NULL_deployment_long <- dbGetQuery(my_con, query)
-as_tibble(non_NULL_deployment_long)
+detection_non_zero_deployment_long <- dbGetQuery(my_con, query)
+as_tibble(detection_non_zero_deployment_long)
 ```
 
 Extract subset from the database to gain better insight into `latitude` and `longitude`
 
 ```{r}
 query <- glue_sql(
-    "SELECT receiver, transmitter, datetime, latitude, longitude, deployment_lat, deployment_long
+    "SELECT receiver, transmitter, datetime, latitude, deployment_lat, longitude, deployment_long
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
-      AND latitude IS NOT NULL
-      LIMIT 10000
+    WHERE animal_id_pk IN ({animal_id_pk*})
+      AND NOT latitude = deployment_lat
+      AND NOT latitude = 0
+      LIMIT 1000
     " ,
-    transmitters = transmitters,
-    animals = animal_projects,    
+    animal_id_pk = animal_id_pk,    
     .con = my_con)
 
-latitude_longitude_view <- dbGetQuery(my_con, query)
-as_tibble(latitude_longitude_view)
+detection_latitude_longitude_1000 <- dbGetQuery(my_con, query)
+as_tibble(detection_latitude_longitude_1000)
 ```
+
+## animal_project_code
+
+Inspect non-NUll values for `scientific_name`
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT (animal_project_code)
+    FROM vliz.detections_view AS detections
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    " ,
+    animal_id_pk = animal_id_pk,   
+    .con = my_con)
+
+detection_animal_project_code <- dbGetQuery(my_con, query)
+as_tibble(detection_animal_project_code)
+```
+
+Show distinct values:
+
+```{r}
+query <- glue_sql(
+    "SELECT DISTINCT animal_project_code
+    FROM vliz.detections_view AS detections
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    " ,
+    animal_id_pk = animal_id_pk,   
+    .con = my_con)
+
+detection_animal_project_code_distinct <- dbGetQuery(my_con, query)
+as_tibble(detection_animal_project_code_distinct)
+```
+
+## animal_moratorium
+
+Inspect non-NUll values for `animal_moratorium`
+
+```{r}
+query <- glue_sql(
+    "SELECT COUNT (animal_moratorium)
+    FROM vliz.detections_view AS detections
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    " ,
+    animal_id_pk = animal_id_pk,   
+    .con = my_con)
+
+detection_animal_moratorium <- dbGetQuery(my_con, query)
+as_tibble(detection_animal_moratorium)
+```
+
+Show distinct values:
+
+```{r}
+query <- glue_sql(
+    "SELECT DISTINCT animal_moratorium
+    FROM vliz.detections_view AS detections
+    WHERE animal_id_pk IN ({animal_id_pk*})
+    " ,
+    animal_id_pk = animal_id_pk,   
+    .con = my_con)
+
+detection_animal_moratorium_distinct <- dbGetQuery(my_con, query)
+as_tibble(detection_animal_moratorium_distinct)
+```
+
+Show all values for which there's an animal moratorium:
+
+```{r}
+query <- glue_sql(
+    "SELECT DISTINCT animal_project_code, scientific_name
+    FROM vliz.detections_view AS detections
+    WHERE animal_id_pk IN ({animal_id_pk*})
+      AND animal_moratorium = '1'
+    " ,
+    animal_id_pk = animal_id_pk,   
+    .con = my_con)
+
+detection_animal_moratorium_present <- dbGetQuery(my_con, query)
+as_tibble(detection_animal_moratorium_present)
+```
+
+We have the permission to publish these datasets.
 
 ## scientific name and common names
 
@@ -800,15 +575,13 @@ Inspect non-NUll values for `scientific_name`
 query <- glue_sql(
     "SELECT COUNT (scientific_name)
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
+    WHERE animal_id_pk IN ({animal_id_pk*})
     " ,
-    transmitters = transmitters,
-    animals = animal_projects,    
+    animal_id_pk = animal_id_pk,   
     .con = my_con)
 
-non_NULL_scientific_name <- dbGetQuery(my_con, query)
-as_tibble(non_NULL_scientific_name)
+detection_scientific_name <- dbGetQuery(my_con, query)
+as_tibble(detection_scientific_name)
 ```
 
 Inspect non-NUll values for `animal_common_name`
@@ -817,15 +590,13 @@ Inspect non-NUll values for `animal_common_name`
 query <- glue_sql(
     "SELECT COUNT (animal_common_name)
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
+    WHERE animal_id_pk IN ({animal_id_pk*})
     " ,
-    transmitters = transmitters,
-    animals = animal_projects,    
+    animal_id_pk = animal_id_pk,
     .con = my_con)
 
-non_NULL_common_name <- dbGetQuery(my_con, query)
-as_tibble(non_NULL_common_name)
+detection_common_name <- dbGetQuery(my_con, query)
+as_tibble(detection_common_name)
 ```
 
 
@@ -835,15 +606,13 @@ Inspect unique values and combinations with `animal_common_name`:
 query <- glue_sql(
     "SELECT DISTINCT scientific_name, animal_common_name
     FROM vliz.detections_view AS detections
-    WHERE transmitter IN ({transmitters*})
-      AND animal_project_code IN ({animals*})
+    WHERE animal_id_pk IN ({animal_id_pk*})
     " ,
-    transmitters = transmitters,
-    animals = animal_projects,    
+    animal_id_pk = animal_id_pk,
     .con = my_con)
 
-scientific_common_name <- dbGetQuery(my_con, query)
-as_tibble(scientific_common_name)
+detection_common_name <- dbGetQuery(my_con, query)
+as_tibble(detection_common_name)
 ```
 
 ## animal sex
