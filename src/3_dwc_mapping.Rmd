@@ -25,7 +25,7 @@ my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 
 # Query data:
 
-## Animal event data:
+## Animal event data
 
 Query animal metadata:
 
@@ -58,6 +58,27 @@ animals_occ_data %>%
   write_csv(here::here("data","processed", "dwc_animals_occ.csv"),
             na = "")
 ```
+
+## Animal emof data
+
+Query animal emof capture data:
+
+```{r}
+animals_emof_capture_sql <- glue_sql(read_file(here::here("sql", "dwc_animals_emof_capture.sql")), .con = my_con)
+animals_emof_capture_data <- dbGetQuery(my_con, animals_emof_capture_sql)
+```
+
+
+
+
+Export data:
+
+```{r}
+animals_emof_data %>% 
+  write_csv(here::here("data","processed", "dwc_animals_occ.csv"),
+            na = "")
+```
+
 
 ##  Deployment event
 
@@ -120,9 +141,9 @@ Query and save data (one csv file per animal id):
 download_detections(
   sql_file = here::here("sql", "dwc_detections_occ.sql"),
   download_directory = here::here("data", "processed"),
-  animal_id_pk = animal_ids,
+  animal_ids = c(729, 728),
   con = my_con,
-  overwrite = FALSE
+  overwrite = TRUE
 )
 ```
 
