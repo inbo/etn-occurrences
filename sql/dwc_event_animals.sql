@@ -16,45 +16,14 @@
     --- Sync tag
     --- Sentinel
 
-SELECT
-  type,
-  modified,
-  language,
-  license,
-  rightsholder,
-  institutionCode,
-  datasetID,
-  datasetName,
-  basisOfRecord,
-  eventID,
-  samplingProtocol,
-  eventDate,
-  locality,
-  decimalLatitude,
-  decimalLongitude
+-- First, we map the capture, surgery and release events separately and paste them together in one large dataset
+
+WITH union_event_animals AS(
+
+SELECT *
+
 
 FROM (
-
-    SELECT
-
-    -- Metadata terms:
-
-      'Event'::text as type,
-      date_modified::text as modified,
-      'en'::text as language,
-      'http://creativecommons.org/publicdomain/zero/1.0/'::text as license,
-       owner_organization::text as rightsholder,
-       owner_organization::text as institutionCode,
-      ''::text as datasetID,
-      'Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)'::text as datasetName,
-      'HumanObservation'::text as basisOfRecord,
---      'WGS84':text as geodeticDatum,
---      30::numeric as coordinateUncertaintyInMeters,
-      *
-
-    FROM (
-
-    -- Capture event:
 
       SELECT
       date_modified,
@@ -72,7 +41,7 @@ FROM (
       to_char(catched_date_time, 'YYYY-MM-DD') as eventDate,
 
       --- eventRemarks
---      '' as eventRemarks,
+      '' as eventRemarks,
 
       --- locality
       CASE
@@ -152,7 +121,7 @@ FROM (
         ,
 
       --- eventRemarks
---      '' as eventRemarks,
+      '' as eventRemarks,
 
       --- locality
       CASE
@@ -215,7 +184,7 @@ FROM (
 
     UNION ALL
 
-    -- Capture event:
+    -- Release event:
 
     SELECT
 
@@ -232,6 +201,9 @@ FROM (
 
         --- eventDate
         to_char(utc_release_date_time, 'YYYY-MM-DD') AS eventDate,
+
+      --- eventRemarks
+      '' as eventRemarks,
 
         --- locality
         CASE
@@ -258,10 +230,11 @@ FROM (
 
     FROM vliz.animals_view
 
-    ) as x
+    ) as full_dataset
 
+-- Select on specific animal projects and scientific names:
 
-    WHERE
+  WHERE
 
       (projectcode = '2011_rivierprik'
         OR projectcode = '2012_leopoldkanaal'
@@ -274,4 +247,27 @@ FROM (
       AND NOT scientific_name = 'Sentinel'
       AND NOT scientific_name = 'Sync tag'
 
-) AS y
+
+    )
+SELECT
+  'Event'::text as type,
+  date_modified::text as modified,
+  'en'::text as language,
+  'http://creativecommons.org/publicdomain/zero/1.0/'::text as license,
+  owner_organization::text as rightsholder,
+  owner_organization::text as institutionCode,
+  ''::text as datasetID,
+  'Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)'::text as datasetName,
+  'HumanObservation'::text as basisOfRecord,
+  eventID,
+  samplingProtocol,
+  eventDate,
+  eventRemarks,
+  locality,
+  decimalLatitude,
+  decimalLongitude,
+  'WSG84'::text as geodeticDatum,
+  30::numeric as coordinateUncertaintyInMeters
+
+FROM union_event_animals
+
