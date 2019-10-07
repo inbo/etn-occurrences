@@ -1,4 +1,6 @@
-    -- The following animal projects are being used in the animal projects of interest:
+
+    -- This query is used to map a subset of the European Tracking Network database  to Darwin Core.
+    -- The subset includes data from the following animal projects:
 
     --- 2011 Rivierprik
     --- 2012 Leopoldkanaal
@@ -17,6 +19,7 @@
 SELECT
   type,
   modified,
+  language,
   license,
   rightsholder,
   institutionCode,
