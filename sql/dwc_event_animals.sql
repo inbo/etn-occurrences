@@ -41,7 +41,11 @@ FROM (
       to_char(catched_date_time, 'YYYY-MM-DD') as eventDate,
 
       --- eventRemarks
+<<<<<<< HEAD
       '' as eventRemarks,
+=======
+--      '' as eventRemarks,
+>>>>>>> 283df9f382011bbdb35c8b8b3dc8027d53df6fad
 
       --- locality
       CASE
