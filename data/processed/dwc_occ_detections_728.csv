@@ -1,11 +1,11 @@
-eventid,occurrenceid,recordedby,scientificname,kingdom,phylum,vernacularname,taxonrank
-urn:catalog:etn:albert:2281:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:id_pk:occurrence-detections,"",Anguilla anguilla,Animalia,Chordata,European eel,species
+eventid,occurrenceid,eventdate,recordedby,scientificname,kingdom,phylum,vernacularname,sex,taxonrank
+urn:catalog:etn:albert:2281:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:42886461:occurrence-detections,2016-11-07,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:43915185:occurrence-detections,2015-12-12,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:43915186:occurrence-detections,2015-12-12,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:43915187:occurrence-detections,2015-12-12,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:43915188:occurrence-detections,2015-12-12,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:43915189:occurrence-detections,2015-12-12,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:43915190:occurrence-detections,2015-12-12,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:43915191:occurrence-detections,2015-12-12,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:43915192:occurrence-detections,2015-12-12,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:728:43915193:occurrence-detections,2015-12-12,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
