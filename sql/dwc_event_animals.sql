@@ -48,6 +48,8 @@ FROM (
       ''::text as datasetID,
       'Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)'::text as datasetName,
       'HumanObservation'::text as basisOfRecord,
+--      'WGS84':text as geodeticDatum,
+--      30::numeric as coordinateUncertaintyInMeters,
       *
 
     FROM (
@@ -69,12 +71,16 @@ FROM (
       --- eventDate
       to_char(catched_date_time, 'YYYY-MM-DD') as eventDate,
 
+      --- eventRemarks
+--      '' as eventRemarks,
+
       --- locality
       CASE
         WHEN capture_location = 'Genk'
           OR capture_location = 'Upstream draining channel Genk'
           OR capture_location = 'sluis Genk'
           OR capture_location = 'Shipping lock Genk'
+          OR capture_location = 'shipping lock Genk'
             THEN 'Shipping lock Genk'::text
         WHEN capture_location = 'Diepenbeek'
           OR capture_location = 'Upstream drainage channel Diepenbeek'
@@ -145,6 +151,9 @@ FROM (
         END AS eventDate
         ,
 
+      --- eventRemarks
+--      '' as eventRemarks,
+
       --- locality
       CASE
         WHEN capture_location = 'hatchery Erezée' THEN capture_location::text
@@ -152,6 +161,7 @@ FROM (
           OR capture_location = 'Upstream draining channel Genk'
           OR capture_location = 'sluis Genk'
           OR capture_location = 'Shipping lock Genk'
+          OR capture_location = 'shipping lock Genk'
             THEN 'Shipping lock Genk'::text
         WHEN capture_location = 'Diepenbeek'
           OR capture_location = 'Upstream drainage channel Diepenbeek'
