@@ -69,12 +69,16 @@ FROM (
       --- eventDate
       to_char(catched_date_time, 'YYYY-MM-DD') as eventDate,
 
+      --- eventRemarks
+--      '' as eventRemarks,
+
       --- locality
       CASE
         WHEN capture_location = 'Genk'
           OR capture_location = 'Upstream draining channel Genk'
           OR capture_location = 'sluis Genk'
           OR capture_location = 'Shipping lock Genk'
+          OR capture_location = 'shipping lock Genk'
             THEN 'Shipping lock Genk'::text
         WHEN capture_location = 'Diepenbeek'
           OR capture_location = 'Upstream drainage channel Diepenbeek'
