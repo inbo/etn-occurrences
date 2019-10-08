@@ -1,11 +1,11 @@
-eventid,occurrenceid,eventdate,recordedby,scientificname,kingdom,phylum,vernacularname,sex,taxonrank
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919174:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919175:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919176:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919177:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919178:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919179:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919180:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919181:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919182:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
-urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919183:occurrence-detections,2015-12-23,"",Anguilla anguilla,Animalia,Chordata,European eel,female,species
+eventid,occurrenceid,eventdate,scientificname,kingdom,phylum,vernacularname,sex,taxonrank
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919174:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919175:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919176:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919177:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919178:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919179:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919180:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919181:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919182:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
+urn:catalog:etn:albert:2781:occurrence-detections,urn:catalog:etn:2013_albertkanaal:729:43919183:occurrence-detections,2015-12-23,Anguilla anguilla,Animalia,Chordata,European eel,female,species
