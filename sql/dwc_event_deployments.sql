@@ -15,10 +15,10 @@ SELECT
 -- Event Core terms:
 
   --- eventID
- 'urn:catalog:etn:' || d.projectcode || ':' || d.id_pk || ':event-receiver-deployment' as eventID,
+ 'etn:' || d.projectcode || ':' || d.id_pk || ':event-receiver-deployment' as eventID,
 
   --- samplingProtocol
-  'receiver deployment' as samplingProtocol,
+ 'receiver deployment' as samplingProtocol,
 
   --- eventDate
     CASE
