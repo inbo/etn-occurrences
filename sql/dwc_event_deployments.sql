@@ -3,7 +3,7 @@ SELECT
 -- Metadata terms:
 
   'Event'::text as type,
-  to_char(d.date_modified, 'YYYY-MM-DD') as modified,
+  to_char(d.date_modified, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') as modified,
   'en'::text as language,
   'http://creativecommons.org/publicdomain/zero/1.0/'::text as license,
   etn.name::text as rightsholder,
@@ -22,11 +22,11 @@ SELECT
 
   --- eventDate
     CASE
-      WHEN d.recover_date_time IS NULL THEN (to_char(d.deploy_date_time, 'YYYY-MM-DD'))::text
+      WHEN d.recover_date_time IS NULL THEN (to_char(d.deploy_date_time, 'YYYY-MM-DD"T"HH24:MI:SS"Z"'))::text
       ELSE (
-          to_char(d.deploy_date_time, 'YYYY-MM-DD') ||
+          to_char(d.deploy_date_time, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') ||
           '/' ||
-          to_char(d.recover_date_time, 'YYYY-MM-DD')
+          to_char(d.recover_date_time, 'YYYY-MM-DD"T"HH24:MI:SS"Z"')
           )::text
       END AS eventDate,
 
@@ -53,7 +53,7 @@ SELECT
   ROUND(d.deploy_long::numeric,5) as decimalLongitude,
 
   --- geodeticDatum
-  'WSG84'::text as geodeticDatum,
+  'WGS84'::text as geodeticDatum,
 
   --- coordinateUncertaintyInMeters
   30::numeric as coordinateUncertaintyInMeters
@@ -73,3 +73,5 @@ WHERE projectcode = 'albert'
     OR projectcode = 'ws1'
     OR projectcode = 'ws2'
     OR projectcode = 'ws3'
+
+ORDER BY eventID
