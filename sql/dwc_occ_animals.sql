@@ -1,12 +1,13 @@
 
 SELECT
   eventID,
-  occurrenceID,
-  person_id::text as recordedBy,
+  'urn:catalog:etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
+  ''::text as eventDate,
   scientific_name::text as scientificName,
   'Animalia'::text as kingdom,
   'Chordata'::text as phylum,
   common_name::text as vernacularName,
+  sex::text as sex,
   'species'::text as taxonRank
 
 FROM (
@@ -16,7 +17,6 @@ FROM (
   -- Capture event
 
     'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-capture' as eventID,
-    'urn:catalog:etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
     *
 
   FROM vliz.animals_view
@@ -28,7 +28,6 @@ FROM (
   -- Surgery event
 
     'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-surgery' as eventID,
-    'urn:catalog:etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
     *
 
   FROM vliz.animals_view
@@ -40,7 +39,6 @@ FROM (
 -- Release event
 
   'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-release' as eventID,
-  'urn:catalog:etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
   *
 
 
