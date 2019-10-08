@@ -167,8 +167,6 @@ FROM (
 
 ) as x
 
-
-
 WHERE (projectcode = '2011_rivierprik'
       OR projectcode = '2012_leopoldkanaal'
       OR projectcode = '2013_albertkanaal'
@@ -180,3 +178,4 @@ WHERE (projectcode = '2011_rivierprik'
       AND NOT scientific_name = 'Sentinel'
       AND NOT scientific_name = 'Sync tag'
 
+ORDER BY eventid
