@@ -2,7 +2,6 @@
 SELECT
   eventID,
   'etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
-  ''::text as eventDate,
   scientific_name::text as scientificName,
   'Animalia'::text as kingdom,
   common_name::text as vernacularName,
