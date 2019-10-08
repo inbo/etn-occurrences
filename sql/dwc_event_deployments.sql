@@ -1,82 +1,75 @@
--- The following network projects are being used in the animal projects of interest:
--- Albertkanaal
--- Bovenschelde
--- BPNS
--- Demer
--- Dijle
--- Leopoldkanaal
--- Maas
--- Saeftinghe
--- Westerschelde 1
--- Westerschelde 2
--- Westerschelde 3
--- Zeeschelde
-
 SELECT
 
 -- Metadata terms:
 
   'Event'::text as type,
+  to_char(d.date_modified, 'YYYY-MM-DD') as modified,
   'en'::text as language,
   'http://creativecommons.org/publicdomain/zero/1.0/'::text as license,
-  ''::text as rightsholder,
-  'http://www.inbo.be/en/norms-for-data-use'::text as accessRights,
+  etn.name::text as rightsholder,
   ''::text as datasetID,
   'Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)'::text as datasetName,
-  ''::text as institutionCode,
+  etn.name::text as institutionCode,
   'MachineObservation'::text as basisOfRecord,
 
--- Taxon Core terms:
+-- Event Core terms:
 
   --- eventID
- 'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-receiver-deployment' as eventID,
+ 'urn:catalog:etn:' || d.projectcode || ':' || d.id_pk || ':event-receiver-deployment' as eventID,
 
   --- samplingProtocol
-  '' as samplingProtocol,
+  'receiver deployment' as samplingProtocol,
 
   --- eventDate
     CASE
-      WHEN recover_date_time IS NULL THEN (to_char(deploy_date_time, 'YYYY-MM-DD'))::text
+      WHEN d.recover_date_time IS NULL THEN (to_char(d.deploy_date_time, 'YYYY-MM-DD'))::text
       ELSE (
-          to_char(deploy_date_time, 'YYYY-MM-DD') ||
+          to_char(d.deploy_date_time, 'YYYY-MM-DD') ||
           '/' ||
-          to_char(recover_date_time, 'YYYY-MM-DD')
+          to_char(d.recover_date_time, 'YYYY-MM-DD')
           )::text
       END AS eventDate,
 
-  --- locatlity
-  station_name::text as locality,
+  --- eventRemarks
+
+ CASE
+  WHEN d.recover_lat IS NOT NULL THEN
+    ('recover latitude: ' || ROUND(d.recover_lat::numeric,5) || ' | ' ||
+    'recover longitude: ' || ROUND(d.recover_long::numeric,5) || ' | ' ||
+    'location name: ' || d.location_name || ' | ' ||
+    'location description: ' || COALESCE(d.location_description, 'NA'))::text
+  ELSE
+     ('location name: ' || d.location_name || ' | ' ||
+    'location description: ' || COALESCE(d.location_description, 'NA'))::text
+  END AS eventRemarks,
+
+  --- locality
+  d.station_name::text as locality,
 
   --- decimalLatitude
-  ROUND(deploy_lat::numeric,5) as decimalLatitude,
+  ROUND(d.deploy_lat::numeric,5) as decimalLatitude,
 
   --- decimalLongitude
-  ROUND(deploy_long::numeric,5) as decimalLongitude,
+  ROUND(d.deploy_long::numeric,5) as decimalLongitude,
 
-  --- eventRemarks
- CASE
-  WHEN recover_lat IS NOT NULL THEN
-    ('recover latitude: ' || ROUND(recover_lat::numeric,5) || ' | ' ||
-    'recover longitude: ' || ROUND(recover_long::numeric,5) || ' | ' ||
-    'location name: ' || location_name || ' | ' ||
-    'location description: ' || COALESCE(location_description, 'NA'))::text
-  ELSE
-     ('location name: ' || location_name || ' | ' ||
-    'location description: ' || COALESCE(location_description, 'NA'))::text
-  END AS eventRemarks
+  --- geodeticDatum
+  'WSG84'::text as geodeticDatum,
 
-FROM vliz.deployments_view AS deployments
+  --- coordinateUncertaintyInMeters
+  30::numeric as coordinateUncertaintyInMeters
 
-  WHERE projectcode = 'albert'
-      OR projectcode = 'bovenschelde'
-      OR projectcode = 'bpns'
-      OR projectcode = 'demer'
-      OR projectcode = 'dijle'
-      OR projectcode = 'leopoldkanaal'
-      OR projectcode = 'maas'
-      OR projectcode = 'saeftinghe'
-      OR projectcode = 'ws1'
-      OR projectcode = 'ws2'
-      OR projectcode = 'ws3'
+FROM vliz.deployments_view AS d
+  JOIN vliz.receivers AS r ON (d.receiver_fk = r.id_pk)
+  JOIN vliz.etn_group AS etn ON (r.owner_group_fk = etn.id_pk)
 
-
+WHERE projectcode = 'albert'
+    OR projectcode = 'bovenschelde'
+    OR projectcode = 'bpns'
+    OR projectcode = 'demer'
+    OR projectcode = 'dijle'
+    OR projectcode = 'leopoldkanaal'
+    OR projectcode = 'maas'
+    OR projectcode = 'saeftinghe'
+    OR projectcode = 'ws1'
+    OR projectcode = 'ws2'
+    OR projectcode = 'ws3'
