@@ -1,7 +1,7 @@
 
 SELECT
   eventID,
-  'urn:catalog:etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
+  'etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
   ''::text as eventDate,
   scientific_name::text as scientificName,
   'Animalia'::text as kingdom,
@@ -16,7 +16,7 @@ FROM (
 
   -- Capture event
 
-    'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-capture' as eventID,
+    'etn:' || projectcode || ':' || id_pk || ':event-capture' as eventID,
     *
 
   FROM vliz.animals_view
@@ -27,7 +27,7 @@ FROM (
 
   -- Surgery event
 
-    'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-surgery' as eventID,
+    'etn:' || projectcode || ':' || id_pk || ':event-surgery' as eventID,
     *
 
   FROM vliz.animals_view
@@ -38,7 +38,7 @@ FROM (
 
 -- Release event
 
-  'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-release' as eventID,
+  'etn:' || projectcode || ':' || id_pk || ':event-release' as eventID,
   *
 
 
