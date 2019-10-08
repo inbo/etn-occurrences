@@ -30,7 +30,7 @@ FROM (
       scientific_name,
 
       --- eventID
-      'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-capture' as eventID,
+      'etn:' || projectcode || ':' || id_pk || ':event-capture' as eventID,
 
       --- samplingProtocol
       capture_method::text as samplingProtocol,
@@ -105,7 +105,7 @@ FROM (
       scientific_name,
 
        --- eventID
-      'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-surgery' as eventID,
+      'etn:' || projectcode || ':' || id_pk || ':event-surgery' as eventID,
 
        --- samplingProtocol
       'surgery'::text as samplingProtocol,
@@ -192,7 +192,7 @@ FROM (
       scientific_name,
 
         --- eventID
-        'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-release' as eventID,
+        'etn:' || projectcode || ':' || id_pk || ':event-release' as eventID,
 
         --- samplingProtocol
         'release'::text as samplingProtocol,
