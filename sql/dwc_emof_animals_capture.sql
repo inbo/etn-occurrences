@@ -1,7 +1,7 @@
 
 SELECT
-   'urn:catalog:etn:' || projectcode || ':' || id_pk || ':event-capture' as eventID,
-   'urn:catalog:etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
+   'etn:' || projectcode || ':' || id_pk || ':event-capture' as eventID,
+   'etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
    measurementType,
    measurementValue,
    measurementUnit
