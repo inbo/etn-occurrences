@@ -36,10 +36,7 @@ FROM (
       capture_method::text as samplingProtocol,
 
       --- eventDate
-      to_char(catched_date_time, 'YYYY-MM-DD') as eventDate,
-
-      --- eventRemarks
-      '' as eventRemarks,
+      to_char(catched_date_time, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') as eventDate,
 
       --- locality
       CASE
@@ -113,13 +110,10 @@ FROM (
       --- eventDate
       CASE
         WHEN date_of_surgery IS NULL
-          THEN to_char(catched_date_time, 'YYYY-MM-DD')
-        ELSE to_char(date_of_surgery, 'YYYY-MM-DD')
+          THEN to_char(catched_date_time, 'YYYY-MM-DD"T"HH24:MI:SS"Z"')
+        ELSE to_char(date_of_surgery, 'YYYY-MM-DD"T"HH24:MI:SS"Z"')
         END AS eventDate
         ,
-
-      --- eventRemarks
-      '' as eventRemarks,
 
       --- locality
       CASE
@@ -198,10 +192,7 @@ FROM (
         'release'::text as samplingProtocol,
 
         --- eventDate
-        to_char(utc_release_date_time, 'YYYY-MM-DD') AS eventDate,
-
-      --- eventRemarks
-      '' as eventRemarks,
+        to_char(utc_release_date_time, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') AS eventDate,
 
         --- locality
         CASE
@@ -251,7 +242,7 @@ FROM (
 
 SELECT
   'Event'::text as type,
-  date_modified::text as modified,
+  to_char(date_modified, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') as modified,
   'en'::text as language,
   'http://creativecommons.org/publicdomain/zero/1.0/'::text as license,
   owner_organization::text as rightsholder,
@@ -262,12 +253,12 @@ SELECT
   eventID,
   samplingProtocol,
   eventDate,
-  eventRemarks,
   locality,
   decimalLatitude,
   decimalLongitude,
-  'WSG84'::text as geodeticDatum,
+  'WGS84'::text as geodeticDatum,
   30::numeric as coordinateUncertaintyInMeters
 
 FROM union_event_animals
 
+ORDER BY eventid
