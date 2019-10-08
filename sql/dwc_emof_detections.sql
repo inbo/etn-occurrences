@@ -1,7 +1,7 @@
 
 SELECT
-   'urn:catalog:etn:' || network_project_code || ':' || deployment_fk || ':occurrence-detections'::text as eventID,
-   'urn:catalog:etn:' || animal_project_code || ':' || animal_id_pk || ':' || id_pk || ':occurrence-detections'::text as occurrenceID,
+   'etn:' || network_project_code || ':' || deployment_fk || ':event-receiver-deployment'::text as eventID,
+   'etn:' || animal_project_code || ':' || animal_id_pk || ':' || id_pk || ':occurrence-detection'::text as occurrenceID,
    measurementType,
    measurementValue,
    measurementUnit
