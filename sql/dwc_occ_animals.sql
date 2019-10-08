@@ -5,7 +5,6 @@ SELECT
   ''::text as eventDate,
   scientific_name::text as scientificName,
   'Animalia'::text as kingdom,
-  'Chordata'::text as phylum,
   common_name::text as vernacularName,
   sex::text as sex,
   'species'::text as taxonRank
