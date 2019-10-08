@@ -1,5 +1,5 @@
 SELECT
- 'urn:catalog:etn:' || projectcode || ':' || id_pk || ':' || 'event-receiver-deployment' as eventID,
+ 'etn:' || projectcode || ':' || id_pk || ':' || 'event-receiver-deployment' as eventID,
  '' as occurrenceID,
   measurementType,
   measurementValue,
