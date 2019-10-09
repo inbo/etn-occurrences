@@ -18,7 +18,14 @@ output:
 #    toc_depth: 3
 ---
 
-This script is used to export data from the etn database to the [raw data folder](https://github.com/inbo/etn-occurrences/tree/master/data/raw) in this repository. The goal is to simplify data exploration.
+This script is used to export data from the etn database to the [raw data folder](https://github.com/inbo/etn-occurrences/tree/master/data/raw) in this repository. The goal is to simplify data exploration. We use this for the following tables in the database:
+
+- `vliz_animals.view`
+- `vliz_tags`
+- `vliz_deployments.view`
+- `vliz_receivers`
+
+We do not export data from the `vliz_detections.view` table as this table is too large. Exploration of this table is done in `2_inspect_detections.Rmd`.
 
 # Setup 
 
