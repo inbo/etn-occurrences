@@ -1,5 +1,5 @@
 ---
-title: "Select transmitter and receiver data"
+title: "Export data"
 subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
 author:
 - Lien Reysehove
@@ -17,6 +17,8 @@ output:
 #    toc: yes
 #    toc_depth: 3
 ---
+
+This script is used to export data from the etn database to the [raw data folder]() in this repository. The goal is to simplify data exploration.
 
 # Setup 
 
@@ -189,4 +191,23 @@ Export `receivers` as .csv:
 ```{r}
 write_csv(receivers, "../data/raw/receivers.csv", na = "")
 ```
+
+# Select detections
+
+```{r}
+query <- glue_sql("
+  SELECT *
+  FROM vliz.detections_view
+  WHERE animal_id_pk = 486
+  LIMIT 100
+  ",
+  .con = my_con)
+
+individual_detections <- dbGetQuery(my_con, query)
+as_tibble(individual_detections)
+```
+
+
+
+
 
