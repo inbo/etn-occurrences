@@ -18,7 +18,7 @@ output:
 #    toc_depth: 3
 ---
 
-This script is used to export data from the etn database to the [raw data folder]() in this repository. The goal is to simplify data exploration.
+This script is used to export data from the etn database to the [raw data folder](https://github.com/inbo/etn-occurrences/tree/master/data/raw) in this repository. The goal is to simplify data exploration.
 
 # Setup 
 
@@ -32,9 +32,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)      # To do data science
 library(magrittr)       # To use %<>% pipes
 library(here)           # To find files
-library(janitor)        # To clean input data
 library(etn)            # To interact with ETN
-library(lubridate)      # To process date and time information
 library(glue)
 ```
 
@@ -47,9 +45,9 @@ my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
 
-# Select Animals data
+# Export animals data
 
-Extract all information related to the following animal projects:
+Extract all information from the animals metadata table (`vliz.animals_view`) related to the following animal projects:
 
 - 2012 Leopoldkanaal
 - 2013 Albertkanaal (excluding Sync tag data)
@@ -81,21 +79,15 @@ animals <- dbGetQuery(my_con, query)
 as_tibble(animals)
 ```
 
-Save data in `raw`:
+Export data to `raw`:
 
 ```{r}
-animals %>% write_csv(here::here("data", "raw", "animals.csv"), na = "")
+animals %>% write_csv(here::here("data", "raw", "input_animals.csv"), na = "")
 ```
 
-# Select transmitter data
+# Export transmitter data
 
-Select `tag_full_id` and save as separate vector:
-
-```{r}
-tag_full_id <- animals %>% pull(tag_full_id)
-```
-
-Select tag information fomr `vliz_tags`:
+Select transmitter information fomr `vliz_tags`:
 
 ```{r}
 query <- glue_sql(
@@ -124,12 +116,12 @@ as_tibble(transmitters)
 Export transmitters data:
 
 ```{r}
-transmitters %>% write_csv(here::here("data", "raw", "transmitters.csv"), na = "")
+transmitters %>% write_csv(here::here("data", "raw", "input_transmitters.csv"), na = "")
 ```
 
-# Select deployments
+# Export deployment data
 
-Extract all receivers involved in the detections of the specific animal projects listed earlier. We can't select on specific animal projects here. Hence, we use the network projects included in the animal projects.
+Extract all receivers involved in the detections of the specific animal projects listed earlier. We can't select on specific animal projects here. Hence, we use the network projects included in the specific animal projects.
 
 ```{r}
 query <- glue_sql(
@@ -155,10 +147,10 @@ as_tibble(deployments)
 Export `deployments` as .csv:
 
 ```{r}
-write_csv(deployments, "../data/raw/deployments.csv", na = "")
+write_csv(deployments, here::here("data","raw","input_deployments.csv"), na = "")
 ```
 
-# Select receivers
+# Export receivers
 
 ```{r}
 query <- glue_sql("
@@ -189,25 +181,8 @@ as_tibble(receivers)
 Export `receivers` as .csv:
 
 ```{r}
-write_csv(receivers, "../data/raw/receivers.csv", na = "")
+write_csv(receivers, here::here("data","raw","input_receivers.csv"), na = "")
 ```
-
-# Select detections
-
-```{r}
-query <- glue_sql("
-  SELECT *
-  FROM vliz.detections_view
-  WHERE animal_id_pk = 486
-  LIMIT 100
-  ",
-  .con = my_con)
-
-individual_detections <- dbGetQuery(my_con, query)
-as_tibble(individual_detections)
-```
-
-
 
 
 
