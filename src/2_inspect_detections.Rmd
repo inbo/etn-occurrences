@@ -1,5 +1,5 @@
 ---
-title: "Inspect transmitter and receiver metadata"
+title: "Inspect detections data"
 subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
 author:
 - Lien Reysehove
