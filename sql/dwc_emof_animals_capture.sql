@@ -1,7 +1,14 @@
 
 SELECT
+
+-- eventID
+--- eventID includes a reference to the specific animal project and the identifier of the specific animal (id_pk) involved in the capture event
    'etn:' || projectcode || ':' || id_pk || ':event-capture' as eventID,
+
+-- occurrenecID
+--- occurrenceID includes a reference to the specific animal project and the identifier of the specific animal (id_pk) involved in the capture occurrene
    'etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
+
    measurementType,
    measurementValue,
    measurementUnit

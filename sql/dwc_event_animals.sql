@@ -1,20 +1,5 @@
-    -- The following animal projects are being used in the animal projects of interest:
 
-    --- 2011 Rivierprik
-    --- 2012 Leopoldkanaal
-    --- 2013 Albertkanaal
-    --- 2014 Demer
-    --- 2015 Dijle
-    --- 2015 PhD Verhelst (only for _Anguilla anguilla_)
-    --- Homarus
-    --- PhD Jan Reuben
-
-    --- We exclude data from the following scientific names (not an animal):
-
-    --- Sync tag
-    --- Sentinel
-
--- First, we map the capture, surgery and release events separately and paste them together in one large dataset
+-- We map the capture, surgery and release events separately and paste them together in one large dataset
 
 WITH union_event_animals AS(
 
@@ -30,6 +15,7 @@ FROM (
       scientific_name,
 
       --- eventID
+      ---- eventID integrates a reference to the animal project and the identifier of the specific animal (id_pk)
       'etn:' || projectcode || ':' || id_pk || ':event-capture' as eventID,
 
       --- samplingProtocol
@@ -102,6 +88,8 @@ FROM (
       scientific_name,
 
        --- eventID
+       ---- eventID integrates a reference to the animal project and the identifier of the specific animal (id_pk)
+
       'etn:' || projectcode || ':' || id_pk || ':event-surgery' as eventID,
 
        --- samplingProtocol
@@ -186,6 +174,8 @@ FROM (
       scientific_name,
 
         --- eventID
+        ---- eventID integrates a reference to the animal project and the identifier of the specific animal (id_pk)
+
         'etn:' || projectcode || ':' || id_pk || ':event-release' as eventID,
 
         --- samplingProtocol
@@ -241,6 +231,9 @@ FROM (
 
 
 SELECT
+
+--- Metadata terms:
+
   'Event'::text as type,
   to_char(date_modified, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') as modified,
   'en'::text as language,
@@ -250,6 +243,8 @@ SELECT
   ''::text as datasetID,
   'Acoustic telemetry data of fish in the Scheldt river basin and the Belgian Part of the North Sea (BPNS)'::text as datasetName,
   'HumanObservation'::text as basisOfRecord,
+
+--- Event core terms (generated earlier in this script):
   eventID,
   samplingProtocol,
   eventDate,

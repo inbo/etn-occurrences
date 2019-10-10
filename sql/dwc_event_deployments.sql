@@ -15,6 +15,7 @@ SELECT
 -- Event Core terms:
 
   --- eventID
+  --- eventID includes a reference to the specific network project and the identifier of the specific receiver deployment (d.id_pk)
  'etn:' || d.projectcode || ':' || d.id_pk || ':event-receiver-deployment' as eventID,
 
   --- samplingProtocol
@@ -31,6 +32,7 @@ SELECT
       END AS eventDate,
 
   --- eventRemarks
+  --- eventRemarks combines information on the recover latitude and longitude (when provided) of the receiver, and detailed information about the location of the receiver deployment
 
  CASE
   WHEN d.recover_lat IS NOT NULL THEN
@@ -62,6 +64,7 @@ FROM vliz.deployments_view AS d
   JOIN vliz.receivers AS r ON (d.receiver_fk = r.id_pk)
   JOIN vliz.etn_group AS etn ON (r.owner_group_fk = etn.id_pk)
 
+--- Select on specific network projects:
 WHERE projectcode = 'albert'
     OR projectcode = 'bovenschelde'
     OR projectcode = 'bpns'

@@ -1,14 +1,31 @@
 
 SELECT
-  eventID,
+
+-- eventID
+--- eventID includes a reference to the specific animal project and the identifier of the specific animal (id_pk) involved in the capture occurrence
+
+-- occurrenceID
+--- occurrenceID includes a reference to the specific animal project and the identifier of the specific animal (id_pk) involved in the capture occurrence
   'etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
+
+-- scientificName
   scientific_name::text as scientificName,
+
+-- kingdom
   'Animalia'::text as kingdom,
+
+-- vernacularName
   common_name::text as vernacularName,
+
+-- sex
   sex::text as sex,
+
+-- taxonRank
   'species'::text as taxonRank
 
-FROM (
+FROM
+
+-- Generates the eventID for the capture, surgery and release event:
 
   (SELECT
 
@@ -48,6 +65,8 @@ FROM (
 
 
     WHERE
+
+    --- Specify animal projects of interest:
 
       (projectcode = '2011_rivierprik'
         OR projectcode = '2012_leopoldkanaal'

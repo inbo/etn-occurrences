@@ -1,6 +1,13 @@
 SELECT
+
+-- eventID
+--- eventID includes a reference to the specific animal project and the identifier of the specific animal (id_pk) involved in the surgery event
  'etn:' || projectcode || ':' || id_pk || ':event-surgery' as eventID,
+
+-- occurrenceID
+--- (empty as the emof is linked to an the event core)
  '' as occurrenceID,
+
   measurementType,
   measurementValue,
   measurementUnit
