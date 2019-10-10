@@ -1,3 +1,40 @@
+---
+title: "Darwin Core mapping"
+subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
+author:
+- Lien Reysehove
+- Peter Desmet
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+---
+
+This document describes how the data from the [European Tracking Network (etn)](http://www.lifewatch.be/etn/) are standardized to the [Darwin Core]() format.
+The mapping is based on the ongoing work in the [Darwin Core for biologging](https://github.com/tdwg/dwc-for-biologging/), following the specifications for the [Ocean Tracking Network (OTN)](https://github.com/tdwg/dwc-for-biologging/wiki/Acoustic-sensor-enabled-tracking-of-blue-sharks). The data are mapped to an [Event Core](http://rs.gbif.org/core/dwc_event_2016_06_21.xml), which is linked to an [Occurrence extension](http://rs.gbif.org/core/dwc_event_2016_06_21.xml) and [Extended Measurements or Facts extension](http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) .
+
+- Event core: includes the capture, surgery and release event of the specific animals, as well as the deployments of the receiver network
+
+- Occurrence extension: includes the capture occurrence of specific animals, as well as the detections of each of these animals by the receivers in the network.
+
+- Extended measurement or facts extension: measurements or facts related to the animal surgery event (transmitter specifications) or receiver deployment event, as wel as measurements or facts related to the capture occurrence and detection occurrence.
+
+The data here are published for the following animal projects in the European Tracking Network (excluding data for sentinels and sync tags):
+
+- 2011 Rivierprik
+- 2012 Leopoldkanaal
+- 2013 Albertkanaal
+- 2014 Demer
+- 2015 Dijle
+- 2015 PhD Verhelst (only for _Anguilla anguilla_)
+- Homarus
+- PhD Reubens
+
+The basic elements of this mapping scripts are a series of [SQL scripts](https://github.com/inbo/etn-occurrences/tree/master/sql) generated to extract and transform the data from the database.
 
 # Setup 
 
@@ -23,83 +60,68 @@ Get username/password from environment (therefore requires this script to be run
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-# Query data:
+# Query data
 
-## Animal event data
+## Event data
 
-Query animal metadata:
+### Animal event
+
+Query animal event data (including the capture, surgery and release event):
 
 ```{r}
-animals_event_sql <- glue_sql(read_file(here::here("sql", "dwc_animals_event.sql")), .con = my_con)
-animals_event_data <- dbGetQuery(my_con, animals_event_sql)
+event_animals_sql <- glue_sql(read_file(here::here("sql", "dwc_event_animals.sql")), .con = my_con)
+event_animals_data <- dbGetQuery(my_con, event_animals_sql)
 ```
 
-Export data:
+Export data as .csv:
 
 ```{r}
-animals_event_data %>% 
-  write_csv(here::here("data","processed", "dwc_animals_event.csv"),
+event_animals_data %>% 
+  write_csv(here::here("data","processed", "dwc_event_animals.csv"),
             na = "")
 ```
 
-## Animal occurrence data
+### Receiver deployment event
 
-Query animal occurrence data:
+Query receiver deployment event data:
 
 ```{r}
-animals_occ_sql <- glue_sql(read_file(here::here("sql", "dwc_animals_occ.sql")), .con = my_con)
-animals_occ_data <- dbGetQuery(my_con, animals_occ_sql)
+event_deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_event_deployments.sql")), .con = my_con)
+event_deployments_data <- dbGetQuery(my_con, event_deployments_sql)
 ```
 
-Export data:
+Export data as.csv:
 
 ```{r}
-animals_occ_data %>% 
-  write_csv(here::here("data","processed", "dwc_animals_occ.csv"),
+event_deployments_data %>% 
+  write_csv(here::here("data","processed", "dwc_event_deployments.csv"),
             na = "")
 ```
 
-## Animal emof data
+## Occurrence data
 
-Query animal emof capture data:
+### Animal capture occurrences
+
+Query animal capture occurrence data:
 
 ```{r}
-animals_emof_capture_sql <- glue_sql(read_file(here::here("sql", "dwc_animals_emof_capture.sql")), .con = my_con)
-animals_emof_capture_data <- dbGetQuery(my_con, animals_emof_capture_sql)
+occ_animals_sql <- glue_sql(read_file(here::here("sql", "dwc_occ_animals.sql")), .con = my_con)
+occ_animals_data <- dbGetQuery(my_con, occ_animals_sql)
 ```
 
-
-
-
-Export data:
+Export data as .csv:
 
 ```{r}
-animals_emof_data %>% 
-  write_csv(here::here("data","processed", "dwc_animals_occ.csv"),
+occ_animals_data %>% 
+  write_csv(here::here("data","processed", "dwc_occ_animals.csv"),
             na = "")
 ```
 
+### Detections occurrences
 
-##  Deployment event
+The detection occurrence dataset is too large to extract as a whole. Therefore, we use a custom function generated to extract the data for each animal separately.  
 
-Query data:
-
-```{r get_ref_data}
-deployments_event_sql <- glue_sql(read_file(here::here("sql", "dwc_deployments_event.sql")), .con = my_con)
-deployments_event_data <- dbGetQuery(my_con, deployments_event_sql)
-```
-
-Export as .csv:
-
-```{r}
-write_csv(deployments_event_data,
-          here::here("data","processed", "dwc_event_deployments.csv"),
-          na = "")
-```
-
-## Detections occurrences
-
-Define all animal ids required for the selection of the appropriate detections:
+1. Define all animal ids required for the selection of the appropriate detections:
 
 ```{r}
 query <- glue_sql(
@@ -120,31 +142,99 @@ query <- glue_sql(
     .con = my_con)
 
 animal_ids <- dbGetQuery(my_con, query)
-as_tibble(animal_ids)
-```
-
-Generate vector `animal_ids`:
-
-```{r}
 animal_ids <- animal_ids %>% pull(id_pk)
+as.tibble(animal_ids)
 ```
 
-Load custom function to iterate over animal ids:
+2. Load custom function to iterate over animal ids:
 
 ```{r}
 source(here::here("src", "functions", "download_detections.R"))
 ```
 
-Query and save data (one csv file per animal id):
+3. Query and save data (one csv file per animal id):
 
 ```{r}
 download_detections(
-  sql_file = here::here("sql", "dwc_detections_occ.sql"),
+  sql_file = here::here("sql", "dwc_occ_detections.sql"),
   download_directory = here::here("data", "processed"),
-  animal_ids = c(729, 728),
+  animal_ids = animal_ids,
   con = my_con,
   overwrite = TRUE
 )
 ```
+
+## Extended measurements or facts (emof) data
+
+### Emof related to animal capture occurrence:
+
+Query animal emof capture data:
+
+```{r}
+emof_animals_capture_sql <- glue_sql(read_file(here::here("sql", "dwc_emof_animals_capture.sql")), .con = my_con)
+emof_animals_capture_data <- dbGetQuery(my_con, emof_animals_capture_sql)
+```
+
+### Emof related to animal surgery event:
+
+Query animal emof surgery data:
+
+```{r}
+emof_animals_surgery_sql <- glue_sql(read_file(here::here("sql", "dwc_emof_animals_surgery.sql")), .con = my_con)
+emof_animals_surgery_data <- dbGetQuery(my_con, emof_animals_surgery_sql)
+```
+
+### Combine animal emof data
+
+```{r}
+emof_animals_data <- 
+  emof_animals_capture_data %>% bind_rows(emof_animals_surgery_data)
+```
+
+Export data as .csv:
+
+```{r}
+emof_animals_data %>% 
+  write_csv(here::here("data","processed", "dwc_emof_animals.csv"),
+            na = "")
+```
+
+###  Emof related to receiver deployment event
+
+Query data:
+
+```{r get_ref_data}
+emof_deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_emof_deployments.sql")), .con = my_con)
+emof_deployments_data <- dbGetQuery(my_con, emof_deployments_sql)
+```
+
+Export as .csv:
+
+```{r}
+write_csv(emof_deployments_data,
+          here::here("data","processed", "dwc_emof_deployments.csv"),
+          na = "")
+```
+
+### Emof related to detection occurrences
+
+Query data:
+
+```{r get_ref_data}
+emof_detections_sql <- 
+  glue_sql(read_file(here::here("sql", "dwc_emof_detections.sql")), 
+           animal_ids = animal_ids,
+           .con = my_con)
+emof_detections_data <- dbGetQuery(my_con, emof_detections_sql)
+```
+
+Export as .csv:
+
+```{r}
+write_csv(emof_detections_data,
+          here::here("data","processed", "dwc_emof_detections.csv"),
+          na = "")
+```
+
 
 
