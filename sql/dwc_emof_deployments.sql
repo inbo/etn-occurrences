@@ -4,10 +4,6 @@ SELECT
 --- eventID includes a reference to the specific network project and the identifier of the specific receiver deployment (id_pk) involved in the detection occurrence
  'etn:' || projectcode || ':' || id_pk || ':' || 'event-receiver-deployment' as eventID,
 
--- occurrenceID
---- (empty as the emof is linked to an the event core)
- '' as occurrenceID,
-
   measurementType,
   measurementValue,
   measurementUnit
