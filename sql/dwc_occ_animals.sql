@@ -3,10 +3,14 @@ SELECT
 
 -- eventID
 --- eventID includes a reference to the specific animal project and the identifier of the specific animal (id_pk) involved in the capture occurrence
+  eventid,
 
 -- occurrenceID
 --- occurrenceID includes a reference to the specific animal project and the identifier of the specific animal (id_pk) involved in the capture occurrence
   'etn:' || projectcode || ':' || id_pk || ':occurrence-capture' as occurrenceID,
+
+-- eventDate
+  to_char(catched_date_time, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') as eventDate,
 
 -- scientificName
   scientific_name::text as scientificName,
@@ -27,7 +31,8 @@ FROM
 
 -- Generates the eventID for the capture, surgery and release event:
 
-  (SELECT
+  (
+  SELECT
 
   -- Capture event
 
@@ -58,8 +63,6 @@ FROM
 
 
  FROM vliz.animals_view
-
-  )
 
 ) AS x
 
