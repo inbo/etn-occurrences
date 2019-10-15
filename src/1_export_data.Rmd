@@ -144,7 +144,9 @@ query <- glue_sql(
         OR projectcode = 'saeftinghe'
         OR projectcode = 'ws1'
         OR projectcode = 'ws2'
-        OR projectcode = 'ws3'    ",
+        OR projectcode = 'ws3'
+        OR projectcode = 'zeeschelde'
+    ",
     .con = my_con)
 
 deployments <- dbGetQuery(my_con, query)
@@ -178,7 +180,8 @@ query <- glue_sql("
         OR projectcode = 'saeftinghe'
         OR projectcode = 'ws1'
         OR projectcode = 'ws2'
-        OR projectcode = 'ws3'    ",
+        OR projectcode = 'ws3'
+        OR projectcode = 'zeeschelde'",
       .con = my_con)
 
 receivers <- dbGetQuery(my_con, query)
