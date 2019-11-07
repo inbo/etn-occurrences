@@ -76,5 +76,5 @@ WHERE projectcode = 'albert'
     OR projectcode = 'ws1'
     OR projectcode = 'ws2'
     OR projectcode = 'ws3'
-
+    OR projectcode = 'zeeschelde'
 ORDER BY eventID
