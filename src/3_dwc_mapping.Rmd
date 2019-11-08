@@ -149,13 +149,13 @@ as.tibble(animal_ids)
 2. Load custom function to iterate over animal ids:
 
 ```{r}
-source(here::here("src", "functions", "download_detections.R"))
+source(here::here("src", "functions", "download_occ_detections.R"))
 ```
 
 3. Query and save data (one csv file per animal id):
 
 ```{r}
-download_detections(
+download_occ_detections(
   sql_file = here::here("sql", "dwc_occ_detections.sql"),
   download_directory = here::here("data", "processed", "dwc_occ_detections"),
   animal_ids = animal_ids,

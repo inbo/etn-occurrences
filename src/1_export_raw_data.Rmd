@@ -24,8 +24,7 @@ This script is used to export data from the etn database to the [raw data folder
 - `vliz_tags`
 - `vliz_deployments.view`
 - `vliz_receivers`
-
-We do not export data from the `vliz_detections.view` table as this table is too large. Exploration of this table is done in `2_inspect_detections.Rmd`.
+- `vliz_detections.view`
 
 # Setup 
 
@@ -51,10 +50,9 @@ Get username/password from environment (therefore requires this script to be run
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
+# Define selection criteria
 
-# Export animals data
-
-Extract all information from the animals metadata table (`vliz.animals_view`) related to the following animal projects:
+We will extract the animal and transmitter data based on the animal ID's of interest. These are the animal ID's integrated in the following animal projects:
 
 - 2012 Leopoldkanaal
 - 2013 Albertkanaal (excluding Sync tag data)
@@ -64,22 +62,61 @@ Extract all information from the animals metadata table (`vliz.animals_view`) re
 - Homarus
 - Phd Reubens (only for _Gadus morhua_)
 
+Create `animal_ids`:
+
 ```{r}
 query <- glue_sql(
-    "SELECT *
+    "SELECT DISTINCT id_pk
     FROM vliz.animals_view
     WHERE 
       (projectcode = '2011_rivierprik' 
-        OR projectcode = '2012_leopoldkanaal'
-        OR projectcode = '2013_albertkanaal'
-        OR projectcode = '2014_demer'
-        OR projectcode = '2015_dijle'
-        OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
+      OR projectcode = '2012_leopoldkanaal'
+      OR projectcode = '2013_albertkanaal'
+      OR projectcode = '2014_demer'
+      OR projectcode = '2015_dijle'
+      OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
         OR projectcode = 'homarus'
         OR projectcode = 'phd_reubens')
       AND NOT scientific_name = 'Sentinel'
       AND NOT scientific_name = 'Sync tag'
     " ,
+    .con = my_con)
+
+animal_ids <- dbGetQuery(my_con, query)
+animal_ids <- animal_ids %>% pull(id_pk)
+as.tibble(animal_ids)
+```
+
+The receiver and deployment data will be extrated by selecting on the specific network projects:
+
+- Albertkanaal
+- Bovenschelde
+- BPNS
+- Demer
+- Dijle
+- Leopoldkanaal
+- Maas
+- Saeftinghe
+- Westerschelde 1
+- Westerschelde 2
+- Westerschelde 3
+- Zeeschelde
+
+Create `network_projects`:
+
+```{r}
+network_projects <- c("albert", "bovenschelde", "bpns", "demer", "dijle", "leopold", "maas", "saeftinghe", "ws1", "ws2", "ws3", "zeeschelde")
+```
+
+# Export raw animals data
+
+Query data
+
+```{r}
+query <- glue_sql(
+    "SELECT *
+    FROM vliz.animals_view
+    WHERE id_pk IN ({animal_ids*})" ,
     .con = my_con)
 
 animals <- dbGetQuery(my_con, query)
@@ -92,27 +129,17 @@ Export data to `raw`:
 animals %>% write_csv(here::here("data", "raw", "animals.csv"), na = "")
 ```
 
-# Export transmitter data
+# Export raw transmitter data
 
-Select transmitter information fomr `vliz_tags`:
+Query data:
 
 ```{r}
 query <- glue_sql(
-    "SELECT tags.*, animals.projectcode, animals.scientific_name
+    "SELECT tags.*, animals.projectcode, animals.scientific_name, animals.id_pk AS animal_id_pk
      FROM vliz.tags
         LEFT JOIN vliz.animal_tag_release ON (animal_tag_release.tag_fk = tags.id_pk)
         LEFT JOIN vliz.animals_view animals ON (animals.id_pk = animal_tag_release.animal_fk)
-    WHERE 
-      (projectcode = '2011_rivierprik' 
-        OR projectcode = '2012_leopoldkanaal'
-        OR projectcode = '2013_albertkanaal'
-        OR projectcode = '2014_demer'
-        OR projectcode = '2015_dijle'
-        OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-        OR projectcode = 'homarus'
-        OR projectcode = 'phd_reubens')
-      AND NOT scientific_name = 'Sentinel'
-      AND NOT scientific_name = 'Sync tag'
+      WHERE animals.id_pk IN ({animal_ids*})
     ", 
     .con = my_con)
 
@@ -126,26 +153,15 @@ Export transmitters data:
 transmitters %>% write_csv(here::here("data", "raw", "transmitters.csv"), na = "")
 ```
 
-# Export deployment data
+# Export raw deployment data
 
-Extract all receivers involved in the detections of the specific animal projects listed earlier. We can't select on specific animal projects here. Hence, we use the network projects included in the specific animal projects.
+Query data:
 
 ```{r}
 query <- glue_sql(
     "SELECT *
       FROM vliz.deployments_view AS deployments
-      WHERE projectcode = 'albert'
-        OR projectcode = 'bovenschelde'
-        OR projectcode = 'bpns'
-        OR projectcode = 'demer'
-        OR projectcode = 'dijle'
-        OR projectcode = 'leopold'
-        OR projectcode = 'maas'
-        OR projectcode = 'saeftinghe'
-        OR projectcode = 'ws1'
-        OR projectcode = 'ws2'
-        OR projectcode = 'ws3'
-        OR projectcode = 'zeeschelde'
+      WHERE projectcode IN ({network_projects*})
     ",
     .con = my_con)
 
@@ -159,7 +175,9 @@ Export `deployments` as .csv:
 write_csv(deployments, here::here("data","raw","deployments.csv"), na = "")
 ```
 
-# Export receivers
+# Export raw receiver data
+
+Query data:
 
 ```{r}
 query <- glue_sql("
@@ -170,18 +188,7 @@ query <- glue_sql("
       FROM vliz.receivers
         JOIN vliz.deployments_view deployments ON (receivers.id_pk = deployments.receiver_fk)
         JOIN vliz.etn_group AS etn_group ON (receivers.owner_group_fk = etn_group.id_pk)
-       WHERE projectcode = 'albert'
-        OR projectcode = 'bovenschelde'
-        OR projectcode = 'bpns'
-        OR projectcode = 'demer'
-        OR projectcode = 'dijle'
-        OR projectcode = 'leopold'
-        OR projectcode = 'maas'
-        OR projectcode = 'saeftinghe'
-        OR projectcode = 'ws1'
-        OR projectcode = 'ws2'
-        OR projectcode = 'ws3'
-        OR projectcode = 'zeeschelde'",
+       WHERE projectcode IN ({network_projects*})",
       .con = my_con)
 
 receivers <- dbGetQuery(my_con, query)
@@ -194,5 +201,26 @@ Export `receivers` as .csv:
 write_csv(receivers, here::here("data","raw","receivers.csv"), na = "")
 ```
 
+# Export raw detection data
+
+The database table `vliz_detections.view` is too large to extract as a whole. We use a custom function to extract the data for each `animal_id` separately.  
+
+1. Load custom function to iterate over animal ids:
+
+```{r}
+source(here::here("src", "functions", "download_raw_detections.R"))
+```
+
+2. Query and save data (one csv file per animal id):
+
+```{r}
+download_raw_detections(
+  sql_file = here::here("sql", "raw_detections.sql"),
+  download_directory = here::here("data", "raw", "detections"),
+  animal_ids = animal_ids,
+  con = my_con,
+  overwrite = TRUE
+)
+```
 
 
