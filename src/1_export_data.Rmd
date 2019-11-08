@@ -89,7 +89,7 @@ as_tibble(animals)
 Export data to `raw`:
 
 ```{r}
-animals %>% write_csv(here::here("data", "raw", "input_animals.csv"), na = "")
+animals %>% write_csv(here::here("data", "raw", "animals.csv"), na = "")
 ```
 
 # Export transmitter data
@@ -123,7 +123,7 @@ as_tibble(transmitters)
 Export transmitters data:
 
 ```{r}
-transmitters %>% write_csv(here::here("data", "raw", "input_transmitters.csv"), na = "")
+transmitters %>% write_csv(here::here("data", "raw", "transmitters.csv"), na = "")
 ```
 
 # Export deployment data
@@ -156,7 +156,7 @@ as_tibble(deployments)
 Export `deployments` as .csv:
 
 ```{r}
-write_csv(deployments, here::here("data","raw","input_deployments.csv"), na = "")
+write_csv(deployments, here::here("data","raw","deployments.csv"), na = "")
 ```
 
 # Export receivers
@@ -191,7 +191,7 @@ as_tibble(receivers)
 Export `receivers` as .csv:
 
 ```{r}
-write_csv(receivers, here::here("data","raw","input_receivers.csv"), na = "")
+write_csv(receivers, here::here("data","raw","receivers.csv"), na = "")
 ```
 
 
