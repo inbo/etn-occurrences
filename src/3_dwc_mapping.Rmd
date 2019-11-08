@@ -157,7 +157,7 @@ source(here::here("src", "functions", "download_detections.R"))
 ```{r}
 download_detections(
   sql_file = here::here("sql", "dwc_occ_detections.sql"),
-  download_directory = here::here("data", "processed"),
+  download_directory = here::here("data", "processed", "dwc_occ_detections", "occ_detctions"),
   animal_ids = animal_ids,
   con = my_con,
   overwrite = TRUE
