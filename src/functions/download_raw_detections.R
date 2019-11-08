@@ -1,4 +1,4 @@
-download_detections <- function(sql_file, download_directory, animal_ids,
+download_raw_detections <- function(sql_file, download_directory, animal_ids,
                                 connection, overwrite = FALSE) {
   # Check input arguments
   if (!file.exists(sql_file)) {
