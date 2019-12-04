@@ -86,15 +86,15 @@ event_animals_data %>%
 Query receiver deployment event data:
 
 ```{r}
-event_deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_event_deployments.sql")), .con = my_con)
-event_deployments_data <- dbGetQuery(my_con, event_deployments_sql)
+event_receiver_deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_event_receiver_deployments.sql")), .con = my_con)
+event_receiver_deployments_data <- dbGetQuery(my_con, event_receiver_deployments_sql)
 ```
 
 Export data as.csv:
 
 ```{r}
-event_deployments_data %>% 
-  write_csv(here::here("data","processed", "dwc_event_deployments.csv"),
+event_receiver_deployments_data %>% 
+  write_csv(here::here("data","processed", "dwc_event_receiver_deployments.csv"),
             na = "")
 ```
 
@@ -149,15 +149,15 @@ as.tibble(animal_ids)
 2. Load custom function to iterate over animal ids:
 
 ```{r}
-source(here::here("src", "functions", "download_detections.R"))
+source(here::here("src", "functions", "download_occ_detections.R"))
 ```
 
 3. Query and save data (one csv file per animal id):
 
 ```{r}
-download_detections(
+download_occ_detections(
   sql_file = here::here("sql", "dwc_occ_detections.sql"),
-  download_directory = here::here("data", "processed"),
+  download_directory = here::here("data", "processed", "dwc_occ_detections"),
   animal_ids = animal_ids,
   con = my_con,
   overwrite = TRUE
@@ -204,15 +204,15 @@ emof_animals_data %>%
 Query data:
 
 ```{r get_ref_data}
-emof_deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_emof_deployments.sql")), .con = my_con)
-emof_deployments_data <- dbGetQuery(my_con, emof_deployments_sql)
+emof_receiver_deployments_sql <- glue_sql(read_file(here::here("sql", "dwc_emof_receiver_deployments.sql")), .con = my_con)
+emof_receiver_deployments_data <- dbGetQuery(my_con, emof_receiver_deployments_sql)
 ```
 
 Export as .csv:
 
 ```{r}
-write_csv(emof_deployments_data,
-          here::here("data","processed", "dwc_emof_deployments.csv"),
+write_csv(emof_receiver_deployments_data,
+          here::here("data","processed", "dwc_emof_receiver_deployments.csv"),
           na = "")
 ```
 
