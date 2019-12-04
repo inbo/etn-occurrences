@@ -1,0 +1,495 @@
+---
+title: "Inspect detections data"
+subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
+author:
+- Lien Reysehove
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+#  pdf_document:
+#    df_print: kable
+#    number_sections: yes
+#    toc: yes
+#    toc_depth: 3
+---
+
+This script is used to explore the data in `vliz_detections.view`.
+
+# Setup 
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Install packages
+
+```{r}
+library(tidyverse)      # To do data science
+library(magrittr)       # To use %<>% pipes
+library(here)           # To find files
+library(DBI)            # To connect to database
+library(etn)            # To interact with ETN
+library(glue)           # To write SQL with variables
+```
+
+# Connect to database
+
+Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
+
+```{r}
+my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
+```
+
+# Explore detection data
+
+## Select relevant records
+
+We need to retrieve the detection data from fishes included in the following animal projects:
+
+- 2012 Leopoldkanaal
+- 2013 Albertkanaal (excluding Sync tag data)
+- 2014 Demer
+- 2015 Dijle
+- 2015 Phd Verhelst (only for _Anguilla anguilla_)
+- Homarus
+- Phd Reubens (only for _Gadus morhua_)
+
+The detections for these animals are retrieved by selecting on `animal_id_pk` in the `vliz.detections_view` table. These values correspond to the primary identifiers (`id_pk`) of the animals in the `vliz.animals_view` table. 
+
+1. Retrieve all relevant values for `id_pk` in `vliz.animals_view`
+
+```{r}
+query <- glue_sql("
+  SELECT DISTINCT id_pk
+  FROM vliz.animals_view
+  WHERE 
+    (
+      projectcode = '2011_rivierprik'
+      OR projectcode = '2012_leopoldkanaal'
+      OR projectcode = '2013_albertkanaal'
+      OR projectcode = '2014_demer'
+      OR projectcode = '2015_dijle'
+      OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
+      OR projectcode = 'homarus'
+      OR projectcode = 'phd_reubens'
+    )
+    AND NOT scientific_name = 'Sentinel'
+    AND NOT scientific_name = 'Sync tag'
+  ", .con = my_con)
+
+id_pk <- dbGetQuery(my_con, query)
+as_tibble(id_pk)
+```
+
+2. Generate vector `animal_id_pk` for selection of the corresponding detection data
+
+```{r}
+animal_id_pk <- id_pk %>% pull(id_pk)
+```
+
+3. Extract detection data from the specific values for `animal_id_pk` (show top 100 results):
+
+```{r}
+query <- glue_sql("
+  SELECT *
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  LIMIT 100
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detections_top_100 <- dbGetQuery(my_con, query)
+as_tibble(detections_top_100)
+```
+
+4. Calculate the amount of detections related to the specific `animal_id_pk`
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT(*)
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  LIMIT 100
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+number_of_detections <- dbGetQuery(my_con, query)
+as_tibble(number_of_detections)
+```
+
+## Explore most important fields
+
+We here show a summary of the most relevant fields for the Darwin Core mapping:
+
+- `id_pk` (`occurrenceID` in occurrence and emof extension)
+- `datetime` (`eventDate` in occurrence extension)
+- `latitude` and `longitude` (`decimalLatitude` and `decimalLongitude` in occurrence extension)
+- `station_name` (`locality` in occurrence extension)
+- `scientific_name` (`scientificName` in occurrence extension)
+- `sensor_value` and `sensor_unit` (`measurementValue` and `measurementUnit` in emof extension)
+
+The same code bocks can be used to inspect other fields in the database:
+
+1. Inspect the amount of non-NULL records for a specific field (code not run):
+
+```
+query <- glue_sql("
+  SELECT COUNT(field_name)
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_field_name <- dbGetQuery(my_con, query)
+as_tibble(detection_field_name)
+```
+
+2. Show the first 100 values for the specific field (code not run):
+
+```
+query <- glue_sql("
+  SELECT field_name
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  LIMIT 100
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_field_name_100 <- dbGetQuery(my_con, query)
+as_tibble(detection_field_name_100)
+```
+
+### id_pk
+
+Amount of non-NULL records for `id_pk`:
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT(id_pk)
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_id_pk <- dbGetQuery(my_con, query)
+as_tibble(detection_id_pk)
+```
+
+The amount on non-NULL records for id_pk must equal the total amount of records, i.e. no empty records allowed (should be TRUE):
+
+```{r}
+detection_id_pk$count == number_of_detections$count
+```
+
+The total amount of non-NULL records should be equal to the amount of unique values for `id_pk` (should be TRUE):
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT(DISTINCT id_pk)
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_id_pk_unique <- dbGetQuery(my_con, query)
+```
+
+```{r}
+detection_id_pk$count == detection_id_pk_unique$count
+```
+
+### datetime
+
+Amount of non-NULL records for `datetime` :
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT(datetime)
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_datetime <- dbGetQuery(my_con, query)
+as_tibble(detection_datetime)
+```
+
+The amount on non-NULL records for `datetime` must equal the total amount of records, i.e. no empty records allowed (should be TRUE):
+
+```{r}
+detection_datetime$count == number_of_detections$count
+```
+
+Inspect `datetime` information (show first 100 records):
+
+```{r}
+query <- glue_sql("
+  SELECT DISTINCT datetime, COUNT(datetime)
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  GROUP BY datetime
+  ORDER BY count(datetime) DESC
+  LIMIT 100
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_datetime_100 <- dbGetQuery(my_con, query)
+as_tibble(detection_datetime_100)
+```
+
+Show minimum and maxiumum dates:
+
+```{r}
+query <- glue_sql("
+  SELECT MIN (datetime), MAX(datetime)
+  FROM vliz.detections_view AS detections
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_min_max_datetime <- dbGetQuery(my_con, query)
+as_tibble(detection_min_max_datetime)
+```
+
+### latitude and longitude
+
+Inspect amount of non-NULL values for latitude :
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT (latitude)
+  FROM vliz.detections_view AS detections
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animal_id_pk = animal_id_pk,  
+  .con = my_con)
+
+detection_non_null_latitude <- dbGetQuery(my_con, query)
+as_tibble(detection_non_null_latitude)
+```
+
+Inspect amount of non-NULL and non-zero values for longitude :
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT (longitude)
+  FROM vliz.detections_view AS detections
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animal_id_pk = animal_id_pk,  
+  .con = my_con)
+
+detection_non_null_longitude <- dbGetQuery(my_con, query)
+as_tibble(detection_non_null_longitude)
+```
+
+Inspect, ter comparison, all non-NULL values for deployment_lat:
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT (deployment_lat)
+  FROM vliz.detections_view AS detections
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animal_id_pk = animal_id_pk,  
+  .con = my_con)
+
+detection_non_null_deployment_lat <- dbGetQuery(my_con, query)
+as_tibble(detection_non_null_deployment_lat)
+```
+
+and for `deployment_long`:
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT (deployment_long)
+  FROM vliz.detections_view AS detections
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animal_id_pk = animal_id_pk,  
+  .con = my_con)
+
+detection_non_null_deployment_long <- dbGetQuery(my_con, query)
+as_tibble(detection_non_null_deployment_long)
+```
+
+Extract subset from the database to gain better insight into `latitude`,  `longitude`, `deploy_latitude` and `deploy_longitude`.
+
+```{r}
+query <- glue_sql("
+  SELECT receiver, transmitter, latitude, deployment_lat, longitude, deployment_long
+  FROM vliz.detections_view AS detections
+  WHERE
+    animal_id_pk IN ({animal_id_pk*})
+    AND latitude IS NOT NULL
+  LIMIT 1000
+  ",
+  animal_id_pk = animal_id_pk,    
+  .con = my_con)
+
+detection_latitude_longitude_1000 <- dbGetQuery(my_con, query)
+as_tibble(detection_latitude_longitude_1000)
+```
+
+Conclusion:
+
+-`deployment_lat` and `deployment_long` appear to be linked to the deployment event
+- values for `latitude` and `longitude` are zero for these examples which is wrong.
+
+Compare these records for non-NULL and non-zero values for latitude and longitude:
+
+```{r}
+query <- glue_sql("
+  SELECT receiver, transmitter, latitude, deployment_lat, longitude, deployment_long
+  FROM vliz.detections_view AS detections
+  WHERE
+    animal_id_pk IN ({animal_id_pk*})
+    AND latitude IS NOT NULL
+    AND NOT latitude = 0
+  LIMIT 1000
+  ",
+  animal_id_pk = animal_id_pk,    
+  .con = my_con)
+
+detection_latitude_longitude_1000 <- dbGetQuery(my_con, query)
+as_tibble(detection_latitude_longitude_1000)
+```
+
+Conclusion: `latitude` and `deployment_lat` often deviate (sligthly), same for longitude values. See [issue 62](https://github.com/inbo/etn-occurrences/issues/62)
+
+### station_name
+
+Amount of non-zero records for `station_name`:
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT(station_name)
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_station_name <- dbGetQuery(my_con, query)
+as_tibble(detection_station_name)
+```
+
+Compare `station_name` and `deployment_station_name`. Ideally, the content of these columns should be the same.
+
+```{r}
+query <- glue_sql("
+  SELECT DISTINCT station_name, deployment_station_name
+  FROM vliz.detections_view AS detections
+  WHERE
+    animal_id_pk IN ({animal_id_pk*})
+    AND NOT station_name = ''
+    AND NOT station_name = deployment_station_name
+  ORDER BY station_name
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_station_name_comparison <- dbGetQuery(my_con, query)
+as_tibble(detection_station_name_comparison)
+```
+
+Conclusion: both fields differ and should be checked and cleaned. See [issue 64](https://github.com/inbo/etn-occurrences/issues/64)
+
+### scientific_name
+
+Inspect non-NUll values for `scientific_name`
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT (scientific_name)
+  FROM vliz.detections_view AS detections
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animal_id_pk = animal_id_pk,   
+  .con = my_con)
+
+detection_scientific_name <- dbGetQuery(my_con, query)
+as_tibble(detection_scientific_name)
+```
+
+Inspect unique values and combinations with `animal_common_name`:
+
+```{r}
+query <- glue_sql("
+  SELECT DISTINCT scientific_name, animal_common_name
+  FROM vliz.detections_view AS detections
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animal_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_common_name <- dbGetQuery(my_con, query)
+as_tibble(detection_common_name)
+```
+
+### sensor_value and sensor_unit
+
+Show amount of non-NULL values for `sensor_value`:
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT(sensor_value)
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_sensor_value <- dbGetQuery(my_con, query)
+as_tibble(detection_sensor_value)
+```
+
+Show amount of non-NULL values in `sensor_unit`:
+
+```{r}
+query <- glue_sql("
+  SELECT COUNT(sensor_unit)
+  FROM vliz.detections_view
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_sensor_unit <- dbGetQuery(my_con, query)
+as_tibble(detection_sensor_unit)
+```
+
+Show content of non-NULL values for `sensor_value` and `sensor_unit`:
+
+```{r}
+query <- glue_sql("
+  SELECT DISTINCT sensor_value, sensor_unit
+  FROM vliz.detections_view AS detections
+  WHERE animal_id_pk IN ({animal_id_pk*})
+  ORDER BY sensor_value
+  ",
+  animals_id_pk = animal_id_pk,
+  .con = my_con)
+
+detection_distinct_sensor_value_unit <- dbGetQuery(my_con, query)
+as_tibble(detection_distinct_sensor_value_unit)
+```
+
+Conclusion: 
+
+1. No deviating/extreme sensor units/values
+2. Difference between amount of non-NULL values for `sensor_value` and `sensor_unit` is due to the empty records in `sensor_unit`.
