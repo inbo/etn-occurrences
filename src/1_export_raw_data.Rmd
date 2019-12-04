@@ -38,8 +38,9 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)      # To do data science
 library(magrittr)       # To use %<>% pipes
 library(here)           # To find files
+library(DBI)            # To connect to database
 library(etn)            # To interact with ETN
-library(glue)
+library(glue)           # To write SQL with variables
 ```
 
 # Connect to database
@@ -52,7 +53,7 @@ my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 
 # Define selection criteria
 
-We will extract the animal and transmitter data based on the animal ID's of interest. These are the animal ID's integrated in the following animal projects:
+We will extract the animal and transmitter data based on the **animal ID**'s of interest. These are the animal ID's integrated in the following animal projects:
 
 - 2012 Leopoldkanaal
 - 2013 Albertkanaal (excluding Sync tag data)
@@ -65,29 +66,30 @@ We will extract the animal and transmitter data based on the animal ID's of inte
 Create `animal_ids`:
 
 ```{r}
-query <- glue_sql(
-    "SELECT DISTINCT id_pk
-    FROM vliz.animals_view
-    WHERE 
-      (projectcode = '2011_rivierprik' 
+query <- glue_sql("
+  SELECT DISTINCT id_pk
+  FROM vliz.animals_view
+  WHERE 
+    (
+      projectcode = '2011_rivierprik'
       OR projectcode = '2012_leopoldkanaal'
       OR projectcode = '2013_albertkanaal'
       OR projectcode = '2014_demer'
       OR projectcode = '2015_dijle'
       OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-        OR projectcode = 'homarus'
-        OR projectcode = 'phd_reubens')
-      AND NOT scientific_name = 'Sentinel'
-      AND NOT scientific_name = 'Sync tag'
-    " ,
-    .con = my_con)
+      OR projectcode = 'homarus'
+      OR projectcode = 'phd_reubens'
+    )
+    AND NOT scientific_name = 'Sentinel'
+    AND NOT scientific_name = 'Sync tag'
+  ", .con = my_con)
 
 animal_ids <- dbGetQuery(my_con, query)
 animal_ids <- animal_ids %>% pull(id_pk)
 as.tibble(animal_ids)
 ```
 
-The receiver and deployment data will be extrated by selecting on the specific network projects:
+The receiver and deployment data will be extrated by selecting on the specific **network projects**:
 
 - Albertkanaal
 - Bovenschelde
@@ -113,11 +115,11 @@ network_projects <- c("albert", "bovenschelde", "bpns", "demer", "dijle", "leopo
 Query data
 
 ```{r}
-query <- glue_sql(
-    "SELECT *
-    FROM vliz.animals_view
-    WHERE id_pk IN ({animal_ids*})" ,
-    .con = my_con)
+query <- glue_sql("
+  SELECT *
+  FROM vliz.animals_view
+  WHERE id_pk IN ({animal_ids*})
+  ", .con = my_con)
 
 animals <- dbGetQuery(my_con, query)
 as_tibble(animals)
@@ -134,14 +136,21 @@ animals %>% write_csv(here::here("data", "raw", "animals.csv"), na = "")
 Query data:
 
 ```{r}
-query <- glue_sql(
-    "SELECT tags.*, animals.projectcode, animals.scientific_name, animals.id_pk AS animal_id_pk
-     FROM vliz.tags
-        LEFT JOIN vliz.animal_tag_release ON (animal_tag_release.tag_fk = tags.id_pk)
-        LEFT JOIN vliz.animals_view animals ON (animals.id_pk = animal_tag_release.animal_fk)
-      WHERE animals.id_pk IN ({animal_ids*})
-    ", 
-    .con = my_con)
+query <- glue_sql("
+  SELECT
+    tags.*,
+    animals.projectcode,
+    animals.scientific_name,
+    animals.id_pk AS animal_id_pk
+  FROM
+    vliz.tags
+    LEFT JOIN vliz.animal_tag_release
+      ON animal_tag_release.tag_fk = tags.id_pk
+    LEFT JOIN vliz.animals_view AS animals
+      ON animals.id_pk = animal_tag_release.animal_fk
+  WHERE
+    animals.id_pk IN ({animal_ids*})
+  ", .con = my_con)
 
 transmitters <- dbGetQuery(my_con, query)
 as_tibble(transmitters)
@@ -158,12 +167,11 @@ transmitters %>% write_csv(here::here("data", "raw", "transmitters.csv"), na = "
 Query data:
 
 ```{r}
-query <- glue_sql(
-    "SELECT *
-      FROM vliz.deployments_view AS deployments
-      WHERE projectcode IN ({network_projects*})
-    ",
-    .con = my_con)
+query <- glue_sql("
+  SELECT *
+  FROM vliz.deployments_view AS deployments
+  WHERE projectcode IN ({network_projects*})
+  ", .con = my_con)
 
 deployments <- dbGetQuery(my_con, query)
 as_tibble(deployments)
@@ -181,15 +189,18 @@ Query data:
 
 ```{r}
 query <- glue_sql("
-      SELECT DISTINCT 
-        receivers.* ,
-        deployments.projectcode,
-        etn_group.name as owner_organisation
-      FROM vliz.receivers
-        JOIN vliz.deployments_view deployments ON (receivers.id_pk = deployments.receiver_fk)
-        JOIN vliz.etn_group AS etn_group ON (receivers.owner_group_fk = etn_group.id_pk)
-       WHERE projectcode IN ({network_projects*})",
-      .con = my_con)
+  SELECT DISTINCT 
+    receivers.* ,
+    deployments.projectcode,
+    etn_group.name AS owner_organisation
+  FROM
+    vliz.receivers
+    JOIN vliz.deployments_view deployments
+      ON receivers.id_pk = deployments.receiver_fk
+    JOIN vliz.etn_group AS etn_group
+      ON receivers.owner_group_fk = etn_group.id_pk
+  WHERE projectcode IN ({network_projects*})
+  ", .con = my_con)
 
 receivers <- dbGetQuery(my_con, query)
 as_tibble(receivers)
@@ -222,5 +233,3 @@ download_raw_detections(
   overwrite = TRUE
 )
 ```
-
-
