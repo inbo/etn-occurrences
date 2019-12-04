@@ -53,76 +53,77 @@ my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 
 # Define selection criteria
 
+## Get animals IDs
+
 We will extract the animal and transmitter data based on the **animal ID**'s of interest. These are the animal ID's integrated in the following animal projects:
-
-- 2012 Leopoldkanaal
-- 2013 Albertkanaal (excluding Sync tag data)
-- 2014 Demer
-- 2015 Dijle
-- 2015 Phd Verhelst (only for _Anguilla anguilla_)
-- Homarus
-- Phd Reubens (only for _Gadus morhua_)
-
-Create `animal_ids`:
 
 ```{r}
 query <- glue_sql("
   SELECT DISTINCT id_pk
   FROM vliz.animals_view
   WHERE 
-    (
-      projectcode = '2011_rivierprik'
-      OR projectcode = '2012_leopoldkanaal'
-      OR projectcode = '2013_albertkanaal'
-      OR projectcode = '2014_demer'
-      OR projectcode = '2015_dijle'
-      OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-      OR projectcode = 'homarus'
-      OR projectcode = 'phd_reubens'
-    )
-    AND NOT scientific_name = 'Sentinel'
-    AND NOT scientific_name = 'Sync tag'
+    projectcode = '2011_rivierprik'
+    OR projectcode = '2012_leopoldkanaal'
+    OR (projectcode = '2013_albertkanaal' AND NOT scientific_name = 'Sync tag')
+    OR projectcode = '2014_demer'
+    OR projectcode = '2015_dijle'
+    OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
+    OR projectcode = 'homarus'
+    OR (projectcode = 'phd_reubens' AND NOT scientific_name = 'Sentinel')
   ", .con = my_con)
 
 animal_ids <- dbGetQuery(my_con, query)
 animal_ids <- animal_ids %>% pull(id_pk)
-as.tibble(animal_ids)
+length(animal_ids)
 ```
+
+Export `animal_ids` to .csv:
+
+```{r}
+write_csv(as.data.frame(animal_ids), here::here("data", "interim", "animal_ids.csv"), col_names = FALSE)
+```
+
+## Get network projects
 
 The receiver and deployment data will be extrated by selecting on the specific **network projects**:
 
-- Albertkanaal
-- Bovenschelde
-- BPNS
-- Demer
-- Dijle
-- Leopoldkanaal
-- Maas
-- Saeftinghe
-- Westerschelde 1
-- Westerschelde 2
-- Westerschelde 3
-- Zeeschelde
+```{r}
+network_projects <- c(
+  "albert",         # Albertkanaal
+  "bovenschelde",   # Bovenschelde
+  "bpns",           # BPNS
+  "demer",          # Demer
+  "dijle",          # Dijle
+  "leopold",        # Leopoldkanaal
+  "maas",           # Maes
+  "saeftinghe",     # Saeftinghe
+  "ws1",            # Westerschelde 1
+  "ws2",            # Westerschelde 2
+  "ws3",            # Westerschelde 3
+  "zeeschelde"      # Zeeschelde
+)
+```
 
-Create `network_projects`:
+Export `network_projects` to .csv:
 
 ```{r}
-network_projects <- c("albert", "bovenschelde", "bpns", "demer", "dijle", "leopold", "maas", "saeftinghe", "ws1", "ws2", "ws3", "zeeschelde")
+write_csv(as.data.frame(network_projects), here::here("data", "interim", "network_projects.csv"), col_names = FALSE)
 ```
 
 # Export raw animals data
 
-Query data
+Query data:
 
 ```{r}
 query <- glue_sql("
   SELECT *
   FROM vliz.animals_view
   WHERE id_pk IN ({animal_ids*})
+  ORDER BY id_pk
   ", .con = my_con)
 
 animals <- dbGetQuery(my_con, query)
-as_tibble(animals)
+animals
 ```
 
 Export data to `raw`:
@@ -153,7 +154,7 @@ query <- glue_sql("
   ", .con = my_con)
 
 transmitters <- dbGetQuery(my_con, query)
-as_tibble(transmitters)
+transmitters
 ```
 
 Export transmitters data:
@@ -174,7 +175,7 @@ query <- glue_sql("
   ", .con = my_con)
 
 deployments <- dbGetQuery(my_con, query)
-as_tibble(deployments)
+deployments
 ```
 
 Export `deployments` as .csv:
@@ -203,7 +204,7 @@ query <- glue_sql("
   ", .con = my_con)
 
 receivers <- dbGetQuery(my_con, query)
-as_tibble(receivers)
+receivers
 ```
 
 Export `receivers` as .csv:

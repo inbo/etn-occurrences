@@ -21,17 +21,6 @@ The mapping is based on the ongoing work in the [Darwin Core for biologging](htt
 - **Occurrence extension**: includes the capture occurrence of specific animals, as well as the detections of each of these animals by the receivers in the network.
 - **Extended measurement or facts extension**: measurements or facts related to the animal surgery event (transmitter specifications) or receiver deployment event, as wel as measurements or facts related to the capture occurrence and detection occurrence.
 
-The data here are published for the following animal projects in the European Tracking Network (excluding data for sentinels and sync tags):
-
-- 2011 Rivierprik
-- 2012 Leopoldkanaal
-- 2013 Albertkanaal
-- 2014 Demer
-- 2015 Dijle
-- 2015 PhD Verhelst (only for _Anguilla anguilla_)
-- Homarus
-- PhD Reubens
-
 The basic elements of this mapping scripts are a series of [SQL scripts](https://github.com/inbo/etn-occurrences/tree/master/sql) generated to extract and transform the data from the database.
 
 # Setup 
@@ -57,6 +46,22 @@ Get username/password from environment (therefore requires this script to be run
 
 ```{r}
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
+```
+
+# Select relevant data
+
+1. Select animals:
+
+```{r}
+animal_ids <- read_csv(here::here("data", "interim", "animal_ids.csv"))
+animal_ids <- pull(animal_ids)
+```
+
+2. Select network projects:
+
+```{r}
+network_projects <- read_csv(here::here("data", "interim", "network_projects.csv"))
+network_projects <- pull(network_projects)
 ```
 
 # Query data
@@ -114,40 +119,13 @@ write_csv(occ_animals_data, here::here("data","processed", "dwc_occ_animals.csv"
 
 The detection occurrence dataset is too large to extract as a whole. Therefore, we use a custom function generated to extract the data for each animal separately.  
 
-1. Define all animal ids required for the selection of the appropriate detections:
-
-```{r}
-query <- glue_sql("
-  SELECT DISTINCT id_pk
-  FROM vliz.animals_view
-  WHERE 
-    (
-      projectcode = '2011_rivierprik' 
-      OR projectcode = '2012_leopoldkanaal'
-      OR projectcode = '2013_albertkanaal'
-      OR projectcode = '2014_demer'
-      OR projectcode = '2015_dijle'
-      OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-      OR projectcode = 'homarus'
-      OR projectcode = 'phd_reubens'
-    )
-    AND NOT scientific_name = 'Sentinel'
-    AND NOT scientific_name = 'Sync tag'
-  ",
-  .con = my_con)
-
-animal_ids <- dbGetQuery(my_con, query)
-animal_ids <- animal_ids %>% pull(id_pk)
-as.tibble(animal_ids)
-```
-
-2. Load custom function to iterate over animal ids:
+1. Load custom function to iterate over animal ids:
 
 ```{r}
 source(here::here("src", "functions", "download_occ_detections.R"))
 ```
 
-3. Query and save data (one csv file per animal id):
+2. Query and save data (one csv file per animal id):
 
 ```{r}
 download_occ_detections(
