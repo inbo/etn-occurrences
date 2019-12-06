@@ -109,10 +109,12 @@ Query data:
 
 ```{r}
 query <- glue_sql("
-  SELECT *
-  FROM vliz.animals_view
-  WHERE id_pk IN ({animal_ids*})
-  ORDER BY project_code
+  SELECT
+    *
+  FROM
+    vliz.animals_view
+  WHERE
+    id_pk IN ({animal_ids*})
   ", .con = my_con)
 
 animals <- dbGetQuery(my_con, query)
@@ -172,7 +174,8 @@ query <- glue_sql("
       ON receivers.id_pk = deployments.receiver_fk
     JOIN vliz.etn_group AS etn_group
       ON receivers.owner_group_fk = etn_group.id_pk
-  WHERE projectcode IN ({network_projects*})
+  WHERE
+    projectcode IN ({network_projects*})
   ", .con = my_con)
 
 receivers <- dbGetQuery(my_con, query)
@@ -191,9 +194,12 @@ Query data:
 
 ```{r}
 query <- glue_sql("
-  SELECT *
-  FROM vliz.deployments_view AS deployments
-  WHERE projectcode IN ({network_projects*})
+  SELECT
+    *
+  FROM
+    vliz.deployments_view AS deployments
+  WHERE
+    projectcode IN ({network_projects*})
   ", .con = my_con)
 
 deployments <- dbGetQuery(my_con, query)
