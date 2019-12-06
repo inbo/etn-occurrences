@@ -36,19 +36,19 @@ library(etn)            # To interact with ETN
 library(glue)           # To write SQL with variables
 ```
 
-# Connect to database
+## Connect to ETN database
 
-Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
+Username and password information is read from the R Studio environment, which is why this script needs to be run from <http://rstudio.lifewatch.be>.
 
-```{r}
+```{r connect_to_etn}
 my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-# Define selection criteria
+## Define selection criteria
 
-## Get animals IDs
+### Select animals
 
-We will extract the animal and transmitter data based on the **animal ID**'s of interest. These are the animal ID's integrated in the following animal projects:
+Animals (and associated transmitter data) are selected based on the **animal projects**:
 
 ```{r}
 query <- glue_sql("
@@ -70,15 +70,15 @@ animal_ids <- animal_ids %>% pull(id_pk)
 length(animal_ids)
 ```
 
-Export `animal_ids` to .csv:
+Save `animal_ids` to CSV:
 
 ```{r}
 write_csv(as.data.frame(animal_ids), here::here("data", "interim", "animal_ids.csv"), col_names = FALSE)
 ```
 
-## Get network projects
+### Select network projects
 
-The receiver and deployment data will be extrated by selecting on the specific **network projects**:
+Receiver and deployment data are selected based **network projects**:
 
 ```{r}
 network_projects <- c(
@@ -97,13 +97,13 @@ network_projects <- c(
 )
 ```
 
-Export `network_projects` to .csv:
+Save `network_projects` to CSV:
 
 ```{r}
 write_csv(as.data.frame(network_projects), here::here("data", "interim", "network_projects.csv"), col_names = FALSE)
 ```
 
-# Export raw animals data
+## Get animal data
 
 Query data:
 
@@ -112,20 +112,20 @@ query <- glue_sql("
   SELECT *
   FROM vliz.animals_view
   WHERE id_pk IN ({animal_ids*})
-  ORDER BY id_pk
+  ORDER BY project_code
   ", .con = my_con)
 
 animals <- dbGetQuery(my_con, query)
 animals
 ```
 
-Export data to `raw`:
+Save to CSV:
 
 ```{r}
 animals %>% write_csv(here::here("data", "raw", "animals.csv"), na = "")
 ```
 
-# Export raw transmitter data
+# Get tag/transmitter data
 
 Query data:
 
@@ -146,38 +146,17 @@ query <- glue_sql("
     animals.id_pk IN ({animal_ids*})
   ", .con = my_con)
 
-transmitters <- dbGetQuery(my_con, query)
-transmitters
+tags <- dbGetQuery(my_con, query)
+tags
 ```
 
-Export transmitters data:
+Save to CSV:
 
 ```{r}
-transmitters %>% write_csv(here::here("data", "raw", "transmitters.csv"), na = "")
+tags %>% write_csv(here::here("data", "raw", "tags.csv"), na = "")
 ```
 
-# Export raw deployment data
-
-Query data:
-
-```{r}
-query <- glue_sql("
-  SELECT *
-  FROM vliz.deployments_view AS deployments
-  WHERE projectcode IN ({network_projects*})
-  ", .con = my_con)
-
-deployments <- dbGetQuery(my_con, query)
-deployments
-```
-
-Export `deployments` as .csv:
-
-```{r}
-write_csv(deployments, here::here("data","raw","deployments.csv"), na = "")
-```
-
-# Export raw receiver data
+## Get receiver data
 
 Query data:
 
@@ -200,15 +179,36 @@ receivers <- dbGetQuery(my_con, query)
 receivers
 ```
 
-Export `receivers` as .csv:
+Save to CSV:
 
 ```{r}
-write_csv(receivers, here::here("data","raw","receivers.csv"), na = "")
+write_csv(receivers, here::here("data", "raw", "receivers.csv"), na = "")
 ```
 
-# Export raw detection data
+# Get deployment data
 
-The database table `vliz_detections.view` is too large to extract as a whole. We use a custom function to extract the data for each `animal_id` separately.  
+Query data:
+
+```{r}
+query <- glue_sql("
+  SELECT *
+  FROM vliz.deployments_view AS deployments
+  WHERE projectcode IN ({network_projects*})
+  ", .con = my_con)
+
+deployments <- dbGetQuery(my_con, query)
+deployments
+```
+
+Save to CSV:
+
+```{r}
+write_csv(deployments, here::here("data", "raw", "deployments.csv"), na = "")
+```
+
+# Get detection data
+
+The data in `vliz_detections.view` is too large to extract as a whole. We therefore use a custom function to extract the data for each `animal_id` separately:
 
 Load custom function to iterate over animal ids:
 
