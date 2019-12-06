@@ -1,6 +1,5 @@
 ---
-title: "Darwin Core mapping"
-subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
+title: "Darwin Core mapping for ETN data"
 author:
 - Lien Reysehove
 - Peter Desmet
@@ -14,6 +13,10 @@ output:
     toc_float: yes
 ---
 
+```{r}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
 This document describes how the data from the [European Tracking Network (etn)](http://www.lifewatch.be/etn/) are standardized to the Darwin Core format.
 The mapping is based on the ongoing work in the [Darwin Core for biologging](https://github.com/tdwg/dwc-for-biologging/), following the specifications for the [Ocean Tracking Network (OTN)](https://github.com/tdwg/dwc-for-biologging/wiki/Acoustic-sensor-enabled-tracking-of-blue-sharks). The data are mapped to an [Event Core](http://rs.gbif.org/core/dwc_event_2016_06_21.xml), which is linked to an [Occurrence extension](http://rs.gbif.org/core/dwc_event_2016_06_21.xml) and [Extended Measurements or Facts extension](http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) .
 
@@ -23,13 +26,7 @@ The mapping is based on the ongoing work in the [Darwin Core for biologging](htt
 
 The basic elements of this mapping scripts are a series of [SQL scripts](https://github.com/inbo/etn-occurrences/tree/master/sql) generated to extract and transform the data from the database.
 
-# Setup 
-
-```{r}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
-```
-
-# Install packages
+Load packages:
 
 ```{r}
 library(tidyverse)      # To do data science

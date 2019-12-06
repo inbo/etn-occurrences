@@ -1,5 +1,5 @@
 ---
-title: "Inspect detections data"
+title: "Inspect ETN detections data"
 subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
 author:
 - Lien Reysehove
@@ -11,22 +11,15 @@ output:
     toc: yes
     toc_depth: 3
     toc_float: yes
-#  pdf_document:
-#    df_print: kable
-#    number_sections: yes
-#    toc: yes
-#    toc_depth: 3
 ---
-
-This script is used to explore the data in `vliz_detections.view`.
-
-# Setup 
 
 ```{r}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-# Install packages
+This script is used to explore the data in `vliz_detections.view`.
+
+Load packages:
 
 ```{r}
 library(tidyverse)      # To do data science

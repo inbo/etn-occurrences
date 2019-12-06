@@ -1,8 +1,8 @@
 ---
-title: "Export data"
-subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
+title: "Download ETN data in raw format"
 author:
 - Lien Reysehove
+- Peter Desmet
 date: "`r Sys.Date()`"
 output:
   html_document:
@@ -11,28 +11,21 @@ output:
     toc: yes
     toc_depth: 3
     toc_float: yes
-#  pdf_document:
-#    df_print: kable
-#    number_sections: yes
-#    toc: yes
-#    toc_depth: 3
 ---
-
-This script is used to export data from the etn database to the [raw data folder](https://github.com/inbo/etn-occurrences/tree/master/data/raw) in this repository. The goal is to simplify data exploration. We use this for the following tables in the database:
-
-- `vliz_animals.view`
-- `vliz_tags`
-- `vliz_deployments.view`
-- `vliz_receivers`
-- `vliz_detections.view`
-
-# Setup 
 
 ```{r}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-# Install packages
+This script is used to export data in raw format from the [European Tracking Network (ETN)](http://www.lifewatch.be/etn/) database hosted by the Flanders Marine Institute (VLIZ) as part of the Flemish contribution to LifeWatch. Data are exported to the [raw data directory](../data/raw) and include:
+
+- animals (`vliz.animals_view`)
+- tags (`vliz.tags`)
+- receivers (`vliz.receivers`)
+- receiver deployments (`vliz.deployments_view`)
+- detections (`vliz.detections_view`)
+
+Load libraries:
 
 ```{r}
 library(tidyverse)      # To do data science
