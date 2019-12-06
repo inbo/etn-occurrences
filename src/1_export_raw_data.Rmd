@@ -52,7 +52,7 @@ Animals (and associated transmitter data) are selected based on the **animal pro
 
 ```{r}
 query <- glue_sql("
-  SELECT DISTINCT id_pk
+  SELECT id_pk
   FROM vliz.animals_view
   WHERE 
     projectcode = '2011_rivierprik'
@@ -110,7 +110,48 @@ Query data:
 ```{r}
 query <- glue_sql("
   SELECT
-    *
+    id_pk,
+    projectcode,
+    owner_organization,
+    scientific_name,
+    common_name,
+    tag_full_id,
+    catched_date_time,
+    capture_location,
+    capture_latitude,
+    capture_longitude,
+    capture_method,
+    wild_or_hatchery,
+    date_of_surgery,
+    surgery_location,
+    surgery_latitude,
+    surgery_longitude,
+    treatment_type,
+    anaesthetic,
+    anaesthetic_concentration,
+    release_location,
+    release_latitude,
+    release_longitude,
+    utc_release_date_time,
+    recapture_date,
+    length,
+    length_type,
+    length_units,
+    length2,
+    length2_type,
+    length2_units,
+    length3,
+    length3_type,
+    length3_units,
+    length4,
+    length4_type,
+    length4_units,
+    weight_units,
+    weight,
+    sex,
+    life_stage,
+    age,
+    age_units
   FROM
     vliz.animals_view
   WHERE
