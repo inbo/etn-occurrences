@@ -217,18 +217,19 @@ write_csv(receivers, here::here("data","raw","receivers.csv"), na = "")
 
 The database table `vliz_detections.view` is too large to extract as a whole. We use a custom function to extract the data for each `animal_id` separately.  
 
-1. Load custom function to iterate over animal ids:
+Load custom function to iterate over animal ids:
 
 ```{r}
-source(here::here("src", "functions", "download_raw_detections.R"))
+source(here::here("src", "functions", "download_data.R"))
 ```
 
-2. Query and save data (one csv file per animal id):
+Query and save data (one csv file per animal id):
 
 ```{r}
-download_raw_detections(
-  sql_file = here::here("sql", "raw_detections.sql"),
-  download_directory = here::here("data", "raw", "detections"),
+download_data(
+  sql_file = here("sql", "raw_detections.sql"),
+  download_directory = here("data", "raw", "detections"),
+  download_filename = "detections",
   animal_ids = animal_ids,
   con = my_con,
   overwrite = TRUE

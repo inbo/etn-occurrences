@@ -122,15 +122,16 @@ The detection occurrence dataset is too large to extract as a whole. Therefore, 
 1. Load custom function to iterate over animal ids:
 
 ```{r}
-source(here::here("src", "functions", "download_occ_detections.R"))
+source(here::here("src", "functions", "download_data.R"))
 ```
 
 2. Query and save data (one csv file per animal id):
 
 ```{r}
-download_occ_detections(
-  sql_file = here::here("sql", "dwc_occ_detections.sql"),
-  download_directory = here::here("data", "processed", "dwc_occ_detections"),
+download_data(
+  sql_file = here("sql", "dwc_occ_detections.sql"),
+  download_directory = here("data", "processed", "dwc_occ_detections"),
+  download_filename = "dwc_occ_detections",
   animal_ids = animal_ids,
   con = my_con,
   overwrite = TRUE
