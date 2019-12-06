@@ -1,6 +1,5 @@
 serial_number,model_number,modem_address,expected_battery_life,ar_model_number,ar_serial_number,ar_expected_battery_life,ar_voltage_at_deploy,ar_tilt_after_deploy,ar_interrogate_code,ar_receive_frequency,ar_reply_frequency,ar_ping_rate,ar_enable_code_address,ar_release_code,ar_disable_code,ar_tilt_code,id_pk,receiver,built_in_tag_fk,status,receiver_type,manufacturer_fk,owner_group_fk,financing_project_fk,projectcode,owner_organisation
 115436,VR2W,,,,,,,,,,,,,,,,1106,VR2W-115436,,Active,acoustic_telemetry,1,4,,leopold,INBO
-124059,VR2W,,,,,,,,,,,,,,,,1194,VR2W-124059,,Active,acoustic_telemetry,1,4,,maas,INBO
 131978,VR2W,,,,,,,,,,,,,,,,1621,VR2W-131978,,Active,acoustic_telemetry,1,7,,bpns,VLIZ
 124072,VR2W,,,,,,,,,,,,,,,,1147,VR2W-124072,,Lost,acoustic_telemetry,1,4,,albert,INBO
 113524,VR2W,,,,,,,,,,,,,,,,1128,VR2W-113524,,Active,acoustic_telemetry,1,4,,dijle,INBO
@@ -27,7 +26,6 @@ serial_number,model_number,modem_address,expected_battery_life,ar_model_number,a
 4833,VR2,,,,,,,,,,,,,,,,1312,VR2-4833,,Returned to manufacturer,acoustic_telemetry,1,4,,bovenschelde,INBO
 123826,VR2W,,,,,,,,,,,,,,,,1072,VR2W-123826,,Lost,acoustic_telemetry,1,7,,saeftinghe,VLIZ
 129567,VR2W,,,,,,,,,,,,,,,,1303,VR2W-129567,,Available,acoustic_telemetry,1,7,,bpns,VLIZ
-124062,VR2W,,,,,,,,,,,,,,,,1227,VR2W-124062,,Active,acoustic_telemetry,1,4,,maas,INBO
 122363,VR2W,,,,,,,,,,,,,,,,1086,VR2W-122363,,Active,acoustic_telemetry,1,4,,zeeschelde,INBO
 113529,VR2W,,,,,,,,,,,,,,,,1244,VR2W-113529,,Active,acoustic_telemetry,1,4,,leopold,INBO
 115445,VR2W,,,,,,,,,,,,,,,,1237,VR2W-115445,,Available,acoustic_telemetry,1,4,,bovenschelde,INBO
@@ -173,14 +171,18 @@ serial_number,model_number,modem_address,expected_battery_life,ar_model_number,a
 123833,VR2W,,,,,,,,,,,,,,,,1167,VR2W-123833,,Broken,acoustic_telemetry,1,7,,bpns,VLIZ
 120882,VR2W,,,,,,,,,,,,,,,,1064,VR2W-120882,,Active,acoustic_telemetry,1,4,,ws2,INBO
 480721,VR2Tx,,,,,,,,,,,,,,,,1296,VR2Tx-480721,,Lost,acoustic_telemetry,1,7,,bpns,VLIZ
+112292,VR2W,,,,,,,,,,,,,,,,1220,VR2W-112292,,Broken,acoustic_telemetry,1,4,,leopold,INBO
 112291,VR2W,,,,,,,,,,,,,,,,1096,VR2W-112291,,Lost,acoustic_telemetry,1,4,,ws2,INBO
 546900,VR2AR,,,,,,,,,,,,,,,,1364,VR2AR-546900,1943,Active,acoustic_telemetry,1,7,,bpns,VLIZ
 120887,VR2W,,,,,,,,,,,,,,,,1145,VR2W-120887,,Active,acoustic_telemetry,1,4,,ws2,INBO
 129568,VR2W,,,,,,,,,,,,,,,,1304,VR2W-129568,,Lost,acoustic_telemetry,1,7,,saeftinghe,VLIZ
 123830,VR2W,,,,,,,,,,,,,,,,1180,VR2W-123830,,Broken,acoustic_telemetry,1,7,,ws1,VLIZ
+122157,VR2W,,,,,,,,,,,,,,,,1361,VR2W-122157,,Available,acoustic_telemetry,1,4,,albert,INBO
 122345,VR2W,,,,,,,,,,,,,,,,1109,VR2W-122345,,Lost,acoustic_telemetry,1,4,,demer,INBO
 129565,VR2W,,,,,,,,,,,,,,,,1301,VR2W-129565,,Active,acoustic_telemetry,1,4,,saeftinghe,INBO
 546621,VR2AR,,,,,,,,,,,,,,,,1329,VR2AR-546621,1426,Available,acoustic_telemetry,1,7,,bpns,VLIZ
+112292,VR2W,,,,,,,,,,,,,,,,1220,VR2W-112292,,Broken,acoustic_telemetry,1,4,,zeeschelde,INBO
+124067,VR2W,,,,,,,,,,,,,,,,1132,VR2W-124067,,Available,acoustic_telemetry,1,4,,albert,INBO
 113522,VR2W,,,,,,,,,,,,,,,,1022,VR2W-113522,,Available,acoustic_telemetry,1,4,,leopold,INBO
 127724,VR2W,,,,,,,,,,,,,,,,1168,VR2W-127724,,Available,acoustic_telemetry,1,4,,albert,INBO
 127715,VR2W,,,,,,,,,,,,,,,,1055,VR2W-127715,,Active,acoustic_telemetry,1,7,,bpns,VLIZ
@@ -225,6 +227,7 @@ serial_number,model_number,modem_address,expected_battery_life,ar_model_number,a
 113523,VR2W,,,,,,,,,,,,,,,,1228,VR2W-113523,,Available,acoustic_telemetry,1,4,,albert,INBO
 113527,VR2W,,,,,,,,,,,,,,,,1125,VR2W-113527,,Lost,acoustic_telemetry,1,4,,bovenschelde,INBO
 122367,VR2W,,,,,,,,,,,,,,,,1110,VR2W-122367,,Active,acoustic_telemetry,1,4,,zeeschelde,INBO
+124063,VR2W,,,,,,,,,,,,,,,,1089,VR2W-124063,,Available,acoustic_telemetry,1,4,,maas,INBO
 122352,VR2W,,,,,,,,,,,,,,,,1091,VR2W-122352,,Lost,acoustic_telemetry,1,4,,albert,INBO
 122327,VR2W,,,,,,,,,,,,,,,,1111,VR2W-122327,,Lost,acoustic_telemetry,1,4,,albert,INBO
 120886,VR2W,,,,,,,,,,,,,,,,1066,VR2W-120886,,Active,acoustic_telemetry,1,4,,ws2,INBO
@@ -233,8 +236,8 @@ serial_number,model_number,modem_address,expected_battery_life,ar_model_number,a
 124065,VR2W,,,,,,,,,,,,,,,,1131,VR2W-124065,,Available,acoustic_telemetry,1,4,,maas,INBO
 124065,VR2W,,,,,,,,,,,,,,,,1131,VR2W-124065,,Available,acoustic_telemetry,1,4,,demer,INBO
 115443,VR2W,,,,,,,,,,,,,,,,1152,VR2W-115443,,Available,acoustic_telemetry,1,4,,albert,INBO
-122366,VR2W,,,,,,,,,,,,,,,,1105,VR2W-122366,,Active,acoustic_telemetry,1,4,,albert,INBO
 112293,VR2W,,,,,,,,,,,,,,,,1182,VR2W-112293,,Lost,acoustic_telemetry,1,4,,bovenschelde,INBO
+122366,VR2W,,,,,,,,,,,,,,,,1105,VR2W-122366,,Active,acoustic_telemetry,1,4,,albert,INBO
 123816,VR2W,,,,,,,,,,,,,,,,1251,VR2W-123816,,Lost,acoustic_telemetry,1,7,,ws1,VLIZ
 127726,VR2W,,,,,,,,,,,,,,,,1258,VR2W-127726,,Lost,acoustic_telemetry,1,4,,albert,INBO
 480063,VR2Tx,,,,,,,,,,,,,,,,1269,VR2Tx-480063,1396,Active,acoustic_telemetry,1,7,,bpns,VLIZ
@@ -255,6 +258,7 @@ serial_number,model_number,modem_address,expected_battery_life,ar_model_number,a
 127028,VR2W,,,,,,,,,,,,,,,,1166,VR2W-127028,,Available,acoustic_telemetry,1,4,,albert,INBO
 122319,VR2W,,,,,,,,,,,,,,,,1164,VR2W-122319,,Active,acoustic_telemetry,1,4,,zeeschelde,INBO
 126201,VR2W,,,,,,,,,,,,,,,,1196,VR2W-126201,,Lost,acoustic_telemetry,1,4,,bpns,INBO
+124062,VR2W,,,,,,,,,,,,,,,,1227,VR2W-124062,,Available,acoustic_telemetry,1,4,,maas,INBO
 122363,VR2W,,,,,,,,,,,,,,,,1086,VR2W-122363,,Active,acoustic_telemetry,1,4,,demer,INBO
 115439,VR2W,,,,,,,,,,,,,,,,1202,VR2W-115439,,Active,acoustic_telemetry,1,4,,ws3,INBO
 112286,VR2W,,,,,,,,,,,,,,,,1170,VR2W-112286,,Available,acoustic_telemetry,1,4,,zeeschelde,INBO
@@ -264,6 +268,7 @@ serial_number,model_number,modem_address,expected_battery_life,ar_model_number,a
 115447,VR2W,,,,,,,,,,,,,,,,1026,VR2W-115447,,Active,acoustic_telemetry,1,4,,ws2,INBO
 546892,VR2AR,,,,,,,,,,,,,,,,1353,VR2AR-546892,1491,Active,acoustic_telemetry,1,7,,bpns,VLIZ
 133321,VR2W,,,,,,,,,,,,,,,,1761,VR2W-133321,,Active,acoustic_telemetry,1,7,,bpns,VLIZ
+124059,VR2W,,,,,,,,,,,,,,,,1194,VR2W-124059,,Available,acoustic_telemetry,1,4,,maas,INBO
 113521,VR2W,,,,,,,,,,,,,,,,1059,VR2W-113521,,Lost,acoustic_telemetry,1,4,,zeeschelde,INBO
 131001,VR2W,,,,,,,,,,,,,,,,1327,VR2W-131001,,Active,acoustic_telemetry,1,7,,bpns,VLIZ
 123814,VR2W,,,,,,,,,,,,,,,,1185,VR2W-123814,,Available,acoustic_telemetry,1,7,,bpns,VLIZ
@@ -324,7 +329,6 @@ serial_number,model_number,modem_address,expected_battery_life,ar_model_number,a
 129708,VR2W,,,,,,,,,,,,,,,,1291,VR2W-129708,,Available,acoustic_telemetry,1,7,,bpns,VLIZ
 127722,VR2W,,,,,,,,,,,,,,,,1085,VR2W-127722,,Available,acoustic_telemetry,1,4,,albert,INBO
 122367,VR2W,,,,,,,,,,,,,,,,1110,VR2W-122367,,Active,acoustic_telemetry,1,4,,demer,INBO
-124063,VR2W,,,,,,,,,,,,,,,,1089,VR2W-124063,,Active,acoustic_telemetry,1,4,,maas,INBO
 115432,VR2W,,,,,,,,,,,,,,,,1057,VR2W-115432,,Lost,acoustic_telemetry,1,4,,bovenschelde,INBO
 112289,VR2W,,,,,,,,,,,,,,,,1158,VR2W-112289,,Broken,acoustic_telemetry,1,4,,bovenschelde,INBO
 122368,VR2W,,,,,,,,,,,,,,,,1177,VR2W-122368,,Lost,acoustic_telemetry,1,4,,ws2,INBO
@@ -347,16 +351,12 @@ serial_number,model_number,modem_address,expected_battery_life,ar_model_number,a
 480721,VR2Tx,,,,,,,,,,,,,,,,1296,VR2Tx-480721,,Lost,acoustic_telemetry,1,7,,saeftinghe,VLIZ
 115431,VR2W,,,,,,,,,,,,,,,,1148,VR2W-115431,,Available,acoustic_telemetry,1,4,,leopold,INBO
 122319,VR2W,,,,,,,,,,,,,,,,1164,VR2W-122319,,Active,acoustic_telemetry,1,4,,albert,INBO
-124067,VR2W,,,,,,,,,,,,,,,,1132,VR2W-124067,,Broken,acoustic_telemetry,1,4,,albert,INBO
 127029,VR2W,,,,,,,,,,,,,,,,1197,VR2W-127029,,Available,acoustic_telemetry,1,4,,albert,INBO
 112288,VR2W,,,,,,,,,,,,,,,,1139,VR2W-112288,,Available,acoustic_telemetry,1,4,,albert,INBO
-112292,VR2W,,,,,,,,,,,,,,,,1220,VR2W-112292,,Available,acoustic_telemetry,1,4,,zeeschelde,INBO
-112292,VR2W,,,,,,,,,,,,,,,,1220,VR2W-112292,,Available,acoustic_telemetry,1,4,,leopold,INBO
 122354,VR2W,,,,,,,,,,,,,,,,1101,VR2W-122354,,Available,acoustic_telemetry,1,4,,albert,INBO
 112285,VR2W,,,,,,,,,,,,,,,,1215,VR2W-112285,,Active,acoustic_telemetry,1,4,,leopold,INBO
 122364,VR2W,,,,,,,,,,,,,,,,1054,VR2W-122364,,Active,acoustic_telemetry,1,4,,demer,INBO
 133322,VR2W,,,,,,,,,,,,,,,,1762,VR2W-133322,,Active,acoustic_telemetry,1,7,,ws1,VLIZ
-122157,VR2W,,,,,,,,,,,,,,,,1361,VR2W-122157,,Active,acoustic_telemetry,1,4,,albert,INBO
 119052,VR2W,,,,,,,,,,,,,,,,1144,VR2W-119052,,Active,acoustic_telemetry,1,8,,maas,SVN
 546044,VR2AR,,,,,,,,,,,,,,,,1262,VR2AR-546044,1385,Active,acoustic_telemetry,1,7,,bpns,VLIZ
 113527,VR2W,,,,,,,,,,,,,,,,1125,VR2W-113527,,Lost,acoustic_telemetry,1,4,,ws2,INBO
