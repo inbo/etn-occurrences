@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 This script is used to export data in raw format from the [European Tracking Network (ETN)](http://www.lifewatch.be/etn/) database hosted by the Flanders Marine Institute (VLIZ) as part of the Flemish contribution to LifeWatch. Data are exported to the [raw data directory](../data/raw) and include:
 
 - animals (`vliz.animals_view`)
-- tags (`vliz.tags`)
+- transmitters (`vliz.tags`)
 - receivers (`vliz.receivers`)
 - receiver deployments (`vliz.deployments_view`)
 - detections (`vliz.detections_view`)
@@ -193,7 +193,7 @@ Save to CSV:
 animals %>% write_csv(here::here("data", "raw", "animals.csv"), na = "")
 ```
 
-# Get tag/transmitter data
+# Get transmitter/tag data
 
 Query data:
 
@@ -214,14 +214,14 @@ query <- glue_sql("
     animals.id_pk IN ({animal_ids*})
   ", .con = my_con)
 
-tags <- dbGetQuery(my_con, query)
-tags
+transmitters <- dbGetQuery(my_con, query)
+transmitters
 ```
 
 Save to CSV:
 
 ```{r}
-tags %>% write_csv(here::here("data", "raw", "tags.csv"), na = "")
+transmitters %>% write_csv(here::here("data", "raw", "transmitters.csv"), na = "")
 ```
 
 ## Get receiver data
