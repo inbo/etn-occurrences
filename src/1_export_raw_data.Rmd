@@ -54,12 +54,12 @@ Animals (and associated transmitter data) are selected based on the **animal pro
 animal_projects <- c(
   "2011_rivierprik",
   "2012_leopoldkanaal",
-  "2013_albertkanaal",
+  "2013_albertkanaal", # Remove 'Sync tag'
   "2014_demer",
   "2015_dijle",
-  "2015_phd_verhelst",
+  "2015_phd_verhelst", # Select 'Anguilla anguilla' only
   "homarus",
-  "phd_reubens"
+  "phd_reubens"        # Remove 'Sentinel'
 )
 ```
 
@@ -73,25 +73,8 @@ animals <-
   filter(scientific_name != "Sync tag") %>%
   filter(scientific_name != "Sentinel") %>%
   filter((projectcode == "2015_phd_verhelst" & scientific_name == 'Anguilla anguilla') | (projectcode != "2015_phd_verhelst"))
-```
 
-```{r}
-query <- glue_sql("
-  SELECT id_pk
-  FROM vliz.animals_view
-  WHERE 
-    projectcode = '2011_rivierprik'
-    OR projectcode = '2012_leopoldkanaal'
-    OR (projectcode = '2013_albertkanaal' AND NOT scientific_name = 'Sync tag')
-    OR projectcode = '2014_demer'
-    OR projectcode = '2015_dijle'
-    OR (projectcode = '2015_phd_verhelst' AND scientific_name = 'Anguilla anguilla')
-    OR projectcode = 'homarus'
-    OR (projectcode = 'phd_reubens' AND NOT scientific_name = 'Sentinel')
-  ", .con = my_con)
-
-animal_ids <- dbGetQuery(my_con, query)
-animal_ids <- animal_ids %>% pull(id_pk)
+animal_ids <- animals %>% pull(id_pk)
 length(animal_ids)
 ```
 
