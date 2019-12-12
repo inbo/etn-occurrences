@@ -8,7 +8,7 @@ editor_options:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, include = TRUE, message = FALSE, warning = FALSE, fig.show = "asis")
 
 ```
 
@@ -36,6 +36,7 @@ library(lubridate)
 
 select <- dplyr::select
 filter <- dplyr::filter
+union <- dplyr::union
 ```
 
 ```{r data-import}
@@ -195,3 +196,4 @@ studyareamap <- leaflet() %>%
 # highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)
 
 ```
+
