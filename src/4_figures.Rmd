@@ -1,0 +1,197 @@
+---
+title: "Figures datapaper"
+author: "Ine Pauwels"
+date: "6 december 2019"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r}
+library(conflicted)
+library(here)
+library(magrittr)       # To use %<>% pipes
+library(here)           # To find files
+library(DBI)            # To connect to database
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(ggmap)
+library(maps)
+library(maptools)
+library(mapdata)
+library(geosphere)
+library(mapview)
+library(leaflet)
+library(rgdal)
+library(mapproj)
+library(raster)
+library(rgeos)
+library(lubridate)
+
+select <- dplyr::select
+filter <- dplyr::filter
+```
+
+```{r data-import}
+animals <- read_csv(here::here("data", "raw", "animals.csv"))
+receivers <- read_csv(here::here("data", "raw", "receivers.csv"))
+transmitters <- read_csv(here::here("data", "raw", "tags.csv"))
+deployments <- read_csv(here::here("data", "raw", "deployments.csv"))
+
+shape_lcw <- readOGR("C:/Users/ine_pauwels/Documents/shapefiles", "LowCountries_Water_2004") #shapefile met waterlopen lage landen
+shape_gaps <- readOGR("C:/Users/ine_pauwels/Documents/shapefiles", "PJ_ontbrekende_stukken_reduced") #shapefile met ontbrekende stukken water
+shape_ws <- readOGR("C:/Users/ine_pauwels/Documents/shapefiles", "seavox_sea_area_polygons_v13") #shapefile water westerschelde
+shape_europa <- readOGR("C:/Users/ine_pauwels/Documents/shapefiles", "Europa_landen_WGS1984") #shapefile landen europa
+```
+
+```{r union-polygons}
+
+# merge the different SpatialPolygonDataframes into one and the same dataframe
+poly_rivers <- union(shape_lcw, shape_gaps)
+
+```
+
+
+```{r deployments-dataset-exploration-on-mising-values}
+
+#Explore if there are NA's in the deploy_lat en deploy_long columns
+
+deployments %>% 
+  select(receiver, receiver_status, projectname, projectmember, recover_date_time, deploy_lat, deploy_long, deploy_date_time, deployment_type, recover_date_time, recover_lat, recover_long) %>%
+  select(receiver) %>%
+  nrow()
+
+deployments %>% 
+  select(receiver, receiver_status, projectname, projectmember, recover_date_time, deploy_lat, deploy_long, deploy_date_time, deployment_type, recover_date_time, recover_lat, recover_long) %>%
+  drop_na(deploy_lat, deploy_long) %>%
+  select(receiver) %>%
+  nrow()
+
+deployments %>% 
+  filter(is.na(deploy_lat) == TRUE) %>%
+  select(receiver, receiver_status, projectname, projectmember, recover_date_time, deploy_lat, deploy_long, deploy_date_time, deployment_type, recover_date_time, recover_lat, recover_long)
+#There is one receiver with statuts Available, from projectname BPNS, which has a NA for deploy_lat and deploy_long. We can further remove this line from the data when making maps of receiver locations
+  
+
+#evaluate the datatype per selected column
+
+deployments %>%
+  select(receiver, receiver_status, projectname, projectmember, recover_date_time, deploy_lat, deploy_long, deploy_date_time, deployment_type, recover_date_time, recover_lat, recover_long) %>%
+  drop_na(deploy_lat, deploy_long) %>%
+  str()
+
+```
+
+
+```{r prepare-deployment-data-for-mapping}
+
+# create the dataframe/tibble deploy, in which some columns of deployments are selected and years are taken from the deploy and recovery dates.
+deployments %>% 
+  select(deploy_date_time, recover_date_time, deploy_lat, deploy_long, projectname) %>%
+  filter(projectname != "Saeftinghe") %>%
+  mutate(deploy_year = year(deploy_date_time),
+         recovery_year = year(recover_date_time)) %>%
+  drop_na() -> deploy
+
+# change columnames for long and lat, so that leaflet() (see chuncks below) can read it automatically
+colnames(deploy)[3] <- "lat"
+colnames(deploy)[4] <- "long"
+```
+
+```{r find-centroid-of-study-area}
+
+# find the centroid of the longs and lats in the dataset
+findCentroid <- function(Lon, Lat){centroid(cbind(Lon, Lat))}
+
+our_centroid <- c(findCentroid(deploy$long, deploy$lat)[1],findCentroid(deploy$long, deploy$lat)[2])
+
+```
+
+
+```{r create-leaflet-map}
+
+# load a basic background map
+backgroundmap <- leaflet() %>% 
+   addTiles() %>% 
+   setView( lng = our_centroid[1], lat = our_centroid[2], zoom = 5 ) %>% 
+   addProviderTiles("Esri.WorldImagery")
+
+# change shapefile and deployment spatial info into spatialpointsdataframe for plotting on leaflet background map
+crs_wgs84 <- CRS("+init=epsg:4326")
+
+pts <- SpatialPointsDataFrame(deploy[c("deploy_long","deploy_lat")], 
+                              deploy[!(names(deploy) %in% c("deploy_long","deploy_lat"))], proj4string = crs_wgs84)
+
+# define the colourpallette 
+
+pal <- colorFactor("RdYlBu", domain = projectname, levels = unique(deploy$projectname))
+
+# make the interactive map with leaflet --> for that it is good to split the deploy dataset per year, map the receivers in different layers per year and let the user control what year he/she wants to view on the map
+
+  ## split deploy dataset per deploy-year
+
+deploy %>%
+  filter(deploy_year == 2011) -> deploy_2011
+deploy %>%
+  filter(deploy_year == 2012 & recovery_year > 2012) -> deploy_2012
+deploy %>%
+  filter(deploy_year == 2013 & recovery_year > 2013) -> deploy_2013
+deploy %>%
+  filter(deploy_year == 2014 & recovery_year > 2014) -> deploy_2014
+deploy %>%
+  filter(deploy_year == 2015 & recovery_year > 2015) -> deploy_2015
+deploy %>%
+  filter(deploy_year == 2016 & recovery_year > 2016) -> deploy_2016
+deploy %>%
+  filter(deploy_year == 2017 & recovery_year > 2017) -> deploy_2017
+deploy %>%
+  filter(deploy_year == 2018 & recovery_year > 2018) -> deploy_2018
+deploy %>%
+  filter(deploy_year == 2019 & recovery_year > 2019) -> deploy_2019
+
+  ## map of the study area for all years together (not possible to select per year)
+studyareamap_all_years <- leaflet() %>% 
+  addPolygons(data = poly_rivers, color = "blue", weight = 1, smoothFactor = 0.5,
+    opacity = 0.5, fillOpacity = 0.5,
+    fillColor = "blue", group = "rivers") %>%
+   setView(lng = our_centroid[1], lat = our_centroid[2], zoom = 3) %>% 
+   addProviderTiles("Esri.WorldImagery", group = "World Esri") %>%
+   addProviderTiles("Esri.WorldTerrain", group = "World terrain") %>%
+  addMiniMap(toggleDisplay = TRUE,
+    position = "bottomright") %>%
+  addCircleMarkers(data = deploy, radius = 4, stroke = TRUE, weight = 0.5, color = "black", fill = TRUE, fillColor = ~pal(projectname), fillOpacity = 0.3, group = "receivers")%>%
+  addLegend(pal = pal, values = deploy$projectname, opacity = 1) %>%
+  addLayersControl(
+    baseGroups = c("World Esri", "World terrain"),
+    overlayGroups = c("receivers"),
+    options = layersControlOptions(collapsed = FALSE)) 
+
+  ## map of the study area per year (selectionbutton on the interactive map)
+
+studyareamap <- leaflet() %>% 
+  addPolygons(data = poly_rivers, color = "blue", weight = 1, smoothFactor = 0.5,
+    opacity = 0.5, fillOpacity = 0.5,
+    fillColor = "blue", group = "rivers") %>%
+   setView(lng = our_centroid[1], lat = our_centroid[2], zoom = 3) %>% 
+   addProviderTiles("Esri.WorldImagery", group = "World Esri") %>%
+   addProviderTiles("Esri.WorldTerrain", group = "World terrain") %>%
+  addMiniMap(toggleDisplay = TRUE,
+    position = "bottomleft") %>%
+  addCircleMarkers(data = deploy_2011, radius = 4, stroke = TRUE, weight = 0.5, color = "black", fill = TRUE, fillColor = ~pal(projectname), fillOpacity = 0.6, group = "2011 deployments")%>%
+  addCircleMarkers(data = deploy_2012, radius = 4, stroke = TRUE, weight = 0.5, color = "black", fill = TRUE, fillColor = ~pal(projectname), fillOpacity = 0.6, group = "2012 deployments")%>%
+  addCircleMarkers(data = deploy_2013, radius = 4, stroke = TRUE, weight = 0.5, color = "black", fill = TRUE, fillColor = ~pal(projectname), fillOpacity = 0.6, group = "2013 deployments")%>% addCircleMarkers(data = deploy_2014, radius = 4, stroke = TRUE, weight = 0.5, color = "black", fill = TRUE, fillColor = ~pal(projectname), fillOpacity = 0.6, group = "2014 deployments")%>% addCircleMarkers(data = deploy_2015, radius = 4, stroke = TRUE, weight = 0.5, color = "black", fill = TRUE, fillColor = ~pal(projectname), fillOpacity = 0.6, group = "2015 deployments")%>% addCircleMarkers(data = deploy_2016, radius = 4, stroke = TRUE, weight = 0.5, color = "black", fill = TRUE, fillColor = ~pal(projectname), fillOpacity = 0.6, group = "2016 deployments")%>% addCircleMarkers(data = deploy_2017, radius = 4, stroke = TRUE, weight = 0.5, color = "black", fill = TRUE, fillColor = ~pal(projectname), fillOpacity = 0.6, group = "2017 deployments")%>% addCircleMarkers(data = deploy_2018, radius = 4, stroke = TRUE, weight = 0.5, color = "black", fill = TRUE, fillColor = ~pal(projectname), fillOpacity = 0.6, group = "2018 deployments")%>%
+  addLegend(pal = pal, values = deploy$projectname, opacity = 1) %>%
+  addLayersControl(
+    baseGroups = c("World Esri", "World terrain"),
+    overlayGroups = c("2011 deployments", "2012 deployments", "2013 deployments", "2014 deployments", "2015 deployments", "2016 deployments", "2017 deployments", "2018 deployments"),
+    options = layersControlOptions(collapsed = FALSE))
+
+# highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)
+
+```
