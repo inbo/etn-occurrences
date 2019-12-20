@@ -1,0 +1,376 @@
+---
+title: "descriptive-numbers"
+author: "Ine Pauwels"
+date: "12 december 2019"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+  html_notebook:
+    code_folding: hide
+    fig_align: centre
+    fig_caption: yes
+    fig_height: 8
+    fig_width: 12
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, include = TRUE, message = FALSE, warning = FALSE, fig.show = "asis")
+
+```
+
+
+```{r}
+library(conflicted)
+library(here)
+library(magrittr)       # To use %<>% pipes
+library(here)           # To find files
+library(DBI)            # To connect to database
+library(tidyverse)
+library(dplyr)
+library(lubridate)
+library(knitr)
+
+select <- dplyr::select
+filter <- dplyr::filter
+union <- dplyr::union
+nrow <- base::nrow
+```
+
+# Import data
+
+```{r data-import}
+
+animals <- read_csv(here::here("data", "raw", "animals.csv"))
+receivers <- read_csv(here::here("data", "raw", "receivers.csv"))
+transmitters <- read_csv(here::here("data", "raw", "transmitters.csv"))
+deployments <- read_csv(here::here("data", "raw", "deployments.csv"))
+
+```
+
+# Geographical coverage
+## Total numbers 
+
+```{r select-deploy-dataset-from-deployments}
+
+deployments %>% 
+  select(receiver, receiver_status, deploy_date_time, recover_date_time, deploy_lat, deploy_long, projectname, station_name) %>%
+  filter(projectname != "Saeftinghe") %>%
+  mutate(deploy_year = year(deploy_date_time),
+         recovery_year = year(recover_date_time)) %>%
+  drop_na() -> deploy
+
+```
+
+
+```{r total-number-of-reivers}
+
+receivers %>%
+  select(serial_number, receiver_type, receiver, projectcode, status) %>%
+  drop_na(serial_number) %>%
+  select(serial_number) %>%
+  unique() %>%
+  nrow()
+
+```
+
+```{r total-number-of-receiver-locations}
+
+deployments %>%
+  select(location_name) %>%
+  nrow()
+
+deployments %>%
+  select(station_name) %>%
+  nrow()
+
+# NA's in location and station name?
+deployments %>%
+  select(location_name) %>%
+  drop_na() %>%
+  nrow
+
+deployments %>%
+  select(station_name) %>%
+  drop_na() %>%
+  nrow() # station name has only 2 NA's, we proceed with that
+
+deployments %>%
+  select(station_name) %>%
+  drop_na() %>%
+  unique() %>%
+  nrow()
+
+```
+
+
+## Number of active, non-active, lost receivers
+
+
+```{r number-of-receivers-test-1}
+
+# number of receivers per status, but some serial numbers occur more than once
+receivers %>% 
+  select(serial_number, receiver_type, receiver, projectcode, status) %>%
+  drop_na(serial_number) %>%
+  group_by(status) %>%
+  count() 
+
+# number of receivers per status, but unique serial numbers, some explorations
+
+receivers %>% 
+  select(serial_number, receiver_type, receiver, projectcode, status) %>%
+  drop_na(serial_number) %>%
+  group_by(serial_number) %>%
+  mutate(n = n()) %>%
+  arrange(-n)
+
+receivers %>% 
+  select(serial_number, receiver_type, receiver, projectcode, status) %>%
+  drop_na(serial_number) %>%
+  group_by(serial_number, projectcode) %>%
+  mutate(n = n()) %>%
+  arrange(-n)
+# nu zijn er geen dubbele meer, dus er zijn geen meerdere statussen per serial number in eenzelfde project
+
+receivers %>% 
+  select(serial_number, receiver_type, receiver, projectcode, status) %>%
+  drop_na(serial_number) %>%
+  group_by(projectcode) %>%
+  count()
+
+# same but now based on the deployments
+receivers %>% 
+  select(serial_number, receiver_type, receiver, projectcode, status) %>%
+  drop_na(serial_number) %>%
+  group_by(projectcode) %>%
+  count() %>%
+  kable(, caption="based on receivers")
+
+deploy %>%
+  drop_na(receiver) %>%
+  group_by(projectname) %>%
+  count() %>%
+  kable(, caption="based on deployments")
+
+```
+
+```{r number-of-receivers-test-2}
+
+# Attention, deployments are also defined by the times that a receivers' data are downloaded en should not be used to count stations or receivers within a project
+
+deploy %>%
+  filter(deploy_year > "2010" & recovery_year < "2013") %>%
+  select(receiver) %>%
+  unique() %>%
+  nrow() # 39 receivers die voor 2013 eruit gehaald werden
+
+deploy %>%
+  filter(deploy_year > "2010" & recovery_year < "2014") %>%
+  select(receiver) %>%
+  unique() %>%
+  nrow() # 41 receivers die voor 2014 eruit gehaald werden
+
+deploy %>%
+  filter(deploy_year > "2010" & recovery_year < "2016") %>%
+  select(receiver) %>%
+  unique() %>%
+  nrow() # 131 receivers die voor 2015 eruit gehaald werden
+
+deploy %>%
+  filter(deploy_year > "2010" & recovery_year < "2016") %>%
+  select(receiver) %>%
+  unique() %>%
+  nrow() # 207 receivers die voor 2016 eruit gehaald werden
+
+deploy %>%
+  filter(deploy_year > "2010" & recovery_year < "2017") %>%
+  select(receiver) %>%
+  unique() %>%
+  nrow() # 246 receivers die voor 2017 eruit gehaald werden
+
+deploy %>%
+  filter(deploy_year > "2010" & recovery_year < "2018") %>%
+  select(receiver) %>%
+  unique() %>%
+  nrow() # 259 receivers die voor 2017 eruit gehaald werden
+
+deploy %>%
+  filter(deploy_year > "2014" & recovery_year > "2018") %>%
+  select(receiver) %>%
+  unique() %>%
+  nrow() # 152 receivers die na 2014 gedeployed werden en pas na 2018 eruit gehaald werden = de permanente receivers
+
+deploy %>%
+  filter(deploy_year < "2015" & recovery_year < "2015") %>%
+  select(receiver) %>%
+  unique() %>%
+  nrow() # 131 receivers die voor 2015 erin en eruit gingen
+
+deploy %>%
+  filter(deploy_year == "2011") -> deploy_2011
+deploy %>%
+  filter(deploy_year == "2012" & recovery_year > "2012") -> deploy_2012
+deploy %>%
+  filter(deploy_year == "2013" & recovery_year > "2013") -> deploy_2013
+deploy %>%
+  filter(deploy_year == "2014" & recovery_year > "2014") -> deploy_2014
+deploy %>%
+  filter(deploy_year == "2015" & recovery_year > "2015") -> deploy_2015
+deploy %>%
+  filter(deploy_year == "2016" & recovery_year > "2016") -> deploy_2016
+deploy %>%
+  filter(deploy_year == "2017" & recovery_year > "2017") -> deploy_2017
+deploy %>%
+  filter(deploy_year == "2018" & recovery_year > "2018") -> deploy_2018
+deploy %>%
+  filter(deploy_year == "2019" & recovery_year > "2019") -> deploy_2019
+
+nrow(unique(deploy_2011["receiver"]))
+nrow(unique(deploy_2012["receiver"]))
+nrow(unique(deploy_2013["receiver"]))
+nrow(unique(deploy_2014["receiver"]))
+nrow(unique(deploy_2015["receiver"]))
+nrow(unique(deploy_2016["receiver"]))
+nrow(unique(deploy_2017["receiver"]))
+nrow(unique(deploy_2018["receiver"]))
+nrow(unique(deploy_2019["receiver"]))
+
+deploy %>%
+  group_by(deploy_year, receiver_status) %>%
+  select(receiver) %>%
+  unique() %>%
+  count() %>%
+  arrange(deploy_year)
+
+```
+
+## Number of station names (locations were a receiver is or once was installed)
+
+```{r numbers-of-station-names}
+
+deploy %>%
+  group_by(receiver_status, station_name) %>%
+  drop_na %>%
+  count() %>%
+  nrow()
+
+deploy %>%
+  group_by(receiver_status, station_name) %>%
+  drop_na %>%
+  count()
+
+# Om aantal locaties per type habitat te berekenen
+deploy %>%
+  select(projectname, station_name) %>%
+  drop_na %>%
+  mutate(
+    Habitat = case_when(
+    station_name == "s-12" | station_name == "s-11" | station_name == "s-10a" | station_name == "ak-41" ~ "Tidal river - brakish",
+    station_name == "s-8" | station_name == "s-8a" | station_name == "s-9" | station_name == "s-9a" | station_name == "me-7-2B" | station_name == "s-7" | station_name == "s-6" ~ "Tidal river - brakish/fresh",
+    projectname == "BPNS" ~ "Marine",
+    projectname == "Leopoldkanaal" ~ "Polder area - brakish/fresh",
+    projectname == "Albertkanaal"  ~ "Shipping canal - fresh",
+    projectname == "Maas"  ~ "River - fresh",
+    projectname == "Demer"  ~ "River - fresh",
+    projectname == "Dijle"  ~ "River - fresh",
+    projectname == "Bovenschelde"  ~ "River - fresh",
+    TRUE ~ "Tidal river - fresh")
+    ) %>%
+  arrange(station_name) -> deploy_habitat
+
+deploy_habitat %>% group_by(Habitat) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(total = sum(n),
+         Percentage = round(100*(n/sum(n)))) %>%
+  select(Habitat, Percentage) %>%
+  kable(, caption = "Percentage of locations per habitat type")
+
+```
+
+# Time coverage
+
+## Tags
+
+```{r explore-transmitters-and-animals-data}
+
+transmitters %>%
+  select(animal_id_pk, tag_full_id, model, estimated_lifetime) %>%
+  NROW()
+
+transmitters %>%
+  select(animal_id_pk, tag_full_id, model, estimated_lifetime) %>%
+  drop_na(animal_id_pk) %>%
+  NROW() # geen NA's in deze kolommen
+
+animals %>%
+  select(id_pk, tag_full_id, projectcode, scientific_name, common_name) %>%
+  drop_na() %>%
+  NROW() # geen NA's in deze kolommen
+
+```
+
+```{r transmitters-and-animals-deployment-durations}
+
+transmitters %>%
+  select(animal_id_pk, tag_full_id, estimated_lifetime, model) -> transmitters_select
+
+animals %>%
+  select(id_pk, tag_full_id, projectcode, scientific_name, common_name, utc_release_date_time) %>%
+  inner_join(transmitters_select) -> animals_transmitters
+
+# list of deploy time of each transmitter per tagged animal, and first deploy_date and last end_date (deploy period for this dataset)
+animals_transmitters %>%
+  mutate(Battery_utc_end = utc_release_date_time + days(estimated_lifetime),
+         first = min(utc_release_date_time),
+         last = max(Battery_utc_end)) %>%
+  arrange(Battery_utc_end) %>%
+  kable(, caption = "list of animals, the respective start and end date of their transmitters and the first and last date of transmitter deployments in this dataset")
+
+```
+
+
+## Animals
+
+# Tagging and release
+
+```{r animals-release-per-year}
+
+animals %>%
+  select(id_pk, tag_full_id, projectcode, owner_organization, scientific_name, common_name,catched_date_time, capture_location, capture_longitude, capture_latitude, capture_method, wild_or_hatchery, utc_release_date_time, release_location, release_longitude, release_latitude) %>%
+  drop_na(utc_release_date_time) %>%
+  distinct() %>%
+  mutate(release_year = year(utc_release_date_time))-> individuals  # 660 individuals
+
+write.csv(x = individuals, "individuals.csv")
+
+individuals %>%
+  group_by(scientific_name, release_year) %>%
+  count() %>%
+  spread(release_year, n) %>%
+  write.csv("individuals.csv")
+
+individuals %>%
+  group_by(scientific_name, release_year) %>%
+  count() %>%
+  mutate(Year = factor(release_year, levels = c("2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018")),
+         Species = factor(scientific_name, levels = c("Squalius cephalus", "Silurus glanis", "Salmo salar", "Rutilus rutilus", "Platichthys flesus", "Petromyzon marinus", "Lampetra fluviatilis", "Homarus gammarus", "Gadus morhua", "Cyprinus carpio", "Anguilla anguilla"))) -> ind_long
+
+```
+
+```{r heatmap-releases}
+
+ggplot(ind_long, aes(Year, Species)) +
+    geom_tile(aes(fill = n)) + 
+    geom_text(aes(label = n)) +
+    ggplot2::scale_fill_gradient(low = "white", high = "red") + 
+    theme(axis.text.y = element_text(face = "italic", colour = "black"), axis.text.x = element_text(colour = "black"), legend.text = element_text(size=12, colour = "black"),legend.key.size = unit(0.20, "in")) 
+
+ggsave(filename = "release_species_year.png")
+
+```
+
+
+# Detection
