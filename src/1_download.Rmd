@@ -55,10 +55,26 @@ We will extract the animal and transmitter data based on the animal ID's of inte
 - Homarus
 - Phd Reubens (only for _Gadus morhua_)
 
-# Define selection criteria
 
 ```{r}
-project_name <- "2011_rivierprik"
+project_variables <-
+  tibble(
+    project_code = c("2011_rivierprik", "2012_leopoldkanaal",
+                     "2013_albertkanaal", "2014_demer",
+                     "2015_dijle", "2015_phd_verhelst",
+                     "homarus", "phd_reubens"),
+    scientific_name = c("NULL", "NULL",
+                        list(c("a", "b")), "NULL",
+                        "NULL", "Anguilla anguilla",
+                        "NULL","Gadus morhua" ))
+project_variables
+```
+
+# Define selection criteria
+
+
+```{r}
+selection_criteria <- project_variables %>% filter(project_code == "2011_rivierprik")
 ```
 
 
@@ -67,47 +83,53 @@ project_name <- "2011_rivierprik"
 Animal metadata:
 
 ```{r}
-animals <- get_animals(connection = my_con, animal_project_code = project_name)
+animals <- get_animals(
+  connection = my_con,
+  animal_project_code = selection_criteria $ project_code,
+  scientific_name = selection_criteria $ scientific_name)
 ```
 
-Retrieve transmitter (tag) id's:
+Retrieve tag id's:
 
 ```{r}
-tags <- animals %>% select(tag_id) %>% pull()
+tag_ids <- animals %>% select(tag_id) %>% pull()
 ```
 
-Retrieve transmitter information:
+Retrieve tag information:
 
 ```{r}
-transmitters <- get_tags(connection = my_con, tag_id = tags)
+tags <- get_tags(connection = my_con, tag_id = tag_ids)
 ```
 
 Retrieve detection data:
 
 ```{r}
-detections <- get_detections(connection = my_con, animal_project_code = project_name, limit = FALSE)
+detections <- get_detections(
+  connection = my_con, 
+  animal_project_code = selection_criteria $ project_code,
+  limit = FALSE)
 ```
 
 Extract receiver id's from `detections`
 
 ```{r}
-ids <- detections %>% select(receiver_id) %>% pull() %>% unique()
+receiver_ids <- detections %>% select(receiver_id) %>% pull() %>% unique()
 ```
 
 Extract receiver information:
 
 ```{r}
-receivers <- get_receivers(my_con, receiver_id = ids)
+receivers <- get_receivers(my_con, receiver_id = receiver_ids)
 ```
 
 Extract deployment information:
 
 ```{r}
-all_deployments <- get_deployments(my_con, open_only = FALSE)
+deployments <- get_deployments(my_con, open_only = FALSE)
 ```
 
 ```{r}
-deployments <- all_deployments %>% filter(receiver_id %in% ids)
+deployments <- deployments %>% filter(receiver_id %in% receiver_ids)
 ```
 
 # Save to csv
@@ -115,11 +137,11 @@ deployments <- all_deployments %>% filter(receiver_id %in% ids)
 Save to CSV:
 
 ```{r}
-write_csv(animals, here::here("data", project_name, "animals.csv"), na = "")
-write_csv(transmitters, here::here("data", project_name, "transmitters.csv"), na = "")
-write_csv(detections, here::here("data", project_name, "detections.csv"), na = "")
-write_csv(receivers, here::here("data", project_name, "receivers.csv"), na = "")
-write_csv(deployments, here::here("data", project_name, "deployments.csv"), na = "")
+write_csv(animals, here::here("data", selection_criteria $ project_code, "animals.csv"), na = "")
+write_csv(tags, here::here("data", selection_criteria $ project_code, "tags.csv"), na = "")
+write_csv(detections, here::here("data", selection_criteria $ project_code, "detections.csv"), na = "")
+write_csv(receivers, here::here("data", selection_criteria $ project_code, "receivers.csv"), na = "")
+write_csv(deployments, here::here("data", selection_criteria $ project_code, "deployments.csv"), na = "")
 ```
 
 
