@@ -61,7 +61,7 @@ project_variables <- tribble(
   ~project_code,  ~scientific_name,
   "2011_rivierprik", NULL,
   "2012_leopoldkanaal", NULL,
-  "2013_albertkanaal", c("Anguilla anguilla","Salmo sallar"),
+  "2013_albertkanaal", c("Anguilla anguilla","Salmo salar"),
   "2014_demer", NULL,
   "2015_dijle", NULL,
   "2015_phd_verhelst", "Anguilla anguilla",
@@ -73,7 +73,7 @@ project_variables <- tribble(
 # Define selection criteria
 
 ```{r}
-selection_criteria <- project_variables %>% filter(project_code == "2011_rivierprik")
+selection_criteria <- project_variables %>% filter(project_code == "phd_reubens")
 ```
 
 # Get data (test: here for animal project 2011_rivierprik)
@@ -83,8 +83,8 @@ Animal metadata:
 ```{r}
 animals <- get_animals(
   connection = my_con,
-  animal_project_code = selection_criteria $ project_code,
-  scientific_name = unlist(selection_criteria $ scientific_name))
+  animal_project_code = selection_criteria$project_code,
+  scientific_name = unlist(selection_criteria$scientific_name))
 ```
 
 Retrieve tag id's:
@@ -104,8 +104,8 @@ Retrieve detection data:
 ```{r}
 detections <- get_detections(
   connection = my_con, 
-  animal_project_code = selection_criteria $ project_code,
-  scientific_name = unlist(selection_criteria $ scientific_name)
+  animal_project_code = selection_criteria$project_code,
+  scientific_name = unlist(selection_criteria$scientific_name),
   limit = FALSE)
 ```
 
@@ -132,8 +132,6 @@ deployments <- deployments %>% filter(receiver_id %in% receiver_ids)
 ```
 
 # Save to csv
-
-Save to CSV:
 
 ```{r}
 write_csv(animals, here::here("data", selection_criteria $ project_code, "animals.csv"), na = "")
