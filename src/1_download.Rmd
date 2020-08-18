@@ -55,8 +55,73 @@ We will extract the animal and transmitter data based on the animal ID's of inte
 - Homarus
 - Phd Reubens (only for _Gadus morhua_)
 
+# Define selection criteria
+
 ```{r}
-get_animals(connection = my_con, 
-            animal_project = "2011_rivierprik")
+project_name <- "2011_rivierprik"
 ```
+
+
+# Get data
+
+Animal metadata:
+
+```{r}
+animals <- get_animals(connection = my_con, animal_project_code = project_name)
+```
+
+Retrieve transmitter (tag) id's:
+
+```{r}
+tags <- animals %>% select(tag_id) %>% pull()
+```
+
+Retrieve transmitter information:
+
+```{r}
+transmitters <- get_tags(connection = my_con, tag_id = tags)
+```
+
+Retrieve detection data:
+
+```{r}
+detections <- get_detections(connection = my_con, animal_project_code = project_name, limit = FALSE)
+```
+
+Extract receiver information from `detections`
+
+```{r}
+ids <- detections %>% select(receiver_id) %>% pull() %>% unique()
+```
+
+Extract receiver information:
+
+```{r}
+receivers <- get_receivers(my_con, receiver_id = ids)
+```
+
+Extract deployment information:
+
+```{r}
+all_deployments <- get_deployments(my_con, open_only = FALSE)
+```
+
+```{r}
+deployments <- all_deployments %>% filter(receiver_id %in% ids)
+```
+
+# Save to csv
+
+Save to CSV:
+
+```{r}
+write_csv(animals, here::here("data", project_name, "animals.csv"), na = "")
+write_csv(transmitters, here::here("data", project_name, "transmitters.csv"), na = "")
+write_csv(detections, here::here("data", project_name, "detections.csv"), na = "")
+write_csv(receivers, here::here("data", project_name, "receivers.csv"), na = "")
+write_csv(deployments, here::here("data", project_name, "deployments.csv"), na = "")
+```
+
+
+
 
