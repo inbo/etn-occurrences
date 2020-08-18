@@ -57,26 +57,24 @@ We will extract the animal and transmitter data based on the animal ID's of inte
 
 
 ```{r}
-project_variables <-
-  tibble(
-    project_code = c("2011_rivierprik", "2012_leopoldkanaal",
-                     "2013_albertkanaal", "2014_demer",
-                     "2015_dijle", "2015_phd_verhelst",
-                     "homarus", "phd_reubens"),
-    scientific_name = c("NULL", "NULL",
-                        list(c("a", "b")), "NULL",
-                        "NULL", "Anguilla anguilla",
-                        "NULL","Gadus morhua" ))
-project_variables
+project_variables <- tribble(
+  ~project_code,  ~scientific_name,
+  "2011_rivierprik", NULL,
+  "2012_leopoldkanaal", NULL,
+  "2013_albertkanaal", c("Anguilla anguilla","Salmo sallar"),
+  "2014_demer", NULL,
+  "2015_dijle", NULL,
+  "2015_phd_verhelst", "Anguilla anguilla",
+  "homarus", NULL,
+  "phd_reubens", "Gadus morhua"
+)
 ```
 
 # Define selection criteria
 
-
 ```{r}
 selection_criteria <- project_variables %>% filter(project_code == "2011_rivierprik")
 ```
-
 
 # Get data (test: here for animal project 2011_rivierprik)
 
@@ -86,7 +84,7 @@ Animal metadata:
 animals <- get_animals(
   connection = my_con,
   animal_project_code = selection_criteria $ project_code,
-  scientific_name = selection_criteria $ scientific_name)
+  scientific_name = unlist(selection_criteria $ scientific_name))
 ```
 
 Retrieve tag id's:
@@ -107,6 +105,7 @@ Retrieve detection data:
 detections <- get_detections(
   connection = my_con, 
   animal_project_code = selection_criteria $ project_code,
+  scientific_name = unlist(selection_criteria $ scientific_name)
   limit = FALSE)
 ```
 
