@@ -1,5 +1,5 @@
 ---
-title: "Export data"
+title: "Download data"
 subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
 author:
 - Lien Reysehove
@@ -18,45 +18,22 @@ output:
 #    toc_depth: 3
 ---
 
-# Setup 
+This script has been designed to extract information from the LifeWatch European Tracking Network (ETN) database. The following code is generated to download metadata about **animals**, **tags**, **receivers** and **deployments**, and data about **detections** from one of the following animal projects x scientific name combinations. Please specify for which animal project you want to extract data under section `Define selection criteria` 
 
 ```{r}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+tribble(
+  ~project_code,  ~scientific_name,
+  "2011_rivierprik", "all scientific names",
+  "2012_leopoldkanaal", "all scientific names",
+  "2013_albertkanaal", "Anguilla anguilla, Salmo salar",
+  "2014_demer", "all scientific names",
+  "2015_dijle", "all scientific names",
+  "2015_phd_verhelst", "Anguilla anguilla",
+  "homarus", "all scientific names",
+  "phd_reubens", "Gadus morhua"
+)
 ```
-
-# Install packages
-
-```{r}
-library(tidyverse)      # To do data science
-library(magrittr)       # To use %<>% pipes
-library(here)           # To find files
-library(etn)            # To interact with ETN
-library(glue)
-```
-
-# Connect to database
-
-Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
-
-```{r}
-my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
-```
-
-# Define selection criteria
-
-We will extract the animal and transmitter data based on the animal ID's of interest. These are the animal ID's integrated in the following animal projects:
-
-- 2011 Rivierprik
-- 2012 Leopoldkanaal
-- 2013 Albertkanaal (excluding _Sync tag_)
-- 2014 Demer
-- 2015 Dijle
-- 2015 Phd Verhelst (only for _Anguilla anguilla_)
-- Homarus
-- Phd Reubens (only for _Gadus morhua_)
-
-
-```{r}
+```{r, echo = FALSE}
 project_variables <- tribble(
   ~project_code,  ~scientific_name,
   "2011_rivierprik", NULL,
@@ -70,10 +47,36 @@ project_variables <- tribble(
 )
 ```
 
-# Define selection criteria
+
+# Setup 
 
 ```{r}
-selection_criteria <- project_variables %>% filter(project_code == "phd_reubens")
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Install packages
+
+```{r}
+library(tidyverse)      # To do data science
+library(magrittr)       # To use %<>% pipes
+library(here)           # To find files
+library(etn)            # To interact with ETN
+```
+
+# Connect to database
+
+Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
+
+```{r}
+my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
+```
+
+# Define selection criteria
+
+Define the specific animal project under `project_code == xxx`. 
+
+```{r}
+selection_criteria <- project_variables %>% filter(project_code == "phd_reubens") 
 ```
 
 # Get data (test: here for animal project 2011_rivierprik)
