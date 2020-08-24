@@ -15,41 +15,11 @@ output:
 
 This script downloads data from the [European Tracking Network (ETN)](http://www.lifewatch.be/etn/) database using the [etn R package](https://inbo.github.io/etn/). It starts by defining the animal project (and optional scientific name filter) of interest and then exporting the `animals`, `tags`, `receivers`, `deployments` and `detections` for that project as csv files. Due to the nature of the ETN database, this script will only function on the [LifeWatch RStudio server](http://rstudio.lifewatch.be/). 
 
-```{r}
-tribble(
-  ~project_code,  ~scientific_name,
-  "2011_rivierprik", "all scientific names",
-  "2012_leopoldkanaal", "all scientific names",
-  "2013_albertkanaal", "Anguilla anguilla, Salmo salar",
-  "2014_demer", "all scientific names",
-  "2015_dijle", "all scientific names",
-  "2015_phd_verhelst", "Anguilla anguilla",
-  "homarus", "all scientific names",
-  "phd_reubens", "Gadus morhua"
-)
-```
-```{r, echo = FALSE}
-project_variables <- tribble(
-  ~project_code,  ~scientific_name,
-  "2011_rivierprik", NULL,
-  "2012_leopoldkanaal", NULL,
-  "2013_albertkanaal", c("Anguilla anguilla","Salmo salar"),
-  "2014_demer", NULL,
-  "2015_dijle", NULL,
-  "2015_phd_verhelst", "Anguilla anguilla",
-  "homarus", NULL,
-  "phd_reubens", "Gadus morhua"
-)
-```
-
-
-# Setup 
-
-```{r}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-# Install packages
+Load libraries:
 
 ```{r}
 library(tidyverse)      # To do data science
@@ -58,31 +28,43 @@ library(here)           # To find files
 library(etn)            # To interact with ETN
 ```
 
-# Connect to database
+## Connect to ETN database
 
-Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
-
-```{r}
-my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
-```
-
-# Define selection criteria
-
-Define the specific animal project under `project_code == xxx`. 
+Get username/password from RStudio Server environment and connect to database:
 
 ```{r}
-selection_criteria <- project_variables %>% filter(project_code == "phd_reubens") 
+con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-# Get data (test: here for animal project 2011_rivierprik)
+## Define datasets to be exported
+
+The animal projects (with additional scientific name filter) that will be published as open datasets:
+
+```{r}
+datasets <- tribble(
+  ~project_code,  ~scientific_name,
+  "2011_rivierprik", NULL,
+  "2012_leopoldkanaal", NULL,
+  "2013_albertkanaal", "Anguilla anguilla, Salmo salar", # Excludes 'Sync tag'
+  "2014_demer", NULL,
+  "2015_dijle", NULL,
+  "2015_phd_verhelst", "Anguilla anguilla",
+  "homarus", NULL,
+  "phd_reubens", "Gadus morhua" # Excludes 'Sentinel'
+)
+```
+
+## Select single dataset
 
 Animal metadata:
+Select a dataset to export. Change `project_code` to download another dataset:
 
 ```{r}
 animals <- get_animals(
   connection = my_con,
   animal_project_code = selection_criteria$project_code,
   scientific_name = unlist(selection_criteria$scientific_name))
+dataset <- datasets %>% filter(project_code == "2011_rivierprik") 
 ```
 
 Retrieve tag id's:
