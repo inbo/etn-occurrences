@@ -131,9 +131,9 @@ deployments <- deployments %>% filter(receiver_id %in% receiver_ids)
 ## Save to csv
 
 ```{r}
-write_csv(animals, here::here("data", dataset$project_code, "animals.csv"), na = "")
-write_csv(tags, here::here("data", dataset$project_code, "tags.csv"), na = "")
-write_csv(detections, here::here("data", dataset$project_code, "detections.csv"), na = "")
-write_csv(receivers, here::here("data", dataset$project_code, "receivers.csv"), na = "")
-write_csv(deployments, here::here("data", dataset$project_code, "deployments.csv"), na = "")
+write_csv(animals, here::here("data", "raw", dataset$project_code, "animals.csv"), na = "")
+write_csv(tags, here::here("data", "raw", dataset$project_code, "tags.csv"), na = "")
+write_csv(detections, here::here("data", "raw", dataset$project_code, "detections.csv"), na = "")
+write_csv(receivers, here::here("data", "raw", dataset$project_code, "receivers.csv"), na = "")
+write_csv(deployments, here::here("data", "raw", dataset$project_code, "deployments.csv"), na = "")
 ```

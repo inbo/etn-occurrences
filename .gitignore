@@ -37,5 +37,7 @@ vignettes/*.pdf
 .DS_Store
 
 # Data
-data/*/*
-!data/2011_rivierprik/*
+data/interim/*
+data/produced/*
+data/raw/*/*
+!data/raw/2011_rivierprik/*
