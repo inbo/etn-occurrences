@@ -56,71 +56,84 @@ datasets <- tribble(
 
 ## Select single dataset
 
-Animal metadata:
 Select a dataset to export. Change `project_code` to download another dataset:
 
 ```{r}
-animals <- get_animals(
-  connection = my_con,
-  animal_project_code = selection_criteria$project_code,
-  scientific_name = unlist(selection_criteria$scientific_name))
 dataset <- datasets %>% filter(project_code == "2011_rivierprik") 
 ```
 
-Retrieve tag id's:
+## Get data
+
+Get animals:
 
 ```{r}
-tag_ids <- animals %>% select(tag_id) %>% pull()
+animals <- get_animals(
+  connection = con,
+  animal_project_code = dataset$project_code,
+  scientific_name = unlist(dataset$scientific_name))
 ```
 
-Retrieve tag information:
+Extract tags associated with animals:
 
 ```{r}
-tags <- get_tags(connection = my_con, tag_id = tag_ids)
+tag_ids <-
+  animals %>%
+  select(tag_id) %>%
+  pull() %>%
+  unique() # Should normally be the case as tags are not reused for animals
 ```
 
-Retrieve detection data:
+Get tags:
+
+```{r}
+tags <- get_tags(connection = con, tag_id = tag_ids)
+```
+
+Get detections for selected project / scientific name:
 
 ```{r}
 detections <- get_detections(
-  connection = my_con, 
-  animal_project_code = selection_criteria$project_code,
-  scientific_name = unlist(selection_criteria$scientific_name),
-  limit = FALSE)
+  connection = con, 
+  animal_project_code = dataset$project_code,
+  scientific_name = unlist(dataset$scientific_name),
+  limit = FALSE
+)
 ```
 
-Extract receiver id's from `detections`
+Extract receivers found in detections:
 
 ```{r}
-receiver_ids <- detections %>% select(receiver_id) %>% pull() %>% unique()
+receiver_ids <-
+  detections %>%
+  select(receiver_id) %>%
+  pull() %>%
+  unique()
 ```
 
-Extract receiver information:
+Get receivers:
 
 ```{r}
-receivers <- get_receivers(my_con, receiver_id = receiver_ids)
+receivers <- get_receivers(con, receiver_id = receiver_ids)
 ```
 
-Extract deployment information:
+Get deployments:
 
 ```{r}
-deployments <- get_deployments(my_con, open_only = FALSE)
+deployments <- get_deployments(con, open_only = FALSE)
 ```
+
+Select deployments for receivers with detections:
 
 ```{r}
 deployments <- deployments %>% filter(receiver_id %in% receiver_ids)
 ```
 
-# Save to csv
+## Save to csv
 
 ```{r}
-write_csv(animals, here::here("data", selection_criteria $ project_code, "animals.csv"), na = "")
-write_csv(tags, here::here("data", selection_criteria $ project_code, "tags.csv"), na = "")
-write_csv(detections, here::here("data", selection_criteria $ project_code, "detections.csv"), na = "")
-write_csv(receivers, here::here("data", selection_criteria $ project_code, "receivers.csv"), na = "")
-write_csv(deployments, here::here("data", selection_criteria $ project_code, "deployments.csv"), na = "")
+write_csv(animals, here::here("data", dataset$project_code, "animals.csv"), na = "")
+write_csv(tags, here::here("data", dataset$project_code, "tags.csv"), na = "")
+write_csv(detections, here::here("data", dataset$project_code, "detections.csv"), na = "")
+write_csv(receivers, here::here("data", dataset$project_code, "receivers.csv"), na = "")
+write_csv(deployments, here::here("data", dataset$project_code, "deployments.csv"), na = "")
 ```
-
-
-
-
