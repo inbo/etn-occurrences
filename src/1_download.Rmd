@@ -1,60 +1,25 @@
 ---
-title: "Download data"
-subtitle: "ETN - LifeWatch.be acoustic telemetry data of fish"
+title: "Download ETN data"
 author:
-- Lien Reysehove
+- Lien Reyserhove
+- Peter Desmet
 date: "`r Sys.Date()`"
 output:
   html_document:
     df_print: paged
-    number_sections: yes
-    toc: yes
+    number_sections: true
+    toc: true
     toc_depth: 3
-    toc_float: yes
-#  pdf_document:
-#    df_print: kable
-#    number_sections: yes
-#    toc: yes
-#    toc_depth: 3
+    toc_float: true
 ---
 
-This script has been designed to extract information from the LifeWatch European Tracking Network (ETN) database. The following code is generated to download metadata about **animals**, **tags**, **receivers** and **deployments**, and data about **detections** from one of the following animal projects x scientific name combinations. Please specify for which animal project you want to extract data under section `Define selection criteria` 
+This script downloads data from the [European Tracking Network (ETN)](http://www.lifewatch.be/etn/) database using the [etn R package](https://inbo.github.io/etn/). It starts by defining the animal project (and optional scientific name filter) of interest and then exporting the `animals`, `tags`, `receivers`, `deployments` and `detections` for that project as csv files. Due to the nature of the ETN database, this script will only function on the [LifeWatch RStudio server](http://rstudio.lifewatch.be/). 
 
-```{r}
-tribble(
-  ~project_code,  ~scientific_name,
-  "2011_rivierprik", "all scientific names",
-  "2012_leopoldkanaal", "all scientific names",
-  "2013_albertkanaal", "Anguilla anguilla, Salmo salar",
-  "2014_demer", "all scientific names",
-  "2015_dijle", "all scientific names",
-  "2015_phd_verhelst", "Anguilla anguilla",
-  "homarus", "all scientific names",
-  "phd_reubens", "Gadus morhua"
-)
-```
-```{r, echo = FALSE}
-project_variables <- tribble(
-  ~project_code,  ~scientific_name,
-  "2011_rivierprik", NULL,
-  "2012_leopoldkanaal", NULL,
-  "2013_albertkanaal", c("Anguilla anguilla","Salmo salar"),
-  "2014_demer", NULL,
-  "2015_dijle", NULL,
-  "2015_phd_verhelst", "Anguilla anguilla",
-  "homarus", NULL,
-  "phd_reubens", "Gadus morhua"
-)
-```
-
-
-# Setup 
-
-```{r}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-# Install packages
+Load libraries:
 
 ```{r}
 library(tidyverse)      # To do data science
@@ -63,87 +28,112 @@ library(here)           # To find files
 library(etn)            # To interact with ETN
 ```
 
-# Connect to database
+## Connect to ETN database
 
-Get username/password from environment (therefore requires this script to be run on <http://rstudio.lifewatch.be>) and connect to database:
-
-```{r}
-my_con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
-```
-
-# Define selection criteria
-
-Define the specific animal project under `project_code == xxx`. 
+Get username/password from RStudio Server environment and connect to database:
 
 ```{r}
-selection_criteria <- project_variables %>% filter(project_code == "phd_reubens") 
+con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
 ```
 
-# Get data (test: here for animal project 2011_rivierprik)
+## Define datasets to be exported
 
-Animal metadata:
+The animal projects (with additional scientific name filter) that will be published as open datasets:
+
+```{r}
+datasets <- tribble(
+  ~project_code,  ~scientific_name,
+  "2011_rivierprik", NULL,
+  "2012_leopoldkanaal", NULL,
+  "2013_albertkanaal", "Anguilla anguilla, Salmo salar", # Excludes 'Sync tag'
+  "2014_demer", NULL,
+  "2015_dijle", NULL,
+  "2015_phd_verhelst", "Anguilla anguilla",
+  "homarus", NULL,
+  "phd_reubens", "Gadus morhua" # Excludes 'Sentinel'
+)
+```
+
+## Select single dataset
+
+Select a dataset to export. Change `project_code` to download another dataset:
+
+```{r}
+dataset <- datasets %>% filter(project_code == "2011_rivierprik") 
+```
+
+## Get data
+
+Get animals:
 
 ```{r}
 animals <- get_animals(
-  connection = my_con,
-  animal_project_code = selection_criteria$project_code,
-  scientific_name = unlist(selection_criteria$scientific_name))
+  connection = con,
+  animal_project_code = dataset$project_code,
+  scientific_name = unlist(dataset$scientific_name))
 ```
 
-Retrieve tag id's:
+Extract tags associated with animals:
 
 ```{r}
-tag_ids <- animals %>% select(tag_id) %>% pull()
+tag_ids <-
+  animals %>%
+  select(tag_id) %>%
+  pull() %>%
+  unique() # Should normally be the case as tags are not reused for animals
 ```
 
-Retrieve tag information:
+Get tags:
 
 ```{r}
-tags <- get_tags(connection = my_con, tag_id = tag_ids)
+tags <- get_tags(connection = con, tag_id = tag_ids)
 ```
 
-Retrieve detection data:
+Get detections for selected project / scientific name:
 
 ```{r}
 detections <- get_detections(
-  connection = my_con, 
-  animal_project_code = selection_criteria$project_code,
-  scientific_name = unlist(selection_criteria$scientific_name),
-  limit = FALSE)
+  connection = con, 
+  animal_project_code = dataset$project_code,
+  scientific_name = unlist(dataset$scientific_name),
+  limit = FALSE
+)
 ```
 
-Extract receiver id's from `detections`
+Extract receivers found in detections:
 
 ```{r}
-receiver_ids <- detections %>% select(receiver_id) %>% pull() %>% unique()
+receiver_ids <-
+  detections %>%
+  select(receiver_id) %>%
+  pull() %>%
+  unique()
 ```
 
-Extract receiver information:
+Get receivers:
 
 ```{r}
-receivers <- get_receivers(my_con, receiver_id = receiver_ids)
+receivers <- get_receivers(con, receiver_id = receiver_ids)
 ```
 
-Extract deployment information:
+Get deployments:
 
 ```{r}
-deployments <- get_deployments(my_con, open_only = FALSE)
+deployments <- get_deployments(con, open_only = FALSE)
 ```
+
+Select deployments for receivers with detections:
 
 ```{r}
 deployments <- deployments %>% filter(receiver_id %in% receiver_ids)
 ```
 
-# Save to csv
+## Save to csv
 
 ```{r}
-write_csv(animals, here::here("data", selection_criteria $ project_code, "animals.csv"), na = "")
-write_csv(tags, here::here("data", selection_criteria $ project_code, "tags.csv"), na = "")
-write_csv(detections, here::here("data", selection_criteria $ project_code, "detections.csv"), na = "")
-write_csv(receivers, here::here("data", selection_criteria $ project_code, "receivers.csv"), na = "")
-write_csv(deployments, here::here("data", selection_criteria $ project_code, "deployments.csv"), na = "")
+write_csv(animals, here::here("data", dataset$project_code, "animals.csv"), na = "")
+write_csv(tags, here::here("data", dataset$project_code, "tags.csv"), na = "")
+write_csv(detections, here::here("data", dataset$project_code, "detections.csv"), na = "")
+write_csv(receivers, here::here("data", dataset$project_code, "receivers.csv"), na = "")
+write_csv(deployments, here::here("data", dataset$project_code, "deployments.csv"), na = "")
 ```
-
-
-
-
