@@ -33,7 +33,8 @@ library(etn)            # To interact with ETN
 Get username/password from RStudio Server environment and connect to database:
 
 ```{r}
-con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
+# con <- connect_to_etn(Sys.getenv("username"), Sys.getenv("password"))
+con <- connect_to_etn(Sys.getenv("userid"), Sys.getenv("pwd"))
 ```
 
 ## Define datasets to be exported
@@ -114,16 +115,11 @@ Get deployment metadata for those network projects:
 
 ```{r}
 deployments <- get_deployments(con, network_project_code = network_project_codes, open_only = FALSE)
-```
 
-Select receivers listed in deployments:
-
-```{r}
-receiver_ids <-
+# Remove linebreaks in deployment comments (which can cause incorrect csv)
+deployments <-
   deployments %>%
-  select(receiver_id) %>%
-  unique() %>%
-  pull()
+  mutate(comments = str_replace_all(comments, "[\r\n]+", " "))
 ```
 
 Get receiver metadata:
