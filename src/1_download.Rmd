@@ -116,7 +116,7 @@ Get deployment metadata for those network projects:
 ```{r}
 deployments <- get_deployments(con, network_project_code = network_project_codes, open_only = FALSE)
 
-# Remove linebreaks in deployment comments (which can cause incorrect csv)
+# Remove linebreaks in deployment comments to get single lines in csv
 deployments <-
   deployments %>%
   mutate(comments = str_replace_all(comments, "[\r\n]+", " "))
