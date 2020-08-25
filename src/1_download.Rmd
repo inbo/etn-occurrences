@@ -111,6 +111,12 @@ network_project_codes <-
   pull()
 ```
 
+Included network projects. It is up to the project PI to leave this as is or expand it with other (e.g. neighbouring) network projects that did not result in detections:
+
+```{r}
+network_project_codes
+```
+
 Get deployment metadata for those network projects:
 
 ```{r}
