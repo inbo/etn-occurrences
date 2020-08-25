@@ -100,32 +100,36 @@ detections <- get_detections(
 )
 ```
 
-Extract receivers found in detections:
+Select network projects listed in detections:
+
+```{r}
+network_project_codes <-
+  detections %>%
+  select(network_project_code) %>%
+  unique() %>%
+  pull()
+```
+
+Get deployment metadata for those network projects:
+
+```{r}
+deployments <- get_deployments(con, network_project_code = network_project_codes, open_only = FALSE)
+```
+
+Select receivers listed in deployments:
 
 ```{r}
 receiver_ids <-
-  detections %>%
+  deployments %>%
   select(receiver_id) %>%
-  pull() %>%
-  unique()
+  unique() %>%
+  pull()
 ```
 
-Get receivers:
+Get receiver metadata:
 
 ```{r}
 receivers <- get_receivers(con, receiver_id = receiver_ids)
-```
-
-Get deployments:
-
-```{r}
-deployments <- get_deployments(con, open_only = FALSE)
-```
-
-Select deployments for receivers with detections:
-
-```{r}
-deployments <- deployments %>% filter(receiver_id %in% receiver_ids)
 ```
 
 ## Save to csv
@@ -134,6 +138,6 @@ deployments <- deployments %>% filter(receiver_id %in% receiver_ids)
 write_csv(animals, here::here("data", "raw", dataset$project_code, "animals.csv"), na = "")
 write_csv(tags, here::here("data", "raw", dataset$project_code, "tags.csv"), na = "")
 write_csv(detections, here::here("data", "raw", dataset$project_code, "detections.csv"), na = "")
-write_csv(receivers, here::here("data", "raw", dataset$project_code, "receivers.csv"), na = "")
 write_csv(deployments, here::here("data", "raw", dataset$project_code, "deployments.csv"), na = "")
+write_csv(receivers, here::here("data", "raw", dataset$project_code, "receivers.csv"), na = "")
 ```
