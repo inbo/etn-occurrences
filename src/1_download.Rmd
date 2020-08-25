@@ -64,7 +64,7 @@ dataset <- datasets %>% filter(project_code == "2011_rivierprik")
 
 ## Get data
 
-Get animals:
+Get animal metadata:
 
 ```{r}
 animals <- get_animals(
@@ -73,7 +73,7 @@ animals <- get_animals(
   scientific_name = unlist(dataset$scientific_name))
 ```
 
-Extract tags associated with animals:
+Select tags associated with animals:
 
 ```{r}
 tag_ids <-
@@ -83,7 +83,7 @@ tag_ids <-
   unique() # Should normally be the case as tags are not reused for animals
 ```
 
-Get tags:
+Get tag metadata:
 
 ```{r}
 tags <- get_tags(connection = con, tag_id = tag_ids)
