@@ -128,6 +128,12 @@ deployments <-
   mutate(comments = str_replace_all(comments, "[\r\n]+", " "))
 ```
 
+Select receivers associated with those deployments:
+
+```{r}
+receiver_ids <- deployments %>% distinct(receiver_id) %>% pull()
+```
+
 Get receiver metadata:
 
 ```{r}
