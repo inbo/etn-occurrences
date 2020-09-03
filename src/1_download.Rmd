@@ -102,6 +102,21 @@ detections <- get_detections(
 )
 ```
 
+Show orphaned deployments in the detections (i.e. not associated with any `network_project_code`). These should be fixed (see <https://github.com/inbo/etn-occurrences/issues/71>):
+
+```{r}
+orphaned_deployments <-
+  detections %>%
+  filter(network_project_code == "none" | is.na(network_project_code)) %>%
+  group_by(receiver_id, deployment_fk, network_project_code) %>%
+  summarize(
+    `from` = min(date_time),
+    `to` = max(date_time),
+    `detections` = n()
+  )
+orphaned_deployments
+```
+
 Select network projects listed in detections:
 
 ```{r}
@@ -109,10 +124,11 @@ network_project_codes <-
   detections %>%
   select(network_project_code) %>%
   unique() %>%
+  filter(network_project_code != "none") %>%
   pull()
 ```
 
-Included network projects. It is up to the project PI to leave this as is or expand it with other (e.g. neighbouring) network projects that did not result in detections:
+Show included network projects. It is up to the project PI to leave this as is or expand it with other (e.g. neighbouring) network projects that did not result in detections:
 
 ```{r}
 network_project_codes
@@ -122,8 +138,11 @@ Get deployment metadata for those network projects:
 
 ```{r}
 deployments <- get_deployments(con, network_project_code = network_project_codes, open_only = FALSE)
+```
 
-# Remove linebreaks in deployment comments to get single lines in csv
+Remove linebreaks in deployment comments to get single lines in csv:
+
+```{r}
 deployments <-
   deployments %>%
   mutate(comments = str_replace_all(comments, "[\r\n]+", " "))
