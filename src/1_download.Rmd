@@ -184,6 +184,42 @@ Get receiver metadata:
 receivers <- get_receivers(con, receiver_id = receiver_ids)
 ```
 
+## Summary stats
+
+```{r}
+stats <- data.frame(
+  "stat" = c(
+    "animal project",
+    "scientific names",
+    "animals",
+    "animals multiple tags",
+    "tags multiple tags",
+    "tags",
+    "detections",
+    "network projects",
+    "deployments",
+    "orphaned deployments",
+    "receivers in deployments",
+    "receivers"
+  ),
+  "value" = c(
+    dataset$project_code,
+    nrow(animals %>% distinct(scientific_name)),
+    nrow(animals),
+    nrow(animals_multiple_tags),
+    nrow(tags_multiple_animals %>% distinct(tag_id)),
+    nrow(tags),
+    nrow(detections),
+    length(network_project_codes),
+    nrow(deployments),
+    nrow(orphaned_deployments),
+    length(receiver_ids),
+    nrow(receivers)
+  )
+)
+stats
+```
+
 ## Save to csv
 
 ```{r}
