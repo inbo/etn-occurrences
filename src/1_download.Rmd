@@ -126,9 +126,11 @@ detections <- get_detections(
 Show orphaned deployments in the detections (i.e. not associated with any `network_project_code`). These should be fixed (see <https://github.com/inbo/etn-occurrences/issues/71>):
 
 ```{r}
+incorrect_network_codes <- c("none", "no_info")
+
 orphaned_deployments <-
   detections %>%
-  filter(network_project_code == "none" | is.na(network_project_code)) %>%
+  filter(network_project_code %in% incorrect_network_codes | is.na(network_project_code)) %>%
   group_by(receiver_id, deployment_fk, network_project_code) %>%
   summarize(
     `from` = min(date_time),
@@ -145,7 +147,8 @@ network_project_codes <-
   detections %>%
   select(network_project_code) %>%
   unique() %>%
-  filter(network_project_code != "none") %>%
+  filter(!network_project_code %in% incorrect_network_codes) %>%
+  arrange() %>%
   pull()
 ```
 
