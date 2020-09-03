@@ -46,7 +46,7 @@ datasets <- tribble(
   ~project_code,  ~scientific_name,
   "2011_rivierprik", NULL,
   "2012_leopoldkanaal", NULL,
-  "2013_albertkanaal", "Anguilla anguilla, Salmo salar", # Excludes 'Sync tag'
+  "2013_albertkanaal", c("Anguilla anguilla", "Salmo salar"), # Excludes 'Sync tag'
   "2014_demer", NULL,
   "2015_dijle", NULL,
   "2015_phd_verhelst", "Anguilla anguilla",
@@ -71,7 +71,8 @@ Get animal metadata:
 animals <- get_animals(
   connection = con,
   animal_project_code = dataset$project_code,
-  scientific_name = unlist(dataset$scientific_name))
+  scientific_name = unlist(dataset$scientific_name)
+)
 ```
 
 Select tags associated with animals:
