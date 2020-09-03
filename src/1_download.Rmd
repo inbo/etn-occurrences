@@ -75,6 +75,27 @@ animals <- get_animals(
 )
 ```
 
+Show animals with multiple tags:
+
+```{r}
+animals_multiple_tags <-
+  animals %>%
+  filter(str_detect(tag_id, ",")) %>%
+  select(animal_id, tag_id)
+animals_multiple_tags
+```
+
+Show tags with multiple animals:
+
+```{r}
+tags_multiple_animals <-
+  animals %>%
+  group_by(tag_id) %>% 
+  filter(n() > 1) %>%
+  select(animal_id, tag_id, release_date_time, recapture_date_time, length1)
+tags_multiple_animals
+```
+
 Select tags associated with animals:
 
 ```{r}
