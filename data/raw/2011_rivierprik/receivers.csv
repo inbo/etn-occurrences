@@ -28,7 +28,7 @@ pk,receiver_id,application_type,telemetry_type,manufacturer,receiver_id_model,re
 1075,VR2W-115433,acoustic_telemetry,-,VEMCO,VR2W,115433,,Lost,,INBO,,,,,,,,,,,,,,,
 1129,VR2W-115434,acoustic_telemetry,-,VEMCO,VR2W,115434,,Active,,INBO,,,,,,,,,,,,,,,
 1076,VR2W-115435,acoustic_telemetry,-,VEMCO,VR2W,115435,,Active,,INBO,,,,,,,,,,,,,,,
-1106,VR2W-115436,acoustic_telemetry,-,VEMCO,VR2W,115436,,Available,,INBO,,,,,,,,,,,,,,,
+1106,VR2W-115436,acoustic_telemetry,-,VEMCO,VR2W,115436,,Active,,INBO,,,,,,,,,,,,,,,
 1030,VR2W-115438,acoustic_telemetry,-,VEMCO,VR2W,115438,,Active,,INBO,,,,,,,,,,,,,,,
 1217,VR2W-115444,acoustic_telemetry,-,VEMCO,VR2W,115444,,Active,,INBO,,,,,,,,,,,,,,,
 1237,VR2W-115445,acoustic_telemetry,-,VEMCO,VR2W,115445,,Available,,INBO,,,,,,,,,,,,,,,
