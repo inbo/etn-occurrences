@@ -16,15 +16,15 @@ The repository also contains a [proof of concept](src) to standardize these data
 
 Shortname | Publisher | DOI | DataCite
 :--- | :--- | :--- | :---:
+2010_PHD_REUBENS | Ghent University | <https://doi.org/10.14284/437> | [DataCite](https://search.datacite.org/works/10.14284/437)
 2011_RIVIERPRIK | INBO | <https://doi.org/10.14284/429> | [DataCite](https://search.datacite.org/works/10.14284/429)
 2012_LEOPOLDKANAAL | INBO | <https://doi.org/10.14284/428> | [DataCite](https://search.datacite.org/works/10.14284/428)
 2013_ALBERTKANAAL | INBO | <https://doi.org/10.14284/431> | [DataCite](https://search.datacite.org/works/10.14284/431)
 2014_DEMER | INBO | <https://doi.org/10.14284/432> | [DataCite](https://search.datacite.org/works/10.14284/432)
 2015_DIJLE | INBO | <https://doi.org/10.14284/430> | [DataCite](https://search.datacite.org/works/10.14284/430)
-2010_PHD_REUBENS | Ghent University | <https://doi.org/10.14284/437> | [DataCite](https://search.datacite.org/works/10.14284/437)
+2015_HOMARUS | VLIZ | <https://doi.org/10.14284/433> | [DataCite](https://search.datacite.org/works/10.14284/433)
 2015_PHD_VERHELST_COD | Ghent University | <https://doi.org/10.14284/435> | [DataCite](https://search.datacite.org/works/10.14284/435)
 2015_PHD_VERHELST_EEL | Ghent University | <https://doi.org/10.14284/434> | [DataCite](https://search.datacite.org/works/10.14284/434)
-2015_HOMARUS | VLIZ | <https://doi.org/10.14284/433> | [DataCite](https://search.datacite.org/works/10.14284/433)
 
 ## Contributors
 
