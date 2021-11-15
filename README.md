@@ -7,7 +7,7 @@ The repository also contains a [proof of concept](src) to standardize these data
 ## Workflow
 
 1. Assess, discuss and improve quality of data related to an animal project in the ETN database
-2. Download data using the ETN R package function [`download_dataset()`](https://inbo.github.io/etn/reference/download_dataset.html)
+2. Download data using the ETN R package function [`download_acoustic_dataset()`](https://inbo.github.io/etn/reference/download_acoustic_dataset.html)
 3. Deposit the data on the [Marine Data Archive](https://mda.vliz.be/)
 4. Document the dataset on [IMIS](http://www.vliz.be/en/imis)
 5. Publish the dataset and assign a DOI
