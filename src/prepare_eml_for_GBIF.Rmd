@@ -1,0 +1,134 @@
+---
+title: "Prepare EML data for GBIF IPT upload"
+author: "Sanne Govaert"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+This script prepares EML data extracted from [IMIS](https://www.vliz.be/en/imis?module=dataset) for upload to a [GBIF IPT](https://gbif.org/ipt).
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+Load libraries
+
+```{r}
+library(EML)
+library(here)
+```
+
+Set user-defined values
+
+```{r}
+project_id <- "2011_RIVIERPRIK"
+metadata_provider <- person(
+  given = "Peter",
+  family = "Desmet",
+  email = "peter.desmet@inbo.be",
+  comment = c(ORCID = "0000-0002-8442-8025")
+)
+```
+
+Read EML 
+
+```{r}
+eml <- EML::read_eml(here::here("data", project_id, "raw", "eml.xml"))
+```
+
+# Cleaning
+
+## Clean creators and contact
+
+- Generic email "info@inbo.be" is removed
+- organizationName "Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek" is replaced by "Research Institute for Nature and Forest (INBO)"
+
+```{r}
+update_contact <- function(contact) {
+  if (
+    !is.null(contact$electronicMailAddress) && contact$electronicMailAddress == "info@inbo.be") {
+    contact$electronicMailAddress <- NULL
+  }
+  if (!is.null(contact$organizationName) && contact$organizationName == "Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek") {
+    contact$organizationName <- "Research Institute for Nature and Forest (INBO)"
+  }
+  contact
+}
+
+eml$dataset$creator <- purrr::map(eml$dataset$creator, update_contact)
+eml$dataset$contact <- update_contact(eml$dataset$contact)
+```
+
+## Set metadataProvider
+
+```{r}
+eml$dataset$metadataProvider <- EML::set_responsibleParty(
+  givenName = metadata_provider$given,
+  surName = metadata_provider$family,
+  electronicMailAddress = metadata_provider$email,
+  userId = if (!is.null(metadata_provider$comment[["ORCID"]])) {
+    list(directory = "https://orcid.org/", metadata_provider$comment[["ORCID"]])
+  } else {
+    NULL
+  }
+)
+```
+
+## Set generalTaxonomicCoverage and associatedParty to NULL
+
+```{r}
+eml$dataset$coverage$taxonomicCoverage$generalTaxonomicCoverage <- NULL
+eml$dataset$associatedParty <- NULL
+```
+
+## Set maintenanceUpdateFrequency to "Not planned"
+
+```{r}
+eml$dataset$maintenance$maintenanceUpdateFrequency <- "Not planned"
+```
+
+## clean keywords
+
+```{r}
+eml$dataset$keywordSet <- purrr::map(eml$dataset$keywordSet, ~ {
+  if (!"keywordThesaurus" %in% names(.)) {
+    . <- c(., keywordThesaurus = "n/a")
+  }
+  .
+})
+```
+
+## Update abstract
+
+The abstract on IMIS is limited to 1000 characters. Extra paragraphs are living in `additionalInfo`. 
+We move the `additionalInfo` to the abstract and clean it up.
+
+```{r}
+additional_info <- eml$dataset$additionalInfo$para
+
+# Split `additional_info` in paragraphs
+paragraphs <- unlist(strsplit(additional_info, "<p>|</p>|\n", perl = TRUE))
+paragraphs <- paragraphs[!paragraphs %in% c("", "<![CDATA[", "<br/>", "]]>")]
+
+# Split paragraph
+paragraphs <- unlist(strsplit(paragraphs, " Data were exported from", perl = TRUE))
+purrr::map(paragraphs, ~ if(grepl("^ the European", .x)) {
+  .x <- paste0("Data were exported from", .x)
+  } else {.x <- .x})
+
+# Rearrange paragraphs: abstract + additional_info
+eml$dataset$abstract$para <- c(eml$dataset$abstract$para, paragraphs)
+
+# Delete `additionalInfo`
+eml$dataset$additionalInfo <- NULL
+```
+
+
+# Write EML
+
+```{r}
+eml_path <- here::here("data", project_id, "processed", "eml.xml")
+EML::write_eml(eml, eml_path)
+```
+
+
