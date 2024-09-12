@@ -92,7 +92,7 @@ eml$dataset$maintenance$maintenanceUpdateFrequency <- "Not planned"
 ```{r}
 eml$dataset$keywordSet <- purrr::map(eml$dataset$keywordSet, ~ {
   if (!"keywordThesaurus" %in% names(.)) {
-    . <- c(., keywordThesaurus = "n/a")
+    . <- c(., keywordThesaurus = "N/A")
   }
   .
 })
@@ -112,7 +112,7 @@ paragraphs <- paragraphs[!paragraphs %in% c("", "<![CDATA[", "<br/>", "]]>")]
 
 # Split paragraph
 paragraphs <- unlist(strsplit(paragraphs, " Data were exported from", perl = TRUE))
-purrr::map(paragraphs, ~ if(grepl("^ the European", .x)) {
+paragraphs <- purrr::map(paragraphs, ~ if(grepl("^ the European", .x)) {
   .x <- paste0("Data were exported from", .x)
   } else {.x <- .x})
 

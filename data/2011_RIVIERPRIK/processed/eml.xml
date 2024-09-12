@@ -169,7 +169,7 @@
       <para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by what later became the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2011_rivierprik, using VEMCO tags (V7, V8) and receivers (VR2, VR2W). In total 39 adult individuals of river lamprey (<i>Lampetra fluviatilis</i>) were captured, tagged and released in 2011 and 2012, to study the effect of weirs and shipping locks on their upstream spawning migration in the tidal and/or non-tidal part of the Scheldt river and its tributaries.]]></para>
       <para>The disruption of longitudinal and lateral connectivity of rivers has led to ecological catastrophes such as the extinction of several diadromous fish species. River lamprey is an important indicator species for the integrity of ecosystems and connectivity within and between catchment areas. In the highly fragmented Scheldt river basin first restoration actions are undertaken, such as the building of nature-like bypasses. The migration patterns in the river catchment and their behaviour at a tidal barrier, lock-weir complexes and fish bypasses (passage timing and delay) in the upper Scheldt river show that the disrupted water management of the river and in consequence of its barriers and bypasses are one keys to (un)successful spawning migration in the catchment, beside spawning habitat deterioration.</para>
       <para>The study was commissioned by the Vlaamse Waterweg NV.</para>
-      <para> the European Tracking Network data portal &lt;a href="http://www.lifewatch.be/etn"&gt; (http://www.lifewatch.be/etn) &lt;/a&gt; developed by VLIZ using the ETN R package &lt;a href="https://inbo.github.io/etn/"&gt; (https://inbo.github.io/etn/) &lt;/a&gt; developed by INBO. Field definitions can be found at &lt;a href="https://inbo.github.io/etn/articles/etn_fields.html"&gt;https://inbo.github.io/etn/articles/etn_fields.html&lt;/a&gt;.</para>
+      <para>Data were exported from the European Tracking Network data portal &lt;a href="http://www.lifewatch.be/etn"&gt; (http://www.lifewatch.be/etn) &lt;/a&gt; developed by VLIZ using the ETN R package &lt;a href="https://inbo.github.io/etn/"&gt; (https://inbo.github.io/etn/) &lt;/a&gt; developed by INBO. Field definitions can be found at &lt;a href="https://inbo.github.io/etn/articles/etn_fields.html"&gt;https://inbo.github.io/etn/articles/etn_fields.html&lt;/a&gt;.</para>
     </abstract>
     <keywordSet>
       <keyword>Acoustic telemetry</keyword>
@@ -188,7 +188,7 @@
       <keyword>Migration barriers</keyword>
       <keyword>River lamprey</keyword>
       <keyword>VEMCO</keyword>
-      <keywordThesaurus>n/a</keywordThesaurus>
+      <keywordThesaurus>N/A</keywordThesaurus>
     </keywordSet>
     <keywordSet>
       <keyword>Migration</keyword>
