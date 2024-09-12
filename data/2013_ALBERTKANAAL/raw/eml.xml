@@ -1,0 +1,305 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" 
+	xmlns:dc="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 https://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd" 
+	packageId="eml.1.1" system="https://www.vliz.be/imis" 
+	xml:lang="en">
+
+<dataset>
+	<title xml:lang="en">2013_ALBERTKANAAL - Acoustic telemetry data for European eel (Anguilla anguilla) and hatched Salmon (Salmo salar) in the Albert canal (Belgium)</title>
+
+<creator>
+	<individualName>
+		<givenName>Raf</givenName>
+		<surName>Baeyens</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-0651-3056</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Jenna</givenName>
+		<surName>Vergeynst</surName>
+	</individualName>
+	<organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>isolde.degrem@ugent.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0001-8959-0884</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Nico</givenName>
+		<surName>De Maerteleire</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>nico.demaerteleire@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Peter</givenName>
+		<surName>Desmet</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Emilie</givenName>
+		<surName>Gelaude</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Tanja</givenName>
+		<surName>Milotic</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-3129-6196</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Ans</givenName>
+		<surName>Mouton</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Ine</givenName>
+		<surName>Pauwels</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>ine.pauwels@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-2856-8787</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Sébastien</givenName>
+		<surName>Pieters</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Lien</givenName>
+		<surName>Reyserhove</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>lien.reyserhove@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0001-7484-9267</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Karen</givenName>
+		<surName>Robberecht</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>Karen.Robberechts@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Pieterjan</givenName>
+		<surName>Verhelst</surName>
+	</individualName>
+	<organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>isolde.degrem@ugent.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-2610-6941</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Johan</givenName>
+		<surName>Coeck</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0003-2732-7428</userId>
+</creator>
+
+
+<metadataProvider>
+	<organizationName>Flanders Marine Institute (VLIZ)</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@vliz.be</electronicMailAddress>
+	<onlineUrl>https://www.vliz.be</onlineUrl>
+</metadataProvider>
+
+	<pubDate>2020-11-20</pubDate>
+	<language>en</language>
+	<abstract>
+		<para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network <a href ="https://lifewatch.be/en/fish-acoustic-receiver-network">(https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2013_albertkanaal, using VEMCO tags (V7, V9, V13) and receivers (VR2AR, VR2Tx, VR2W). In total 161 female individuals of European eel (<i>Anguilla anguilla</i>) and 134 (hatched) smolts of Atlantic salmon (<i>Salmo salar</i>) were captured, tagged and released between 2013 and 2017, to study the effect of shipping locks and hydropower plants on their downstream migration in the Albert canal.]]></para>
+	</abstract>
+	<additionalInfo>
+		<para><![CDATA[<p>Navigation locks play an important role for ship navigation on canals and other regulated waterways worldwide. Unfortunately, these structures may severely impact the aquatic ecosystem and freshwater fish in particular. In Belgium (Europe), the Albert canal connecting the Meuse river to the Scheldt river, is an important migration route for European eel (critically endangered) and Atlantic salmon (vulnerable). During their downstream migration these fish are hampered by six subsequent navigation lock complexes present in the canal. Three of which are by-passed by a small channel leading to a hydropower plant with large Archimedes screw turbines. In the coming years, three more such hydropower plants are to be installed next to three of six ship lock complexes. The Archimedes screws function both as pump and turbine (hydropower generator). Two dimensional fine scale positioning, as well as impact assessment through assessment of fish injury and mortality at the Archimedes screws, was performed to better understand the overall impact of these anthropogenic structures on diadromous fish, such as eel and salmon.</p><br/>
+
+<p>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch. The study was commissioned by the Vlaamse Waterweg NV. Data were exported from the European Tracking Network data portal <a href="http://www.lifewatch.be/etn"> (http://www.lifewatch.be/etn) </a> developed by VLIZ using the ETN R package <a href="https://inbo.github.io/etn/"> (https://inbo.github.io/etn/) </a> developed by INBO. Field definitions can be found at <a href="https://inbo.github.io/etn/articles/etn_fields.html">https://inbo.github.io/etn/articles/etn_fields.html</a>.</p>]]></para>
+	</additionalInfo>
+		<keywordSet>
+		<keyword>Acoustic telemetry</keyword>
+		<keywordThesaurus>ASFA Thesaurus List</keywordThesaurus>
+	</keywordSet>
+	<keywordSet>
+		<keyword>Acoustic Telemetry</keyword>
+		<keywordThesaurus>ETN Context</keywordThesaurus>
+	</keywordSet>
+	<keywordSet>
+		<keyword>Animal movement</keyword>
+		<keyword>Animal tracking</keyword>
+		<keyword>Biologging</keyword>
+		<keyword>Hydropower</keyword>
+		<keyword>Impact assessment</keyword>
+		<keyword>LifeWatch</keyword>
+		<keyword>Migration barriers</keyword>
+		<keyword>Shipping canals</keyword>
+		<keyword>VEMCO</keyword>
+	</keywordSet>
+	<keywordSet>
+		<keyword>Migration</keyword>
+		<keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
+	</keywordSet>
+
+	<intellectualRights>
+		<para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
+	</intellectualRights>
+
+<coverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/4752"><geographicDescription>ANE, Western Scheldt</geographicDescription>	</geographicCoverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/19679"><geographicDescription>Belgium, Albert Canal</geographicDescription>	</geographicCoverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/2469"><geographicDescription>Belgium, Flanders</geographicDescription>	</geographicCoverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/2555"><geographicDescription>Belgium, Meuse Basin</geographicDescription>	</geographicCoverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/5481"><geographicDescription>Belgium, Zeeschelde, Antwerp Harbour</geographicDescription>	</geographicCoverage>
+	<temporalCoverage>
+      <rangeOfDates>
+        <beginDate><calendarDate>2013-10-18</calendarDate></beginDate>
+        <endDate><calendarDate>2019-05-10</calendarDate></endDate>
+      </rangeOfDates>
+    </temporalCoverage>
+	<taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:126281">
+		<generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:126281</generalTaxonomicCoverage>
+		<taxonomicClassification>
+		<taxonRankName>species</taxonRankName>
+		<taxonRankValue>Anguilla anguilla (Linnaeus, 1758)</taxonRankValue>
+		</taxonomicClassification>
+	</taxonomicCoverage>
+	<taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:127186">
+		<generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:127186</generalTaxonomicCoverage>
+		<taxonomicClassification>
+		<taxonRankName>species</taxonRankName>
+		<taxonRankValue>Salmo salar Linnaeus, 1758</taxonRankValue>
+		</taxonomicClassification>
+	</taxonomicCoverage>
+</coverage>
+
+	<maintenance>
+		<description><para></para></description>
+		<maintenanceUpdateFrequency>unkown</maintenanceUpdateFrequency>
+	</maintenance>
+<contact>
+	<individualName>
+		<givenName>Ine</givenName>
+		<surName>Pauwels</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>ine.pauwels@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-2856-8787</userId>
+</contact>
+</dataset>
+
+<additionalMetadata>
+	<describes><para>Extra metadata added by VLIZ to add parameter, platform info, as well as GBIF fields</para></describes>
+	<metadata>
+		<parameter>Fish detections</parameter>
+		<parameter>Fish lifestage</parameter>
+		<parameter>Fish sex</parameter>
+		<parameter>Fish total length</parameter>
+		<parameter>Horizontal eye diameter of fish</parameter>
+		<parameter>Pectoral fin length of fish</parameter>
+		<parameter>Vertical eye diameter of fish</parameter>
+		<parameter>Wet weight of fish</parameter>
+
+		<gbif>
+			<dateStamp>2024-07-09T01:33:06+00:00</dateStamp><hierarchyLevel>dataset</hierarchyLevel>
+			<citation identifier="https://dx.doi.org/10.14284/431">Baeyens, R.; Vergeynst, J.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Milotic, T.; Mouton, A.; Pauwels, I.; Pieters, S.; Reyserhove, L.; Robberechts, K.; Verhelst, P.; Coeck, J.; (2020): 2013_ALBERTKANAAL - Acoustic telemetry data for European eel (Anguilla anguilla) and hatched Salmon (Salmo salar) in the Albert canal (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/431</citation>
+
+		<physical>
+			<objectName>Online dataset</objectName>
+			<characterEncoding>UTF-8</characterEncoding>
+			<dataFormat>
+				<externallyDefinedFormat>
+					<formatName>HTML</formatName>
+			</externallyDefinedFormat>
+			</dataFormat>
+			<distribution>
+				<online>
+					<url function="download">https://rshiny.lifewatch.be/etn-data/</url>
+				</online>
+			</distribution>
+		</physical>
+		<physical>
+			<objectName>Metadata</objectName>
+			<characterEncoding>UTF-8</characterEncoding>
+			<dataFormat>
+				<externallyDefinedFormat>
+					<formatName>HTML</formatName>
+			</externallyDefinedFormat>
+			</dataFormat>
+			<distribution>
+				<online>
+					<url function="download">https://www.vliz.be//en/imis?dasid=5868</url>
+				</online>
+			</distribution>
+		</physical>
+
+	</gbif>
+	</metadata>
+</additionalMetadata>
+
+</eml:eml>
