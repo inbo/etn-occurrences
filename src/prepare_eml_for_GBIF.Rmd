@@ -112,6 +112,7 @@ eml$dataset$metadataProvider <- EML::set_responsibleParty(
 Remove description.
 
 ```{r}
+eml$dataset$coverage$taxonomicCoverage$id <- NULL
 eml$dataset$coverage$taxonomicCoverage$generalTaxonomicCoverage <- NULL
 ```
 
