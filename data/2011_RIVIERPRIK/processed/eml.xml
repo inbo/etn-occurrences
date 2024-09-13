@@ -6,7 +6,7 @@
     </describes>
     <metadata>
       <gbif>
-        <citation>Buysse, D.; Mouton, A.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Jacobs, Y.; Pauwels, I.; Reyserhove, L.; Coeck, J.; (2020): 2011_RIVIERPRIK - Acoustic telemetry data for river lamprey (Lampetra fluviatilis) in the upper Scheldt river (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/429<identifier>https://dx.doi.org/10.14284/429</identifier></citation>
+        <citation>Buysse, D.; Mouton, A.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Jacobs, Y.; Pauwels, I.; Reyserhove, L.; Coeck, J.; (2020): 2011_RIVIERPRIK - Acoustic telemetry data for river lamprey (Lampetra fluviatilis) in the upper Scheldt river (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/429<identifier>https://doi.org/10.14284/429</identifier></citation>
         <dateStamp>2024-07-09T01:33:06+00:00</dateStamp>
         <hierarchyLevel>dataset</hierarchyLevel>
         <physical>
