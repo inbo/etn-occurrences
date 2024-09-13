@@ -214,7 +214,7 @@
           </endDate>
         </rangeOfDates>
       </temporalCoverage>
-      <taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:101172">
+      <taxonomicCoverage>
         <taxonomicClassification>
           <taxonRankName>species</taxonRankName>
           <taxonRankValue>Lampetra fluviatilis (Linnaeus, 1758)</taxonRankValue>
