@@ -112,8 +112,20 @@ eml$dataset$metadataProvider <- EML::set_responsibleParty(
 Remove description.
 
 ```{r}
-eml$dataset$coverage$taxonomicCoverage$id <- NULL
-eml$dataset$coverage$taxonomicCoverage$generalTaxonomicCoverage <- NULL
+tax_coverage <- eml$dataset$coverage$taxonomicCoverage
+number_of_species <- length(tax_coverage)
+clean_coverage <- function(tax_coverage) {
+  tax_coverage <- tax_coverage[names(tax_coverage) != "id"]
+  tax_coverage <- tax_coverage[names(tax_coverage) != "generalTaxonomicCoverage"]
+  return(tax_coverage)
+}
+
+if (number_of_species == 1) {
+  eml$dataset$coverage$taxonomicCoverage$id <- NULL
+  eml$dataset$coverage$taxonomicCoverage$generalTaxonomicCoverage <- NULL
+} else {
+  eml$dataset$coverage$taxonomicCoverage <- purrr::map(tax_coverage, clean_coverage)
+}
 ```
 
 ## Keywords
