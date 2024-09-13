@@ -18,7 +18,7 @@ library(EML)
 library(here)
 ```
 
-Set user-defined values
+# Set user-defined values
 
 ```{r}
 project_id <- "2011_RIVIERPRIK"
@@ -30,7 +30,7 @@ metadata_provider <- person(
 )
 ```
 
-Read EML 
+# Read EML 
 
 ```{r}
 eml <- EML::read_eml(here::here("data", project_id, "raw", "eml.xml"))
@@ -38,77 +38,17 @@ eml <- EML::read_eml(here::here("data", project_id, "raw", "eml.xml"))
 
 # Cleaning
 
-## Clean creators and contact
+## Basic Metadata
 
-- Generic email "info@inbo.be" is removed
-- organizationName "Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek" is replaced by "Research Institute for Nature and Forest (INBO)"
-
-```{r}
-update_contact <- function(contact) {
-  if (
-    !is.null(contact$electronicMailAddress) && contact$electronicMailAddress == "info@inbo.be") {
-    contact$electronicMailAddress <- NULL
-  }
-  if (!is.null(contact$organizationName) && contact$organizationName == "Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek") {
-    contact$organizationName <- "Research Institute for Nature and Forest (INBO)"
-  }
-  contact
-}
-
-eml$dataset$creator <- purrr::map(eml$dataset$creator, update_contact)
-eml$dataset$contact <- update_contact(eml$dataset$contact)
-```
-
-## Set metadataProvider
-
-```{r}
-eml$dataset$metadataProvider <- EML::set_responsibleParty(
-  givenName = metadata_provider$given,
-  surName = metadata_provider$family,
-  electronicMailAddress = metadata_provider$email,
-  userId = if (!is.null(metadata_provider$comment[["ORCID"]])) {
-    list(directory = "https://orcid.org/", metadata_provider$comment[["ORCID"]])
-  } else {
-    NULL
-  }
-)
-```
-
-## Set generalTaxonomicCoverage and associatedParty to NULL
-
-```{r}
-eml$dataset$coverage$taxonomicCoverage$generalTaxonomicCoverage <- NULL
-eml$dataset$associatedParty <- NULL
-```
-
-## Set maintenanceUpdateFrequency to "Not planned"
+### Set Update frequency to "Not planned"
 
 ```{r}
 eml$dataset$maintenance$maintenanceUpdateFrequency <- "Not planned"
 ```
 
-## clean keywords
+### Update Description
 
-```{r}
-eml$dataset$keywordSet <- purrr::map(eml$dataset$keywordSet, ~ {
-  if (!"keywordThesaurus" %in% names(.)) {
-    . <- c(., keywordThesaurus = "N/A")
-  }
-  .
-})
-```
-
-# Clean Reserouce Citation Identifier
-
-```{r}
-identifier <- eml$additionalMetadata$metadata$gbif$citation$identifier
-eml$additionalMetadata$metadata$gbif$citation$identifier <- sub("dx.", "", identifier)
-```
-
-
-## Update abstract
-
-The abstract on IMIS is limited to 1000 characters. Extra paragraphs are living in `additionalInfo`. 
+The abstract on IMIS is limited to 1000 characters. Extra paragraphs are living in `additionalInfo` (Additional metadata). 
 We move the `additionalInfo` to the abstract and clean it up.
 
 ```{r}
@@ -131,6 +71,79 @@ eml$dataset$abstract$para <- c(eml$dataset$abstract$para, paragraphs)
 eml$dataset$additionalInfo <- NULL
 ```
 
+### Clean Resource contacts and Resource creators
+
+- Generic email "info@inbo.be" is removed.
+- Organization "Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek" is replaced by "Research Institute for Nature and Forest (INBO)".
+
+```{r}
+update_contact <- function(contact) {
+  if (
+    !is.null(contact$electronicMailAddress) && contact$electronicMailAddress == "info@inbo.be") {
+    contact$electronicMailAddress <- NULL
+  }
+  if (!is.null(contact$organizationName) && contact$organizationName == "Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek") {
+    contact$organizationName <- "Research Institute for Nature and Forest (INBO)"
+  }
+  contact
+}
+
+eml$dataset$creator <- purrr::map(eml$dataset$creator, update_contact)
+eml$dataset$contact <- update_contact(eml$dataset$contact)
+```
+
+### Set Metadata provider
+
+```{r}
+eml$dataset$metadataProvider <- EML::set_responsibleParty(
+  givenName = metadata_provider$given,
+  surName = metadata_provider$family,
+  electronicMailAddress = metadata_provider$email,
+  userId = if (!is.null(metadata_provider$comment[["ORCID"]])) {
+    list(directory = "https://orcid.org/", metadata_provider$comment[["ORCID"]])
+  } else {
+    NULL
+  }
+)
+```
+
+## Taxonomic coverage
+
+Remove description.
+
+```{r}
+eml$dataset$coverage$taxonomicCoverage$generalTaxonomicCoverage <- NULL
+```
+
+## Keywords
+
+Clean keywords.
+
+```{r}
+eml$dataset$keywordSet <- purrr::map(eml$dataset$keywordSet, ~ {
+  if (!"keywordThesaurus" %in% names(.)) {
+    . <- c(., keywordThesaurus = "N/A")
+  }
+  .
+})
+```
+
+## Associated Parties
+
+Remove associated parties.
+
+```{r}
+eml$dataset$associatedParty <- NULL
+```
+
+## Citations
+
+Clean Resource citation identifier
+
+```{r}
+identifier <- eml$additionalMetadata$metadata$gbif$citation$identifier
+eml$additionalMetadata$metadata$gbif$citation$identifier <- sub("dx.", "", identifier)
+```
 
 # Write EML
 
