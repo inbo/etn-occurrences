@@ -14,14 +14,14 @@ The repository also contains a [proof of concept](src) to standardize these data
 
 ## Datasets
 
-Shortname | Publisher | DOI | DataCite
-:--- | :--- | :--- | :---:
+Shortname | Publisher | DOI | DataCite | GBIF
+:--- | :--- | :--- |  :--- | :---:
 2010_PHD_REUBENS | Ghent University | <https://doi.org/10.14284/437> | [DataCite](https://commons.datacite.org/doi.org/10.14284/437)
-2011_RIVIERPRIK | INBO | <https://doi.org/10.14284/429> | [DataCite](https://commons.datacite.org/doi.org/10.14284/429)
-2012_LEOPOLDKANAAL | INBO | <https://doi.org/10.14284/428> | [DataCite](https://commons.datacite.org/doi.org/10.14284/428)
-2013_ALBERTKANAAL | INBO | <https://doi.org/10.14284/431> | [DataCite](https://commons.datacite.org/doi.org/10.14284/431)
-2014_DEMER | INBO | <https://doi.org/10.14284/432> | [DataCite](https://commons.datacite.org/doi.org/10.14284/432)
-2015_DIJLE | INBO | <https://doi.org/10.14284/430> | [DataCite](https://commons.datacite.org/doi.org/10.14284/430)
+2011_RIVIERPRIK | INBO | <https://doi.org/10.14284/429> | [DataCite](https://commons.datacite.org/doi.org/10.14284/429) | [GBIF](https://www.gbif.org/dataset/365dcf96-b8ba-49dd-91b8-4aaaa0a0a1a7)
+2012_LEOPOLDKANAAL | INBO | <https://doi.org/10.14284/428> | [DataCite](https://commons.datacite.org/doi.org/10.14284/428) | [GBIF](https://www.gbif.org/dataset/0eab323a-364d-4a1b-983b-62b8098845b0)
+2013_ALBERTKANAAL | INBO | <https://doi.org/10.14284/431> | [DataCite](https://commons.datacite.org/doi.org/10.14284/431) | [GBIF](https://www.gbif.org/dataset/47360f99-2f92-4e48-9898-1e4976d09d71)
+2014_DEMER | INBO | <https://doi.org/10.14284/432> | [DataCite](https://commons.datacite.org/doi.org/10.14284/432) | [GBIF](https://www.gbif.org/dataset/8be8dcf1-6e83-4172-a7b7-c2032b933d23)
+2015_DIJLE | INBO | <https://doi.org/10.14284/430> | [DataCite](https://commons.datacite.org/doi.org/10.14284/430) | [GBIF](https://www.gbif.org/dataset/0d9718f4-de6d-4115-b2f0-e3ec6aa088ab)
 2015_HOMARUS | VLIZ | <https://doi.org/10.14284/433> | [DataCite](https://commons.datacite.org/doi.org/10.14284/433)
 2015_PHD_VERHELST_COD | Ghent University | <https://doi.org/10.14284/435> | [DataCite](https://commons.datacite.org/doi.org/10.14284/435)
 2015_PHD_VERHELST_EEL | Ghent University | <https://doi.org/10.14284/434> | [DataCite](https://commons.datacite.org/doi.org/10.14284/434)
