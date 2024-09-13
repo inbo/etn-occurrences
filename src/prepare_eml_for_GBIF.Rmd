@@ -98,6 +98,14 @@ eml$dataset$keywordSet <- purrr::map(eml$dataset$keywordSet, ~ {
 })
 ```
 
+# Clean Reserouce Citation Identifier
+
+```{r}
+identifier <- eml$additionalMetadata$metadata$gbif$citation$identifier
+eml$additionalMetadata$metadata$gbif$citation$identifier <- sub("dx.", "", identifier)
+```
+
+
 ## Update abstract
 
 The abstract on IMIS is limited to 1000 characters. Extra paragraphs are living in `additionalInfo`. 
