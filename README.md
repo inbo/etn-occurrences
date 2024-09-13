@@ -23,7 +23,7 @@ Shortname | Publisher | DOI | DataCite | GBIF
 2014_DEMER | INBO | <https://doi.org/10.14284/432> | [DataCite](https://commons.datacite.org/doi.org/10.14284/432) | [GBIF](https://www.gbif.org/dataset/8be8dcf1-6e83-4172-a7b7-c2032b933d23)
 2015_DIJLE | INBO | <https://doi.org/10.14284/430> | [DataCite](https://commons.datacite.org/doi.org/10.14284/430) | [GBIF](https://www.gbif.org/dataset/0d9718f4-de6d-4115-b2f0-e3ec6aa088ab)
 2015_HOMARUS | VLIZ | <https://doi.org/10.14284/433> | [DataCite](https://commons.datacite.org/doi.org/10.14284/433)
-2015_PHD_VERHELST_COD | Ghent University | <https://doi.org/10.14284/435> | [DataCite](https://commons.datacite.org/doi.org/10.14284/435)
+2015_PHD_VERHELST_COD | Ghent University | <https://doi.org/10.14284/435> | [DataCite](https://commons.datacite.org/doi.org/10.14284/435) | [GBIF](https://www.gbif.org/dataset/aaf715aa-35c0-4bca-a9f1-03f8c11c2c76)
 2015_PHD_VERHELST_EEL | Ghent University | <https://doi.org/10.14284/434> | [DataCite](https://commons.datacite.org/doi.org/10.14284/434)
 
 ## Contributors
