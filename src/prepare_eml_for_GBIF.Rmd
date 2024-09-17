@@ -16,6 +16,7 @@ Load libraries
 ```{r}
 library(EML)
 library(here)
+library(stringr)
 ```
 
 # Set user-defined values
@@ -44,31 +45,6 @@ eml <- EML::read_eml(here::here("data", project_id, "raw", "eml.xml"))
 
 ```{r}
 eml$dataset$maintenance$maintenanceUpdateFrequency <- "Not planned"
-```
-
-### Update Description
-
-The abstract on IMIS is limited to 1000 characters. Extra paragraphs are living in `additionalInfo` (Additional metadata). 
-We move the `additionalInfo` to the abstract and clean it up.
-
-```{r}
-additional_info <- eml$dataset$additionalInfo$para
-
-# Split `additional_info` in paragraphs
-paragraphs <- unlist(strsplit(additional_info, "<p>|</p>|\n", perl = TRUE))
-paragraphs <- paragraphs[!paragraphs %in% c("", "<![CDATA[", "<br/>", "]]>")]
-
-# Split paragraph
-paragraphs <- unlist(strsplit(paragraphs, " Data were exported from", perl = TRUE))
-paragraphs <- purrr::map(paragraphs, ~ if(grepl("^ the European", .x)) {
-  .x <- paste0("Data were exported from", .x)
-  } else {.x <- .x})
-
-# Rearrange paragraphs: abstract + additional_info
-eml$dataset$abstract$para <- c(eml$dataset$abstract$para, paragraphs)
-
-# Delete `additionalInfo`
-eml$dataset$additionalInfo <- NULL
 ```
 
 ### Clean Resource contacts and Resource creators
@@ -154,8 +130,44 @@ eml$dataset$associatedParty <- NULL
 Clean Resource citation identifier
 
 ```{r}
-identifier <- eml$additionalMetadata$metadata$gbif$citation$identifier
-eml$additionalMetadata$metadata$gbif$citation$identifier <- sub("dx.", "", identifier)
+identifier_raw <- eml$additionalMetadata$metadata$gbif$citation$identifier
+identifier <- sub("dx.", "", identifier_raw)
+eml$additionalMetadata$metadata$gbif$citation$identifier <- identifier
+```
+## Update Description in Metadata
+
+The abstract on IMIS is limited to 1000 characters. Extra paragraphs are living in `additionalInfo` (Additional metadata). 
+We move the `additionalInfo` to the abstract and clean it up.
+
+```{r}
+# Get additional paragraphs
+additional_info <- eml$dataset$additionalInfo$para
+
+# Split `additional_info` in paragraphs
+paragraphs <- unlist(strsplit(additional_info, "<p>|</p>|\n", perl = TRUE))
+paragraphs <- paragraphs[!paragraphs %in% c("", "<![CDATA[", "<br/>", "]]>")]
+paragraphs <- unlist(strsplit(paragraphs, " Data were exported from", perl = TRUE))
+
+# Extract publication year
+citation <- eml$additionalMetadata$metadata$gbif$citation$citation
+pattern <- "\\(\\d{4}\\)"
+year <- stringr::str_extract(citation, pattern) %>% 
+  stringr::str_remove_all("\\(|\\)")
+
+# Extract first author
+first_author <- stringr::str_split_1(citation, ",")[1]
+
+# Write new paragraph
+new_paragraph <- paste0("Data have been standardized to Darwin Core using the <a href=\"https://inbo.github.io/etn/\"> etn </a> package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (<a href=\"https://www.lifewatch.be/etn/\">https://www.lifewatch.be/etn/</a>) and are available in ", first_author, " et al. (", year, ", <a href=\"", identifier, "\">", identifier, ")</a>.")
+
+# Update last paragraph
+paragraphs[length(paragraphs)] <- new_paragraph
+
+# Rearrange paragraphs: abstract + additional_info
+eml$dataset$abstract$para <- c(eml$dataset$abstract$para, paragraphs)
+
+# Delete `additionalInfo`
+eml$dataset$additionalInfo <- NULL
 ```
 
 # Write EML
