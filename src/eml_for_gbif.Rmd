@@ -19,7 +19,7 @@ library(here)
 library(stringr)
 ```
 
-# Set user-defined values
+## Set user-defined values
 
 ```{r}
 project_id <- "2011_RIVIERPRIK"
@@ -31,26 +31,24 @@ metadata_provider <- person(
 )
 ```
 
-# Read EML 
+## Read and clean EML 
 
 ```{r}
 eml <- EML::read_eml(here::here("data", project_id, "raw", "eml.xml"))
 ```
 
-# Cleaning
+### Basic Metadata
 
-## Basic Metadata
-
-### Set Update frequency to "Not planned"
+Set update frequency` to `Not planned`:
 
 ```{r}
 eml$dataset$maintenance$maintenanceUpdateFrequency <- "Not planned"
 ```
 
-### Clean Resource contacts and Resource creators
+Clean resource contacts and resource creators:
 
-- Generic email "info@inbo.be" is removed.
-- Organization "Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek" is replaced by "Research Institute for Nature and Forest (INBO)".
+- Remove generic email `info@inbo.be`.
+- Replace organization `Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek` with `Research Institute for Nature and Forest (INBO)`.
 
 ```{r}
 update_contact <- function(contact) {
@@ -68,7 +66,7 @@ eml$dataset$creator <- purrr::map(eml$dataset$creator, update_contact)
 eml$dataset$contact <- update_contact(eml$dataset$contact)
 ```
 
-### Set Metadata provider
+Set metadata provider:
 
 ```{r}
 eml$dataset$metadataProvider <- EML::set_responsibleParty(
@@ -83,9 +81,9 @@ eml$dataset$metadataProvider <- EML::set_responsibleParty(
 )
 ```
 
-## Taxonomic coverage
+### Taxonomic coverage
 
-Remove description.
+Remove description:
 
 ```{r}
 tax_coverage <- eml$dataset$coverage$taxonomicCoverage
@@ -104,9 +102,9 @@ if (number_of_species == 1) {
 }
 ```
 
-## Keywords
+### Keywords
 
-Clean keywords.
+Clean keywords:
 
 ```{r}
 eml$dataset$keywordSet <- purrr::map(eml$dataset$keywordSet, ~ {
@@ -117,27 +115,27 @@ eml$dataset$keywordSet <- purrr::map(eml$dataset$keywordSet, ~ {
 })
 ```
 
-## Associated Parties
+### Associated Parties
 
-Remove associated parties.
+Remove associated parties:
 
 ```{r}
 eml$dataset$associatedParty <- NULL
 ```
 
-## Citations
+### Citations
 
-Clean Resource citation identifier
+Clean resource citation identifier:
 
 ```{r}
 identifier_raw <- eml$additionalMetadata$metadata$gbif$citation$identifier
 identifier <- sub("dx.", "", identifier_raw)
 eml$additionalMetadata$metadata$gbif$citation$identifier <- identifier
 ```
-## Update Description in Metadata
 
-The abstract on IMIS is limited to 1000 characters. Extra paragraphs are living in `additionalInfo` (Additional metadata). 
-We move the `additionalInfo` to the abstract and clean it up.
+### Update Description
+
+The abstract in IMIS consists of multiple paragraph, but only the first one (limited to 1000 characters) is in `abstract`. The other paragraphs are in `additionalInfo`. As with our other datasets, we move all paragraphs to `abstract` and add an additional paragraph describing the transformation to Darwin Core.
 
 ```{r}
 # Get additional paragraphs
@@ -148,7 +146,7 @@ paragraphs <- unlist(strsplit(additional_info, "<p>|</p>|\n", perl = TRUE))
 paragraphs <- paragraphs[!paragraphs %in% c("", "<![CDATA[", "<br/>", "]]>")]
 paragraphs <- unlist(strsplit(paragraphs, " Data were exported from", perl = TRUE))
 
-# Wrap paragraphs with html with <![CDATA[ . ]]
+# Wrap paragraphs with html with <![CDATA[ ]]>
 paragraphs <- purrr::map(paragraphs, ~ if(grepl("<", .)){
     .x <- paste0("<![CDATA[", .x, "]]>")
   } else {.x <- .x}
@@ -179,8 +177,6 @@ eml$dataset$additionalInfo <- NULL
 # Write EML
 
 ```{r}
-eml_path <- here::here("data", project_id, "processed", "eml.xml")
+eml_path <- here::here("data", "processed", project_id, "eml.xml")
 EML::write_eml(eml, eml_path)
 ```
-
-
