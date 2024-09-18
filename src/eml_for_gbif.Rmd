@@ -162,7 +162,7 @@ year <- stringr::str_extract(citation, pattern) %>%
 first_author <- stringr::str_split_1(citation, ",")[1]
 
 # Write new paragraph
-new_paragraph <- paste0("Data have been standardized to Darwin Core using the <a href=\"https://inbo.github.io/etn/\">etn</a> package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (<a href=\"https://www.lifewatch.be/etn/\">https://www.lifewatch.be/etn/</a>) and are available in ", first_author, " et al. (", year, ", <a href=\"", identifier, "\">", identifier, ")</a>.")
+new_paragraph <- paste0("Data have been standardized to Darwin Core using the <a href=\"https://inbo.github.io/etn/\">etn</a> package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (<a href=\"https://www.lifewatch.be/etn/\">https://www.lifewatch.be/etn/</a>) and are available in ", first_author, " et al. (", year, ", <a href=\"", identifier, "\">", identifier, "</a>).")
 
 # Update last paragraph
 paragraphs[length(paragraphs)] <- new_paragraph
