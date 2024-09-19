@@ -6,7 +6,7 @@ This repository contains scripts to **publish fish tracking data** from the [Eur
 
 Shortname | Publisher | IMIS | GBIF | OBIS
 --- | --- | --- | --- | ---
-2010_PHD_REUBENS | Ghent University | [DOI](https://doi.org/10.14284/437) | [GBIF](https://www.gbif.org/dataset/06d9eb55-ab67-45da-a697-18cc42e7cd3c)
+2010_PHD_REUBENS | Ghent University | [DOI](https://doi.org/10.14284/437) | [GBIF](https://www.gbif.org/dataset/06d9eb55-ab67-45da-a697-18cc42e7cd3c)
 2011_RIVIERPRIK | INBO | [DOI](https://doi.org/10.14284/429) | [GBIF](https://www.gbif.org/dataset/365dcf96-b8ba-49dd-91b8-4aaaa0a0a1a7)
 2012_LEOPOLDKANAAL | INBO | [DOI](https://doi.org/10.14284/428) | [GBIF](https://www.gbif.org/dataset/0eab323a-364d-4a1b-983b-62b8098845b0)
 2013_ALBERTKANAAL | INBO | [DOI](https://doi.org/10.14284/431) | [GBIF](https://www.gbif.org/dataset/47360f99-2f92-4e48-9898-1e4976d09d71)
