@@ -1,0 +1,306 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" 
+	xmlns:dc="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 https://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd" 
+	packageId="eml.1.1" system="https://www.vliz.be/imis" 
+	xml:lang="en">
+
+<dataset>
+	<title xml:lang="en">2012_LEOPOLDKANAAL - Acoustic telemetry data for European eel (Anguilla anguilla) in a polder area in Flanders (Belgium)</title>
+
+<creator>
+	<individualName>
+		<givenName>Pieterjan</givenName>
+		<surName>Verhelst</surName>
+	</individualName>
+	<organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>isolde.degrem@ugent.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-2610-6941</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>David</givenName>
+		<surName>Buysse</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-4437-5678</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Raf</givenName>
+		<surName>Baeyens</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-0651-3056</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Nico</givenName>
+		<surName>De Maerteleire</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>nico.demaerteleire@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Peter</givenName>
+		<surName>Desmet</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Emilie</givenName>
+		<surName>Gelaude</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Yves</givenName>
+		<surName>Jacobs</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Tanja</givenName>
+		<surName>Milotic</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-3129-6196</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Ans</givenName>
+		<surName>Mouton</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Lien</givenName>
+		<surName>Reyserhove</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>lien.reyserhove@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0001-7484-9267</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Karen</givenName>
+		<surName>Robberechts</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>karen.robberechts@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Johan</givenName>
+		<surName>Coeck</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0003-2732-7428</userId>
+</creator>
+
+
+<metadataProvider>
+	<organizationName>Flanders Marine Institute (VLIZ)</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@vliz.be</electronicMailAddress>
+	<onlineUrl>https://www.vliz.be</onlineUrl>
+</metadataProvider>
+
+<associatedParty>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<role>contentProvider</role>
+</associatedParty>
+
+	<pubDate>2020-11-19</pubDate>
+	<language>en</language>
+	<abstract>
+		<para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network (<a href="https://lifewatch.be/en/fish-acoustic-receiver-network">https://lifewatch.be/en/fish-acoustic-receiver-network</a>) for the project/study 2012_leopoldkanaal, using VEMCO tags (V7, V13) and receivers (VR2AR, VR2W). In total 104 female individuals of European eel (<i>Anguilla anguilla</i>) were captured, tagged and released in 2011 and 2012, to study their movement behaviour during the yellow eel stage and migration behaviour during the silver eel stage for 4 years in Meetjesland, a polder area in Flanders, Belgium.]]></para>
+	</abstract>
+	<additionalInfo>
+		<para><![CDATA[<p>Polder areas are lowland systems below sea level that are drained for agricultural and urbanization purposes. Hence, they are characterised by water regulating structures such as dykes, water pumping stations and weirs. They are characterised by a network of canals, connected ponds and ditches, resulting in a high habitat diversity and thus many potential growth areas. When the water level rises beyond a certain threshold during precipitation events, water is pumped from the polder area into the sea to maintain a specific water level. Not only does this result in irregular water flows, water pumping stations have already shown to negatively affect fish passing through them by various injuries and mortalities. In this tracking study, we investigated the movement and ranging behaviour of resident, yellow eels to understand their spatio-temporal habitat use in the polder. Second, we analysed what routes migrating silver eels take, what environmental factors influence this migration and to what extent they are delayed by the migration barriers.</p><br/>
+<p>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch. The study was commissioned by the Agency of Nature and Forest (ANB). Data were exported from the European Tracking Network data portal (<a href="http://www.lifewatch.be/etn">http://www.lifewatch.be/etn</a>) developed by VLIZ using the ETN R package (<a href="https://inbo.github.io/etn/">https://inbo.github.io/etn/</a>) developed by INBO. Field definitions can be found at <a href="https://inbo.github.io/etn/articles/etn_fields.html">https://inbo.github.io/etn/articles/etn_fields.html</a>.</p>]]></para>
+	</additionalInfo>
+		<keywordSet>
+		<keyword>Acoustic telemetry</keyword>
+		<keyword>Home range</keyword>
+		<keywordThesaurus>ASFA Thesaurus List</keywordThesaurus>
+	</keywordSet>
+	<keywordSet>
+		<keyword>Acoustic Telemetry</keyword>
+		<keywordThesaurus>ETN Context</keywordThesaurus>
+	</keywordSet>
+	<keywordSet>
+		<keyword>Animal movement</keyword>
+		<keyword>Animal tracking</keyword>
+		<keyword>Biologging</keyword>
+		<keyword>Impact assessment</keyword>
+		<keyword>LifeWatch</keyword>
+		<keyword>Migration barriers</keyword>
+		<keyword>VEMCO</keyword>
+	</keywordSet>
+	<keywordSet>
+		<keyword>Migration</keyword>
+		<keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
+	</keywordSet>
+
+	<intellectualRights>
+		<para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
+	</intellectualRights>
+
+<coverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/4752"><geographicDescription>ANE, Western Scheldt</geographicDescription>	</geographicCoverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/2550"><geographicDescription>Belgium, Belgian Coast</geographicDescription>	</geographicCoverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/2469"><geographicDescription>Belgium, Flanders</geographicDescription>	</geographicCoverage>
+        <geographicCoverage><geographicDescription>Belgium, Leopoldkanaal</geographicDescription>	</geographicCoverage>
+        <geographicCoverage><geographicDescription>Belgium, Meetjesland</geographicDescription>	</geographicCoverage>
+	<temporalCoverage>
+      <rangeOfDates>
+        <beginDate><calendarDate>2012-07-03</calendarDate></beginDate>
+        <endDate><calendarDate>2020-09-28</calendarDate></endDate>
+      </rangeOfDates>
+    </temporalCoverage>
+	<taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:126281">
+		<generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:126281</generalTaxonomicCoverage>
+		<taxonomicClassification>
+		<taxonRankName>species</taxonRankName>
+		<taxonRankValue>Anguilla anguilla (Linnaeus, 1758)</taxonRankValue>
+		</taxonomicClassification>
+	</taxonomicCoverage>
+</coverage>
+
+<methods>
+<methodStep>
+	<description>
+	<title>Durif index</title>
+	</description>
+</methodStep>
+<sampling>
+				<studyExtent><description><para>Entire sampling area</para></description></studyExtent>
+				<samplingDescription><para>Durif index</para></samplingDescription>
+			  </sampling>
+</methods>
+
+	<maintenance>
+		<description><para></para></description>
+		<maintenanceUpdateFrequency>unkown</maintenanceUpdateFrequency>
+	</maintenance>
+<contact>
+	<individualName>
+		<givenName>Johan</givenName>
+		<surName>Coeck</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0003-2732-7428</userId>
+</contact>
+</dataset>
+
+<additionalMetadata>
+	<describes><para>Extra metadata added by VLIZ to add parameter, platform info, as well as GBIF fields</para></describes>
+	<metadata>
+		<parameter>Fish age</parameter>
+		<parameter>Fish detections</parameter>
+		<parameter>Fish lifestage</parameter>
+		<parameter>Fish sex</parameter>
+		<parameter>Fish total length</parameter>
+		<parameter>Horizontal eye diameter of fish</parameter>
+		<parameter>Pectoral fin length of fish</parameter>
+		<parameter>Vertical eye diameter of fish</parameter>
+		<parameter>Wet weight of fish</parameter>
+
+		<gbif>
+			<dateStamp>2024-07-09T01:33:06+00:00</dateStamp><hierarchyLevel>dataset</hierarchyLevel>
+			<citation identifier="https://dx.doi.org/10.14284/428">Verhelst, P.; Buysse, D.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Jacobs, Y.; Milotic, T.; Mouton, A.; Reyserhove, L.; Robberechts, K.; Coeck, J.; (2020): 2012_LEOPOLDKANAAL - Acoustic telemetry data for European eel (Anguilla anguilla) in a polder area in Flanders (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/428</citation>
+
+		<physical>
+			<objectName>Online dataset</objectName>
+			<characterEncoding>UTF-8</characterEncoding>
+			<dataFormat>
+				<externallyDefinedFormat>
+					<formatName>HTML</formatName>
+			</externallyDefinedFormat>
+			</dataFormat>
+			<distribution>
+				<online>
+					<url function="download">https://rshiny.lifewatch.be/etn-data/</url>
+				</online>
+			</distribution>
+		</physical>
+		<physical>
+			<objectName>Metadata</objectName>
+			<characterEncoding>UTF-8</characterEncoding>
+			<dataFormat>
+				<externallyDefinedFormat>
+					<formatName>HTML</formatName>
+			</externallyDefinedFormat>
+			</dataFormat>
+			<distribution>
+				<online>
+					<url function="download">https://www.vliz.be//en/imis?dasid=5873</url>
+				</online>
+			</distribution>
+		</physical>
+
+	</gbif>
+	</metadata>
+</additionalMetadata>
+
+</eml:eml>

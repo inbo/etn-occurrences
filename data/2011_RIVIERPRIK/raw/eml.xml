@@ -1,0 +1,264 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" 
+	xmlns:dc="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 https://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd" 
+	packageId="eml.1.1" system="https://www.vliz.be/imis" 
+	xml:lang="en">
+
+<dataset>
+	<title xml:lang="en">2011_RIVIERPRIK - Acoustic telemetry data for river lamprey (Lampetra fluviatilis) in the upper Scheldt river (Belgium)</title>
+
+<creator>
+	<individualName>
+		<givenName>David</givenName>
+		<surName>Buysse</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-4437-5678</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Ans</givenName>
+		<surName>Mouton</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Raf</givenName>
+		<surName>Baeyens</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-0651-3056</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Nico</givenName>
+		<surName>De Maerteleire</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>nico.demaerteleire@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Peter</givenName>
+		<surName>Desmet</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Emilie</givenName>
+		<surName>Gelaude</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Yves</givenName>
+		<surName>Jacobs</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Ine</givenName>
+		<surName>Pauwels</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>ine.pauwels@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-2856-8787</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Lien</givenName>
+		<surName>Reyserhove</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>lien.reyserhove@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0001-7484-9267</userId>
+</creator>
+<creator>
+	<individualName>
+		<givenName>Johan</givenName>
+		<surName>Coeck</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0003-2732-7428</userId>
+</creator>
+
+
+<metadataProvider>
+	<organizationName>Flanders Marine Institute (VLIZ)</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@vliz.be</electronicMailAddress>
+	<onlineUrl>https://www.vliz.be</onlineUrl>
+</metadataProvider>
+
+<associatedParty>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<role>contentProvider</role>
+</associatedParty>
+
+	<pubDate>2020-11-19</pubDate>
+	<language>en</language>
+	<abstract>
+		<para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by what later became the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2011_rivierprik, using VEMCO tags (V7, V8) and receivers (VR2, VR2W). In total 39 adult individuals of river lamprey (<i>Lampetra fluviatilis</i>) were captured, tagged and released in 2011 and 2012, to study the effect of weirs and shipping locks on their upstream spawning migration in the tidal and/or non-tidal part of the Scheldt river and its tributaries.]]></para>
+	</abstract>
+	<additionalInfo>
+		<para><![CDATA[<p>The disruption of longitudinal and lateral connectivity of rivers has led to ecological catastrophes such as the extinction of several diadromous fish species. River lamprey is an important indicator species for the integrity of ecosystems and connectivity within and between catchment areas. In the highly fragmented Scheldt river basin first restoration actions are undertaken, such as the building of nature-like bypasses. The migration patterns in the river catchment and their behaviour at a tidal barrier, lock-weir complexes and fish bypasses (passage timing and delay) in the upper Scheldt river show that the disrupted water management of the river and in consequence of its barriers and bypasses are one keys to (un)successful spawning migration in the catchment, beside spawning habitat deterioration.</p><br/>
+
+<p>The study was commissioned by the Vlaamse Waterweg NV. Data were exported from the European Tracking Network data portal <a href="http://www.lifewatch.be/etn"> (http://www.lifewatch.be/etn) </a> developed by VLIZ using the ETN R package <a href="https://inbo.github.io/etn/"> (https://inbo.github.io/etn/) </a> developed by INBO. Field definitions can be found at <a href="https://inbo.github.io/etn/articles/etn_fields.html">https://inbo.github.io/etn/articles/etn_fields.html</a>.</p>]]></para>
+	</additionalInfo>
+		<keywordSet>
+		<keyword>Acoustic telemetry</keyword>
+		<keyword>Spawning migrations</keyword>
+		<keywordThesaurus>ASFA Thesaurus List</keywordThesaurus>
+	</keywordSet>
+	<keywordSet>
+		<keyword>Acoustic Telemetry</keyword>
+		<keywordThesaurus>ETN Context</keywordThesaurus>
+	</keywordSet>
+	<keywordSet>
+		<keyword>Animal movement</keyword>
+		<keyword>Animal tracking</keyword>
+		<keyword>Biologging</keyword>
+		<keyword>Impact assessment</keyword>
+		<keyword>Migration barriers</keyword>
+		<keyword>River lamprey</keyword>
+		<keyword>VEMCO</keyword>
+	</keywordSet>
+	<keywordSet>
+		<keyword>Migration</keyword>
+		<keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
+	</keywordSet>
+
+	<intellectualRights>
+		<para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
+	</intellectualRights>
+
+<coverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/2469"><geographicDescription>Belgium, Flanders</geographicDescription>	</geographicCoverage>
+        <geographicCoverage id="http://marineregions.org/mrgid/2542"><geographicDescription>Belgium, Scheldt</geographicDescription>	</geographicCoverage>
+	<temporalCoverage>
+      <rangeOfDates>
+        <beginDate><calendarDate>2011-12-13</calendarDate></beginDate>
+        <endDate><calendarDate>2012-07-03</calendarDate></endDate>
+      </rangeOfDates>
+    </temporalCoverage>
+	<taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:101172">
+		<generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:101172</generalTaxonomicCoverage>
+		<taxonomicClassification>
+		<taxonRankName>species</taxonRankName>
+		<taxonRankValue>Lampetra fluviatilis (Linnaeus, 1758)</taxonRankValue>
+		</taxonomicClassification>
+	</taxonomicCoverage>
+</coverage>
+
+	<maintenance>
+		<description><para></para></description>
+		<maintenanceUpdateFrequency>unkown</maintenanceUpdateFrequency>
+	</maintenance>
+<contact>
+	<individualName>
+		<givenName>David</givenName>
+		<surName>Buysse</surName>
+	</individualName>
+	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
+	<address>
+		<country>BE</country>
+	</address>
+	<electronicMailAddress>info@inbo.be</electronicMailAddress>
+	<userId directory="https://orcid.org/">0000-0002-4437-5678</userId>
+</contact>
+</dataset>
+
+<additionalMetadata>
+	<describes><para>Extra metadata added by VLIZ to add parameter, platform info, as well as GBIF fields</para></describes>
+	<metadata>
+		<parameter>Fish detections</parameter>
+		<parameter>Fish sex</parameter>
+		<parameter>Fish total length</parameter>
+		<parameter>Wet weight of fish</parameter>
+
+		<gbif>
+			<dateStamp>2024-07-09T01:33:06+00:00</dateStamp><hierarchyLevel>dataset</hierarchyLevel>
+			<citation identifier="https://dx.doi.org/10.14284/429">Buysse, D.; Mouton, A.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Jacobs, Y.; Pauwels, I.; Reyserhove, L.; Coeck, J.; (2020): 2011_RIVIERPRIK - Acoustic telemetry data for river lamprey (Lampetra fluviatilis) in the upper Scheldt river (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/429</citation>
+
+		<physical>
+			<objectName>Online dataset</objectName>
+			<characterEncoding>UTF-8</characterEncoding>
+			<dataFormat>
+				<externallyDefinedFormat>
+					<formatName>HTML</formatName>
+			</externallyDefinedFormat>
+			</dataFormat>
+			<distribution>
+				<online>
+					<url function="download">https://rshiny.lifewatch.be/etn-data/</url>
+				</online>
+			</distribution>
+		</physical>
+		<physical>
+			<objectName>Metadata</objectName>
+			<characterEncoding>UTF-8</characterEncoding>
+			<dataFormat>
+				<externallyDefinedFormat>
+					<formatName>HTML</formatName>
+			</externallyDefinedFormat>
+			</dataFormat>
+			<distribution>
+				<online>
+					<url function="download">https://www.vliz.be//en/imis?dasid=5867</url>
+				</online>
+			</distribution>
+		</physical>
+
+	</gbif>
+	</metadata>
+</additionalMetadata>
+
+</eml:eml>
