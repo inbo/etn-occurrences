@@ -35,7 +35,7 @@ metadata_provider <- person(
 ## Read and clean EML 
 
 ```{r}
-eml1 <- EML::read_eml(paste0(imis_url, "&show=eml"))
+eml <- EML::read_eml(paste0(imis_url, "&show=eml"))
 ```
 
 ### Basic Metadata
@@ -53,10 +53,7 @@ Clean resource contacts and resource creators:
 
 ```{r}
 update_contact <- function(contact) {
-  if (
-    !is.null(contact$electronicMailAddress) && contact$electronicMailAddress == "info@inbo.be") {
-    contact$electronicMailAddress <- NULL
-  }
+  contact$electronicMailAddress <- NULL
   if (!is.null(contact$organizationName) && contact$organizationName == "Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek") {
     contact$organizationName <- "Research Institute for Nature and Forest (INBO)"
   }
