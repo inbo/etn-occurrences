@@ -23,6 +23,7 @@ library(stringr)
 
 ```{r}
 project_id <- "2011_RIVIERPRIK"
+imis_url <- "https://www.vliz.be/en/imis?dasid=5867&doiid=429"
 metadata_provider <- person(
   given = "Peter",
   family = "Desmet",
@@ -34,7 +35,7 @@ metadata_provider <- person(
 ## Read and clean EML 
 
 ```{r}
-eml <- EML::read_eml(here::here("data", "raw", project_id, "eml.xml"))
+eml1 <- EML::read_eml(paste0(imis_url, "&show=eml"))
 ```
 
 ### Basic Metadata
