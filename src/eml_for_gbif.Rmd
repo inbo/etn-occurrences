@@ -34,7 +34,7 @@ metadata_provider <- person(
 ## Read and clean EML 
 
 ```{r}
-eml <- EML::read_eml(here::here("data", project_id, "raw", "eml.xml"))
+eml <- EML::read_eml(here::here("data", "raw", project_id, "eml.xml"))
 ```
 
 ### Basic Metadata
