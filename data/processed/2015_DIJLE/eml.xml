@@ -1,304 +1,377 @@
-<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" 
-	xmlns:dc="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 https://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd" 
-	packageId="eml.1.1" system="https://www.vliz.be/imis" 
-	xml:lang="en">
-
-<dataset>
-	<title xml:lang="en">2015_DIJLE - Acoustic telemetry data for five fish species in the Dijle river (Belgium)</title>
-
-<creator>
-	<individualName>
-		<givenName>Sophie</givenName>
-		<surName>Vermeersch</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>info@inbo.be</electronicMailAddress>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Ine</givenName>
-		<surName>Pauwels</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>ine.pauwels@inbo.be</electronicMailAddress>
-	<userId directory="https://orcid.org/">0000-0002-2856-8787</userId>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Raf</givenName>
-		<surName>Baeyens</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>info@inbo.be</electronicMailAddress>
-	<userId directory="https://orcid.org/">0000-0002-0651-3056</userId>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Nico</givenName>
-		<surName>De Maerteleire</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>nico.demaerteleire@inbo.be</electronicMailAddress>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Peter</givenName>
-		<surName>Desmet</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Emilie</givenName>
-		<surName>Gelaude</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>info@inbo.be</electronicMailAddress>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Tanja</givenName>
-		<surName>Milotic</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>info@inbo.be</electronicMailAddress>
-	<userId directory="https://orcid.org/">0000-0002-3129-6196</userId>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Sébastien</givenName>
-		<surName>Pieters</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>info@inbo.be</electronicMailAddress>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Lien</givenName>
-		<surName>Reyserhove</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>lien.reyserhove@inbo.be</electronicMailAddress>
-	<userId directory="https://orcid.org/">0000-0001-7484-9267</userId>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Karen</givenName>
-		<surName>Robberechts</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>karen.robberechts@inbo.be</electronicMailAddress>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Pieterjan</givenName>
-		<surName>Verhelst</surName>
-	</individualName>
-	<organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>isolde.degrem@ugent.be</electronicMailAddress>
-	<userId directory="https://orcid.org/">0000-0002-2610-6941</userId>
-</creator>
-<creator>
-	<individualName>
-		<givenName>Johan</givenName>
-		<surName>Coeck</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>info@inbo.be</electronicMailAddress>
-	<userId directory="https://orcid.org/">0000-0003-2732-7428</userId>
-</creator>
-
-
-<metadataProvider>
-	<organizationName>Flanders Marine Institute (VLIZ)</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>info@vliz.be</electronicMailAddress>
-	<onlineUrl>https://www.vliz.be</onlineUrl>
-</metadataProvider>
-
-	<pubDate>2020-11-20</pubDate>
-	<language>en</language>
-	<abstract>
-		<para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2015_dijle, using VEMCO tags (V7, V13) and receivers (VR2AR, VR2W). In total 26 adult individuals of five local wild fish species (<i>Anguilla anguilla</i>, <i>Cyprinus carpio</i>, <i>Platichthys flesus</i>, <i>Rutilus rutilus</i>, <i>Silurus glanis</i>) were captured, tagged and released in 2015, to study the effect of a specific barrier on their upstream/downstream migration in the Dijle basin.]]></para>
-	</abstract>
-	<additionalInfo>
-		<para><![CDATA[<p>Fish migrating from the sea to the Dijle river (or vice versa) are obstructed by a weir in the city of Mechelen which is designed to prevent tides from entering further inland. To mitigate this problem, fish-friendly weir management was implemented, the effect of which was measured in this study with acoustic telemetry. In 2015, 26 individuals of five fish species - European eel (<i>Anguilla anguilla</i>), common carp (<i>Cyprinus carpio</i>), flounder (<i>Platichthys flesus</i>), roach (<i>Rutilus rutilus</i>) and wels catfish (<i>Silurus glanis</i>) - were captured, tagged and tracked in the areas up- and downstream of the weir. 3 wels catfish tagged for the 2014_demer study were also detected. Results of the evaluated weir passages by fish showed that 21 of 29 fish were able to pass the weir at specific hydrological conditions and weir management options. The number of passages differed between species, but happened always in the periods that higher passage could be expected following their lifestyle. The study indicates the importance and benefits of a fish-friendly weir management.</p><br/>
-
-<p>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch. The study was commissioned by the Vlaamse Waterweg NV. Data were exported from the European Tracking Network data portal (<a href="http://www.lifewatch.be/etn">http://www.lifewatch.be/etn</a>) developed by VLIZ using the ETN R package (<a href="https://inbo.github.io/etn/">https://inbo.github.io/etn/</a>) developed by INBO. Field definitions can be found at <a href="https://inbo.github.io/etn/articles/etn_fields.html">https://inbo.github.io/etn/articles/etn_fields.html</a>.</p>]]></para>
-	</additionalInfo>
-		<keywordSet>
-		<keyword>Acoustic telemetry</keyword>
-		<keywordThesaurus>ASFA Thesaurus List</keywordThesaurus>
-	</keywordSet>
-	<keywordSet>
-		<keyword>Acoustic Telemetry</keyword>
-		<keywordThesaurus>ETN Context</keywordThesaurus>
-	</keywordSet>
-	<keywordSet>
-		<keyword>Animal movement</keyword>
-		<keyword>Animal tracking</keyword>
-		<keyword>Biologging</keyword>
-		<keyword>Impact assessment</keyword>
-		<keyword>LifeWatch</keyword>
-		<keyword>Migration barriers</keyword>
-		<keyword>VEMCO</keyword>
-	</keywordSet>
-	<keywordSet>
-		<keyword>Migration</keyword>
-		<keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
-	</keywordSet>
-
-	<intellectualRights>
-		<para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
-	</intellectualRights>
-
-<coverage>
-        <geographicCoverage id="http://marineregions.org/mrgid/3098"><geographicDescription>Belgium, Dijle R.</geographicDescription>	</geographicCoverage>
-        <geographicCoverage id="http://marineregions.org/mrgid/2469"><geographicDescription>Belgium, Flanders</geographicDescription>	</geographicCoverage>
-        <geographicCoverage id="http://marineregions.org/mrgid/2542"><geographicDescription>Belgium, Scheldt</geographicDescription>	</geographicCoverage>
-	<temporalCoverage>
-      <rangeOfDates>
-        <beginDate><calendarDate>2015-04-22</calendarDate></beginDate>
-        <endDate><calendarDate>2018-06-28</calendarDate></endDate>
-      </rangeOfDates>
-    </temporalCoverage>
-	<taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:126281">
-		<generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:126281</generalTaxonomicCoverage>
-		<taxonomicClassification>
-		<taxonRankName>species</taxonRankName>
-		<taxonRankValue>Anguilla anguilla (Linnaeus, 1758)</taxonRankValue>
-		</taxonomicClassification>
-	</taxonomicCoverage>
-	<taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:154582">
-		<generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:154582</generalTaxonomicCoverage>
-		<taxonomicClassification>
-		<taxonRankName>species</taxonRankName>
-		<taxonRankValue>Cyprinus carpio Linnaeus, 1758</taxonRankValue>
-		</taxonomicClassification>
-	</taxonomicCoverage>
-	<taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:127141">
-		<generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:127141</generalTaxonomicCoverage>
-		<taxonomicClassification>
-		<taxonRankName>species</taxonRankName>
-		<taxonRankValue>Platichthys flesus (Linneaus, 1758)</taxonRankValue>
-		</taxonomicClassification>
-	</taxonomicCoverage>
-	<taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:154333">
-		<generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:154333</generalTaxonomicCoverage>
-		<taxonomicClassification>
-		<taxonRankName>species</taxonRankName>
-		<taxonRankValue>Rutilus rutilus (Linnaeus, 1758)</taxonRankValue>
-		</taxonomicClassification>
-	</taxonomicCoverage>
-	<taxonomicCoverage id="urn:lsid:marinespecies.org:taxname:154677">
-		<generalTaxonomicCoverage>urn:lsid:marinespecies.org:taxname:154677</generalTaxonomicCoverage>
-		<taxonomicClassification>
-		<taxonRankName>species</taxonRankName>
-		<taxonRankValue>Silurus glanis Linnaeus, 1758</taxonRankValue>
-		</taxonomicClassification>
-	</taxonomicCoverage>
-</coverage>
-
-	<maintenance>
-		<description><para></para></description>
-		<maintenanceUpdateFrequency>unkown</maintenanceUpdateFrequency>
-	</maintenance>
-<contact>
-	<individualName>
-		<givenName>Sophie</givenName>
-		<surName>Vermeersch</surName>
-	</individualName>
-	<organizationName>Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek</organizationName>
-	<address>
-		<country>BE</country>
-	</address>
-	<electronicMailAddress>info@inbo.be</electronicMailAddress>
-</contact>
-</dataset>
-
-<additionalMetadata>
-	<describes><para>Extra metadata added by VLIZ to add parameter, platform info, as well as GBIF fields</para></describes>
-	<metadata>
-		<parameter>Fish detections</parameter>
-		<parameter>Fish total length</parameter>
-		<parameter>Wet weight of fish</parameter>
-
-		<gbif>
-			<dateStamp>2024-07-09T01:33:06+00:00</dateStamp><hierarchyLevel>dataset</hierarchyLevel>
-			<citation identifier="https://dx.doi.org/10.14284/430">Vermeersch, S.; Pauwels, I.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Milotic, T.; Pieters, S.; Reyserhove, L.; Robberechts, K.; Verhelst, P.; Coeck, J.; (2020): 2015_DIJLE - Acoustic telemetry data for five fish species in the Dijle river (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/430</citation>
-
-		<physical>
-			<objectName>Online dataset</objectName>
-			<characterEncoding>UTF-8</characterEncoding>
-			<dataFormat>
-				<externallyDefinedFormat>
-					<formatName>HTML</formatName>
-			</externallyDefinedFormat>
-			</dataFormat>
-			<distribution>
-				<online>
-					<url function="download">https://rshiny.lifewatch.be/etn-data/</url>
-				</online>
-			</distribution>
-		</physical>
-		<physical>
-			<objectName>Metadata</objectName>
-			<characterEncoding>UTF-8</characterEncoding>
-			<dataFormat>
-				<externallyDefinedFormat>
-					<formatName>HTML</formatName>
-			</externallyDefinedFormat>
-			</dataFormat>
-			<distribution>
-				<online>
-					<url function="download">https://www.vliz.be//en/imis?dasid=5872</url>
-				</online>
-			</distribution>
-		</physical>
-
-	</gbif>
-	</metadata>
-</additionalMetadata>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" xmlns:dc="https://www.dublincore.org/specifications/dublin-core/dcmi-terms" xml:lang="en" packageId="eml.1.1" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 https://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd" system="https://www.vliz.be/imis">
+  <additionalMetadata>
+    <describes>
+      <para>Extra metadata added by VLIZ to add parameter, platform info, as well as GBIF fields</para>
+    </describes>
+    <metadata>
+      <gbif>
+        <citation>Vermeersch, S.; Pauwels, I.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Milotic, T.; Pieters, S.; Reyserhove, L.; Robberechts, K.; Verhelst, P.; Coeck, J.; (2020): 2015_DIJLE - Acoustic telemetry data for five fish species in the Dijle river (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/430<identifier>https://doi.org/10.14284/430</identifier></citation>
+        <dateStamp>2025-01-08T10:56:27+01:00</dateStamp>
+        <hierarchyLevel>dataset</hierarchyLevel>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005872</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.eurobis.org/toolbox/en/download/occurrence/dataset/5872</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>GBIF dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.gbif.org/dataset/0d9718f4-de6d-4115-b2f0-e3ec6aa088ab</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://ipt.inbo.be/archive.do?r=2015_dijle</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">http://ipt.inbo.be/resource?r=2015_dijle</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://obis.org/dataset/64e038e6-795c-418e-b617-7c81e4dcb293</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://rshiny.lifewatch.be/etn-data/</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Metadata</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.vliz.be//en/imis?dasid=5872</url>
+            </online>
+          </distribution>
+        </physical>
+      </gbif>
+      <parameter>Fish detections</parameter>
+      <parameter>Fish total length</parameter>
+      <parameter>Wet weight of fish</parameter>
+    </metadata>
+  </additionalMetadata>
+  <dataset>
+    <title xml:lang="en">2015_DIJLE - Acoustic telemetry data for five fish species in the Dijle river (Belgium)</title>
+    <creator>
+      <individualName>
+        <givenName>Sophie</givenName>
+        <surName>Vermeersch</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Ine</givenName>
+        <surName>Pauwels</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-2856-8787</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Raf</givenName>
+        <surName>Baeyens</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-0651-3056</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Nico</givenName>
+        <surName>De Maerteleire</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Peter</givenName>
+        <surName>Desmet</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Emilie</givenName>
+        <surName>Gelaude</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Tanja</givenName>
+        <surName>Milotic</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-3129-6196</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Sébastien</givenName>
+        <surName>Pieters</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Lien</givenName>
+        <surName>Reyserhove</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0001-7484-9267</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Karen</givenName>
+        <surName>Robberechts</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Pieterjan</givenName>
+        <surName>Verhelst</surName>
+      </individualName>
+      <organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-2610-6941</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Johan</givenName>
+        <surName>Coeck</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0003-2732-7428</userId>
+    </creator>
+    <metadataProvider>
+      <individualName>
+        <givenName>Peter</givenName>
+        <surName>Desmet</surName>
+      </individualName>
+      <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
+      <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
+    </metadataProvider>
+    <pubDate>2024-11-27</pubDate>
+    <language>en</language>
+    <abstract>
+      <para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2015_dijle, using VEMCO tags (V7, V13) and receivers (VR2AR, VR2W). In total 26 adult individuals of five local wild fish species (<i>Anguilla anguilla</i>, <i>Cyprinus carpio</i>, <i>Platichthys flesus</i>, <i>Rutilus rutilus</i>, <i>Silurus glanis</i>) were captured, tagged and released in 2015, to study the effect of a specific barrier on their upstream/downstream migration in the Dijle basin.]]></para>
+      <para><![CDATA[Fish migrating from the sea to the Dijle river (or vice versa) are obstructed by a weir in the city of Mechelen which is designed to prevent tides from entering further inland. To mitigate this problem, fish-friendly weir management was implemented, the effect of which was measured in this study with acoustic telemetry. In 2015, 26 individuals of five fish species - European eel (<i>Anguilla anguilla</i>), common carp (<i>Cyprinus carpio</i>), flounder (<i>Platichthys flesus</i>), roach (<i>Rutilus rutilus</i>) and wels catfish (<i>Silurus glanis</i>) - were captured, tagged and tracked in the areas up- and downstream of the weir. 3 wels catfish tagged for the 2014_demer study were also detected. Results of the evaluated weir passages by fish showed that 21 of 29 fish were able to pass the weir at specific hydrological conditions and weir management options. The number of passages differed between species, but happened always in the periods that higher passage could be expected following their lifestyle. The study indicates the importance and benefits of a fish-friendly weir management.]]></para>
+      <para>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch. The study was commissioned by the Vlaamse Waterweg NV.</para>
+      <para>Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Vermeersch et al. (2020, &lt;a href="https://doi.org/10.14284/430"&gt;https://doi.org/10.14284/430&lt;/a&gt;).</para>
+    </abstract>
+    <keywordSet>
+      <keyword>Acoustic telemetry</keyword>
+      <keywordThesaurus>ASFA Thesaurus List</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Acoustic Telemetry</keyword>
+      <keywordThesaurus>ETN Context</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Animal movement</keyword>
+      <keyword>Animal tracking</keyword>
+      <keyword>Biologging</keyword>
+      <keyword>Impact assessment</keyword>
+      <keyword>LifeWatch</keyword>
+      <keyword>Migration barriers</keyword>
+      <keyword>VEMCO</keyword>
+      <keywordThesaurus>N/A</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Migration</keyword>
+      <keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>
+      <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
+    </intellectualRights>
+    <coverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/3098">
+        <geographicDescription>Belgium, Dijle R.</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2469">
+        <geographicDescription>Belgium, Flanders</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2542">
+        <geographicDescription>Belgium, Scheldt</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>EurOBIS calculated BBOX &gt; station Bounding Box</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.78573</westBoundingCoordinate>
+          <eastBoundingCoordinate>4.72155</eastBoundingCoordinate>
+          <northBoundingCoordinate>51.64202</northBoundingCoordinate>
+          <southBoundingCoordinate>50.970103</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2015-04-22</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2018-06-28</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Anguilla anguilla (Linnaeus, 1758)</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Cyprinus carpio Linnaeus, 1758</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Platichthys flesus (Linneaus, 1758)</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Rutilus rutilus (Linnaeus, 1758)</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Silurus glanis Linnaeus, 1758</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <maintenance>
+      <description>
+        <para/>
+      </description>
+      <maintenanceUpdateFrequency>Not planned</maintenanceUpdateFrequency>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>Sophie</givenName>
+        <surName>Vermeersch</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </contact>
+  </dataset>
 </eml:eml>

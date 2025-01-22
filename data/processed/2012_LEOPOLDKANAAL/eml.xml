@@ -6,93 +6,9 @@
     </describes>
     <metadata>
       <gbif>
-        <citation>Buysse, D.; Mouton, A.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Jacobs, Y.; Pauwels, I.; Reyserhove, L.; Coeck, J.; (2020): 2011_RIVIERPRIK - Acoustic telemetry data for river lamprey (Lampetra fluviatilis) in the upper Scheldt river (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/429<identifier>https://doi.org/10.14284/429</identifier></citation>
-        <dateStamp>2025-01-08T10:53:03+01:00</dateStamp>
+        <citation>Verhelst, P.; Buysse, D.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Jacobs, Y.; Milotic, T.; Mouton, A.; Reyserhove, L.; Robberechts, K.; Coeck, J.; (2020): 2012_LEOPOLDKANAAL - Acoustic telemetry data for European eel (Anguilla anguilla) in a polder area in Flanders (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/428<identifier>https://doi.org/10.14284/428</identifier></citation>
+        <dateStamp>2024-07-09T01:33:06+00:00</dateStamp>
         <hierarchyLevel>dataset</hierarchyLevel>
-        <physical>
-          <objectName>Online dataset</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005867</url>
-            </online>
-          </distribution>
-        </physical>
-        <physical>
-          <objectName>Online dataset</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">https://www.eurobis.org/toolbox/en/download/occurrence/dataset/5867</url>
-            </online>
-          </distribution>
-        </physical>
-        <physical>
-          <objectName>GBIF dataset</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">https://www.gbif.org/dataset/365dcf96-b8ba-49dd-91b8-4aaaa0a0a1a7</url>
-            </online>
-          </distribution>
-        </physical>
-        <physical>
-          <objectName>IPT</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">https://ipt.inbo.be/archive.do?r=2011_rivierprik</url>
-            </online>
-          </distribution>
-        </physical>
-        <physical>
-          <objectName>IPT</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">http://ipt.inbo.be/resource?r=2011_rivierprik</url>
-            </online>
-          </distribution>
-        </physical>
-        <physical>
-          <objectName>Online dataset</objectName>
-          <characterEncoding>UTF-8</characterEncoding>
-          <dataFormat>
-            <externallyDefinedFormat>
-              <formatName>HTML</formatName>
-            </externallyDefinedFormat>
-          </dataFormat>
-          <distribution>
-            <online>
-              <url function="download">https://obis.org/dataset/384580a6-e811-427d-a7a0-1319f6d013a8</url>
-            </online>
-          </distribution>
-        </physical>
         <physical>
           <objectName>Online dataset</objectName>
           <characterEncoding>UTF-8</characterEncoding>
@@ -117,19 +33,36 @@
           </dataFormat>
           <distribution>
             <online>
-              <url function="download">https://www.vliz.be//en/imis?dasid=5867</url>
+              <url function="download">https://www.vliz.be//en/imis?dasid=5873</url>
             </online>
           </distribution>
         </physical>
       </gbif>
+      <parameter>Fish age</parameter>
       <parameter>Fish detections</parameter>
+      <parameter>Fish lifestage</parameter>
       <parameter>Fish sex</parameter>
       <parameter>Fish total length</parameter>
+      <parameter>Horizontal eye diameter of fish</parameter>
+      <parameter>Pectoral fin length of fish</parameter>
+      <parameter>Vertical eye diameter of fish</parameter>
       <parameter>Wet weight of fish</parameter>
     </metadata>
   </additionalMetadata>
   <dataset>
-    <title xml:lang="en">2011_RIVIERPRIK - Acoustic telemetry data for river lamprey (Lampetra fluviatilis) in the upper Scheldt river (Belgium)</title>
+    <title xml:lang="en">2012_LEOPOLDKANAAL - Acoustic telemetry data for European eel (Anguilla anguilla) in a polder area in Flanders (Belgium)</title>
+    <creator>
+      <individualName>
+        <givenName>Pieterjan</givenName>
+        <surName>Verhelst</surName>
+      </individualName>
+      <organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <electronicMailAddress>isolde.degrem@ugent.be</electronicMailAddress>
+      <userId directory="https://orcid.org/">0000-0002-2610-6941</userId>
+    </creator>
     <creator>
       <individualName>
         <givenName>David</givenName>
@@ -140,16 +73,6 @@
         <country>BE</country>
       </address>
       <userId directory="https://orcid.org/">0000-0002-4437-5678</userId>
-    </creator>
-    <creator>
-      <individualName>
-        <givenName>Ans</givenName>
-        <surName>Mouton</surName>
-      </individualName>
-      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
-      <address>
-        <country>BE</country>
-      </address>
     </creator>
     <creator>
       <individualName>
@@ -171,6 +94,7 @@
       <address>
         <country>BE</country>
       </address>
+      <electronicMailAddress>nico.demaerteleire@inbo.be</electronicMailAddress>
     </creator>
     <creator>
       <individualName>
@@ -205,14 +129,24 @@
     </creator>
     <creator>
       <individualName>
-        <givenName>Ine</givenName>
-        <surName>Pauwels</surName>
+        <givenName>Tanja</givenName>
+        <surName>Milotic</surName>
       </individualName>
       <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
       <address>
         <country>BE</country>
       </address>
-      <userId directory="https://orcid.org/">0000-0002-2856-8787</userId>
+      <userId directory="https://orcid.org/">0000-0002-3129-6196</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Ans</givenName>
+        <surName>Mouton</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
     </creator>
     <creator>
       <individualName>
@@ -223,7 +157,19 @@
       <address>
         <country>BE</country>
       </address>
+      <electronicMailAddress>lien.reyserhove@inbo.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0001-7484-9267</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Karen</givenName>
+        <surName>Robberechts</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <electronicMailAddress>karen.robberechts@inbo.be</electronicMailAddress>
     </creator>
     <creator>
       <individualName>
@@ -244,17 +190,17 @@
       <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
     </metadataProvider>
-    <pubDate>2024-11-27</pubDate>
+    <pubDate>2020-11-19</pubDate>
     <language>en</language>
     <abstract>
-      <para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by what later became the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2011_rivierprik, using VEMCO tags (V7, V8) and receivers (VR2, VR2W). In total 39 adult individuals of river lamprey (<i>Lampetra fluviatilis</i>) were captured, tagged and released in 2011 and 2012, to study the effect of weirs and shipping locks on their upstream spawning migration in the tidal and/or non-tidal part of the Scheldt river and its tributaries.]]></para>
-      <para>The disruption of longitudinal and lateral connectivity of rivers has led to ecological catastrophes such as the extinction of several diadromous fish species. River lamprey is an important indicator species for the integrity of ecosystems and connectivity within and between catchment areas. In the highly fragmented Scheldt river basin first restoration actions are undertaken, such as the building of nature-like bypasses. The migration patterns in the river catchment and their behaviour at a tidal barrier, lock-weir complexes and fish bypasses (passage timing and delay) in the upper Scheldt river show that the disrupted water management of the river and in consequence of its barriers and bypasses are one keys to (un)successful spawning migration in the catchment, beside spawning habitat deterioration.</para>
-      <para>The study was commissioned by the Vlaamse Waterweg NV.</para>
-      <para>Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Buysse et al. (2020, &lt;a href="https://doi.org/10.14284/429"&gt;https://doi.org/10.14284/429&lt;/a&gt;).</para>
+      <para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network (<a href="https://lifewatch.be/en/fish-acoustic-receiver-network">https://lifewatch.be/en/fish-acoustic-receiver-network</a>) for the project/study 2012_leopoldkanaal, using VEMCO tags (V7, V13) and receivers (VR2AR, VR2W). In total 104 female individuals of European eel (<i>Anguilla anguilla</i>) were captured, tagged and released in 2011 and 2012, to study their movement behaviour during the yellow eel stage and migration behaviour during the silver eel stage for 4 years in Meetjesland, a polder area in Flanders, Belgium.]]></para>
+      <para>Polder areas are lowland systems below sea level that are drained for agricultural and urbanization purposes. Hence, they are characterised by water regulating structures such as dykes, water pumping stations and weirs. They are characterised by a network of canals, connected ponds and ditches, resulting in a high habitat diversity and thus many potential growth areas. When the water level rises beyond a certain threshold during precipitation events, water is pumped from the polder area into the sea to maintain a specific water level. Not only does this result in irregular water flows, water pumping stations have already shown to negatively affect fish passing through them by various injuries and mortalities. In this tracking study, we investigated the movement and ranging behaviour of resident, yellow eels to understand their spatio-temporal habitat use in the polder. Second, we analysed what routes migrating silver eels take, what environmental factors influence this migration and to what extent they are delayed by the migration barriers.</para>
+      <para>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch. The study was commissioned by the Agency of Nature and Forest (ANB).</para>
+      <para>Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Verhelst et al. (2020, &lt;a href="https://doi.org/10.14284/428"&gt;https://doi.org/10.14284/428&lt;/a&gt;).</para>
     </abstract>
     <keywordSet>
       <keyword>Acoustic telemetry</keyword>
-      <keyword>Spawning migrations</keyword>
+      <keyword>Home range</keyword>
       <keywordThesaurus>ASFA Thesaurus List</keywordThesaurus>
     </keywordSet>
     <keywordSet>
@@ -266,8 +212,8 @@
       <keyword>Animal tracking</keyword>
       <keyword>Biologging</keyword>
       <keyword>Impact assessment</keyword>
+      <keyword>LifeWatch</keyword>
       <keyword>Migration barriers</keyword>
-      <keyword>River lamprey</keyword>
       <keyword>VEMCO</keyword>
       <keywordThesaurus>N/A</keywordThesaurus>
     </keywordSet>
@@ -279,35 +225,35 @@
       <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
     </intellectualRights>
     <coverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/4752">
+        <geographicDescription>ANE, Western Scheldt</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2550">
+        <geographicDescription>Belgium, Belgian Coast</geographicDescription>
+      </geographicCoverage>
       <geographicCoverage id="http://marineregions.org/mrgid/2469">
         <geographicDescription>Belgium, Flanders</geographicDescription>
       </geographicCoverage>
-      <geographicCoverage id="http://marineregions.org/mrgid/2542">
-        <geographicDescription>Belgium, Scheldt</geographicDescription>
+      <geographicCoverage>
+        <geographicDescription>Belgium, Leopoldkanaal</geographicDescription>
       </geographicCoverage>
       <geographicCoverage>
-        <geographicDescription>EurOBIS calculated BBOX &gt; station Bounding Box</geographicDescription>
-        <boundingCoordinates>
-          <westBoundingCoordinate>3.4313904305</westBoundingCoordinate>
-          <eastBoundingCoordinate>4.1060977142</eastBoundingCoordinate>
-          <northBoundingCoordinate>51.1042459773</northBoundingCoordinate>
-          <southBoundingCoordinate>50.7917709035</southBoundingCoordinate>
-        </boundingCoordinates>
+        <geographicDescription>Belgium, Meetjesland</geographicDescription>
       </geographicCoverage>
       <temporalCoverage>
         <rangeOfDates>
           <beginDate>
-            <calendarDate>2011-12-13</calendarDate>
+            <calendarDate>2012-07-03</calendarDate>
           </beginDate>
           <endDate>
-            <calendarDate>2012-07-03</calendarDate>
+            <calendarDate>2020-09-28</calendarDate>
           </endDate>
         </rangeOfDates>
       </temporalCoverage>
       <taxonomicCoverage>
         <taxonomicClassification>
           <taxonRankName>species</taxonRankName>
-          <taxonRankValue>Lampetra fluviatilis (Linnaeus, 1758)</taxonRankValue>
+          <taxonRankValue>Anguilla anguilla (Linnaeus, 1758)</taxonRankValue>
         </taxonomicClassification>
       </taxonomicCoverage>
     </coverage>
@@ -319,14 +265,31 @@
     </maintenance>
     <contact>
       <individualName>
-        <givenName>David</givenName>
-        <surName>Buysse</surName>
+        <givenName>Johan</givenName>
+        <surName>Coeck</surName>
       </individualName>
       <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
       <address>
         <country>BE</country>
       </address>
-      <userId directory="https://orcid.org/">0000-0002-4437-5678</userId>
+      <userId directory="https://orcid.org/">0000-0003-2732-7428</userId>
     </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <title>Durif index</title>
+        </description>
+      </methodStep>
+      <sampling>
+        <studyExtent>
+          <description>
+            <para>Entire sampling area</para>
+          </description>
+        </studyExtent>
+        <samplingDescription>
+          <para>Durif index</para>
+        </samplingDescription>
+      </sampling>
+    </methods>
   </dataset>
 </eml:eml>
