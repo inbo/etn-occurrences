@@ -7,7 +7,7 @@
     <metadata>
       <gbif>
         <citation>Verhelst, P.; Reubens, J.; Coeck, J.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Mouton, A.; Pieters, S.; Reyserhove, L.; Robberechts, K.; Moens, T.; (2020): 2015_PHD_VERHELST_EEL - Acoustic telemetry data for European eel (Anguilla anguilla) in the Scheldt estuary and southern North Sea (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/434<identifier>https://doi.org/10.14284/434</identifier></citation>
-        <dateStamp>2025-01-08T10:49:50+01:00</dateStamp>
+        <dateStamp>2025-03-26T15:27:18+00:00</dateStamp>
         <hierarchyLevel>dataset</hierarchyLevel>
         <physical>
           <objectName>Online dataset</objectName>
@@ -19,7 +19,7 @@
           </dataFormat>
           <distribution>
             <online>
-              <url function="download">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005850</url>
+              <url function="download">https://emodnet.ec.europa.eu/geoviewer/?layers=6d617269-6e65-696e-666f-000000001510:1:1&amp;basemap=ebwbl&amp;active=12639&amp;bounds=-12530604,-7655416,12530604,7655416&amp;filters=12639:datasetid__datasetid=5850--&amp;projection=EPSG:3857</url>
             </online>
           </distribution>
         </physical>
@@ -48,6 +48,34 @@
           <distribution>
             <online>
               <url function="download">https://www.gbif.org/dataset/638cc552-4ca9-43c0-8cad-d3f570a4572e</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE Download Service (WFS)</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/Dataportal/wfs?service=wfs&amp;version=1.1.0&amp;typeName=eurobis-obisenv_full&amp;request=GetFeature&amp;outputFormat=text%2Fcsv&amp;viewParams=datasetid%3A5850</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE WMS</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/wms?service=WMS&amp;request=getCapabilities&amp;layer=Dataportal:eurobis_rasters-obisenv</url>
             </online>
           </distribution>
         </physical>
@@ -273,13 +301,13 @@
       <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
     </metadataProvider>
-    <pubDate>2025-01-07</pubDate>
+    <pubDate>2024-08-26</pubDate>
     <language>en</language>
     <abstract>
       <para><![CDATA[This is an acoustic telemetry dataset published by Ghent University. It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2015_phd_verhelst_eel, using VEMCO tags (V13) and receivers (VR2AR, VR2Tx, VR2W). In total 136 female individuals of European eel (<i>Anguilla anguilla</i>) were captured, tagged and released between 2015 and 2018 in the Scheldt estuary, to study their migration behaviour - especially their use of selective tidal stream transport - in a tidal system without migration barriers.]]></para>
       <para>Large estuaries with a complete salinity gradient from a tidal freshwater zone to marine have become rare due to water regulating constructions such as sluices, shipping locks, water pumping stations and dams. However, the Scheldt estuary in Belgium still has an extensive estuary of ca 160 km. Diadromous fish have to overcome substantial distances which come with a high energetic cost. Due to the high energetic cost of migration and the low adult survival, some of these species have developed semelparity. Consequently, a bioenergetic trade-off between migration and reproduction may exist for semelparous fish species, especially since many will stop feeding during migration: the smaller the energy expenditure during migration, the larger the amount of energy that may remain available for gonad maturation. An example where migration can have important bioenergetic repercussions is migration through strong tidal systems. To reduce energy loss in such systems, fish may perform selective tidal stream transport (STST): an animal ascends into the water column with the appropriate tide and rests on or in the bottom during the opposite tide. However, the use of STST by silver European eels is still controversial. In this study, we found strong evidence that silver European eels apply STST. The results illustrate that eels can distinguish between ebb and flood and suggest that tides play a role in orientation, either directly or indirectly. The general migration speed was higher in the downstream part of the estuary compared to the upstream part, while tidal migration speed was equal in both parts, indicating that eels migrated more consistently in the downstream part. The results of this study give insight in how a diadromous species migrates through an estuary and underline the importance of the tides.</para>
       <para>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</para>
-      <para>Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Verhelst et al. (2020, &lt;a href="https://doi.org/10.14284/434"&gt;https://doi.org/10.14284/434&lt;/a&gt;).</para>
+      <para>&lt;![CDATA[Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Verhelst et al. (2020, &lt;a href="https://doi.org/10.14284/434"&gt;https://doi.org/10.14284/434&lt;/a&gt;).]]&gt;</para>
     </abstract>
     <keywordSet>
       <keyword>Acoustic telemetry</keyword>
@@ -298,16 +326,51 @@
       <keywordThesaurus>N/A</keywordThesaurus>
     </keywordSet>
     <keywordSet>
+      <keyword>Bio-geographical regions</keyword>
+      <keyword>Habitats and biotopes</keyword>
+      <keyword>Sea regions</keyword>
+      <keywordThesaurus>INSPIRE themes</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Biota</keyword>
+      <keyword>Environment</keyword>
+      <keyword>Geoscientific Information</keyword>
+      <keyword>Oceans</keyword>
+      <keywordThesaurus>INSPIRE Topics</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
       <keyword>Data</keyword>
       <keywordThesaurus>Assemble KO Types</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Metadata non conformant</keyword>
+      <keyword>Metadata not evaluated</keyword>
+      <keywordThesaurus>INSPIRE Conformity</keywordThesaurus>
     </keywordSet>
     <keywordSet>
       <keyword>Migration</keyword>
       <keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
     </keywordSet>
+    <keywordSet>
+      <keyword>No limitations to public access</keyword>
+      <keywordThesaurus>INSPIRE Limitations on public access</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>WGS84 (EPSG:4326)</keyword>
+      <keywordThesaurus>Coordinate Reference System</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>XYZ ASCII</keyword>
+      <keywordThesaurus>Spatial data formats</keywordThesaurus>
+    </keywordSet>
     <intellectualRights>
       <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
     </intellectualRights>
+    <distribution scope="document">
+      <online>
+        <url function="information">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005850</url>
+      </online>
+    </distribution>
     <coverage>
       <geographicCoverage id="http://marineregions.org/mrgid/2550">
         <geographicDescription>ANE, Belgium, Belgian Coast</geographicDescription>

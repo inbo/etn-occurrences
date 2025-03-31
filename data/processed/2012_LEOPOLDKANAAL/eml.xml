@@ -7,8 +7,120 @@
     <metadata>
       <gbif>
         <citation>Verhelst, P.; Buysse, D.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Jacobs, Y.; Milotic, T.; Mouton, A.; Reyserhove, L.; Robberechts, K.; Coeck, J.; (2020): 2012_LEOPOLDKANAAL - Acoustic telemetry data for European eel (Anguilla anguilla) in a polder area in Flanders (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/428<identifier>https://doi.org/10.14284/428</identifier></citation>
-        <dateStamp>2024-07-09T01:33:06+00:00</dateStamp>
+        <dateStamp>2025-03-26T15:27:18+00:00</dateStamp>
         <hierarchyLevel>dataset</hierarchyLevel>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://emodnet.ec.europa.eu/geoviewer/?layers=6d617269-6e65-696e-666f-000000001510:1:1&amp;basemap=ebwbl&amp;active=12639&amp;bounds=-12530604,-7655416,12530604,7655416&amp;filters=12639:datasetid__datasetid=5873--&amp;projection=EPSG:3857</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.eurobis.org/toolbox/en/download/occurrence/dataset/5873</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>GBIF dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.gbif.org/dataset/0eab323a-364d-4a1b-983b-62b8098845b0</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE Download Service (WFS)</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/Dataportal/wfs?service=wfs&amp;version=1.1.0&amp;typeName=eurobis-obisenv_full&amp;request=GetFeature&amp;outputFormat=text%2Fcsv&amp;viewParams=datasetid%3A5873</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE WMS</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/wms?service=WMS&amp;request=getCapabilities&amp;layer=Dataportal:eurobis_rasters-obisenv</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://ipt.inbo.be/archive.do?r=2012_leopoldkanaal</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">http://ipt.inbo.be/resource?r=2012_leopoldkanaal</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://obis.org/dataset/f3f5f40c-de45-4f03-b8d7-a4600ae33211</url>
+            </online>
+          </distribution>
+        </physical>
         <physical>
           <objectName>Online dataset</objectName>
           <characterEncoding>UTF-8</characterEncoding>
@@ -60,7 +172,6 @@
       <address>
         <country>BE</country>
       </address>
-      <electronicMailAddress>isolde.degrem@ugent.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0002-2610-6941</userId>
     </creator>
     <creator>
@@ -94,7 +205,6 @@
       <address>
         <country>BE</country>
       </address>
-      <electronicMailAddress>nico.demaerteleire@inbo.be</electronicMailAddress>
     </creator>
     <creator>
       <individualName>
@@ -157,7 +267,6 @@
       <address>
         <country>BE</country>
       </address>
-      <electronicMailAddress>lien.reyserhove@inbo.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0001-7484-9267</userId>
     </creator>
     <creator>
@@ -169,7 +278,6 @@
       <address>
         <country>BE</country>
       </address>
-      <electronicMailAddress>karen.robberechts@inbo.be</electronicMailAddress>
     </creator>
     <creator>
       <individualName>
@@ -190,13 +298,13 @@
       <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
     </metadataProvider>
-    <pubDate>2020-11-19</pubDate>
+    <pubDate>2024-11-22</pubDate>
     <language>en</language>
     <abstract>
       <para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network (<a href="https://lifewatch.be/en/fish-acoustic-receiver-network">https://lifewatch.be/en/fish-acoustic-receiver-network</a>) for the project/study 2012_leopoldkanaal, using VEMCO tags (V7, V13) and receivers (VR2AR, VR2W). In total 104 female individuals of European eel (<i>Anguilla anguilla</i>) were captured, tagged and released in 2011 and 2012, to study their movement behaviour during the yellow eel stage and migration behaviour during the silver eel stage for 4 years in Meetjesland, a polder area in Flanders, Belgium.]]></para>
       <para>Polder areas are lowland systems below sea level that are drained for agricultural and urbanization purposes. Hence, they are characterised by water regulating structures such as dykes, water pumping stations and weirs. They are characterised by a network of canals, connected ponds and ditches, resulting in a high habitat diversity and thus many potential growth areas. When the water level rises beyond a certain threshold during precipitation events, water is pumped from the polder area into the sea to maintain a specific water level. Not only does this result in irregular water flows, water pumping stations have already shown to negatively affect fish passing through them by various injuries and mortalities. In this tracking study, we investigated the movement and ranging behaviour of resident, yellow eels to understand their spatio-temporal habitat use in the polder. Second, we analysed what routes migrating silver eels take, what environmental factors influence this migration and to what extent they are delayed by the migration barriers.</para>
       <para>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch. The study was commissioned by the Agency of Nature and Forest (ANB).</para>
-      <para>Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Verhelst et al. (2020, &lt;a href="https://doi.org/10.14284/428"&gt;https://doi.org/10.14284/428&lt;/a&gt;).</para>
+      <para>&lt;![CDATA[Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Verhelst et al. (2020, &lt;a href="https://doi.org/10.14284/428"&gt;https://doi.org/10.14284/428&lt;/a&gt;).]]&gt;</para>
     </abstract>
     <keywordSet>
       <keyword>Acoustic telemetry</keyword>
@@ -218,12 +326,47 @@
       <keywordThesaurus>N/A</keywordThesaurus>
     </keywordSet>
     <keywordSet>
+      <keyword>Bio-geographical regions</keyword>
+      <keyword>Habitats and biotopes</keyword>
+      <keyword>Sea regions</keyword>
+      <keywordThesaurus>INSPIRE themes</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Biota</keyword>
+      <keyword>Environment</keyword>
+      <keyword>Geoscientific Information</keyword>
+      <keyword>Oceans</keyword>
+      <keywordThesaurus>INSPIRE Topics</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Metadata non conformant</keyword>
+      <keyword>Metadata not evaluated</keyword>
+      <keywordThesaurus>INSPIRE Conformity</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
       <keyword>Migration</keyword>
       <keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>No limitations to public access</keyword>
+      <keywordThesaurus>INSPIRE Limitations on public access</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>WGS84 (EPSG:4326)</keyword>
+      <keywordThesaurus>Coordinate Reference System</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>XYZ ASCII</keyword>
+      <keywordThesaurus>Spatial data formats</keywordThesaurus>
     </keywordSet>
     <intellectualRights>
       <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
     </intellectualRights>
+    <distribution scope="document">
+      <online>
+        <url function="information">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005873</url>
+      </online>
+    </distribution>
     <coverage>
       <geographicCoverage id="http://marineregions.org/mrgid/4752">
         <geographicDescription>ANE, Western Scheldt</geographicDescription>
@@ -239,6 +382,15 @@
       </geographicCoverage>
       <geographicCoverage>
         <geographicDescription>Belgium, Meetjesland</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>EurOBIS calculated BBOX &gt; station Bounding Box</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.917725</westBoundingCoordinate>
+          <eastBoundingCoordinate>5.110242</eastBoundingCoordinate>
+          <northBoundingCoordinate>51.4169613</northBoundingCoordinate>
+          <southBoundingCoordinate>51.00164</southBoundingCoordinate>
+        </boundingCoordinates>
       </geographicCoverage>
       <temporalCoverage>
         <rangeOfDates>

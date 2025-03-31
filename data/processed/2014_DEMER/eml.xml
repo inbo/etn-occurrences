@@ -7,7 +7,7 @@
     <metadata>
       <gbif>
         <citation>Pauwels, I.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Milotic, T.; Pieters, S.; Reyserhove, L.; Robberechts, K.; Verhelst, P.; Coeck, J.; (2020): 2014_DEMER - Acoustic telemetry data for four fish species in the Demer river (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/432<identifier>https://doi.org/10.14284/432</identifier></citation>
-        <dateStamp>2025-01-08T10:55:26+01:00</dateStamp>
+        <dateStamp>2025-03-26T15:27:18+00:00</dateStamp>
         <hierarchyLevel>dataset</hierarchyLevel>
         <physical>
           <objectName>Online dataset</objectName>
@@ -19,7 +19,7 @@
           </dataFormat>
           <distribution>
             <online>
-              <url function="download">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005871</url>
+              <url function="download">https://emodnet.ec.europa.eu/geoviewer/?layers=6d617269-6e65-696e-666f-000000001510:1:1&amp;basemap=ebwbl&amp;active=12639&amp;bounds=-12530604,-7655416,12530604,7655416&amp;filters=12639:datasetid__datasetid=5871--&amp;projection=EPSG:3857</url>
             </online>
           </distribution>
         </physical>
@@ -48,6 +48,34 @@
           <distribution>
             <online>
               <url function="download">https://www.gbif.org/dataset/8be8dcf1-6e83-4172-a7b7-c2032b933d23</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE Download Service (WFS)</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/Dataportal/wfs?service=wfs&amp;version=1.1.0&amp;typeName=eurobis-obisenv_full&amp;request=GetFeature&amp;outputFormat=text%2Fcsv&amp;viewParams=datasetid%3A5871</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE WMS</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/wms?service=WMS&amp;request=getCapabilities&amp;layer=Dataportal:eurobis_rasters-obisenv</url>
             </online>
           </distribution>
         </physical>
@@ -255,13 +283,13 @@
       <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
     </metadataProvider>
-    <pubDate>2024-11-27</pubDate>
+    <pubDate>2024-11-22</pubDate>
     <language>en</language>
     <abstract>
       <para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network">(https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2014_demer, using VEMCO tags (V7, V13) and receivers (VR2W). In total 16 adult individuals of four local wild fish species (<i>Petromyzon marinus</i>, <i>Rutilus rutilus</i>, <i>Silurus glanis</i>, <i>Squalius cephalus</i>) were captured, tagged and released in 2014, to study the effect of a specific barrier on their upstream/downstream migration in the Demer basin.]]></para>
-      <para><![CDATA[Longitudinal and lateral connectivity of rivers is necessary for fish to successfully fulfill their life cycle. In Flanders, fish are obstructed in their essential free migrations by weirs, sluices, mills, and pumping stations, which are needed to control the water level. The Demer river drains the eastern part of the Scheldt basin. Fish migrating from the sea to the Demer river are obstructed by three hydraulic constructions. In this study we aimed to evaluate the possibilities for fish migration around the most upstream of these three constructions, the Grote Steunbeer in the city of Diest. Therefore, behaviour of two sea lamprey (<i>Petromyzon marinus</i>), two roach (<i>Rutilus rutilus</i>), nine Wels catfish (<i>Silurus glanis</i>) and three chub (<i>Squalius cephalus</i>) was investigated by acoustic telemetry in the areas up-, downstream and around the fish migration barrier. The results indicated that free upstream fish migration in the Demer river is obstructed by the Grote Steunbeer barrier in its current state, and that adaptations to this barrier should get priority as the tributary of the Zwarte beek only partly offers an alternative route for fish to qualitative spawning habitats upstream.]]></para>
+      <para>Longitudinal and lateral connectivity of rivers is necessary for fish to successfully fulfill their life cycle. In Flanders, fish are obstructed in their essential free migrations by weirs, sluices, mills, and pumping stations, which are needed to control the water level. The Demer river drains the eastern part of the Scheldt basin. Fish migrating from the sea to the Demer river are obstructed by three hydraulic constructions. In this study we aimed to evaluate the possibilities for fish migration around the most upstream of these three constructions, the Grote Steunbeer in the city of Diest. Therefore, behaviour of two sea lamprey (<i>Petromyzon marinus</i>), two roach (<i>Rutilus rutilus</i>), nine Wels catfish (<i>Silurus glanis</i>) and three chub (<i>Squalius cephalus</i>) was investigated by acoustic telemetry in the areas up-, downstream and around the fish migration barrier. The results indicated that free upstream fish migration in the Demer river is obstructed by the Grote Steunbeer barrier in its current state, and that adaptations to this barrier should get priority as the tributary of the Zwarte beek only partly offers an alternative route for fish to qualitative spawning habitats upstream.</para>
       <para>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch. The study was commissioned by the Flemish Environment Agency (VMM).</para>
-      <para>Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Pauwels et al. (2020, &lt;a href="https://doi.org/10.14284/432"&gt;https://doi.org/10.14284/432&lt;/a&gt;).</para>
+      <para>&lt;![CDATA[Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Pauwels et al. (2020, &lt;a href="https://doi.org/10.14284/432"&gt;https://doi.org/10.14284/432&lt;/a&gt;).]]&gt;</para>
     </abstract>
     <keywordSet>
       <keyword>Acoustic telemetry</keyword>
@@ -282,12 +310,47 @@
       <keywordThesaurus>N/A</keywordThesaurus>
     </keywordSet>
     <keywordSet>
+      <keyword>Bio-geographical regions</keyword>
+      <keyword>Habitats and biotopes</keyword>
+      <keyword>Sea regions</keyword>
+      <keywordThesaurus>INSPIRE themes</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Biota</keyword>
+      <keyword>Environment</keyword>
+      <keyword>Geoscientific Information</keyword>
+      <keyword>Oceans</keyword>
+      <keywordThesaurus>INSPIRE Topics</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Metadata non conformant</keyword>
+      <keyword>Metadata not evaluated</keyword>
+      <keywordThesaurus>INSPIRE Conformity</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
       <keyword>Migration</keyword>
       <keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>No limitations to public access</keyword>
+      <keywordThesaurus>INSPIRE Limitations on public access</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>WGS84 (EPSG:4326)</keyword>
+      <keywordThesaurus>Coordinate Reference System</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>XYZ ASCII</keyword>
+      <keywordThesaurus>Spatial data formats</keywordThesaurus>
     </keywordSet>
     <intellectualRights>
       <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
     </intellectualRights>
+    <distribution scope="document">
+      <online>
+        <url function="information">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005871</url>
+      </online>
+    </distribution>
     <coverage>
       <geographicCoverage id="http://marineregions.org/mrgid/3101">
         <geographicDescription>Belgium, Demer R.</geographicDescription>

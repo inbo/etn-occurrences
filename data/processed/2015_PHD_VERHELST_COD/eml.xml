@@ -7,7 +7,7 @@
     <metadata>
       <gbif>
         <citation>Verhelst, P.; Reubens, J.; Desmet, P.; Reyserhove, L.; Moens, T.; (2020): 2015_PHD_VERHELST_COD - Acoustic telemetry data for Atlantic cod (Gadus morhua) in the Scheldt estuary and southern North Sea (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/435<identifier>https://doi.org/10.14284/435</identifier></citation>
-        <dateStamp>2025-01-08T10:57:13+01:00</dateStamp>
+        <dateStamp>2025-03-26T15:27:18+00:00</dateStamp>
         <hierarchyLevel>dataset</hierarchyLevel>
         <physical>
           <objectName>Online dataset</objectName>
@@ -19,7 +19,7 @@
           </dataFormat>
           <distribution>
             <online>
-              <url function="download">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000006581</url>
+              <url function="download">https://emodnet.ec.europa.eu/geoviewer/?layers=6d617269-6e65-696e-666f-000000001510:1:1&amp;basemap=ebwbl&amp;active=12639&amp;bounds=-12530604,-7655416,12530604,7655416&amp;filters=12639:datasetid__datasetid=6581--&amp;projection=EPSG:3857</url>
             </online>
           </distribution>
         </physical>
@@ -48,6 +48,34 @@
           <distribution>
             <online>
               <url function="download">https://www.gbif.org/dataset/aaf715aa-35c0-4bca-a9f1-03f8c11c2c76</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE Download Service (WFS)</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/Dataportal/wfs?service=wfs&amp;version=1.1.0&amp;typeName=eurobis-obisenv_full&amp;request=GetFeature&amp;outputFormat=text%2Fcsv&amp;viewParams=datasetid%3A6581</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE WMS</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/wms?service=WMS&amp;request=getCapabilities&amp;layer=Dataportal:eurobis_rasters-obisenv</url>
             </online>
           </distribution>
         </physical>
@@ -205,13 +233,13 @@
       <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
     </metadataProvider>
-    <pubDate>2024-09-19</pubDate>
+    <pubDate>2024-08-26</pubDate>
     <language>en</language>
     <abstract>
       <para><![CDATA[This is an acoustic telemetry dataset published by Ghent University. It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2015_phd_verhelst_cod, using VEMCO tags (V9, V13, V13AP) and receivers (VR2AR, VR2C, VR2Tx, VR2W). In total 106 individuals of Atlantic cod (<i>Gadus morhua</i>) were captured, tagged and released between 2014 and 2018 in the Scheldt estuary and Belgian Part of the North Sea, to study movement behaviour between the estuary, sand bars, shipwrecks and wind farms.]]></para>
-      <para><![CDATA[Estuaries and coastal areas are subject to anthropogenic activities, as the largest harbours and economic activities are located along river banks and close to shore. Known to have a high habitat diversity, estuaries and coastal areas play a key role in the life cycle of many organisms, including marine fish. As such, these areas can serve as transport routes, foraging or nursery areas. In order to conserve these areas in a cost-efficient and sustainable way, a better understanding of the ecosystem functions and services is needed. The western Scheldt estuary and adjacent coastal area of Belgium are an important migration route and resident area for marine fish. We selected the Atlantic cod (<i>Gadus morhua</i>) as an economically important indicator species for marine fish species, to assess the importance of estuarine and coastal areas as a key habitat for this species. The results of this study will be useful for management measures for the conservation and restoration of the cod population.]]></para>
+      <para>Estuaries and coastal areas are subject to anthropogenic activities, as the largest harbours and economic activities are located along river banks and close to shore. Known to have a high habitat diversity, estuaries and coastal areas play a key role in the life cycle of many organisms, including marine fish. As such, these areas can serve as transport routes, foraging or nursery areas. In order to conserve these areas in a cost-efficient and sustainable way, a better understanding of the ecosystem functions and services is needed. The western Scheldt estuary and adjacent coastal area of Belgium are an important migration route and resident area for marine fish. We selected the Atlantic cod (<i>Gadus morhua</i>) as an economically important indicator species for marine fish species, to assess the importance of estuarine and coastal areas as a key habitat for this species. The results of this study will be useful for management measures for the conservation and restoration of the cod population.</para>
       <para>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</para>
-      <para>Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Verhelst et al. (2020, &lt;a href="https://doi.org/10.14284/435"&gt;https://doi.org/10.14284/435&lt;/a&gt;).</para>
+      <para>&lt;![CDATA[Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Verhelst et al. (2020, &lt;a href="https://doi.org/10.14284/435"&gt;https://doi.org/10.14284/435&lt;/a&gt;).]]&gt;</para>
     </abstract>
     <keywordSet>
       <keyword>Acoustic telemetry</keyword>
@@ -232,12 +260,47 @@
       <keywordThesaurus>N/A</keywordThesaurus>
     </keywordSet>
     <keywordSet>
+      <keyword>Bio-geographical regions</keyword>
+      <keyword>Habitats and biotopes</keyword>
+      <keyword>Sea regions</keyword>
+      <keywordThesaurus>INSPIRE themes</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Biota</keyword>
+      <keyword>Environment</keyword>
+      <keyword>Geoscientific Information</keyword>
+      <keyword>Oceans</keyword>
+      <keywordThesaurus>INSPIRE Topics</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Metadata non conformant</keyword>
+      <keyword>Metadata not evaluated</keyword>
+      <keywordThesaurus>INSPIRE Conformity</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
       <keyword>Migration</keyword>
       <keywordThesaurus>CAB Thesaurus</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>No limitations to public access</keyword>
+      <keywordThesaurus>INSPIRE Limitations on public access</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>WGS84 (EPSG:4326)</keyword>
+      <keywordThesaurus>Coordinate Reference System</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>XYZ ASCII</keyword>
+      <keywordThesaurus>Spatial data formats</keywordThesaurus>
     </keywordSet>
     <intellectualRights>
       <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
     </intellectualRights>
+    <distribution scope="document">
+      <online>
+        <url function="information">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000006581</url>
+      </online>
+    </distribution>
     <coverage>
       <geographicCoverage id="http://marineregions.org/mrgid/2550">
         <geographicDescription>ANE, Belgium, Belgian Coast</geographicDescription>

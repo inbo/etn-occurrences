@@ -7,7 +7,7 @@
     <metadata>
       <gbif>
         <citation>Reubens, J.; Degraer, S.; Desmet, P.; Moens, T.; Reyserhove, L.; Vincx, M.; (2020): 2010_PHD_REUBENS - Acoustic telemetry data for Atlantic cod (Gadus morhua) in the C-Power wind farm in the southern North Sea (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/437<identifier>https://doi.org/10.14284/437</identifier></citation>
-        <dateStamp>2025-01-08T10:51:47+01:00</dateStamp>
+        <dateStamp>2025-03-26T15:27:18+00:00</dateStamp>
         <hierarchyLevel>dataset</hierarchyLevel>
         <physical>
           <objectName>Online dataset</objectName>
@@ -19,7 +19,7 @@
           </dataFormat>
           <distribution>
             <online>
-              <url function="download">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005846</url>
+              <url function="download">https://emodnet.ec.europa.eu/geoviewer/?layers=6d617269-6e65-696e-666f-000000001510:1:1&amp;basemap=ebwbl&amp;active=12639&amp;bounds=-12530604,-7655416,12530604,7655416&amp;filters=12639:datasetid__datasetid=5846--&amp;projection=EPSG:3857</url>
             </online>
           </distribution>
         </physical>
@@ -48,6 +48,34 @@
           <distribution>
             <online>
               <url function="download">https://www.gbif.org/dataset/06d9eb55-ab67-45da-a697-18cc42e7cd3c</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE Download Service (WFS)</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/Dataportal/wfs?service=wfs&amp;version=1.1.0&amp;typeName=eurobis-obisenv_full&amp;request=GetFeature&amp;outputFormat=text%2Fcsv&amp;viewParams=datasetid%3A5846</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE WMS</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/wms?service=WMS&amp;request=getCapabilities&amp;layer=Dataportal:eurobis_rasters-obisenv</url>
             </online>
           </distribution>
         </physical>
@@ -215,13 +243,13 @@
       <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
     </metadataProvider>
-    <pubDate>2024-08-30</pubDate>
+    <pubDate>2024-08-26</pubDate>
     <language>en</language>
     <abstract>
       <para><![CDATA[This is an acoustic telemetry dataset published by Ghent University. It contains animal (fish) tracking data collected by what later became the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2010_phd_Reubens, using VEMCO tags (V9) and receivers (VR2W). In total 41 individuals of Atlantic cod (<i>Gadus morhua</i>) were captured, tagged and released in 2010 and 2011 in the C-Power wind farm in the Belgian part of the North Sea, to study their movement behaviour and assess the impacts of offshore wind farms on their movement ecology. This dataset also includes the data of the synchronisation tags present in the study. To calculate exact 2D positions using acoustic telemetry, the time difference of arrival of signals at different receivers is used. Therefore sync tags are needed to account for clock drift in the receivers.]]></para>
-      <para><![CDATA[Intensive exploitation of the marine environment by mankind can alter the natural habitat of marine organisms drastically. The addition of artificial hard substrates (e.g. offshore wind turbines) to soft-sediment sandy bottoms is a pervasive example of an anthropogenic habitat change. In this study, we assess the influence of offshore wind farms on the spatio-temporal movement ecology of Atlantic cod (<i>Gadus morhua</i>). The results of this study will be useful for management measures for the conservation and restoration of the cod population.]]></para>
+      <para>Intensive exploitation of the marine environment by mankind can alter the natural habitat of marine organisms drastically. The addition of artificial hard substrates (e.g. offshore wind turbines) to soft-sediment sandy bottoms is a pervasive example of an anthropogenic habitat change. In this study, we assess the influence of offshore wind farms on the spatio-temporal movement ecology of Atlantic cod (<i>Gadus morhua</i>). The results of this study will be useful for management measures for the conservation and restoration of the cod population.</para>
       <para>This study was funded by Research Foundation - Flanders (FWO).</para>
-      <para>Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Reubens et al. (2020, &lt;a href="https://doi.org/10.14284/437"&gt;https://doi.org/10.14284/437&lt;/a&gt;).</para>
+      <para>&lt;![CDATA[Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Reubens et al. (2020, &lt;a href="https://doi.org/10.14284/437"&gt;https://doi.org/10.14284/437&lt;/a&gt;).]]&gt;</para>
     </abstract>
     <keywordSet>
       <keyword>Acoustic telemetry</keyword>
@@ -241,12 +269,47 @@
       <keywordThesaurus>N/A</keywordThesaurus>
     </keywordSet>
     <keywordSet>
+      <keyword>Bio-geographical regions</keyword>
+      <keyword>Habitats and biotopes</keyword>
+      <keyword>Sea regions</keyword>
+      <keywordThesaurus>INSPIRE themes</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Biota</keyword>
+      <keyword>Environment</keyword>
+      <keyword>Geoscientific Information</keyword>
+      <keyword>Oceans</keyword>
+      <keywordThesaurus>INSPIRE Topics</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
       <keyword>Data</keyword>
       <keywordThesaurus>Assemble KO Types</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Metadata non conformant</keyword>
+      <keyword>Metadata not evaluated</keyword>
+      <keywordThesaurus>INSPIRE Conformity</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>No limitations to public access</keyword>
+      <keywordThesaurus>INSPIRE Limitations on public access</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>WGS84 (EPSG:4326)</keyword>
+      <keywordThesaurus>Coordinate Reference System</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>XYZ ASCII</keyword>
+      <keywordThesaurus>Spatial data formats</keywordThesaurus>
     </keywordSet>
     <intellectualRights>
       <para>This work is licensed under a <ulink url="http://creativecommons.org/licenses/by/4.0/legalcode"><citetitle>Creative Commons Attribution (CC-BY) 4.0 License</citetitle></ulink>.</para>
     </intellectualRights>
+    <distribution scope="document">
+      <online>
+        <url function="information">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005846</url>
+      </online>
+    </distribution>
     <coverage>
       <geographicCoverage id="http://marineregions.org/mrgid/2550">
         <geographicDescription>ANE, Belgium, Belgian Coast</geographicDescription>
