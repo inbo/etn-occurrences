@@ -7,7 +7,7 @@
     <metadata>
       <gbif>
         <citation>Buysse, D.; Mouton, A.; Baeyens, R.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Jacobs, Y.; Pauwels, I.; Reyserhove, L.; Coeck, J.; (2020): 2011_RIVIERPRIK - Acoustic telemetry data for river lamprey (Lampetra fluviatilis) in the upper Scheldt river (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/429<identifier>https://doi.org/10.14284/429</identifier></citation>
-        <dateStamp>2025-01-08T10:53:03+01:00</dateStamp>
+        <dateStamp>2025-03-26T15:27:18+00:00</dateStamp>
         <hierarchyLevel>dataset</hierarchyLevel>
         <physical>
           <objectName>Online dataset</objectName>
@@ -19,7 +19,7 @@
           </dataFormat>
           <distribution>
             <online>
-              <url function="download">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005867</url>
+              <url function="download">https://emodnet.ec.europa.eu/geoviewer/?layers=6d617269-6e65-696e-666f-000000001510:1:1&amp;basemap=ebwbl&amp;active=12639&amp;bounds=-12530604,-7655416,12530604,7655416&amp;filters=12639:datasetid__datasetid=5867--&amp;projection=EPSG:3857</url>
             </online>
           </distribution>
         </physical>
@@ -48,6 +48,34 @@
           <distribution>
             <online>
               <url function="download">https://www.gbif.org/dataset/365dcf96-b8ba-49dd-91b8-4aaaa0a0a1a7</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE Download Service (WFS)</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/Dataportal/wfs?service=wfs&amp;version=1.1.0&amp;typeName=eurobis-obisenv_full&amp;request=GetFeature&amp;outputFormat=text%2Fcsv&amp;viewParams=datasetid%3A5867</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE WMS</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/wms?service=WMS&amp;request=getCapabilities&amp;layer=Dataportal:eurobis_rasters-obisenv</url>
             </online>
           </distribution>
         </physical>
@@ -244,13 +272,13 @@
       <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
       <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
     </metadataProvider>
-    <pubDate>2024-11-27</pubDate>
+    <pubDate>2024-11-22</pubDate>
     <language>en</language>
     <abstract>
       <para><![CDATA[This is an acoustic telemetry dataset published by the Research Institute for Nature and Forest (INBO). It contains animal (fish) tracking data collected by what later became the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2011_rivierprik, using VEMCO tags (V7, V8) and receivers (VR2, VR2W). In total 39 adult individuals of river lamprey (<i>Lampetra fluviatilis</i>) were captured, tagged and released in 2011 and 2012, to study the effect of weirs and shipping locks on their upstream spawning migration in the tidal and/or non-tidal part of the Scheldt river and its tributaries.]]></para>
       <para>The disruption of longitudinal and lateral connectivity of rivers has led to ecological catastrophes such as the extinction of several diadromous fish species. River lamprey is an important indicator species for the integrity of ecosystems and connectivity within and between catchment areas. In the highly fragmented Scheldt river basin first restoration actions are undertaken, such as the building of nature-like bypasses. The migration patterns in the river catchment and their behaviour at a tidal barrier, lock-weir complexes and fish bypasses (passage timing and delay) in the upper Scheldt river show that the disrupted water management of the river and in consequence of its barriers and bypasses are one keys to (un)successful spawning migration in the catchment, beside spawning habitat deterioration.</para>
       <para>The study was commissioned by the Vlaamse Waterweg NV.</para>
-      <para>Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Buysse et al. (2020, &lt;a href="https://doi.org/10.14284/429"&gt;https://doi.org/10.14284/429&lt;/a&gt;).</para>
+      <para>&lt;![CDATA[Data have been standardized to Darwin Core using the &lt;a href="https://inbo.github.io/etn/"&gt;etn&lt;/a&gt; package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (&lt;a href="https://lifewatch.be/etn/"&gt;https://lifewatch.be/etn/&lt;/a&gt;) and are available in Buysse et al. (2020, &lt;a href="https://doi.org/10.14284/429"&gt;https://doi.org/10.14284/429&lt;/a&gt;).]]&gt;</para>
     </abstract>
     <keywordSet>
       <keyword>Acoustic telemetry</keyword>
@@ -272,12 +300,47 @@
       <keywordThesaurus>N/A</keywordThesaurus>
     </keywordSet>
     <keywordSet>
+      <keyword>Bio-geographical regions</keyword>
+      <keyword>Habitats and biotopes</keyword>
+      <keyword>Sea regions</keyword>
+      <keywordThesaurus>INSPIRE themes</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Biota</keyword>
+      <keyword>Environment</keyword>
+      <keyword>Geoscientific Information</keyword>
+      <keyword>Oceans</keyword>
+      <keywordThesaurus>INSPIRE Topics</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Metadata non conformant</keyword>
+      <keyword>Metadata not evaluated</keyword>
+      <keywordThesaurus>INSPIRE Conformity</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
       <keyword>Migration</keyword>
       <keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>No limitations to public access</keyword>
+      <keywordThesaurus>INSPIRE Limitations on public access</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>WGS84 (EPSG:4326)</keyword>
+      <keywordThesaurus>Coordinate Reference System</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>XYZ ASCII</keyword>
+      <keywordThesaurus>Spatial data formats</keywordThesaurus>
     </keywordSet>
     <intellectualRights>
       <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
     </intellectualRights>
+    <distribution scope="document">
+      <online>
+        <url function="information">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005867</url>
+      </online>
+    </distribution>
     <coverage>
       <geographicCoverage id="http://marineregions.org/mrgid/2469">
         <geographicDescription>Belgium, Flanders</geographicDescription>
