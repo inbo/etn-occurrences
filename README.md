@@ -13,8 +13,8 @@ Shortname | Publisher | IMIS | GBIF | OBIS
 2014_DEMER | INBO | [DOI](https://doi.org/10.14284/432) | [GBIF](https://www.gbif.org/dataset/8be8dcf1-6e83-4172-a7b7-c2032b933d23) | [OBIS](https://obis.org/dataset/4961ff53-d090-497f-9ddb-39b6c485bb66)
 2015_DIJLE | INBO | [DOI](https://doi.org/10.14284/430) | [GBIF](https://www.gbif.org/dataset/0d9718f4-de6d-4115-b2f0-e3ec6aa088ab) | [OBIS](https://obis.org/dataset/64e038e6-795c-418e-b617-7c81e4dcb293)
 2015_HOMARUS | VLIZ | [DOI](https://doi.org/10.14284/433) | 
-2015_PHD_VERHELST_COD | Ghent University | [DOI](https://doi.org/10.14284/435) | [GBIF](https://www.gbif.org/dataset/aaf715aa-35c0-4bca-a9f1-03f8c11c2c76) | [OBIS](https://obis.org/dataset/5b7fb48c-80ce-4126-bf4d-8b68e1862139)
-2015_PHD_VERHELST_EEL | Ghent University | [DOI](https://doi.org/10.14284/434) | [GBIF](https://www.gbif.org/dataset/638cc552-4ca9-43c0-8cad-d3f570a4572e) | [OBIS](https://obis.org/dataset/05d3a928-d9de-4855-ac9c-137d12d3a3cb)
+2015_PHD_VERHELST_COD | Ghent University | [DOI](https://doi.org/10.14284/435) | [GBIF](https://www.gbif.org/dataset/aaf715aa-35c0-4bca-a9f1-03f8c11c2c76) | [OBIS](https://obis.org/dataset/5b7fb48c-80ce-4126-bf4d-8b68e1862139)
+2015_PHD_VERHELST_EEL | Ghent University | [DOI](https://doi.org/10.14284/434) | [GBIF](https://www.gbif.org/dataset/638cc552-4ca9-43c0-8cad-d3f570a4572e) | [OBIS](https://obis.org/dataset/05d3a928-d9de-4855-ac9c-137d12d3a3cb)
 
 ## Contributors
 
