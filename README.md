@@ -1,6 +1,6 @@
 # Acoustic telemetry datasets
 
-This repository contains scripts to **publish fish tracking data** from the [European Tracking Network (ETN)](http://lifewatch.be/etn/) (specifically from the [Permanent Belgian Acoustic Receiver Network](https://lifewatch.be/en/fish-acoustic-receiver-network)) on [GBIF](https://www.gbif.org/) and [OBIS](https://obis.org/). For reausable functions, see the [etn](https://inbo.github.io/movepub) R package.
+This repository contains scripts to **publish fish tracking data** from the [European Tracking Network (ETN)](http://lifewatch.be/etn/) (specifically from the [Permanent Belgian Acoustic Receiver Network](https://lifewatch.be/en/fish-acoustic-receiver-network)) on [GBIF](https://www.gbif.org/) and [OBIS](https://obis.org/). For reusable functions, see the [etn](https://inbo.github.io/movepub) R package.
 
 ## Datasets
 
