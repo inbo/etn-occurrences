@@ -17,6 +17,7 @@ Load libraries
 library(EML)
 library(here)
 library(stringr)
+library(purrr)
 ```
 
 ## Set user-defined values
@@ -136,22 +137,23 @@ eml$additionalMetadata$metadata$gbif$citation$identifier <- identifier
 The abstract in IMIS consists of multiple paragraph, but only the first one (limited to 1000 characters) is in `abstract`. The other paragraphs are in `additionalInfo`. As with our other datasets, we move all paragraphs to `abstract` and add an additional paragraph describing the transformation to Darwin Core.
 
 ```{r}
-# Get additional paragraphs
+# Get abstract and additional paragraphs
 abstract <- eml$dataset$abstract$para
 additional_info <- eml$dataset$additionalInfo$para
 
-# Correct html
-new_abstract <- paste0("<p>", abstract, "</p>", additional_info) %>% 
+# Split `additional_info` in paragraphs
+paragraphs <- unlist(strsplit(additional_info, "<p>|</p>|\n", perl = TRUE))
+paragraphs <- paragraphs[!paragraphs %in% c("", "<![CDATA[", "<br/>", "]]>")]
+paragraphs <- unlist(strsplit(paragraphs, " Data were exported from", perl = TRUE))
+
+# Add abstract to paragraphs
+paragraphs <- c(abstract, paragraphs) %>% 
+  # Add <p></p> tags to each paragraph 
+  purrr::map_chr(~ paste0("<p>", ., "</p>")) %>% 
   # Remove <![CDATA[ ]]> wrappers (not needed anymore in EML 2.2.0)
   stringr::str_remove_all("<!\\[CDATA\\[|\\]\\]>") %>% 
   # remove unsupported html tags
   stringr::str_remove_all("<i>|</i>|<br/>")
-
-# Remove last paragraph
-new_abstract <- paste0(
-  unlist(strsplit(new_abstract, " Data were exported from", perl = TRUE))[[1]],
-  "</p>"
-)
 
 # Extract publication year
 citation <- eml$additionalMetadata$metadata$gbif$citation$citation
@@ -165,8 +167,11 @@ first_author <- stringr::str_split_1(citation, ",")[1]
 # Write new paragraph
 new_paragraph <- paste0("<p>Data have been standardized to Darwin Core using the <a href=\"https://inbo.github.io/etn/\">etn</a> package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (<a href=\"https://lifewatch.be/etn/\">https://lifewatch.be/etn/</a>) and are available in ", first_author, " et al. (", year, ", <a href=\"", identifier, "\">", identifier, "</a>).</p>")
 
-# Add last paragraph
-eml$dataset$abstract$para <- paste0(new_abstract, new_paragraph)
+# Update last paragraph
+paragraphs[length(paragraphs)] <- new_paragraph
+
+# Add collapsed paragraphs to EML
+eml$dataset$abstract$para <- paste0(paragraphs, collapse = "")
 
 # Delete `additionalInfo`
 eml$dataset$additionalInfo <- NULL
