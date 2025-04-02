@@ -137,12 +137,21 @@ The abstract in IMIS consists of multiple paragraph, but only the first one (lim
 
 ```{r}
 # Get additional paragraphs
+abstract <- eml$dataset$abstract$para
 additional_info <- eml$dataset$additionalInfo$para
 
-# Split `additional_info` in paragraphs
-paragraphs <- unlist(strsplit(additional_info, "<p>|</p>|\n", perl = TRUE))
-paragraphs <- paragraphs[!paragraphs %in% c("", "<![CDATA[", "<br/>", "]]>")]
-paragraphs <- unlist(strsplit(paragraphs, " Data were exported from", perl = TRUE))
+# Correct html
+new_abstract <- paste0("<p>", abstract, "</p>", additional_info) %>% 
+  # Remove <![CDATA[ ]]> wrappers (not needed anymore in EML 2.2.0)
+  stringr::str_remove_all("<!\\[CDATA\\[|\\]\\]>") %>% 
+  # remove unsupported html tags
+  stringr::str_remove_all("<i>|</i>|<br/>")
+
+# Remove last paragraph
+new_abstract <- paste0(
+  unlist(strsplit(new_abstract, " Data were exported from", perl = TRUE))[[1]],
+  "</p>"
+)
 
 # Extract publication year
 citation <- eml$additionalMetadata$metadata$gbif$citation$citation
@@ -154,19 +163,10 @@ year <- stringr::str_extract(citation, pattern) %>%
 first_author <- stringr::str_split_1(citation, ",")[1]
 
 # Write new paragraph
-new_paragraph <- paste0("Data have been standardized to Darwin Core using the <a href=\"https://inbo.github.io/etn/\">etn</a> package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (<a href=\"https://lifewatch.be/etn/\">https://lifewatch.be/etn/</a>) and are available in ", first_author, " et al. (", year, ", <a href=\"", identifier, "\">", identifier, "</a>).")
+new_paragraph <- paste0("<p>Data have been standardized to Darwin Core using the <a href=\"https://inbo.github.io/etn/\">etn</a> package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (<a href=\"https://lifewatch.be/etn/\">https://lifewatch.be/etn/</a>) and are available in ", first_author, " et al. (", year, ", <a href=\"", identifier, "\">", identifier, "</a>).</p>")
 
-# Update last paragraph
-paragraphs[length(paragraphs)] <- new_paragraph
-
-# Wrap paragraphs with html with <![CDATA[ ]]>
-paragraphs <- purrr::map(paragraphs, ~ if(grepl("http", .)){
-    .x <- paste0("<![CDATA[", .x, "]]>")
-  } else {.x <- .x}
-)
-
-# Rearrange paragraphs: abstract + additional_info
-eml$dataset$abstract$para <- c(eml$dataset$abstract$para, paragraphs)
+# Add last paragraph
+eml$dataset$abstract$para <- paste0(new_abstract, new_paragraph)
 
 # Delete `additionalInfo`
 eml$dataset$additionalInfo <- NULL
