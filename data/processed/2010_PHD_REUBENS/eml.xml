@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" xmlns:dc="https://www.dublincore.org/specifications/dublin-core/dcmi-terms" xml:lang="en" packageId="eml.1.1" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 https://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd" system="https://www.vliz.be/imis">
+  <additionalMetadata>
+    <describes>
+      <para>Extra metadata added by VLIZ to add parameter, platform info, as well as GBIF fields</para>
+    </describes>
+    <metadata>
+      <gbif>
+        <citation>Reubens, J.; Degraer, S.; Desmet, P.; Moens, T.; Reyserhove, L.; Vincx, M.; (2020): 2010_PHD_REUBENS - Acoustic telemetry data for Atlantic cod (Gadus morhua) in the C-Power wind farm in the southern North Sea (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/437<identifier>https://doi.org/10.14284/437</identifier></citation>
+        <dateStamp>2025-03-26T15:27:18+00:00</dateStamp>
+        <hierarchyLevel>dataset</hierarchyLevel>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://emodnet.ec.europa.eu/geoviewer/?layers=6d617269-6e65-696e-666f-000000001510:1:1&amp;basemap=ebwbl&amp;active=12639&amp;bounds=-12530604,-7655416,12530604,7655416&amp;filters=12639:datasetid__datasetid=5846--&amp;projection=EPSG:3857</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.eurobis.org/toolbox/en/download/occurrence/dataset/5846</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>GBIF dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.gbif.org/dataset/06d9eb55-ab67-45da-a697-18cc42e7cd3c</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE Download Service (WFS)</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/Dataportal/wfs?service=wfs&amp;version=1.1.0&amp;typeName=eurobis-obisenv_full&amp;request=GetFeature&amp;outputFormat=text%2Fcsv&amp;viewParams=datasetid%3A5846</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE WMS</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/wms?service=WMS&amp;request=getCapabilities&amp;layer=Dataportal:eurobis_rasters-obisenv</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://ipt.inbo.be/archive?r=2010_phd_reubens</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">http://ipt.inbo.be/resource?r=2010_phd_reubens</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://ipt.vliz.be/eurobis/resource?r=2010_phd_reubens</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://obis.org/dataset/63061840-e725-4c74-bdbc-65f31a8e28c8</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://rshiny.lifewatch.be/etn-data/</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Metadata</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.vliz.be//en/imis?dasid=5846</url>
+            </online>
+          </distribution>
+        </physical>
+      </gbif>
+      <parameter>Fish detections</parameter>
+      <parameter>Fish total length</parameter>
+    </metadata>
+  </additionalMetadata>
+  <dataset>
+    <title xml:lang="en">Acoustic telemetry data for Atlantic cod (Gadus morhua) in the C-Power wind farm in the southern North Sea (Belgium)</title>
+    <creator>
+      <individualName>
+        <givenName>Jan</givenName>
+        <surName>Reubens</surName>
+      </individualName>
+      <organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-9823-5670</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Steven</givenName>
+        <surName>Degraer</surName>
+      </individualName>
+      <organizationName>Koninklijk Belgisch Instituut voor Natuurwetenschappen; Operationele Directie Natuurlijk Milieu</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-3159-5751</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Peter</givenName>
+        <surName>Desmet</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Tom</givenName>
+        <surName>Moens</surName>
+      </individualName>
+      <organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0001-6544-9210</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Lien</givenName>
+        <surName>Reyserhove</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0001-7484-9267</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Magda</givenName>
+        <surName>Vincx</surName>
+      </individualName>
+      <organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <metadataProvider>
+      <individualName>
+        <givenName>Peter</givenName>
+        <surName>Desmet</surName>
+      </individualName>
+      <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
+      <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
+    </metadataProvider>
+    <pubDate>2024-08-26</pubDate>
+    <language>en</language>
+    <abstract>
+      <para>
+        <p>This is an acoustic telemetry dataset published by Ghent University. It contains animal (fish) tracking data collected by what later became the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2010_phd_Reubens, using VEMCO tags (V9) and receivers (VR2W). In total 41 individuals of Atlantic cod (Gadus morhua) were captured, tagged and released in 2010 and 2011 in the C-Power wind farm in the Belgian part of the North Sea, to study their movement behaviour and assess the impacts of offshore wind farms on their movement ecology. This dataset also includes the data of the synchronisation tags present in the study. To calculate exact 2D positions using acoustic telemetry, the time difference of arrival of signals at different receivers is used. Therefore sync tags are needed to account for clock drift in the receivers.</p>
+        <p>Intensive exploitation of the marine environment by mankind can alter the natural habitat of marine organisms drastically. The addition of artificial hard substrates (e.g. offshore wind turbines) to soft-sediment sandy bottoms is a pervasive example of an anthropogenic habitat change. In this study, we assess the influence of offshore wind farms on the spatio-temporal movement ecology of Atlantic cod (Gadus morhua). The results of this study will be useful for management measures for the conservation and restoration of the cod population.</p>
+        <p>This study was funded by Research Foundation - Flanders (FWO).</p>
+        <p>Data have been standardized to Darwin Core using the <a href="https://inbo.github.io/etn/">etn</a> package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (<a href="https://lifewatch.be/etn/">https://lifewatch.be/etn/</a>) and are available in Reubens et al. (2020, <a href="https://doi.org/10.14284/437">https://doi.org/10.14284/437</a>).</p>
+      </para>
+    </abstract>
+    <keywordSet>
+      <keyword>Acoustic telemetry</keyword>
+      <keyword>Home range</keyword>
+      <keywordThesaurus>ASFA Thesaurus List</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Acoustic Telemetry</keyword>
+      <keywordThesaurus>ETN Context</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Animal movement</keyword>
+      <keyword>Animal tracking</keyword>
+      <keyword>Biologging</keyword>
+      <keyword>Impact assessment</keyword>
+      <keyword>VEMCO</keyword>
+      <keywordThesaurus>N/A</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Bio-geographical regions</keyword>
+      <keyword>Habitats and biotopes</keyword>
+      <keyword>Sea regions</keyword>
+      <keywordThesaurus>INSPIRE themes</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Biota</keyword>
+      <keyword>Environment</keyword>
+      <keyword>Geoscientific Information</keyword>
+      <keyword>Oceans</keyword>
+      <keywordThesaurus>INSPIRE Topics</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Data</keyword>
+      <keywordThesaurus>Assemble KO Types</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Metadata non conformant</keyword>
+      <keyword>Metadata not evaluated</keyword>
+      <keywordThesaurus>INSPIRE Conformity</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>No limitations to public access</keyword>
+      <keywordThesaurus>INSPIRE Limitations on public access</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>WGS84 (EPSG:4326)</keyword>
+      <keywordThesaurus>Coordinate Reference System</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>XYZ ASCII</keyword>
+      <keywordThesaurus>Spatial data formats</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>
+      <para>This work is licensed under a <ulink url="http://creativecommons.org/licenses/by/4.0/legalcode"><citetitle>Creative Commons Attribution (CC-BY) 4.0 License</citetitle></ulink>.</para>
+    </intellectualRights>
+    <distribution scope="document">
+      <online>
+        <url function="information">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005846</url>
+      </online>
+    </distribution>
+    <coverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2550">
+        <geographicDescription>ANE, Belgium, Belgian Coast</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2438">
+        <geographicDescription>ANE, Belgium, Zeeland Banks, Thornton Bank</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2350">
+        <geographicDescription>ANE, North Sea</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>EurOBIS calculated BBOX &gt; station Bounding Box</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.92157</westBoundingCoordinate>
+          <eastBoundingCoordinate>2.953</eastBoundingCoordinate>
+          <northBoundingCoordinate>51.552</northBoundingCoordinate>
+          <southBoundingCoordinate>51.53766667</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2010-08-06</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2015-08-31</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Gadus morhua Linnaeus, 1758</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <maintenance>
+      <description>
+        <para/>
+      </description>
+      <maintenanceUpdateFrequency>Not planned</maintenanceUpdateFrequency>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>Jan</givenName>
+        <surName>Reubens</surName>
+      </individualName>
+      <organizationName>Vlaams Instituut voor de Zee</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-9823-5670</userId>
+    </contact>
+  </dataset>
+</eml:eml>
