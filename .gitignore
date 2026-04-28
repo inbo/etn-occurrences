@@ -37,7 +37,5 @@ vignettes/*.pdf
 .DS_Store
 
 # Data
-data/interim/*
-data/produced/*
-data/raw/*/*
-!data/raw/2011_rivierprik/*
+data/processed/*/*
+!data/processed/*/datapackage.json
