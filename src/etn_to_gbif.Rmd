@@ -33,7 +33,7 @@ datasets <- yaml::read_yaml(here::here("src", "datasets.yml"))
 dataset <- purrr::keep(datasets, ~ .x$animal_project_code %in% animal_project_code)[[1]] 
 ```
 
-## Create file paths:
+## Create file path
 
 ```{r}
 dir <- here::here("data", "processed", animal_project_code)
@@ -45,7 +45,6 @@ Get package:
 
 ```{r}
 package <- etn::get_package(animal_project_code = dataset$animal_project_code)
-etn::write_package(package, dir)
 ```
 
 Write files:
@@ -60,3 +59,10 @@ etn::write_dwc(
   rights_holder = dataset$rights_holder
 )
 ```
+
+Write package: 
+
+```{r}
+etn::write_package(package, dir)
+```
+
