@@ -21,26 +21,28 @@ library(etn)
 library(yaml)
 ```
 
-## Set animal_project_code
+## Set user-defined values
+
+Set animal_project_code:
 
 ```{r}
 animal_project_code <- "2014_DEMER"
 ```
 
-## Read yaml with user-defined values
+Read yaml with dataset metadata (doi, title, license, rights holder):
 
 ```{r}
 datasets <- yaml::read_yaml(here::here("src", "datasets.yml"))
 dataset <- purrr::keep(datasets, ~ .x$animal_project_code %in% animal_project_code)[[1]] 
 ```
 
-## Create file path
+Set directory:
 
 ```{r}
 dir <- here::here("data", "processed", animal_project_code)
 ```
 
-## Create package and write Darwin Core
+## Get data from database
 
 Get package:
 
@@ -48,7 +50,15 @@ Get package:
 package <- etn::get_package(animal_project_code = dataset$animal_project_code)
 ```
 
-Write files:
+## Write files (package and Darwin Core)
+
+Write package:
+
+```{r}
+etn::write_package(package, dir)
+```
+
+Write Darwin Core files:
 
 ```{r}
 etn::write_dwc(
@@ -60,10 +70,3 @@ etn::write_dwc(
   rights_holder = dataset$rights_holder
 )
 ```
-
-Write package: 
-
-```{r}
-etn::write_package(package, dir)
-```
-
