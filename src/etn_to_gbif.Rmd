@@ -26,7 +26,7 @@ library(yaml)
 animal_project_code <- "2014_DEMER"
 ```
 
-## Read yaml wit user-defined values
+## Read yaml with user-defined values
 
 ```{r}
 datasets <- yaml::read_yaml(here::here("src", "datasets.yml"))
