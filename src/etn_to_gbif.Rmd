@@ -58,5 +58,5 @@ etn::write_dwc(
   dataset_name = purrr::pluck(datasets, "dataset_name"),
   license = purrr::pluck(datasets, "license"),
   rights_holder = purrr::pluck(datasets, "rights_holder")
-  )
+)
 ```
