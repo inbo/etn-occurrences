@@ -44,7 +44,7 @@ dir <- here::here("data", "processed", animal_project_code)
 Get package:
 
 ```{r}
-package <- etn::get_package(animal_project_code = purrr::pluck(dataset, "animal_project_code"))
+package <- etn::get_package(animal_project_code = dataset$animal_project_code)
 etn::write_package(package, dir)
 ```
 
@@ -54,9 +54,9 @@ Write files:
 etn::write_dwc(
   package = package,
   directory = file.path(dir, "dwc"),
-  dataset_id = purrr::pluck(dataset, "dataset_id"),
-  dataset_name = purrr::pluck(dataset, "dataset_name"),
-  license = purrr::pluck(dataset, "license"),
-  rights_holder = purrr::pluck(dataset, "rights_holder")
+  dataset_id = dataset$dataset_id,
+  dataset_name = dataset$dataset_name,
+  license = dataset$license,
+  rights_holder = dataset$rights_holder
 )
 ```
