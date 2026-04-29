@@ -52,7 +52,7 @@ Write files:
 
 ```{r}
 etn::write_dwc(
-  package = etn::read_package(file.path(dir, "datapackage.json")),
+  package = package,
   directory = file.path(dir, "dwc"),
   dataset_id = purrr::pluck(datasets, "dataset_id"),
   dataset_name = purrr::pluck(datasets, "dataset_name"),
