@@ -1,0 +1,40 @@
+- animal_project_code: 2010_PHD_REUBENS
+  dataset_id: https://doi.org/10.14284/437
+  dataset_name: 2010_PHD_REUBENS - Acoustic telemetry data for Atlantic cod (Gadus morhua) in the C-Power wind farm in the southern North Sea (Belgium)
+  license: CC-BY-4.0
+  rights_holder: Ghent University
+- animal_project_code: 2011_RIVIERPRIK
+  dataset_id: https://doi.org/10.14284/429
+  dataset_name: 2011_RIVIERPRIK - Acoustic telemetry data for river lamprey (Lampetra fluviatilis) in the upper Scheldt river (Belgium)
+  license: CC0-1.0
+  rights_holder: INBO
+- animal_project_code: 2012_LEOPOLDKANAAL
+  dataset_id: https://doi.org/10.14284/428
+  dataset_name: 2012_LEOPOLDKANAAL - Acoustic telemetry data for European eel (Anguilla anguilla) in a polder area in Flanders (Belgium)
+  license: CC0-1.0
+  rights_holder: INBO
+- animal_project_code: 2013_ALBERTKANAAL
+  dataset_id: https://doi.org/10.14284/431
+  dataset_name: 2013_ALBERTKANAAL - Acoustic telemetry data for European eel (Anguilla anguilla) and hatched Salmon (Salmo salar) in the Albert canal (Belgium)
+  license: CC0-1.0
+  rights_holder: INBO
+- animal_project_code: 2014_DEMER
+  dataset_id: https://doi.org/10.14284/432
+  dataset_name: 2014_DEMER - Acoustic telemetry data for four fish species in the Demer river (Belgium)
+  license: CC0-1.0
+  rights_holder: INBO
+- animal_project_code: 2015_DIJLE
+  dataset_id: https://doi.org/10.14284/430
+  dataset_name: 2015_DIJLE - Acoustic telemetry data for five fish species in the Dijle river (Belgium)
+  license: CC0-1.0
+  rights_holder: INBO
+- animal_project_code: 2015_PHD_VERHELST_COD
+  dataset_id: https://doi.org/10.14284/435
+  dataset_name: 2015_PHD_VERHELST_COD - Acoustic telemetry data for Atlantic cod (Gadus morhua) in the Scheldt estuary and southern North Sea (Belgium)
+  license: CC0-1.0
+  rights_holder: Ghent University
+- animal_project_code: 2015_PHD_VERHELST_EEL
+  dataset_id: https://doi.org/10.14284/434
+  dataset_name: 2015_PHD_VERHELST_EEL - Acoustic telemetry data for European eel (Anguilla anguilla) in the Scheldt estuary and southern North Sea (Belgium)
+  license: CC0-1.0
+  rights_holder: Ghent University
