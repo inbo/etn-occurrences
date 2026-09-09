@@ -1,0 +1,72 @@
+---
+title: "Prepare ETN data for GBIF IPT upload (make Darwin Core)"
+author:
+- Sanne Govaert
+- Peter Desmet
+date: "`r Sys.Date()`"
+output:
+  html_document
+---
+
+This script prepares ETN data for upload to a [GBIF IPT](https://gbif.org/ipt). 
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+Load libraries:
+
+```{r}
+library(etn)
+library(yaml)
+```
+
+## Set user-defined values
+
+Set animal_project_code:
+
+```{r}
+animal_project_code <- "2014_DEMER"
+```
+
+Read yaml with dataset metadata (doi, title, license, rights holder):
+
+```{r}
+datasets <- yaml::read_yaml(here::here("src", "datasets.yml"))
+dataset <- purrr::keep(datasets, ~ .x$animal_project_code %in% animal_project_code)[[1]] 
+```
+
+Set directory:
+
+```{r}
+dir <- here::here("data", "processed", animal_project_code)
+```
+
+## Get data from database
+
+Get package:
+
+```{r}
+package <- etn::get_package(animal_project_code = dataset$animal_project_code)
+```
+
+## Write files (package and Darwin Core)
+
+Write package:
+
+```{r}
+etn::write_package(package, dir)
+```
+
+Write Darwin Core files:
+
+```{r}
+etn::write_dwc(
+  package = package,
+  directory = file.path(dir, "dwc"),
+  dataset_id = dataset$dataset_id,
+  dataset_name = dataset$dataset_name,
+  license = dataset$license,
+  rights_holder = dataset$rights_holder
+)
+```
