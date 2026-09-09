@@ -1,0 +1,185 @@
+---
+title: "Prepare EML data for GBIF IPT upload"
+author: "Sanne Govaert"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+This script prepares EML data extracted from [IMIS](https://www.vliz.be/en/imis?module=dataset) for upload to a [GBIF IPT](https://gbif.org/ipt).
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+Load libraries
+
+```{r}
+library(EML)
+library(here)
+library(stringr)
+library(purrr)
+```
+
+## Set user-defined values
+
+```{r}
+project_id <- "2011_RIVIERPRIK"
+imis_url <- "https://www.vliz.be/en/imis?dasid=5867&doiid=429"
+metadata_provider <- person(
+  given = "Peter",
+  family = "Desmet",
+  email = "peter.desmet@inbo.be",
+  comment = c(ORCID = "0000-0002-8442-8025")
+)
+```
+
+## Read and clean EML 
+
+```{r}
+eml <- EML::read_eml(paste0(imis_url, "&show=eml"))
+```
+
+### Basic Metadata
+
+Set update frequency` to `Not planned`:
+
+```{r}
+eml$dataset$maintenance$maintenanceUpdateFrequency <- "Not planned"
+```
+
+Clean resource contacts and resource creators:
+
+- Remove generic email `info@inbo.be`.
+- Replace organization `Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek` with `Research Institute for Nature and Forest (INBO)`.
+
+```{r}
+update_contact <- function(contact) {
+  contact$electronicMailAddress <- NULL
+  if (!is.null(contact$organizationName) && contact$organizationName == "Vlaamse overheid; Beleidsdomein Omgeving; Instituut voor Natuur- en Bosonderzoek") {
+    contact$organizationName <- "Research Institute for Nature and Forest (INBO)"
+  }
+  contact
+}
+
+eml$dataset$creator <- purrr::map(eml$dataset$creator, update_contact)
+eml$dataset$contact <- update_contact(eml$dataset$contact)
+```
+
+Set metadata provider:
+
+```{r}
+eml$dataset$metadataProvider <- EML::set_responsibleParty(
+  givenName = metadata_provider$given,
+  surName = metadata_provider$family,
+  electronicMailAddress = metadata_provider$email,
+  userId = if (!is.null(metadata_provider$comment[["ORCID"]])) {
+    list(directory = "https://orcid.org/", metadata_provider$comment[["ORCID"]])
+  } else {
+    NULL
+  }
+)
+```
+
+### Taxonomic coverage
+
+Remove description:
+
+```{r}
+tax_coverage <- eml$dataset$coverage$taxonomicCoverage
+number_of_species <- length(tax_coverage)
+clean_coverage <- function(tax_coverage) {
+  tax_coverage <- tax_coverage[names(tax_coverage) != "id"]
+  tax_coverage <- tax_coverage[names(tax_coverage) != "generalTaxonomicCoverage"]
+  return(tax_coverage)
+}
+
+if (number_of_species == 1) {
+  eml$dataset$coverage$taxonomicCoverage$id <- NULL
+  eml$dataset$coverage$taxonomicCoverage$generalTaxonomicCoverage <- NULL
+} else {
+  eml$dataset$coverage$taxonomicCoverage <- purrr::map(tax_coverage, clean_coverage)
+}
+```
+
+### Keywords
+
+Clean keywords:
+
+```{r}
+eml$dataset$keywordSet <- purrr::map(eml$dataset$keywordSet, ~ {
+  if (!"keywordThesaurus" %in% names(.)) {
+    . <- c(., keywordThesaurus = "N/A")
+  }
+  .
+})
+```
+
+### Associated Parties
+
+Remove associated parties:
+
+```{r}
+eml$dataset$associatedParty <- NULL
+```
+
+### Citations
+
+Clean resource citation identifier:
+
+```{r}
+identifier_raw <- eml$additionalMetadata$metadata$gbif$citation$identifier
+identifier <- sub("dx.", "", identifier_raw)
+eml$additionalMetadata$metadata$gbif$citation$identifier <- identifier
+```
+
+### Update Description
+
+The abstract in IMIS consists of multiple paragraph, but only the first one (limited to 1000 characters) is in `abstract`. The other paragraphs are in `additionalInfo`. As with our other datasets, we move all paragraphs to `abstract` and add an additional paragraph describing the transformation to Darwin Core.
+
+```{r}
+# Get abstract and additional paragraphs
+abstract <- eml$dataset$abstract$para
+additional_info <- eml$dataset$additionalInfo$para
+
+# Split `additional_info` in paragraphs
+paragraphs <- unlist(strsplit(additional_info, "<p>|</p>|\n", perl = TRUE))
+paragraphs <- paragraphs[!paragraphs %in% c("", "<![CDATA[", "<br/>", "]]>")]
+paragraphs <- unlist(strsplit(paragraphs, " Data were exported from", perl = TRUE))
+
+# Add abstract to paragraphs
+paragraphs <- c(abstract, paragraphs) %>% 
+  # Add <p></p> tags to each paragraph 
+  purrr::map_chr(~ paste0("<p>", ., "</p>")) %>% 
+  # Remove <![CDATA[ ]]> wrappers (not needed anymore in EML 2.2.0)
+  stringr::str_remove_all("<!\\[CDATA\\[|\\]\\]>") %>% 
+  # remove unsupported html tags
+  stringr::str_remove_all("<i>|</i>|<br/>")
+
+# Extract publication year
+citation <- eml$additionalMetadata$metadata$gbif$citation$citation
+pattern <- "\\(\\d{4}\\)"
+year <- stringr::str_extract(citation, pattern) %>% 
+  stringr::str_remove_all("\\(|\\)")
+
+# Extract first author
+first_author <- stringr::str_split_1(citation, ",")[1]
+
+# Write new paragraph
+new_paragraph <- paste0("<p>Data have been standardized to Darwin Core using the <a href=\"https://inbo.github.io/etn/\">etn</a> package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (<a href=\"https://lifewatch.be/etn/\">https://lifewatch.be/etn/</a>) and are available in ", first_author, " et al. (", year, ", <a href=\"", identifier, "\">", identifier, "</a>).</p>")
+
+# Update last paragraph
+paragraphs[length(paragraphs)] <- new_paragraph
+
+# Add collapsed paragraphs to EML
+eml$dataset$abstract$para <- paste0(paragraphs, collapse = "")
+
+# Delete `additionalInfo`
+eml$dataset$additionalInfo <- NULL
+```
+
+# Write EML
+
+```{r}
+eml_path <- here::here("data", "processed", project_id, "eml.xml")
+EML::write_eml(eml, eml_path)
+```

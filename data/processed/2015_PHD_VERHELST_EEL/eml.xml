@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" xmlns:dc="https://www.dublincore.org/specifications/dublin-core/dcmi-terms" xml:lang="en" packageId="eml.1.1" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 https://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd" system="https://www.vliz.be/imis">
+  <additionalMetadata>
+    <describes>
+      <para>Extra metadata added by VLIZ to add parameter, platform info, as well as GBIF fields</para>
+    </describes>
+    <metadata>
+      <gbif>
+        <citation>Verhelst, P.; Reubens, J.; Coeck, J.; De Maerteleire, N.; Desmet, P.; Gelaude, E.; Mouton, A.; Pieters, S.; Reyserhove, L.; Robberechts, K.; Moens, T.; (2020): 2015_PHD_VERHELST_EEL - Acoustic telemetry data for European eel (Anguilla anguilla) in the Scheldt estuary and southern North Sea (Belgium). Marine Data Archive. https://dx.doi.org/10.14284/434<identifier>https://doi.org/10.14284/434</identifier></citation>
+        <dateStamp>2025-03-26T15:27:18+00:00</dateStamp>
+        <hierarchyLevel>dataset</hierarchyLevel>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://emodnet.ec.europa.eu/geoviewer/?layers=6d617269-6e65-696e-666f-000000001510:1:1&amp;basemap=ebwbl&amp;active=12639&amp;bounds=-12530604,-7655416,12530604,7655416&amp;filters=12639:datasetid__datasetid=5850--&amp;projection=EPSG:3857</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.eurobis.org/toolbox/en/download/occurrence/dataset/5850</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>GBIF dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.gbif.org/dataset/638cc552-4ca9-43c0-8cad-d3f570a4572e</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE Download Service (WFS)</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/Dataportal/wfs?service=wfs&amp;version=1.1.0&amp;typeName=eurobis-obisenv_full&amp;request=GetFeature&amp;outputFormat=text%2Fcsv&amp;viewParams=datasetid%3A5850</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>INSPIRE WMS</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://geo.vliz.be/geoserver/wms?service=WMS&amp;request=getCapabilities&amp;layer=Dataportal:eurobis_rasters-obisenv</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://ipt.inbo.be/archive?r=2015_phd_verhelst_eel</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">http://ipt.inbo.be/resource?r=2015_phd_verhelst_eel</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>IPT</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://ipt.vliz.be/eurobis/resource?r=2015_phd_verhelst_eel</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://obis.org/dataset/05d3a928-d9de-4855-ac9c-137d12d3a3cb</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Online dataset</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://rshiny.lifewatch.be/etn-data/</url>
+            </online>
+          </distribution>
+        </physical>
+        <physical>
+          <objectName>Metadata</objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>HTML</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">https://www.vliz.be//en/imis?dasid=5850</url>
+            </online>
+          </distribution>
+        </physical>
+      </gbif>
+      <parameter>Fish age</parameter>
+      <parameter>Fish detections</parameter>
+      <parameter>Fish lifestage</parameter>
+      <parameter>Fish sex</parameter>
+      <parameter>Fish total length</parameter>
+      <parameter>Horizontal eye diameter of fish</parameter>
+      <parameter>Pectoral fin length of fish</parameter>
+      <parameter>Vertical eye diameter of fish</parameter>
+      <parameter>Wet weight of fish</parameter>
+    </metadata>
+  </additionalMetadata>
+  <dataset>
+    <title xml:lang="en">2015_PHD_VERHELST_EEL - Acoustic telemetry data for European eel (Anguilla anguilla) in the Scheldt estuary and southern North Sea (Belgium)</title>
+    <creator>
+      <individualName>
+        <givenName>Pieterjan</givenName>
+        <surName>Verhelst</surName>
+      </individualName>
+      <organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-2610-6941</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Jan</givenName>
+        <surName>Reubens</surName>
+      </individualName>
+      <organizationName>Vlaams Instituut voor de Zee</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-9823-5670</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Johan</givenName>
+        <surName>Coeck</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0003-2732-7428</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Nico</givenName>
+        <surName>De Maerteleire</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Peter</givenName>
+        <surName>Desmet</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Emilie</givenName>
+        <surName>Gelaude</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Ans</givenName>
+        <surName>Mouton</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Sébastien</givenName>
+        <surName>Pieters</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Lien</givenName>
+        <surName>Reyserhove</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0001-7484-9267</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Karen</givenName>
+        <surName>Robberechts</surName>
+      </individualName>
+      <organizationName>Research Institute for Nature and Forest (INBO)</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Tom</givenName>
+        <surName>Moens</surName>
+      </individualName>
+      <organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0001-6544-9210</userId>
+    </creator>
+    <metadataProvider>
+      <individualName>
+        <givenName>Peter</givenName>
+        <surName>Desmet</surName>
+      </individualName>
+      <electronicMailAddress>peter.desmet@inbo.be</electronicMailAddress>
+      <userId directory="https://orcid.org/">0000-0002-8442-8025</userId>
+    </metadataProvider>
+    <pubDate>2024-08-26</pubDate>
+    <language>en</language>
+    <abstract>
+      <para>
+        <p>This is an acoustic telemetry dataset published by Ghent University. It contains animal (fish) tracking data collected by the Permanent Belgian Acoustic Receiver Network <a href="https://lifewatch.be/en/fish-acoustic-receiver-network"> (https://lifewatch.be/en/fish-acoustic-receiver-network)</a> for the project/study 2015_phd_verhelst_eel, using VEMCO tags (V13) and receivers (VR2AR, VR2Tx, VR2W). In total 136 female individuals of European eel (Anguilla anguilla) were captured, tagged and released between 2015 and 2018 in the Scheldt estuary, to study their migration behaviour - especially their use of selective tidal stream transport - in a tidal system without migration barriers.</p>
+        <p>Large estuaries with a complete salinity gradient from a tidal freshwater zone to marine have become rare due to water regulating constructions such as sluices, shipping locks, water pumping stations and dams. However, the Scheldt estuary in Belgium still has an extensive estuary of ca 160 km. Diadromous fish have to overcome substantial distances which come with a high energetic cost. Due to the high energetic cost of migration and the low adult survival, some of these species have developed semelparity. Consequently, a bioenergetic trade-off between migration and reproduction may exist for semelparous fish species, especially since many will stop feeding during migration: the smaller the energy expenditure during migration, the larger the amount of energy that may remain available for gonad maturation. An example where migration can have important bioenergetic repercussions is migration through strong tidal systems. To reduce energy loss in such systems, fish may perform selective tidal stream transport (STST): an animal ascends into the water column with the appropriate tide and rests on or in the bottom during the opposite tide. However, the use of STST by silver European eels is still controversial. In this study, we found strong evidence that silver European eels apply STST. The results illustrate that eels can distinguish between ebb and flood and suggest that tides play a role in orientation, either directly or indirectly. The general migration speed was higher in the downstream part of the estuary compared to the upstream part, while tidal migration speed was equal in both parts, indicating that eels migrated more consistently in the downstream part. The results of this study give insight in how a diadromous species migrates through an estuary and underline the importance of the tides.</p>
+        <p>This dataset was collected using infrastructure provided by VLIZ and INBO funded by the Research Foundation - Flanders (FWO) as part of the Belgian contribution to LifeWatch.</p>
+        <p>Data have been standardized to Darwin Core using the <a href="https://inbo.github.io/etn/">etn</a> package and are downsampled to the first detection per hour. The original data are managed in the European Tracking Network data platform (<a href="https://lifewatch.be/etn/">https://lifewatch.be/etn/</a>) and are available in Verhelst et al. (2020, <a href="https://doi.org/10.14284/434">https://doi.org/10.14284/434</a>).</p>
+      </para>
+    </abstract>
+    <keywordSet>
+      <keyword>Acoustic telemetry</keyword>
+      <keywordThesaurus>ASFA Thesaurus List</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Acoustic Telemetry</keyword>
+      <keywordThesaurus>ETN Context</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Animal movement</keyword>
+      <keyword>Animal tracking</keyword>
+      <keyword>Biologging</keyword>
+      <keyword>LifeWatch</keyword>
+      <keyword>VEMCO</keyword>
+      <keywordThesaurus>N/A</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Bio-geographical regions</keyword>
+      <keyword>Habitats and biotopes</keyword>
+      <keyword>Sea regions</keyword>
+      <keywordThesaurus>INSPIRE themes</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Biota</keyword>
+      <keyword>Environment</keyword>
+      <keyword>Geoscientific Information</keyword>
+      <keyword>Oceans</keyword>
+      <keywordThesaurus>INSPIRE Topics</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Data</keyword>
+      <keywordThesaurus>Assemble KO Types</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Metadata non conformant</keyword>
+      <keyword>Metadata not evaluated</keyword>
+      <keywordThesaurus>INSPIRE Conformity</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Migration</keyword>
+      <keywordThesaurus>CSA Technology Research Database Master Thesaurus</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>No limitations to public access</keyword>
+      <keywordThesaurus>INSPIRE Limitations on public access</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>WGS84 (EPSG:4326)</keyword>
+      <keywordThesaurus>Coordinate Reference System</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>XYZ ASCII</keyword>
+      <keywordThesaurus>Spatial data formats</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>
+      <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
+    </intellectualRights>
+    <distribution scope="document">
+      <online>
+        <url function="information">https://emodnet.ec.europa.eu/geonetwork/srv/eng/catalog.search#/metadata/6d617269-6e65-696e-666f-000000005850</url>
+      </online>
+    </distribution>
+    <coverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2550">
+        <geographicDescription>ANE, Belgium, Belgian Coast</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2350">
+        <geographicDescription>ANE, North Sea</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/4752">
+        <geographicDescription>ANE, Western Scheldt</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/3098">
+        <geographicDescription>Belgium, Dijle R.</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2469">
+        <geographicDescription>Belgium, Flanders</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/2542">
+        <geographicDescription>Belgium, Scheldt</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage id="http://marineregions.org/mrgid/5481">
+        <geographicDescription>Belgium, Zeeschelde, Antwerp Harbour</geographicDescription>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>EurOBIS calculated BBOX &gt; station Bounding Box</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>2.573</westBoundingCoordinate>
+          <eastBoundingCoordinate>5.109196</eastBoundingCoordinate>
+          <northBoundingCoordinate>51.667924</northBoundingCoordinate>
+          <southBoundingCoordinate>51.00164</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2015-04-18</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2020-08-08</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Anguilla anguilla (Linnaeus, 1758)</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <maintenance>
+      <description>
+        <para/>
+      </description>
+      <maintenanceUpdateFrequency>Not planned</maintenanceUpdateFrequency>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>Pieterjan</givenName>
+        <surName>Verhelst</surName>
+      </individualName>
+      <organizationName>Universiteit Gent; Faculteit Wetenschappen; Vakgroep Biologie; Onderzoeksgroep Mariene Biologie</organizationName>
+      <address>
+        <country>BE</country>
+      </address>
+      <userId directory="https://orcid.org/">0000-0002-2610-6941</userId>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <title>Durif index</title>
+        </description>
+      </methodStep>
+      <sampling>
+        <studyExtent>
+          <description>
+            <para>Entire sampling area</para>
+          </description>
+        </studyExtent>
+        <samplingDescription>
+          <para>Durif index</para>
+        </samplingDescription>
+      </sampling>
+    </methods>
+  </dataset>
+</eml:eml>
